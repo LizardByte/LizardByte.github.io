@@ -116,3 +116,16 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+
+/*card image hover*/
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: all 1.5s ease;
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.1);
+}

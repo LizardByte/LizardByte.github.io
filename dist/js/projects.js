@@ -49,11 +49,20 @@ $(document).ready(function(){
                     card.className = "card h-100 shadow border-0"
                     column.appendChild(card)
 
+                    let banner_div = document.createElement("div")
+                    banner_div.className = "hover-zoom"
+                    card.append(banner_div)
+
+                    let banner_link = document.createElement("a")
+                    banner_link.href = sorted[repo]['html_url']
+                    banner_link.target = "_blank"
+                    banner_div.append(banner_link)
+
                     let banner = document.createElement("img")
                     banner.className = "card-img-top"
                     banner.src = `${base_url}/${cache_repo}/github/openGraphImages/${sorted[repo]['name']}.png`
                     banner.alt = ""
-                    card.append(banner)
+                    banner_link.append(banner)
 
                     let card_body = document.createElement("div")
                     card_body.className = "bg-dark text-white card-body p-4"
