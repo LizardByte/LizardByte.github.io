@@ -50,6 +50,7 @@ body {
     top: 200px;
     right: 10vw;
     padding: 1rem;
+    text-shadow: 2px 2px 5px black;
     user-select: none;
     z-index: 1;
 }
@@ -59,6 +60,7 @@ body {
     top: 275px;
     right: 10vw;
     padding: 1rem;
+    text-shadow: 2px 2px 5px black;
     user-select: none;
     z-index: 1;
 }
