@@ -120,7 +120,7 @@ $(document).ready(function(){
                         dataType: "json",
                         success: function (languages) {
                             let language_data_row = document.createElement("div")
-                            language_data_row.className = "card-group d-flex p-3 align-items-center"
+                            language_data_row.className = "card-group p-3 align-items-center"
                             card_footer.appendChild(language_data_row)
 
                             for (let language in languages) {

@@ -47,7 +47,7 @@ body {
 
 .carousel-overlay-title {
     position: absolute;
-    top: 200px;
+    top: 20vh;
     right: 10vw;
     padding: 1rem;
     text-shadow: 2px 2px 5px black;
@@ -57,7 +57,7 @@ body {
 
 .carousel-overlay-subtitle {
     position: absolute;
-    top: 275px;
+    top: 30vh;
     right: 10vw;
     padding: 1rem;
     text-shadow: 2px 2px 5px black;
