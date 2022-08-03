@@ -32,6 +32,19 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    // get readthedocs projects
+    let readthedocs = []
+    $.ajax({
+        url: `${base_url}/${cache_repo}/readthedocs/projects.json`,
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            for (let item in data) {
+                readthedocs.push(data[item])
+            }
+        }
+    });
+
     $.ajax({
         url: `${base_url}/${cache_repo}/github/repos.json`,
         type: "GET",
@@ -114,6 +127,26 @@ $(document).ready(function(){
                     fork_link_image.className = "fa-fw fa-solid fa-code-fork"
                     fork_link.prepend(fork_link_image)
 
+                    for (let docs in readthedocs) {
+                        let docs_repo = readthedocs[docs]['repository']['url'];
+                        docs_repo = docs_repo.toLowerCase();
+
+                        let project_repo = sorted[repo]['clone_url'];
+                        project_repo = project_repo.toLowerCase();
+
+                        if (docs_repo === project_repo) {
+                            let docs_link = document.createElement("a")
+                            docs_link.className = "nav-link nav-link text-white"
+                            docs_link.href = readthedocs[docs]['urls']['documentation']
+                            docs_link.target = "_blank"
+                            repo_data_row.appendChild(docs_link)
+
+                            let docs_link_image = document.createElement("i")
+                            docs_link_image.className = "fa-fw fa-solid fa-file-lines"
+                            docs_link.prepend(docs_link_image)
+                        }
+                    }
+
                     $.ajax({
                         url: `${base_url}/${cache_repo}/github/languages/${sorted[repo]['name']}.json`,
                         type: "GET",
@@ -134,7 +167,7 @@ $(document).ready(function(){
                                 language_data_row.append(language_icon)
                             }
                         }
-                    })
+                    });
                 }
             }
         }
