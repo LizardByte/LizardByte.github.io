@@ -119,6 +119,29 @@ body {
     justify-content: space-around;
 }
 
+.feedback {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+iframe.feedback {
+    width: 100vw;
+    min-height: calc(100vh - 80px - 72px); /* subtract navbar and footer height */
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+    iframe.feedback {
+        min-height: calc(100vh - 80px - 93px); /* subtract navbar and footer height */
+    }
+}
+
+@media screen and (max-width: 320px) {
+    iframe.feedback {
+        min-height: calc(100vh - 80px - 114px); /* subtract navbar and footer height */
+    }
+}
+
 /*card image hover*/
 .hover-zoom {
     overflow: hidden;
