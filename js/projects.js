@@ -59,7 +59,7 @@ $(document).ready(function(){
                     container.appendChild(column)
 
                     let card = document.createElement("div")
-                    card.className = "card h-100 shadow border-0"
+                    card.className = "card h-100 shadow border-0 rounded-0"
                     column.appendChild(card)
 
                     let banner_div = document.createElement("div")
@@ -72,13 +72,13 @@ $(document).ready(function(){
                     banner_div.append(banner_link)
 
                     let banner = document.createElement("img")
-                    banner.className = "card-img-top"
+                    banner.className = "card-img-top rounded-0"
                     banner.src = `${base_url}/${cache_repo}/github/openGraphImages/${sorted[repo]['name']}.png`
                     banner.alt = ""
                     banner_link.append(banner)
 
                     let card_body = document.createElement("div")
-                    card_body.className = "bg-dark text-white card-body p-4"
+                    card_body.className = "bg-dark text-white card-body p-4 rounded-0"
                     card.appendChild(card_body)
 
                     let card_title_link = document.createElement("a")
@@ -98,7 +98,7 @@ $(document).ready(function(){
                     card_body.appendChild(card_paragraph)
 
                     let card_footer = document.createElement("div")
-                    card_footer.className = "card-footer p-2 pt-0 bg-dark text-white border-top-0"
+                    card_footer.className = "card-footer p-2 pt-0 bg-dark text-white border-0 rounded-0"
                     card.appendChild(card_footer)
 
                     let repo_data_row = document.createElement("div")
