@@ -1,11 +1,12 @@
+---
 name: Build
 
 on:
   pull_request:
-    branches: [ master, nightly ]
-    types: [ opened, synchronize, reopened ]
+    branches: [master, nightly]
+    types: [opened, synchronize, reopened]
   push:
-    branches: [ master, nightly ]
+    branches: [master, nightly]
   workflow_dispatch:
 
 jobs:
@@ -32,7 +33,7 @@ jobs:
         run: |
           # empty contents
           rm -f -r ./gh-pages/*
-          
+
           # copy back to pages
           cp -f -r ./dist/. ./gh-pages/
 
@@ -46,7 +47,7 @@ jobs:
             ${{ github.workspace }}/gh-pages
 
       - name: Deploy to gh-pages
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}  # yamllint disable-line rule:line-length
         uses: actions-js/push@v1.3
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
