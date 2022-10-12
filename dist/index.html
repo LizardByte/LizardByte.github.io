@@ -129,7 +129,7 @@
                                     <p class="text-white mb-0">All of our projects are open source.</p>
                                 </div>
                                 <div class="col mb-5 h-100">
-                                    <div class="feature bg-success bg-gradient text-white mb-3">
+                                    <div class="feature bg-secondary bg-gradient text-white mb-3">
                                         <i class="fa-fw fa-solid fa-dollar-sign"></i>
                                     </div>
                                     <h2 class="text-white h5">Free</h2>
@@ -190,47 +190,121 @@
                     <div class="row gx-5" id="project-container"></div>
                 </div>
             </section>
+
             <!-- Social section-->
-            <section class="bg-dark py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-4">
-                            <section class="offset-anchor" id="Social">
-                                <h3 class="fw-bolder text-white mb-0">Social</h3>
-                                <div class="row gx-5 p-4">
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://www.facebook.com/LizardByteDev" target="_blank"
-                                       title="Facebook"><i class="fa-lg fa-brands fa-facebook"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://www.reddit.com/r/LizardByte" target="_blank"
-                                       title="Reddit"><i class="fa-lg fa-brands fa-reddit-alien"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://twitter.com/LizardByteDev" target="_blank"
-                                       title="Twitter"><i class="fa-lg fa-brands fa-twitter"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://www.youtube.com/c/LizardByteDev" target="_blank"
-                                       title="YouTube"><i class="fa-lg fa-brands fa-youtube"></i></a>
-                                </div>
-                            </section>
+            <section class="offset-anchor bg-dark p-5" id="Social">
+                <div class="container my-5 shadow border-0 bg-dark-gray rounded-0 col-md-7">
+                    <div class="d-table-row g-0 text-white">
+                        <div class="d-table-cell px-3 align-middle text-center">
+                            <h1>
+                                <i class="fa-fw fas fa-comments"></i>
+                            </h1>
                         </div>
-                        <div class="col-lg-4">
-                            <section class="offset-anchor" id="Donate">
-                                <h3 class="fw-bolder text-white mb-0">Donate</h3>
-                                <div class="row gx-5 p-4">
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://github.com/sponsors/LizardByte" target="_blank"
-                                       title="GitHub Sponsors"><i class="fa-lg fa-regular fa-heart"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://mee6.xyz/m/804382334370578482" target="_blank"
-                                       title="MEE6"><i class="fa-fw logo-mee6 rounded-circle"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://www.patreon.com/LizardByte" target="_blank"
-                                       title="Patreon"><i class="fa-fw fa-brands fa-patreon"></i></a>
-                                    <a class="btn feature bg-secondary bg-gradient text-white rounded-circle m-2"
-                                       href="https://www.paypal.com/paypalme/ReenigneArcher" target="_blank"
-                                       title="PayPal"><i class="fa-lg fa-brands fa-paypal"></i></a>
-                                </div>
-                            </section>
+                        <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                            <div class="container">
+                                    <h4 class="card-title mb-3 fw-bolder">Social</h4>
+                                </a>
+                            </div>
+                            <a
+                                class="text-decoration-none"
+                                href="https://app.lizardbyte.dev/discord"
+                                >
+                                <img class="m-3"
+                                     alt="Discord"
+                                     src="https://img.shields.io/badge/dynamic/json?color=blue&label=Discord&style=for-the-badge&query=approximate_member_count&url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2Fd6MpcrbYQs%3Fwith_counts%3Dtrue&logo=discord"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.facebook.com/LizardByteDev"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="Facebook"
+                                     src="https://img.shields.io/badge/dynamic/json?color=blue&label=Facebook&style=for-the-badge&query=data.0.values.0.value&url=https%3A%2F%2Fapp.lizardbyte.dev%2Funo%2Ffacebook%2Fpage.json&logo=facebook"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.reddit.com/r/LizardByte"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="Reddit"
+                                     src="https://img.shields.io/reddit/subreddit-subscribers/lizardbyte?label=Reddit&style=for-the-badge&logo=reddit"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://twitter.com/LizardByteDev"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="Twitter"
+                                     src="https://img.shields.io/twitter/follow/LizardByteDev?label=Twitter&style=for-the-badge&color=blue&logo=twitter"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.youtube.com/c/LizardByteDev"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="YouTube"
+                                     src="https://img.shields.io/youtube/channel/subscribers/UCtSzs1U8B7yYX1uE58a6BxA?label=YouTube&style=for-the-badge&logo=youtube"
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donate section-->
+            <section class="offset-anchor bg-dark p-5" id="Donate">
+                <div class="container mb-5 shadow border-0 bg-dark-gray rounded-0 col-md-7">
+                    <div class="d-table-row g-0 text-white">
+                        <div class="d-table-cell px-3 align-middle text-center">
+                            <h1>
+                                <i class="fa-fw fas fa-coins"></i>
+                            </h1>
+                        </div>
+                        <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                            <div class="container">
+                                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                                </a>
+                            </div>
+                            <a
+                                class="text-decoration-none"
+                                href="https://github.com/sponsors/LizardByte"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="GitHub Sponsors"
+                                     src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://mee6.xyz/m/804382334370578482"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="MEE6"
+                                     src="https://img.shields.io/static/v1?style=for-the-badge&label=MEE6&message=Donate&color=green&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAklEQVR4AewaftIAAAG6SURBVJXBPWgTARiA4fe7H/WKCGoo0qAcIhUJHCSnoIgZYiq4ugk6BEuEimRxk04SwcEhU0pMDY5xcnSK0N22XCexYHSxkpBCB69gc58ntHCcEerzCCmVIMyjVEFLCi4xgT5ID6HV8Zw1EoR9D4LQMQwav8Y6DwiTqW1KO4qoLXtOSMwkNr8ROmON3kfKHUD4N4kUX9Eblx8tdleb9T2D2Fi1AVLk0KQ4Vm0Qk0oQ5lX1IyD8HxUR31DVKiDsU43YHQ1I290eolFEgqhq1RAokbDx+iXd8nl2vm1y4OfgO2/nLrC+9JwkgZKl4JIwc/Um4WCLqeksB46dzJC7/5izxdskKbgWKZlcgUyuQJJh2fi1Z0xiCfQVZkkJhz/Y+fqZP+zjJzh10SNNoG8p9IBZUkafAjaf3OW0bTO6doviizekKfQsEWmp6kNASMhen6O89I6Z7QEfrpSJ+IuKSMtcb9a38gtPs4BPyvDMOb64l9AjR0kTod3xpl4ZxEyRGugKh6YrpkiNmElstVnf8xcWu5Yp05FSAITJ1DalLci9Zc8JiQkplSDMo1RBSwouMYE+SA+h1fGcNRJ+A8xgoQAar6IXAAAAAElFTkSuQmCC"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.patreon.com/LizardByte"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="Patreon"
+                                     src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Funo%2Fpatreon%2FLizardByte.json&logo=patreon"
+                                >
+                            </a>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.paypal.com/paypalme/ReenigneArcher"
+                                target="_blank">
+                                <img class="m-3"
+                                     alt="PayPal"
+                                     src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                                >
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +312,7 @@
 
             <!-- Support -->
             <section class="offset-anchor bg-dark p-5" id="Support">
-                <div class="col-md-8 mx-auto mb-5">
+                <div class="col-md-7 mx-auto mb-5">
                     <div class="container shadow border-0 bg-primary rounded-0">
                         <div class="d-table-row g-0 text-white">
                             <div class="d-table-cell px-4 align-middle text-center">
