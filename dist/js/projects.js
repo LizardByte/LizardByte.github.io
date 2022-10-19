@@ -73,7 +73,7 @@ $(document).ready(function(){
 
                     let banner = document.createElement("img")
                     banner.className = "card-img-top rounded-0"
-                    banner.src = `${base_url}/${cache_repo}/github/openGraphImages/${sorted[repo]['name']}.png`
+                    banner.src = `${base_url}/${cache_repo}/github/openGraphImages/${sorted[repo]['name']}_624x312.png`
                     banner.alt = ""
                     banner_link.append(banner)
 
