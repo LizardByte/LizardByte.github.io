@@ -10,18 +10,38 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
         filePath: "/app.lizardbyte.dev.json",
         distribution: "a4655f152d6ea4b5113a0991bw4",
         languages: {
+            "en":"English",
             "es-ES":"Spanish",
-            "en":"English"},
+        },
         languagesData: {
+            "en":{"code":"en","name":"English","twoLettersCode":"en"},
             "es-ES":{"code":"es-ES","name":"Spanish","twoLettersCode":"es"},
-            "en":{"code":"en","name":"English","twoLettersCode":"en"}
         },
         defaultLanguage: "en",
         defaultLanguageTitle: "English",
         languageDetectType: "default",
-        poweredBy: true,
+        poweredBy: false,
+        position: "bottom-left",
+        submenuPosition: "top-left",
     });
 
-    let button = document.getElementById('crowdin-language-picker');
-    button.className = 'cr-position-bottom-left cr-submenu-top-left'
+    // change styling of language selector button
+    let button = document.getElementsByClassName('cr-picker-button')[0];
+    button.classList.add('border-white');
+    button.classList.add('btn');
+    button.classList.add('btn-outline-light');
+    button.classList.add('bg-dark');
+    button.classList.add('text-white');
+    button.classList.add('rounded-0');
+
+    // change styling of language selector menu
+    let menu = document.getElementsByClassName('cr-picker-submenu')[0];
+    menu.classList.add('border-white');
+    menu.classList.add('bg-dark');
+    menu.classList.add('text-white');
+    menu.classList.add('rounded-0');
+
+    // change styling of selected language in menu
+    let selected = document.getElementsByClassName('cr-selected')[0];
+    selected.classList.add('text-white');
 });
