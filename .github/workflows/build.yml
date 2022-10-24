@@ -27,7 +27,7 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Prepare gh-pages
         run: |
@@ -36,6 +36,14 @@ jobs:
 
           # copy back to pages
           cp -f -r ./dist/. ./gh-pages/
+
+          # create localization directories
+          LANGUAGES=("en" "es-ES")
+
+          for LANGUAGE in ${LANGUAGES[*]}; do
+            mkdir -p ./gh-pages/$LANGUAGE
+            cp -f -r ./dist/*.html ./gh-pages/$LANGUAGE/
+          done
 
       - name: Upload Artifacts
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}

@@ -1,2 +1,6 @@
 # ignore JetBrains project
 .idea/
+
+# ignore duplicated dist folder for localization
+dist/en
+dist/es-ES
