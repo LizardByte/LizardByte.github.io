@@ -19,7 +19,7 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
         },
         defaultLanguage: "en",
         defaultLanguageTitle: "English",
-        languageDetectType: "default",
+        languageDetectType: "subdirectory",
         poweredBy: false,
         position: "bottom-left",
         submenuPosition: "top-left",
