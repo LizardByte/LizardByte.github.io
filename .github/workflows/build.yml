@@ -42,7 +42,7 @@ jobs:
 
           for LANGUAGE in ${LANGUAGES[*]}; do
             mkdir -p ./gh-pages/$LANGUAGE
-            cp -f -r ./dist/*.html ./gh-pages/$LANGUAGE/
+            cp -f -r ./dist/. ./gh-pages/$LANGUAGE/
           done
 
       - name: Upload Artifacts
