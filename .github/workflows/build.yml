@@ -6,7 +6,7 @@ on:
     branches: [master, nightly]
     types: [opened, synchronize, reopened]
   push:
-    branches: [master, nightly]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
