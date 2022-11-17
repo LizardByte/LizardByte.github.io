@@ -34,6 +34,11 @@ jobs:
           # empty contents
           rm -f -r ./gh-pages/*
 
+          # install npm dependencies
+          cd ./dist
+          npm install
+          cd ..
+
           # copy back to pages
           cp -f -r ./dist/. ./gh-pages/
 

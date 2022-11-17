@@ -1,6 +1,10 @@
 # ignore JetBrains project
 .idea/
 
+# ignore node modules
+node_modules/
+package-lock.json
+
 # ignore duplicated dist folder for localization
 dist/en
 dist/es-ES
