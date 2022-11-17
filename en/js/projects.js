@@ -106,7 +106,7 @@ $(document).ready(function(){
                     card_footer.appendChild(repo_data_row)
 
                     let star_link = document.createElement("a")
-                    star_link.className = "nav-link nav-link-sm text-white"
+                    star_link.className = "nav-link nav-link-sm text-white px-3"
                     star_link.href = `https://star-history.com/#${sorted[repo]['full_name']}`
                     star_link.target = "_blank"
                     star_link.textContent = sorted[repo]['stargazers_count']
@@ -117,7 +117,7 @@ $(document).ready(function(){
                     star_link.prepend(star_link_image)
 
                     let fork_link = document.createElement("a")
-                    fork_link.className = "nav-link nav-link-sm text-white"
+                    fork_link.className = "nav-link nav-link-sm text-white px-3"
                     fork_link.href = `https://github.com/${sorted[repo]['full_name']}/network/members`
                     fork_link.target = "_blank"
                     fork_link.textContent = sorted[repo]['forks']
@@ -136,7 +136,7 @@ $(document).ready(function(){
 
                         if (docs_repo === project_repo) {
                             let docs_link = document.createElement("a")
-                            docs_link.className = "nav-link nav-link text-white"
+                            docs_link.className = "nav-link nav-link text-white px-3"
                             docs_link.href = readthedocs[docs]['urls']['documentation']
                             docs_link.target = "_blank"
                             repo_data_row.appendChild(docs_link)
