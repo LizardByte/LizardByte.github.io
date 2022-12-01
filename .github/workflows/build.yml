@@ -34,21 +34,12 @@ jobs:
           # empty contents
           rm -f -r ./gh-pages/*
 
-          # install npm dependencies
-          cd ./dist
-          npm install
-          cd ..
-
           # copy back to pages
           cp -f -r ./dist/. ./gh-pages/
 
-          # create localization directories
-          LANGUAGES=("en" "es-ES")
-
-          for LANGUAGE in ${LANGUAGES[*]}; do
-            mkdir -p ./gh-pages/$LANGUAGE
-            cp -f -r ./dist/. ./gh-pages/$LANGUAGE/
-          done
+          # install npm dependencies
+          cd ./gh-pages
+          npm install
 
       - name: Upload Artifacts
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}

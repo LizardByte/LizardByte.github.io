@@ -8,7 +8,7 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
         baseUrl: "https://app.lizardbyte.dev",
         distributionBaseUrl: "https://distributions.crowdin.net",
         filePath: "/app.lizardbyte.dev.json",
-        distribution: "a4655f152d6ea4b5113a0991bw4",
+        distribution: "440412a823e55ea582c5b891bw4",
         languages: {
             "en":"English",
             "es-ES":"Spanish",
@@ -19,7 +19,7 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
         },
         defaultLanguage: "en",
         defaultLanguageTitle: "English",
-        languageDetectType: "subdirectory",
+        languageDetectType: "default",
         poweredBy: false,
         position: "bottom-left",
         submenuPosition: "top-left",
