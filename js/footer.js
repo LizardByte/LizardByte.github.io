@@ -6,9 +6,9 @@ document.getElementById("footer-container").innerHTML = `
                         <div class="small m-0 text-white" id="copyright-text">Copyright &copy; LizardByte</div>
                     </div>
                     <div class="col-auto">
-                        <a class="link-light small" href="privacy.html">Privacy</a>
+                        <a class="link-light small" href="privacy">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="terms.html">Terms</a>
+                        <a class="link-light small" href="terms">Terms</a>
                     </div>
                 </div>
             </div>
