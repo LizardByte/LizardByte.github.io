@@ -11,10 +11,14 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
         distribution: "440412a823e55ea582c5b891bw4",
         languages: {
             "en":"English",
+            "de":"German",
+            "it":"Italian",
             "es-ES":"Spanish",
         },
         languagesData: {
             "en":{"code":"en","name":"English","twoLettersCode":"en"},
+            "de":{"code":"de","name":"German","twoLettersCode":"de"},
+            "it":{"code":"it","name":"Italian","twoLettersCode":"it"},
             "es-ES":{"code":"es-ES","name":"Spanish","twoLettersCode":"es"},
         },
         defaultLanguage: "en",
