@@ -6,9 +6,11 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
 {
     window.proxyTranslator.init({
         baseUrl: "https://app.lizardbyte.dev",
+        appUrl: "https://proxy-translator.app.crowdin.net",
+        valuesParams: "U2FsdGVkX19lYMLsPNDpxzdbu5KzPwzTS/rPrBbwGbbU3juYVTX1ChpPTNuLnYEWHnskatr4HtJD9r9WZ4SSi1u76eThEzx06RYBo750zfT9HuvbwlwXRfX3agTDdqh4",
         distributionBaseUrl: "https://distributions.crowdin.net",
         filePath: "/app.lizardbyte.dev.json",
-        distribution: "440412a823e55ea582c5b891bw4",
+        distribution: "de06f110bff2c04df23e2c91bw4",
         languages: {
             "en":"English",
             "de":"German",
