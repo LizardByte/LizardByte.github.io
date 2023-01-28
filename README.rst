@@ -10,7 +10,7 @@ This repo contains the source files for the `LizardByte <https://app.lizardbyte.
 Integrations
 ------------
 
-.. image:: https://img.shields.io/github/workflow/status/lizardbyte/lizardbyte.github.io/Build/master?label=build&logo=github&style=for-the-badge
+.. image:: https://img.shields.io/github/actions/workflow/status/lizardbyte/lizardbyte.github.io/build.yml.svg?branch=master&label=build&logo=github&style=for-the-badge
    :alt: GitHub Workflow Status (Build)
    :target: https://github.com/LizardByte/LizardByte.github.io/actions/workflows/build.yml?query=branch%3Amaster
 
