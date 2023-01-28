@@ -39,7 +39,7 @@ $.getScript('https://cdn.jsdelivr.net/npm/@widgetbot/crate@3', function()
         defer: false,
     })
 
-    $.getScript('js/sleep.js')
+    $.getScript('https://app.lizardbyte.dev/js/sleep.js')
         // This won't work when running locally, so we will have a fallback sleep function for development testing
         // https://stackoverflow.com/a/26851894/11214013
         .done(function() {

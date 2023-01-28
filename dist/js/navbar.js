@@ -10,7 +10,7 @@ navbar_element.innerHTML = `
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand fw-bold" href="/">
-                    <img src="assets/images/logo-56x56.png"> LizardByte
+                    <img src="https://app.lizardbyte.dev/assets/images/logo-56x56.png" alt=""> LizardByte
                 </a>
             </div>
             <div class="navbar-header">
