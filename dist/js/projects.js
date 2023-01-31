@@ -1,29 +1,16 @@
 // projects section script
-function rankingSorter(firstKey, secondKey) {
-    return function(a, b) {
-        if (a[firstKey] > b[firstKey]) {
-            return -1;
-        } else if (a[firstKey] < b[firstKey]) {
-            return 1;
-        }
-        else {
-            if (a[secondKey] > b[secondKey]) {
-                return 1;
-            } else if (a[secondKey] < b[secondKey]) {
-                return -1;
-            } else {
-                return 0;
-            }
-        }
-    }
-}
 
+// load external scripts
+$.getScript('https://app.lizardbyte.dev/js/ranking_sorter.js')
+
+
+// get project container
 container = document.getElementById("project-container")
 let org_name = "LizardByte"
 let base_url = `https://app.${org_name.toLowerCase()}.dev`
 let cache_repo = "uno"
 
-// create project cards
+
 $(document).ready(function(){
     // Set cache = false for all jquery ajax requests.
     $.ajaxSetup({
@@ -31,6 +18,8 @@ $(document).ready(function(){
     });
 });
 
+
+// create project cards
 $(document).ready(function(){
     // get readthedocs projects
     let readthedocs = []
