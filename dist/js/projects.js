@@ -56,6 +56,7 @@ $(document).ready(function(){
                     card.append(banner_div)
 
                     let banner_link = document.createElement("a")
+                    banner_link.className = "crowdin-ignore"
                     banner_link.href = sorted[repo]['html_url']
                     banner_link.target = "_blank"
                     banner_div.append(banner_link)
@@ -71,7 +72,7 @@ $(document).ready(function(){
                     card.appendChild(card_body)
 
                     let card_title_link = document.createElement("a")
-                    card_title_link.className = "text-decoration-none link-light"
+                    card_title_link.className = "text-decoration-none link-light crowdin-ignore"
                     card_title_link.href = sorted[repo]['html_url']
                     card_title_link.target = "_blank"
                     card_body.appendChild(card_title_link)
@@ -94,8 +95,28 @@ $(document).ready(function(){
                     repo_data_row.className = "d-flex align-items-center"
                     card_footer.appendChild(repo_data_row)
 
+                    let github_link = document.createElement("a")
+                    github_link.className = "nav-link text-white ms-3"
+                    github_link.href = sorted[repo]['html_url']
+                    github_link.target = "_blank"
+                    repo_data_row.appendChild(github_link)
+
+                    let github_link_image = document.createElement("i")
+                    github_link_image.className = "fa-fw fa-brands fa-github"
+                    github_link.prepend(github_link_image)
+
+                    // try to get repo subpage using base url and overwrite the links if it exists
+                    $.ajax({
+                        url: `${base_url}/${sorted[repo]['name']}/`,
+                        type: "GET",
+                        success: function () {
+                            banner_link.href = `${base_url}/${sorted[repo]['name']}/`
+                            card_title_link.href = `${base_url}/${sorted[repo]['name']}/`
+                        },
+                    })
+
                     let star_link = document.createElement("a")
-                    star_link.className = "nav-link nav-link-sm text-white px-3"
+                    star_link.className = "nav-link nav-link-sm text-white ms-3"
                     star_link.href = `https://star-history.com/#${sorted[repo]['full_name']}`
                     star_link.target = "_blank"
                     star_link.textContent = sorted[repo]['stargazers_count']
@@ -106,7 +127,7 @@ $(document).ready(function(){
                     star_link.prepend(star_link_image)
 
                     let fork_link = document.createElement("a")
-                    fork_link.className = "nav-link nav-link-sm text-white px-3"
+                    fork_link.className = "nav-link nav-link-sm text-white ms-3"
                     fork_link.href = `https://github.com/${sorted[repo]['full_name']}/network/members`
                     fork_link.target = "_blank"
                     fork_link.textContent = sorted[repo]['forks']
@@ -125,7 +146,7 @@ $(document).ready(function(){
 
                         if (docs_repo === project_repo) {
                             let docs_link = document.createElement("a")
-                            docs_link.className = "nav-link nav-link text-white px-3"
+                            docs_link.className = "nav-link text-warning ms-3"
                             docs_link.href = readthedocs[docs]['urls']['documentation']
                             docs_link.target = "_blank"
                             repo_data_row.appendChild(docs_link)

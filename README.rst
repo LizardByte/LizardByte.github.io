@@ -1,5 +1,3 @@
-:github_url: https://github.com/LizardByte/LizardByte.github.io/tree/nightly/README.rst
-
 Overview
 ========
 
