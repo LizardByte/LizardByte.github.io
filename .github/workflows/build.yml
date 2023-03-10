@@ -29,17 +29,23 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      - name: Prepare gh-pages
+      - name: Build website
         run: |
-          # empty contents
+          # install npm dependencies
+          npm install
+
+          # empty contents of gh-pages
           rm -f -r ./gh-pages/*
 
-          # copy back to pages
-          cp -f -r ./dist/. ./gh-pages/
+          # move contents of dist to gh-pages
+          mv -f ./dist/* ./gh-pages/
 
-          # install npm dependencies
-          cd ./gh-pages
-          npm install
+          # move node_modules directory to gh-pages
+          mv -f ./node_modules/ ./gh-pages/
+
+          # remove files in gh-pages that start with a dot
+          # regex required because `.*` will wipe everything
+          rm -f -r ./gh-pages/.[a-zA-Z0-9]*
 
       - name: Upload Artifacts
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}
@@ -49,9 +55,12 @@ jobs:
           if-no-files-found: error  # 'warn' or 'ignore' are also available, defaults to `warn`
           path: |
             ${{ github.workspace }}/gh-pages
+            !**/*.git
 
       - name: Deploy to gh-pages
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}  # yamllint disable-line rule:line-length
+        if: >-
+          (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
+          (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
         uses: actions-js/push@v1.4
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
