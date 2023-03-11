@@ -45,7 +45,7 @@ jobs:
 
           # remove files in gh-pages that start with a dot
           # regex required because `.*` will wipe everything
-          rm -f -r ./gh-pages/.[a-zA-Z0-9]*
+          # rm -f -r ./gh-pages/.[a-zA-Z0-9]*
 
       - name: Upload Artifacts
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}
