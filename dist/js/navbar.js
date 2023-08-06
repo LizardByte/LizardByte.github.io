@@ -9,8 +9,9 @@ navbar_element.className = "navbar navbar-expand-lg navbar-dark bg-black fixed-t
 navbar_element.innerHTML = `
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand fw-bold" href="/">
-                    <img src="https://app.lizardbyte.dev/assets/images/logo-56x56.png" alt=""> LizardByte
+                <a class="navbar-brand fw-bold crowdin-ignore" href="/">
+                    <img src="https://app.lizardbyte.dev/assets/images/logo-56x56.png" alt=""
+                         class="crowdin-ignore"> LizardByte
                 </a>
             </div>
             <div class="navbar-header">
@@ -56,6 +57,12 @@ for(let i = 0; i < sections.length; ++i) {
         navbar_link.className = nav_link_class
         navbar_link.href = `#${sections[i].id}`
         navbar_link.textContent = sections[i].id
+
+        // check if crowdin-ignore is in the section classes and add it to the link
+        if (sections[i].classList.contains("crowdin-ignore")) {
+            navbar_link.classList.add("crowdin-ignore")
+        }
+
         navbar_item.appendChild(navbar_link)
         navbar_list.appendChild(navbar_item)
     }

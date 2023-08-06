@@ -78,7 +78,7 @@ $(document).ready(function(){
                     card_body.appendChild(card_title_link)
 
                     let card_title_text = document.createElement("h5")
-                    card_title_text.className = "card-title mb-3 fw-bolder"
+                    card_title_text.className = "card-title mb-3 fw-bolder crowdin-ignore"
                     card_title_text.textContent = result[repo]['name']
                     card_title_link.appendChild(card_title_text)
 
@@ -170,7 +170,7 @@ $(document).ready(function(){
                                 let language_file = encodeURIComponent(`${language}.svg`)
 
                                 let language_icon = document.createElement("img")
-                                language_icon.className = "language-logo"
+                                language_icon.className = "language-logo crowdin-ignore"
                                 language_icon.src = `${base_url}/${cache_repo}/language-icons/${language_file}`
                                 language_icon.alt = language
                                 language_icon.title = language
