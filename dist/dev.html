@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>LizardByte | Developer Dashboard</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Developer Dashboard for LizardByte projects" />
+        <meta name="author" content="" />
+
+        <!-- Open Graph/Twitter metadata -->
+        <meta property="og:site_name" content="LizardByte" />
+        <meta property="og:title" content="LizardByte | Developer Dashboard" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://app.lizardbyte.dev/assets/images/og-image.png" />
+        <meta property="og:url" content="https://app.lizardbyte.dev/dev" />
+        <meta property="og:description" content="Overview of LizardByte's GitHub projects." />
+        <meta property="og:locale" content="en-US" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="og:twitter_site" content="@lizardbytedev" />
+        <meta property="og:twitter_site:id" content="@lizardbytedev" />
+        <meta property="og:twitter_creator" content="@lizardbytedev" />
+        <meta property="og:twitter_creator:id" content="@lizardbytedev" />
+        <meta property="twitter:image" content="https://app.lizardbyte.dev/assets/images/og-image.png" />
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <!-- FontAwesome-->
+        <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+        <!-- Bootstrap theme-->
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Custom css-->
+        <link href="css/custom.css" rel="stylesheet" />
+        <!-- Custom logos-->
+        <link href="css/logos.css" rel="stylesheet" />
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+
+        <!-- Crowdin widget -->
+        <script src="js/crowdin.js"></script>
+        <script src="js/crowdin_web_widget.js"></script>
+    </head>
+    <body class="d-flex flex-column h-100 bg-dark-gray">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav id="nav-container"></nav>
+
+            <!-- Projects section-->
+            <section class="py-5 offset-anchor" id="Projects">
+                <div class="container my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center text-white">
+                                <h2 class="fw-bolder pb-4">Projects</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5" id="dashboard-container"></div>
+                </div>
+            </section>
+
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto" id="footer-container"></footer>
+        <!-- Bootstrap core JS-->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Get navbar -->
+        <script src="js/navbar.js"></script>
+        <!-- Get footer -->
+        <script src="js/footer.js"></script>
+        <!-- Discord WidgetBot -->
+        <script src="js/discord.js"></script>
+        <!-- Get project details -->
+        <script src="js/dev_dashboard.js"></script>
+    </body>
+</html>

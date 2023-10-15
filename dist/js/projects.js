@@ -39,7 +39,7 @@ $(document).ready(function(){
         type: "GET",
         dataType:"json",
         success: function (result) {
-            let sorted = result.sort(rankingSorter("stargazers_count", "name"));
+            let sorted = result.sort(rankingSorter("stargazers_count", "name"))
 
             for(let repo in sorted) {
                 if (sorted[repo]['archived'] === false && sorted[repo]['description'] !== null && sorted[repo]['fork'] === false) {
