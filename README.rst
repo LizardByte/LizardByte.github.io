@@ -12,10 +12,8 @@ Integrations
    :alt: GitHub Workflow Status (Build)
    :target: https://github.com/LizardByte/LizardByte.github.io/actions/workflows/build.yml?query=branch%3Amaster
 
-.. image:: https://img.shields.io/badge/dynamic/json?color=blue&label=localized&style=for-the-badge&query=%24.progress..data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15178612-606145.json&logo=crowdin
-   :alt: CrowdIn
-   :target: https://translate.lizardbyte.dev
-
-.. image:: https://badges.awesome-crowdin.com/translation-15178612-606145.png
+CrowdIn Localization
+^^^^^^^^^^^^^^^^^^^^
+.. image:: https://app.lizardbyte.dev/uno/crowdin/LizardByte_graph.svg
    :alt: CrowdIn graph
    :target: https://translate.lizardbyte.dev
