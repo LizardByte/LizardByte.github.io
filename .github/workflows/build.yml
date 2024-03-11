@@ -31,17 +31,8 @@ jobs:
 
       - name: Build website
         run: |
-          # install npm dependencies
-          npm install
-
-          # empty contents of gh-pages
-          rm -f -r ./gh-pages/*
-
-          # move contents of dist to gh-pages
-          mv -f ./dist/* ./gh-pages/
-
-          # move node_modules directory to gh-pages
-          mv -f ./node_modules/ ./gh-pages/
+          sudo chmod +x ./scripts/build.sh
+          ./scripts/build.sh
 
       - name: Upload Artifacts
         if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}

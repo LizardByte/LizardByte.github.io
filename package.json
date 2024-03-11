@@ -1,7 +1,17 @@
 {
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.6.0",
     "bootstrap": "5.3.3",
     "jquery": "3.7.1"
+  },
+  "devDependencies": {
+    "css-loader": "6.10.0",
+    "mini-css-extract-plugin": "2.8.1",
+    "script-loader": "0.7.2",
+    "webpack": "5.90.3",
+    "webpack-cli": "5.1.4"
   }
 }
