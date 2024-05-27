@@ -66,7 +66,6 @@ $(document).ready(function(){
                 "Stars",
                 "Forks",
                 "Open Issues & Pulls",
-                "Master Default",
                 "Languages",
                 "License",
                 "Docs",
@@ -164,14 +163,6 @@ $(document).ready(function(){
                 table_data_image_src.alt = ""
                 table_data_image.append(table_data_image_src)
 
-                // default branch is master
-                let default_branch_data = document.createElement("i")
-                if (sorted[repo]['default_branch'] === "master") {
-                    default_branch_data.className = "fa-fw fa-solid fa-check-circle text-success"
-                } else {
-                    default_branch_data.className = "fa-fw fa-solid fa-times-circle text-danger"
-                }
-
                 // get license data
                 // if blank use font awesome red X circle icon
                 let license_data = document.createElement("i")
@@ -204,7 +195,6 @@ $(document).ready(function(){
                     "stargazers_count": sorted[repo]['stargazers_count'],
                     "forks": sorted[repo]['forks'],
                     "open_issues": sorted[repo]['open_issues'],
-                    "default_branch": default_branch_data,
                     "language": language_data,
                     "license": license_data,
                     "readthedocs": docs_link,
