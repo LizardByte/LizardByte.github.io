@@ -6,7 +6,7 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
     window.proxyTranslator.init({
         baseUrl: "https://app.lizardbyte.dev",
         appUrl: "https://proxy-translator.app.crowdin.net",
-        valuesParams: "U2FsdGVkX18oEIFwyzOmQTrYwQEazqRvzErV24EQn8dee5U583HvbKkVktb0G/DMLpc+vYefsXCu07kcR3Fxa1aoSsMTkEJmM8Htl2tcYv2DkTKzd+pVAP8MBhpfAnPD",
+        valuesParams: "U2FsdGVkX19ClOT7gAzJBnfQPMcvqkPxFWxyPrnN7UEMztYDAOA+/W4kvMqRz2gDLv2/K3hTEtwbcq5imv5k5MUAykz0uklBcdH49kqeo1AhYpNKXdwXZNYBPXmNUm5F",
         distributionBaseUrl: "https://distributions.crowdin.net",
         filePath: "/app.lizardbyte.dev.json",
         distribution: "0913bb75b61f0b26247ffa91bw4",
@@ -15,7 +15,12 @@ $.getScript('https://proxy-translator.app.crowdin.net/assets/proxy-translator.js
             "es-ES": {"code":"es-ES","name":"Spanish","twoLettersCode":"es"},
             "de": {"code":"de","name":"German","twoLettersCode":"de"},
             "it": {"code":"it","name":"Italian","twoLettersCode":"it"},
+            "ja":{"code":"ja","name":"Japanese","twoLettersCode":"ja"},
+            "pt-PT":{"code":"pt-PT","name":"Portuguese","twoLettersCode":"pt"},
             "ru": {"code":"ru","name":"Russian","twoLettersCode":"ru"},
+            "sv-SE":{"code":"sv-SE","name":"Swedish","twoLettersCode":"sv"},
+            "tr":{"code":"tr","name":"Turkish","twoLettersCode":"tr"},
+            "zh-CN":{"code":"zh-CN","name":"Chinese Simplified","twoLettersCode":"zh"},
             "en": {"code":"en","name":"English","twoLettersCode":"en"},
             "en-US": {"code":"en-US","name":"English, United States","twoLettersCode":"en"},
             "en-GB": {"code":"en-GB","name":"English, United Kingdom","twoLettersCode":"en"}
