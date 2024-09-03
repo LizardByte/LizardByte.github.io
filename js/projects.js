@@ -8,7 +8,7 @@ $.getScript('https://app.lizardbyte.dev/js/ranking_sorter.js')
 container = document.getElementById("project-container")
 let org_name = "LizardByte"
 let base_url = `https://app.${org_name.toLowerCase()}.dev`
-let cache_repo = "uno"
+let cache_repo = "dashboard"
 
 
 $(document).ready(function(){
@@ -171,7 +171,7 @@ $(document).ready(function(){
 
                                 let language_icon = document.createElement("img")
                                 language_icon.className = "language-logo crowdin-ignore"
-                                language_icon.src = `${base_url}/${cache_repo}/language-icons/${language_file}`
+                                language_icon.src = `${base_url}/uno/language-icons/${language_file}`
                                 language_icon.alt = language
                                 language_icon.title = language
                                 language_data_row.append(language_icon)
