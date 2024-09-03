@@ -14,6 +14,6 @@ Integrations
 
 CrowdIn Localization
 ^^^^^^^^^^^^^^^^^^^^
-.. image:: https://app.lizardbyte.dev/uno/crowdin/LizardByte_graph.svg
+.. image:: https://app.lizardbyte.dev/dashboard/crowdin/LizardByte_graph.svg
    :alt: CrowdIn graph
    :target: https://translate.lizardbyte.dev
