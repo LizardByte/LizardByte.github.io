@@ -9,14 +9,59 @@ on:
     branches: [master]
   workflow_dispatch:
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
+jobs:
+  build:
+    name: Build Jekyll
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install dependencies
+        run: |
+          bundle install
+
+      - name: Setup Pages
+        id: configure-pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup CI config
+        run: |
+          echo "---" > _config_ci.yml
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: |
+          bundle exec jekyll build --future --config _config_ci.yml,_config.yml
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy to Pages
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
+      (github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Checkout gh-pages
         uses: actions/checkout@v4
         with:
@@ -25,39 +70,22 @@ jobs:
           persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of the personal token
           fetch-depth: 0  # otherwise, will fail to push refs to dest repo
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
-      - name: Build website
+      - name: Clean
         run: |
-          # install npm dependencies
-          npm install
-
           # empty contents of gh-pages
           rm -f -r ./gh-pages/*
 
-          # move contents of dist to gh-pages
-          # https://stackoverflow.com/a/20192079/11214013
-          cp -r ./dist/. ./gh-pages/
-
-          # move node_modules directory to gh-pages
-          mv -f ./node_modules/ ./gh-pages/
-
-      - name: Upload Artifacts
-        if: ${{ github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' }}
-        uses: actions/upload-artifact@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
-          name: gh-pages
-          if-no-files-found: error  # 'warn' or 'ignore' are also available, defaults to `warn`
-          path: |
-            ${{ github.workspace }}/gh-pages
-            !**/*.git
+          name: site
+          path: gh-pages
+
+      - name: no-jekyll
+        run: |
+          touch gh-pages/.nojekyll
 
       - name: Deploy to gh-pages
-        if: >-
-          (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
-          (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
         uses: actions-js/push@v1.5
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
@@ -66,4 +94,4 @@ jobs:
           directory: gh-pages
           branch: gh-pages
           force: false
-          message: automatic-update-${{ steps.date.outputs.date }}
+          message: "Deploy site from ${{ github.sha }}"
