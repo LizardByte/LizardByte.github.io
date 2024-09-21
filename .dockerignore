@@ -1,0 +1,8 @@
+# ignore hidden files
+.*
+
+!.well-known/
+
+third-party/beautiful-jekyll/_posts/
+
+_site/

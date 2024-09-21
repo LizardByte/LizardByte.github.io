@@ -1,0 +1,212 @@
+---
+name: Build Jekyll
+
+on:
+  workflow_call:
+    inputs:
+      site_artifact:
+        description: 'Artifact name to download'
+        required: false
+        default: ''
+        type: string
+      config_file:
+        description: 'Configuration file to use, relative to the site source directory'
+        required: false
+        default: '_config.yml'
+        type: string
+      target_branch:
+        description: 'Branch to deploy to. Branch must already exist.'
+        required: false
+        default: 'gh-pages'
+        type: string
+      clean_gh_pages:
+        description: 'Clean gh-pages before deploying'
+        required: false
+        default: true
+        type: boolean
+      theme_ref:
+        description: 'Branch, tag, or commit SHA of the theme repository to use'
+        required: false
+        default: 'master'
+        type: string
+    secrets:
+      GH_BOT_EMAIL:
+        description: 'Email address of the bot account'
+        required: true
+      GH_BOT_NAME:
+        description: 'Name of the bot account'
+        required: true
+      GH_BOT_TOKEN:
+        description: 'Personal access token of the bot account'
+        required: true
+
+jobs:
+  build:
+    name: Build Jekyll
+    runs-on: ubuntu-latest
+    steps:
+      - name: Input validation
+        run: |
+          error=false
+          if [ "${{ inputs.site_artifact }}" == 'site' ]; then
+            echo "Artifact name cannot be 'site'"
+            error=true
+          fi
+
+          if [ "$error" = true ]; then
+            exit 1
+          fi
+
+      - name: Checkout theme
+        uses: actions/checkout@v4
+        with:
+          repository: LizardByte/LizardByte.github.io
+          ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || inputs.theme_ref }}
+          submodules: recursive
+          path: theme
+
+      - name: Checkout project
+        if: ${{ inputs.site_artifact != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.site_artifact }}
+          path: project
+
+      - name: Setup project
+        if: ${{ github.repository == 'LizardByte/LizardByte.github.io' }}
+        run: |
+          mkdir -p ./project
+          cp -RT ./theme/ ./project/
+          rm -rf ./project/third-party
+
+      - name: Create site
+        env:
+          TMPDIR: /home/runner/work/tmp
+        run: |
+          mkdir -p ${TMPDIR}
+
+          base_dirs=(
+            ./theme/third-party/beautiful-jekyll
+            ./theme
+          )
+
+          targets=(
+            *.gemspec
+            _data
+            _includes
+            _layouts
+            _sass
+            assets
+            404.html
+            _config_theme.yml
+            favicon.ico
+            feed.xml
+            Gemfile
+            staticman.yml
+            tags.html
+          )
+
+          for base_dir in "${base_dirs[@]}"; do
+            for target in "${targets[@]}"; do
+              if [ -e "$base_dir/$target" ]; then
+                cp -rf "$base_dir/$target" ${TMPDIR}/
+              fi
+            done
+          done
+
+          # copy project directory, they should only come from the project repo
+          cp -RTf ./project/ ${TMPDIR}/
+
+          # remove the workspace
+          cd ..
+          rm -rf ${GITHUB_WORKSPACE}
+
+          # move the temporary directory to the workspace
+          mv ${TMPDIR} ${GITHUB_WORKSPACE}
+          cd ${GITHUB_WORKSPACE}
+
+          # debug contents recursively
+          ls -Ra
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install dependencies
+        run: |
+          bundle install
+
+      - name: Setup Pages
+        id: configure-pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup CI config
+        run: |
+          echo "---" > _config_ci.yml
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: |
+          # if inputs.config_file exists
+          config_files="_config_ci.yml,_config_theme.yml"
+          if [ -e "${{ inputs.config_file }}" ]; then
+            config_files="${config_files},${{ inputs.config_file }}"
+          fi
+
+          bundle exec jekyll build --future --config ${config_files}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+
+  deploy:
+    name: Deploy to Pages
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
+      (github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target_branch }}
+          path: gh-pages
+          persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of the personal token
+          fetch-depth: 0  # otherwise, will fail to push refs to dest repo
+
+      - name: Clean
+        if: ${{ inputs.clean_gh_pages }}
+        run: |
+          # empty contents of gh-pages
+          rm -f -r ./gh-pages/*
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: gh-pages
+
+      - name: no-jekyll
+        run: |
+          touch gh-pages/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: actions-js/push@v1.5
+        with:
+          github_token: ${{ secrets.GH_BOT_TOKEN }}
+          author_email: ${{ secrets.GH_BOT_EMAIL }}
+          author_name: ${{ secrets.GH_BOT_NAME }}
+          directory: gh-pages
+          branch: ${{ inputs.target_branch }}
+          force: false
+          message: "Deploy site from ${{ github.sha }}"
