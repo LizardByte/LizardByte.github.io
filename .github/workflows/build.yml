@@ -38,7 +38,7 @@ jobs:
           rm -f -r ./gh-pages/*
 
           # move contents of dist to gh-pages
-          mv -f ./dist/* ./gh-pages/
+          mv ./dist/{.,}* ./gh-pages/
 
           # move node_modules directory to gh-pages
           mv -f ./node_modules/ ./gh-pages/
