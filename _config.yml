@@ -11,9 +11,8 @@
 ############################
 
 # https://beautifuljekyll.com/getstarted/#method-1-github-repository-with-remote_theme
-# remote_theme: daattali/beautiful-jekyll@6.0.1
-remote_theme: daattali/beautiful-jekyll@b1b667e372acf5f602cca6fee64dd850af70f3da
-# TODO: move to LizardByte fork, with customizations specific to our site
+# remote_theme: daattali/beautiful-jekyll
+# Our custom workflow will handle setting up the theme. E.g. combining beautifuljekyll with our customizations.
 
 # Name of website
 title: LizardByte
