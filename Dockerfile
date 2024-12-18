@@ -74,4 +74,4 @@ _SETUP
 EXPOSE 4000
 
 # Command to build and serve the Jekyll site
-CMD ["bundle", "exec", "jekyll", "serve", "--trace", "--config", "_config_theme.yml,_config_local.yml"]
+CMD ["bundle", "exec", "jekyll", "serve", "--future", "--trace", "--config", "_config_theme.yml,_config_local.yml"]
