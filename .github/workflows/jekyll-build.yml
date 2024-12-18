@@ -1,17 +1,39 @@
 ---
-name: Build
+name: Build Jekyll
 
 on:
-  pull_request:
-    branches: [master]
-    types: [opened, synchronize, reopened]
-  push:
-    branches: [master]
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_call:
+    inputs:
+      site_source:
+        description: 'Directory where the site source files are located'
+        required: false
+        default: '.'
+        type: string
+      config_file:
+        description: 'Configuration file to use, relative to the site source directory'
+        required: false
+        default: '_config.yml'
+        type: string
+      target_branch:
+        description: 'Branch to deploy to. Branch must already exist.'
+        required: false
+        default: 'gh-pages'
+        type: string
+      clean_gh_pages:
+        description: 'Clean gh-pages before deploying'
+        required: false
+        default: true
+        type: boolean
+    secrets:
+      GH_BOT_EMAIL:
+        description: 'Email address of the bot account'
+        required: true
+      GH_BOT_NAME:
+        description: 'Name of the bot account'
+        required: true
+      GH_BOT_TOKEN:
+        description: 'Personal access token of the bot account'
+        required: true
 
 jobs:
   build:
@@ -58,7 +80,7 @@ jobs:
             _sass
             assets
             404.html
-            _config.yml
+            _config_theme.yml
             favicon.ico
             feed.xml
             Gemfile
@@ -75,7 +97,7 @@ jobs:
           done
 
           # copy project directory, they should only come from the project repo
-          cp -RTf ./project/ ${TMPDIR}/
+          cp -RTf ./project/${{ inputs.site_source }}/ ${TMPDIR}/
 
           # remove the workspace
           cd ..
@@ -111,7 +133,13 @@ jobs:
           JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
         run: |
-          bundle exec jekyll build --future --config _config_ci.yml,_config.yml
+          # if inputs.config_file exists
+          config_files="_config_ci.yml,_config_theme.yml"
+          if [ -e "${{ inputs.config_file }}" ]; then
+            config_files="${config_files},${{ inputs.config_file }}"
+          fi
+
+          bundle exec jekyll build --future --config ${config_files}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -132,12 +160,13 @@ jobs:
       - name: Checkout gh-pages
         uses: actions/checkout@v4
         with:
-          ref: gh-pages
+          ref: ${{ inputs.target_branch }}
           path: gh-pages
           persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of the personal token
           fetch-depth: 0  # otherwise, will fail to push refs to dest repo
 
       - name: Clean
+        if: ${{ inputs.clean_gh_pages }}
         run: |
           # empty contents of gh-pages
           rm -f -r ./gh-pages/*
@@ -159,6 +188,6 @@ jobs:
           author_email: ${{ secrets.GH_BOT_EMAIL }}
           author_name: ${{ secrets.GH_BOT_NAME }}
           directory: gh-pages
-          branch: gh-pages
+          branch: ${{ inputs.target_branch }}
           force: false
           message: "Deploy site from ${{ github.sha }}"
