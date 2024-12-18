@@ -58,7 +58,7 @@ jobs:
         uses: sarisia/actions-status-discord@v1
         with:
           avatar_url: ${{ secrets.ORG_LOGO_URL }}
-          color: 0x00ff00
+          color: 0x00ff00  # green
           nodetail: true
           nofail: false
           title: ${{ github.event.issue.title }}
@@ -66,22 +66,7 @@ jobs:
           username: ${{ secrets.DISCORD_USERNAME }}
           webhook: ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
 
-  fb_group:
-    if: false && needs.authorize.outputs.authorized == 'true'
-    needs: authorize
-    outputs:
-      post-url: "https://www.facebook.com/groups/lizardbyte"
-    runs-on: ubuntu-latest
-    steps:
-      - name: facebook-post-action
-        uses: ReenigneArcher/facebook-post-action@v1
-        with:
-          page_id: ${{ secrets.FACEBOOK_GROUP_ID }}
-          access_token: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
-          message: ${{ github.event.issue.title }}
-          url: ${{ github.event.issue.body }}
-
-  fb_page:
+  facebook:
     if: needs.authorize.outputs.authorized == 'true'
     needs: authorize
     outputs:
@@ -89,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: facebook-post-action
-        uses: ReenigneArcher/facebook-post-action@v1
+        uses: LizardByte/facebook-post-action@v2024.1207.15428
         with:
           page_id: ${{ secrets.FACEBOOK_PAGE_ID }}
           access_token: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
@@ -134,12 +119,11 @@ jobs:
           twitter-access-token-secret: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
 
   close-issue:
-    if: always()
+    if: needs.authorize.outputs.authorized == 'true'
     needs:
       - authorize
       - discord
-      - facebook_group
-      - facebook_page
+      - facebook
       - reddit
       - x
     runs-on: ubuntu-latest
@@ -150,10 +134,8 @@ jobs:
         run: |
           comment="| Job | Status | Post URL |\n"
           comment+="| --- | ------ | -------- |\n"
-          comment+="| Authorize | ${{ needs.authorize.result }} | |\n"
           comment+="| Discord | ${{ needs.discord.result }} | ${{ needs.discord.outputs.post-url }} |\n"
-          # comment+="| Facebook Group | ${{ needs.fb_group.result }} | ${{ needs.fb_group.outputs.post-url }} |\n"
-          comment+="| Facebook Page | ${{ needs.fb_page.result }} | ${{ needs.fb_page.outputs.post-url }} |\n"
+          comment+="| Facebook | ${{ needs.facebook.result }} | ${{ needs.facebook.outputs.post-url }} |\n"
           comment+="| Reddit | ${{ needs.reddit.result }} | ${{ needs.reddit.outputs.post-url }} |\n"
           comment+="| X | ${{ needs.x.result }} | ${{ needs.x.outputs.post-url }} |\n"
 
