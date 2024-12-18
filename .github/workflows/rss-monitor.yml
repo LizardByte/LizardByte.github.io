@@ -1,0 +1,20 @@
+---
+name: Monitor RSS feed
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # hourly
+
+jobs:
+  rss-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: RSS to issues
+        uses: git-for-windows/rss-to-issues@v0
+        with:
+          github-token: ${{ secrets.GH_BOT_TOKEN }}
+          feed: https://lizardbyte.github.io/feed.xml
+          character-limit: 0
+          dry-run: false
+          max-age: 48h
+          labels: blog
