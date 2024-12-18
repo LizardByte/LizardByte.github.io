@@ -1,4 +1,6 @@
 # ignore hidden files
 .*
 
+third-party/beautiful-jekyll/_posts/
+
 _site/

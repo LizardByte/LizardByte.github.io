@@ -24,6 +24,11 @@ on:
         required: false
         default: true
         type: boolean
+      theme_ref:
+        description: 'Branch, tag, or commit SHA of the theme repository to use'
+        required: false
+        default: 'master'
+        type: string
     secrets:
       GH_BOT_EMAIL:
         description: 'Email address of the bot account'
@@ -44,7 +49,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: LizardByte/LizardByte.github.io
-          ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || 'master' }}
+          ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || inputs.theme_ref }}
           submodules: recursive
           path: theme
 
