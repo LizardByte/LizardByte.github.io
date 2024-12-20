@@ -231,13 +231,33 @@ gtag: "G-0NFSCW63S2"  # TODO: Update this with your own Google Analytics tag ID
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
 # (3) Install the Utterances app in your repository https://github.com/apps/utterances
 # See more details about the parameters below at https://utteranc.es/
-utterances:
-  repository: LizardByte/community  # GitHub username/repository eg. "daattali/beautiful-jekyll"
-  issue-term: title  # Mapping between blog posts and GitHub issues
-  theme: gruvbox-dark  # Utterances theme
-  label: blog-comments  # Label that will be assigned to GitHub Issues created by Utterances
+# utterances:
+#  repository: LizardByte/community  # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  issue-term: pathname  # Mapping between blog posts and GitHub issues
+#  theme: gruvbox-dark  # Utterances theme
+#  label: blog-comments  # Label that will be assigned to GitHub Issues created by Utterances
 
-# other options for comments are staticman and giscus
+# To use giscus comments:
+# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository,
+# (2) Install the giscus app in your repository (details at https://giscus.app),
+# (3) Fill in *all* the parameters below
+# See more details about giscus and each of the following parameters at https://giscus.app
+giscus:
+  hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
+  repository: LizardByte/community  # GitHub username/repository eg. "daattali/beautiful-jekyll"
+  repository-id: R_kgDOMzlnmw  # ID of your repository, retrieve this info from https://giscus.app
+  category: Announcements  # Category name of your GitHub Discussion posts
+  category-id: DIC_kwDOMzlnm84Cil5m  # ID of your category, retrieve this info from https://giscus.app
+  mapping: pathname
+  strict: 1
+  reactions-enabled: 1
+  emit-metadata: 0
+  input-position: top
+  theme: /assets/css/giscus.css
+  lang: en
+  lazy-loading: true
+
+# other options for comments are staticman
 
 ################
 # --- Misc --- #
