@@ -61,7 +61,7 @@ $(document).ready(function(){
                     banner_link.append(banner)
 
                     let card_body = document.createElement("div")
-                    card_body.className = "card-body p-4 rounded-0"
+                    card_body.className = "card-body text-white p-4 rounded-0"
                     card.appendChild(card_body)
 
                     let card_title_link = document.createElement("a")
