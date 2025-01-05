@@ -65,7 +65,7 @@ jobs:
           submodules: recursive
           path: theme
 
-      - name: Checkout project
+      - name: Download input artifact
         if: ${{ inputs.site_artifact != '' }}
         uses: actions/download-artifact@v4
         with:

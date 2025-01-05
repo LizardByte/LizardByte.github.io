@@ -48,6 +48,9 @@ jobs:
         with:
           name: prep  # any name except 'site' is allowed
           path: hello.txt
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
   
   call-jekyll-build:
     needs: prep
