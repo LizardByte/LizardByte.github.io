@@ -13,7 +13,7 @@ body {
     border-style: solid;
 }
 
-.card-body, .card-custom, .card-footer, .cr-picker-button, .cr-picker-submenu {
+.card-body, .card-custom, .card-footer, .card-img-top, .cr-picker-button, .cr-picker-submenu {
     --bs-bg-opacity: 1;
     background-color: var(--navbar-col) !important;
 }

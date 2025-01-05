@@ -64,3 +64,5 @@ jobs:
       GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
 ```
+
+For additional options see [jekyll-build.yml](.github/workflows/jekyll-build.yml)

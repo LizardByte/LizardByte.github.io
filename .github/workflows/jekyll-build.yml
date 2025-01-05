@@ -9,6 +9,13 @@ on:
         required: false
         default: ''
         type: string
+      extract_archive:
+        description: |
+          Name of nested archive to extract. In some cases you may want to upload a zip of files to reduce
+          upload size and time. If you do this, you must specify the name of the archive to extract.
+        required: false
+        default: ''
+        type: string
       config_file:
         description: 'Configuration file to use, relative to the site source directory'
         required: false
@@ -71,6 +78,27 @@ jobs:
         with:
           name: ${{ inputs.site_artifact }}
           path: project
+
+      - name: Extract archive
+        if: ${{ inputs.site_artifact != '' && inputs.extract_archive != '' }}
+        working-directory: project
+        run: |
+          case "${{ inputs.extract_archive }}" in
+            *.tar.gz|*.tgz)
+              tar -xzf ${{ inputs.extract_archive }} -C .
+              ;;
+            *.tar)
+              tar -xf ${{ inputs.extract_archive }} -C .
+              ;;
+            *.zip)
+              unzip ${{ inputs.extract_archive }} -d .
+              ;;
+            *)
+              echo "Unsupported archive format"
+              exit 1
+              ;;
+          esac
+          rm -f ${{ inputs.extract_archive }}
 
       - name: Setup project
         if: ${{ github.repository == 'LizardByte/LizardByte.github.io' }}
