@@ -1,0 +1,127 @@
+---
+# See https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml for documented options
+
+title: LizardByte
+author: LizardByte
+navbar-links:
+  ❤ Donate:
+    - GitHub: "https://github.com/sponsors/LizardByte"
+    - Patreon: "https://patreon.com/LizardByte"
+    - PayPal: "https://www.paypal.com/paypalme/ReenigneArcher"
+  GitHub: "https://github.com/LizardByte"
+  Resources:
+    - Blog: "blog"
+    - Docs: "https://docs.lizardbyte.dev/en/latest/about/overview.html"
+    - Community: "https://github.com/orgs/LizardByte/discussions"
+    - Discord: "discord"
+    - Support: "support"
+    - Status: "https://status.LizardByte.dev"
+  Development:
+    - Contributing: "https://docs.lizardbyte.dev/en/latest/developers/contributing.html"
+    - Dashboard: "https://app.lizardbyte.dev/dashboard"
+    - Dev Status: "https://status-dev.LizardByte.dev"
+avatar: "/assets/img/navbar-avatar.png"
+round-avatar: true
+social-network-links:
+  rss: true
+  discord: d6MpcrbYQs
+  facebook: LizardByteDev
+  github: LizardByte
+  patreon: LizardByte
+  reddit: r/LizardByte
+  twitter: LizardByteDev
+  youtube: c/LizardByteDev
+rss-description: LizardByte
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+  vk: false
+remove-ads: true  # remove the "Powered by Beautiful Jekyll" text in the footer
+url-pretty: "app.LizardByte.dev"
+title-on-all-pages: true
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+post_search: true
+edit_page_button: true
+navbar-var-length: true
+keywords: "LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server"
+footer-col: "#242526"
+footer-hover-col: "#28a9e6"
+footer-link-col: "#dfdfdf"
+footer-text-col: "#a8aaa8"
+hover-col: "#28a9e6"
+link-col: "#28a9e6"
+navbar-border-col: "#393a3b"
+navbar-col: "#151515"
+navbar-text-col: "#e4e6eb"
+page-col: "#303436"
+text-col: "#e4e4e4"
+mobile-theme-col: "#05FF3B"
+site-css:
+  - "/assets/css/custom-styles.css"
+gtag: "G-SSW90X5YZX"
+giscus:
+  hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
+  repository: LizardByte/community  # GitHub username/repository eg. "daattali/beautiful-jekyll"
+  repository-id: R_kgDOMzlnmw  # ID of your repository, retrieve this info from https://giscus.app
+  category: Announcements  # Category name of your GitHub Discussion posts
+  category-id: DIC_kwDOMzlnm84Cil5m  # ID of your category, retrieve this info from https://giscus.app
+  mapping: pathname
+  strict: 1
+  reactions-enabled: 1
+  emit-metadata: 0
+  input-position: top
+  theme: /assets/css/giscus.css
+  lang: en
+  lazy-loading: true
+date_format: "%B %-d, %Y"
+
+# Advanced settings
+timezone: "America/New_York"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      after-content:
+        - donate.html
+      footer-extra:
+        - footer-extra.html
+      comments: true  # add comments to all blog posts
+      social-share: true  # add social media sharing buttons to all blog posts
+      css:
+        - "/assets/css/show-search.css"
+  - scope:
+      path: ""  # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "page"
+      after-content:
+        - donate.html
+      footer-extra:
+        - footer-extra.html
+
+# Exclude these files from production site
+exclude:
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+
+include:
+  - .well-known
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap

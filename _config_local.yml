@@ -1,0 +1,5 @@
+---
+host: "localhost"
+port: 4000
+baseurl: ""
+repository: "octocat/dummy"

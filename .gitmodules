@@ -1,0 +1,4 @@
+[submodule "third-party/beautiful-jekyll"]
+	path = third-party/beautiful-jekyll
+	url = https://github.com/ReenigneArcher/beautiful-jekyll.git
+	branch = master

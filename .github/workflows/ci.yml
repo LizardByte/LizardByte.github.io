@@ -1,0 +1,52 @@
+---
+name: Jekyll CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  call-jekyll-build:
+    uses: ./.github/workflows/jekyll-build.yml
+    with:
+      target_branch: gh-pages
+      clean_gh_pages: true
+    secrets:
+      GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
+      GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
+      GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Release
+        id: setup-release
+        uses: LizardByte/setup-release-action@v2024.919.143601
+        with:
+          github_token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - name: Create Release
+        id: action
+        uses: LizardByte/create-release-action@v2024.919.143026
+        with:
+          allowUpdates: false
+          artifacts: ''
+          body: ${{ steps.setup-release.outputs.release_body }}
+          generateReleaseNotes: ${{ steps.setup-release.outputs.release_generate_release_notes }}
+          name: ${{ steps.setup-release.outputs.release_tag }}
+          prerelease: true
+          tag: ${{ steps.setup-release.outputs.release_tag }}
+          token: ${{ secrets.GH_BOT_TOKEN }}
