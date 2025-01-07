@@ -172,7 +172,9 @@ jobs:
       - name: Setup CI config
         run: |
           echo "---" > _config_ci.yml
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_url }}" >> _config_ci.yml
+
+          cat _config_ci.yml
 
       - name: Build site
         env:
