@@ -36,6 +36,16 @@ on:
         required: false
         default: 'master'
         type: string
+      base_url:
+        description: |
+          Base URL of the site. With default option, the root will come from LizardByte.github.io (app.lizardbyte.dev).
+          This is useful to re-use the theme config and many assets from that site; but requires you to prefix other
+          assets with `/<RepoName>` (e.g. `/MyRepo/assets/img/my-image.png`).
+
+          If this is set to `_auto`, the workflow will determine this value automatically.
+        required: false
+        default: ''
+        type: string
     secrets:
       GH_BOT_EMAIL:
         description: 'Email address of the bot account'
@@ -173,7 +183,11 @@ jobs:
         run: |
           config_file="_config_ci.yml"
           echo "---" > $config_file
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> $config_file
+          if [ "${{ inputs.base_url }}" == '_auto' ]; then
+            echo "baseurl: '${{ steps.configure-pages.outputs.base_path }}'" >> $config_file
+          else
+            echo "baseurl: '${{ inputs.base_url }}'" >> $config_file
+          fi
 
           cat $config_file
 
@@ -186,6 +200,7 @@ jobs:
           # if inputs.config_file exists
           config_files="_config_ci.yml,_config_theme.yml"
           if [ -e "${{ inputs.config_file }}" ]; then
+            cat ${{ inputs.config_file }}
             config_files="${config_files},${{ inputs.config_file }}"
           fi
 
