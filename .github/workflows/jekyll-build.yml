@@ -101,7 +101,7 @@ jobs:
               tar -xf ${{ inputs.extract_archive }} -C .
               ;;
             *.zip)
-              unzip ${{ inputs.extract_archive }} -d .
+              7z x ${{ inputs.extract_archive }} -o.
               ;;
             *)
               echo "Unsupported archive format"
@@ -206,11 +206,16 @@ jobs:
 
           bundle exec jekyll build --future --config ${config_files}
 
+      - name: Prepare Artifacts  # uploading artifacts may fail if not zipped due to very large quantity of files
+        shell: bash
+        run: |
+          7z a _site.zip ./_site/*
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: site
-          path: _site
+          path: _site.zip
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 1
@@ -244,8 +249,11 @@ jobs:
           name: site
           path: gh-pages
 
-      - name: no-jekyll
+      - name: Setup gh-pages
+        working-directory: gh-pages
         run: |
+          7z x _site.zip -o.
+          rm _site.zip
           touch gh-pages/.nojekyll
 
       - name: Deploy to gh-pages
