@@ -171,14 +171,16 @@ jobs:
 
       - name: Setup CI config
         run: |
-          echo "---" > _config_ci.yml
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_url }}" >> _config_ci.yml
+          config_file="_config_ci.yml"
+          echo "---" > $config_file
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> $config_file
 
-          cat _config_ci.yml
+          cat $config_file
 
       - name: Build site
         env:
           JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGES_REPO_NWO: ${{ github.repository }}
         run: |
           # if inputs.config_file exists
