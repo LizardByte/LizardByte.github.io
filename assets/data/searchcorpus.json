@@ -8,6 +8,14 @@
 "date"     : "January  6, 2025" 
 }, 
  
+{ 
+"title"    : "Multi-platform C++ development in CLion", 
+"desc"     : "Multi-platform C++ development in CLion", 
+"category" : "clion, c++, cpp, cmake, dev, linux, macos, windows", 
+"url"      : "/2024-02-01-multi-platform-cpp-development-in-clion/", 
+"date"     : "February  1, 2024" 
+}, 
+ 
  
 { 
 "title"    : "Blog", 

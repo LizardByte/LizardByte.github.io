@@ -22,5 +22,16 @@
         <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-06-welcome/</guid>
       </item>
     
+      <item>
+        <title>Multi-platform C++ development in CLion</title>
+        <description>
+          How to set up CLion to handle Linux, macOS, and Windows development in a single project - 
+          Introduction When developing multiplatform C++ projects, it can be frustrating to have to switch between different systems to develop, inspect, and test your code. This is especially true when you are working on a project that has dependencies. Without the proper setup, you may find your IDE complaining about missing...
+        </description>
+        <pubDate>Thu, 01 Feb 2024 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</guid>
+      </item>
+    
   </channel>
 </rss>
