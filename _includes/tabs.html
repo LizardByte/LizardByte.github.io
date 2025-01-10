@@ -1,0 +1,35 @@
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        {% for tab in include.tabs %}
+        <li class="nav-item" role="presentation">
+            <button
+                    class="nav-link {% if forloop.first %}active{% endif %}"
+                    id="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-pane"
+                    aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            >{{ tab.name }}</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="tab-content">
+        {% for tab in include.tabs %}
+        <div
+                class="tab-pane fade {% if forloop.first %}show active{% endif %}"
+                id="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-pane"
+                role="tabpanel"
+                aria-labelledby="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-tab"
+                tabindex="0"
+        >
+            {% if include.index and include.index >= 0 %}
+                {{ tab.content[include.index] | markdownify }}
+            {% else %}
+                {{ tab.content | markdownify }}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
