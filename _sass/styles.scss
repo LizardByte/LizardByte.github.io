@@ -1,3 +1,5 @@
+@import "admonition";
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -20,8 +22,8 @@ body {
 
 /* in line code */
 code {
-  color: #fb660a;
-  background-color: #111111;
+  color: var(--mid-col);
+  background-color: var(--navbar-col);
 }
 
 .feature {
@@ -64,11 +66,9 @@ code {
 .hover-zoom {
     overflow: hidden;
 }
-
 .hover-zoom img {
     transition: all 1.5s ease;
 }
-
 .hover-zoom:hover img {
     transform: scale(1.1);
 }
@@ -77,4 +77,50 @@ code {
     /* remove max-width from beautiful-jekyll */
     max-width: none;
     height: 40px;
+}
+
+/* code blocks */
+.highlight {
+  border-radius: 0.5rem;
+}
+.highlight > pre {
+  border-left: 0.4375rem solid var(--text-col);
+}
+.highlight pre.lineno {
+  border-right: 2px solid var(--text-col);
+}
+.admonition .highlight {
+  margin-left: 0.5rem;
+  margin-right: 1.25rem;
+}
+.admonition .highlight > pre {
+  border-radius: 0.5rem;
+}
+
+/* CSS for tabs */
+.tabs {
+  background-color: var(--footer-col);
+  padding: 1rem;
+}
+.tabs .nav-link {
+  color: var(--link-col);
+}
+.tabs .nav-link:hover {
+  color: var(--hover-col);
+}
+.tabs .nav-link.active {
+  color: var(--text-col);
+  border-color: var(--text-col);
+}
+.tab-content {
+  background-color: var(--navbar-col);
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--page-col);
+  border-radius: 0.5rem;
+}
+
+/* tables */
+table tr:nth-child(2n) {
+  background-color: var(--footer-col);
 }

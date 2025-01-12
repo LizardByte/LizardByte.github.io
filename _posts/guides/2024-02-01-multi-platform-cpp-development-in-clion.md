@@ -4,7 +4,7 @@ title: Multi-platform C++ development in CLion
 subtitle: How to set up CLion to handle Linux, macOS, and Windows development in a single project
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
-tags: [clion, c++, cpp, cmake, dev, linux, macos, windows]
+tags: [clion, c++, cpp, cmake, dev, guide, linux, macos, windows]
 thumbnail-img: /assets/img/thumbnails/clion.png
 comments: true
 author: ReenigneArcher

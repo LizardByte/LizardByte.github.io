@@ -1,0 +1,35 @@
+{% comment %}
+    credit: https://www.adamsdesk.com/posts/admonitions-jekyll
+{% endcomment %}
+
+{% if include.type.size > 0 and include.body.size > 0 %}
+    {% assign types = "
+        attention:Attention,
+        caution:Caution,
+        danger:Danger,
+        error:Error,
+        hint:Hint,
+        important:Important,
+        note:Note,
+        seealso:See also,
+        tip:Tip,
+        todo: TODO,
+        warning:Warning" | split: "," %}
+        {% assign title = include.title | default: "" %}
+        {% if title == "" %}
+        {% for type in types %}
+            {% assign typeKeyVal = type | split: ":" %}
+            {% assign typeKey = typeKeyVal[0] | strip %}
+            {% assign typeValue = typeKeyVal[1] | strip %}
+            {% if typeKey == include.type %}
+                {% assign title = typeValue %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+<div class="admonition {{ include.type }} rounded">
+    <p class="admonition-title">{{ title }}</p>
+    <p>
+        {{ include.body | markdownify }}
+    </p>
+</div>
+{% endif %}

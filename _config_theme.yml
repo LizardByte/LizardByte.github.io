@@ -59,8 +59,11 @@ navbar-text-col: "#e4e6eb"
 page-col: "#303436"
 text-col: "#e4e4e4"
 mobile-theme-col: "#05FF3B"
+sass:
+  sass_dir: _sass
+  style: compressed
 site-css:
-  - "/assets/css/custom-styles.css"
+  - "/assets/css/styles.css"
 gtag: "G-SSW90X5YZX"
 giscus:
   hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
