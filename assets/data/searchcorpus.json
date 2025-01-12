@@ -9,11 +9,51 @@
 }, 
  
 { 
+"title"    : "Autostart Sunshine on Boot without Auto-Login", 
+"desc"     : "Autostart Sunshine on Boot without Auto-Login", 
+"category" : "community-guide, community-guide-sunshine, linux, sunshine", 
+"url"      : "/2024-10-16-autostart-sunshine-on-boot-without-auto-login/", 
+"date"     : "October 16, 2024" 
+}, 
+ 
+{ 
+"title"    : "Discord Call Cancellation in Sunshine on Windows", 
+"desc"     : "Discord Call Cancellation in Sunshine on Windows", 
+"category" : "community-guide, community-guide-sunshine, windows, sunshine, discord", 
+"url"      : "/2024-05-24-discord-call-cancellation-sunshine-windows/", 
+"date"     : "May 24, 2024" 
+}, 
+ 
+{ 
+"title"    : "Discord Call Cancellation in Sunshine on Linux", 
+"desc"     : "Discord Call Cancellation in Sunshine on Linux", 
+"category" : "community-guide, community-guide-sunshine, linux, sunshine, discord", 
+"url"      : "/2024-04-18-discord-call-cancellation-sunshine-linux/", 
+"date"     : "April 18, 2024" 
+}, 
+ 
+{ 
 "title"    : "Multi-platform C++ development in CLion", 
 "desc"     : "Multi-platform C++ development in CLion", 
-"category" : "clion, c++, cpp, cmake, dev, linux, macos, windows", 
+"category" : "clion, c++, cpp, cmake, dev, guide, linux, macos, windows", 
 "url"      : "/2024-02-01-multi-platform-cpp-development-in-clion/", 
 "date"     : "February  1, 2024" 
+}, 
+ 
+{ 
+"title"    : "Remote SSH Headless Sunshine Setup", 
+"desc"     : "Remote SSH Headless Sunshine Setup", 
+"category" : "community-guide, community-guide-sunshine, linux, sunshine", 
+"url"      : "/2023-09-14-remote-ssh-headless-sunshine-setup/", 
+"date"     : "September 14, 2023" 
+}, 
+ 
+{ 
+"title"    : "Blog Guide", 
+"desc"     : "Blog Guide", 
+"category" : "", 
+"url"      : "/1970-01-01-blog-guide/", 
+"date"     : "January  1, 1970" 
 }, 
  
  
@@ -70,6 +110,14 @@
 "desc"     : "Terms", 
 "category" : "page", 
 "url"      : "/terms/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "LizardByte", 
+"desc"     : "LizardByte", 
+"category" : "page", 
+"url"      : "/page2/", 
 "date"     : "January 1, 1970" 
 } 
  

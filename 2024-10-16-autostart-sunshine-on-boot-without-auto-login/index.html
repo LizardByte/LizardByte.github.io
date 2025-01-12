@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  
+
+  <title>Autostart Sunshine on Boot without Auto-Login | LizardByte</title>
+
+  
+  
+  <meta name="author" content="MidwesternRodent">
+  
+
+  <meta name="description" content="After following this guide you will be able to: Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature. Have Sunshine initialize to the login screen ready for you to enter your credentials. Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/styles.css">
+    
+  
+
+  
+  
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Autostart Sunshine on Boot without Auto-Login | LizardByte">
+  <meta property="og:description" content="After following this guide you will be able to: Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature. Have Sunshine initialize to the login screen ready for you to enter your credentials. Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="MidwesternRodent">
+  
+  <meta property="og:article:published_time" content="2024-10-16T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Autostart Sunshine on Boot without Auto-Login | LizardByte">
+  <meta property="twitter:description" content="After following this guide you will be able to: Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature. Have Sunshine initialize to the login screen ready for you to enter your credentials. Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/LizardByte">GitHub</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/en/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Development</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/en/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+              </div>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json' 
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Autostart Sunshine on Boot without Auto-Login</h1>
+          
+          
+           
+            
+              By <strong>MidwesternRodent</strong><br>
+            
+            <span class="post-meta">Posted on October 16, 2024</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=LizardByte.github.io&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        
+<p>After following this guide you will be able to:</p>
+<ol>
+  <li>Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature.</li>
+  <li>Have Sunshine initialize to the login screen ready for you to enter your credentials.</li>
+  <li>Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon work appropriately.</li>
+</ol>
+
+<h2 id="specifications">Specifications</h2>
+<p>This guide was created with the following software on the host:</p>
+<ol>
+  <li>OpenSSH server and client (both on the host machine)</li>
+  <li>Sunshine v2024.1003.1754422</li>
+  <li>Debian 12 w/ KDE Plasma, SDDM, Wayland (also tested through xorg), and pipewire for audio.</li>
+</ol>
+
+<p>The host hardware that was used in developing this guide:</p>
+<ol>
+  <li>AMD 7900XTX</li>
+  <li>AMD Ryzen 7 7800X3D</li>
+  <li>128GB DDR5 RAM</li>
+  <li>4 displays in total. 2 1080p displays, 1 3440x1440 display, and 1 4k Roku TV which is used as the always-on display
+for streaming. (could be subbed with a dummy plug).</li>
+</ol>
+
+<p>If you have used this guide on any alternative hardware or software (including non-debian based distros)
+please, feel free to modify this guide and keep it growing!</p>
+
+<h2 id="caveats">Caveats</h2>
+<ol>
+  <li>When you login the machine will close your connection and you will have to reconnect. This is necessary due to an
+issue similar to why the
+<a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#uinput-permissions-workaround">Uinput Permissions Workaround</a>
+is needed since SSH connections are not treated the same as graphical logins. This causes weirdness like sound not
+working through pipewire, and the tray icon for Sunshine not appearing. To get around this, we need to close the SSH
+initiated Sunshine service, and start a new Sunshine service with the permissions of the graphical desktop.
+Unfortunately, this closes the connection and forces you to reconnect through Moonlight. There is no way around this to
+the best of my knowledge without enabling auto-login.</li>
+  <li>This guide does not cover using virtual displays. If you are using Nvidia graphics,
+see <a href="/2023-09-14-remote-ssh-headless-sunshine-setup/">Remote SSH Headless Setup</a>.
+If you are using AMD hardware, let me know if you find something or feel free to add it to this guide.</li>
+  <li>I haven’t (yet) found a way to disable sleep on the login screen, so if you wait too long after starting your PC,
+the display may go to sleep and Moonlight will have trouble connecting. Shutting down and using WoL works great
+though.</li>
+</ol>
+
+<div class="admonition attention rounded">
+    <p class="admonition-title">Attention</p>
+    <p>
+        
+<p>This is definitely safer than enabling auto-login directly, especially for a dual-use PC that is not only
+streamed via Moonlight, but is also used as a standard desktop. <em>However</em>, I do not know the implications of having an
+always running SSH client to the localhost on the same machine. It may be possible for someone with significant
+knowledge and physical access to the machine to compromise your user account due to this always-running SSH session.
+However, that’s better than just having the desktop always available, or opening up SSH even just your LAN since this
+guide specifically disables non-localhost connections, so I believe this is safer to use than auto-login for general
+users. As always, your <a href="https://en.wikipedia.org/wiki/Threat_model">threat model</a> may vary.</p>
+
+    </p>
+</div>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>In <a href="/2023-09-14-remote-ssh-headless-sunshine-setup/">Remote SSH Headless Setup</a>
+complete the following sections.</p>
+
+<ol>
+  <li><a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#static-ip-setup">Static IP Setup</a></li>
+  <li><a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#ssh-server-setup">SSH Server Setup</a></li>
+  <li><a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#virtual-display-setup">Virtual Display Setup</a></li>
+  <li><a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#uinput-permissions-workaround">Uinput Permissions Workaround</a></li>
+  <li><a href="/2023-09-14-remote-ssh-headless-sunshine-setup/
+#stream-launcher-script">Stream Launcher Script</a></li>
+</ol>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>On a default Debian 12 install using KDE Plasma, you are using the Simple Desktop Display Manager (SDDM).
+Even if you are logging in to a Wayland session, SDDM by default starts with an xorg session, so this script
+does not need to be modified if you primarily use a Wayland session (the default) when you login.</p>
+
+    </p>
+</div>
+
+<h2 id="instructions">Instructions</h2>
+
+<h3 id="enable-wake-on-lan">Enable Wake on LAN</h3>
+
+<p>Wake on LAN (WoL) will allow you to send a magic packet to turn your PC on remotely. This is handled automatically by
+Moonlight’s “send wake on lan” option in the app, but you do need to enable it on your host machine first. The
+<a href="https://wiki.debian.org/WakeOnLan#Enabling_WOL">instructions on the debian.org</a> site are a little hard to parse, so
+I’ve simplified them below.</p>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>This may not work on all deb based distributions. If you know of a better way for POP OS, Ubuntu, or another
+debian based distro please feel free to edit the guide yourself, or let me know.</p>
+
+    </p>
+</div>
+
+<p>First, find the name of your ethernet interface.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip <span class="nb">link </span>show
+</code></pre></div></div>
+
+<p>When I run this command, these are the results I receive</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+   link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp117s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+   link/ether 9c:6b:00:59:33:c1 brd ff:ff:ff:ff:ff:ff
+</code></pre></div></div>
+
+<p>We can ignore the loopback interface, and I can see my ethernet interface is called <code class="language-plaintext highlighter-rouge">enp117s0</code>. You might see
+wireless interfaces here as well, but they can also be ignored.</p>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>If your PC is only connected via Wi-Fi, it is still technically possible to get this working, but it is outside
+the scope of this guide and requires more networking knowledge and a Wi-Fi chip that supports WoL. If this is your
+first foray into linux, I’d recommend just getting a cable.</p>
+
+    </p>
+</div>
+
+<p>Now I can install ethtool and modify my interface to allow Wake on LAN. For your use, replace <code class="language-plaintext highlighter-rouge">enp117s0</code> with whatever
+the name of your ethernet interface is from the command <code class="language-plaintext highlighter-rouge">ip link show</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>ethtool
+<span class="nb">sudo </span>ethtool <span class="nt">-s</span> enp117s0 wol g
+</code></pre></div></div>
+
+<h3 id="ssh-client-setup">SSH Client Setup</h3>
+<p>To start, we need to install an SSH client (which is different from the <em>server</em> in
+<a href="/2023-09-14-remote-ssh-headless-sunshine-setup/">Remote SSH Headless Setup</a>)
+on our machine if this not already done. Open a terminal and enter the following commands.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>openssh-client
+</code></pre></div></div>
+
+<p>Next we need to generate the keys we will use to connect to our SSH session. This is as simple as running the
+following in a terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen
+</code></pre></div></div>
+
+<p>and simply pressing enter through the default options. This will place a file called <code class="language-plaintext highlighter-rouge">id_rsa</code> and <code class="language-plaintext highlighter-rouge">id_rsa.pub</code>
+in the hidden folder <code class="language-plaintext highlighter-rouge">~/.ssh/</code>. This is the default key used when this user initiates an SSH session.</p>
+
+<p>Next, we’ll copy that public key to the <code class="language-plaintext highlighter-rouge">~/.ssh/authorized_users</code> file. These are the public keys
+allowed to access this machine over SSH, and will allow us to establish an SSH connection with this user
+to the SSH server running on the localhost.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_rsa.pub <span class="o">&gt;&gt;</span> ~/.ssh/authorized_keys 
+</code></pre></div></div>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>If you also want any other machines (e.g. a laptop or Steam Deck) to connect to your machine remotely over ssh,
+be sure to generate a pubkey on that machine and append it to the authorized_keys file like we did above.</p>
+
+    </p>
+</div>
+
+<h4 id="ssh-server-modifications">SSH Server Modifications</h4>
+
+<p>We’ll want to make a few modification to the SSH server on the Sunshine host, both for convenience and security.</p>
+
+<p>Modify <code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config</code> with the following changes:</p>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-0-tab" data-bs-toggle="tab" data-bs-target="#nano-0-pane" type="button" role="tab" aria-controls="nano-0-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-0-tab" data-bs-toggle="tab" data-bs-target="#vim-0-pane" type="button" role="tab" aria-controls="vim-0-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-0-pane" role="tabpanel" aria-labelledby="nano-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/ssh/sshd_config
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-0-pane" role="tabpanel" aria-labelledby="vim-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/ssh/sshd_config
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Find the line with <code class="language-plaintext highlighter-rouge">PasswordAuthentication</code> and make sure it is set to <code class="language-plaintext highlighter-rouge">no</code> (removed the <code class="language-plaintext highlighter-rouge">#</code> if present).
+Then find the line <code class="language-plaintext highlighter-rouge">PubkeyAuthentication</code> and make sure it is set to <code class="language-plaintext highlighter-rouge">yes</code> (remove the <code class="language-plaintext highlighter-rouge">#</code>if present).
+When you’re done you should have these two lines in your config somewhere.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PubkeyAuthentication yes
+PasswordAuthentication no
+</code></pre></div></div>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>Using publickey encryption for SSH connections significantly increases your protection against brute force
+attacks, and protects you against a rogue machine pretending to be your SSH server and stealing your password.</p>
+
+    </p>
+</div>
+
+<p>The next step is optional, but if you do not plan on connecting to your computer remotely via ssh and only have
+installed SSH for the purposes of using Sunshine, it’s a good idea to disable listening for remote SSH connections.
+Do this by changing the following lines near the top of your <code class="language-plaintext highlighter-rouge">sshd_config</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ListenAddress 0.0.0.0
+#ListenAddress ::
+</code></pre></div></div>
+
+<p>To the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ListenAddress 127.0.0.1
+ListenAddress ::1
+</code></pre></div></div>
+
+<p>This will only allow SSH connections coming from your computer itself.</p>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>On some distributions, the maintainers have added some files in <code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config.d/</code> which are pulled into
+your <code class="language-plaintext highlighter-rouge">sshd_config</code>. These modifications can conflict with what we’ve just done. If you have any files in
+<code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config.d/</code>, make sure they do not include any of the changes we’ve just made, or you will experience
+problems. If they do, you can comment out those lines by placing a <code class="language-plaintext highlighter-rouge">#</code> at their beginning, or delete the files safely
+if you don’t plan to use SSH for anything other than Sunshine.</p>
+
+    </p>
+</div>
+
+<h4 id="quick-test-and-accept-host-authenticity">Quick Test and Accept Host Authenticity.</h4>
+
+<p>Next, let’s reboot the machine and try to connect! Accept any warnings about the unidentified host at this time,
+you’ll never see those appear again unless something changes with your setup.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span>@localhost
+</code></pre></div></div>
+
+<p>You should see a new login prompt for the machine you’re already on, and when you type <code class="language-plaintext highlighter-rouge">exit</code> you should just see</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">logout
+</span>Connection to localhost closed.
+</code></pre></div></div>
+
+<h3 id="run-sunshine-setup-on-boot-over-ssh">Run sunshine-setup on boot over SSH</h3>
+
+<p>Thanks to
+<a href="https://unix.stackexchange.com/questions/669389/how-do-i-get-an-ssh-command-to-run-on-boot/669476#669476">this comment from Gavin Haynes on Unix Stack exchange</a>,
+we can establish an SSH connection on boot to run the sunshine-setup script via a systemd service.</p>
+
+<h4 id="disable-default-sunshine-services">Disable default Sunshine services</h4>
+
+<p>These service files are sometimes overwritten when updating Sunshine with the .deb.
+So we’ll be making new ones and disabling the included service files for our purposes.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo sytstemctl disable sunshine
+systemctl --user disable sunshine
+</code></pre></div></div>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>In order to disable the user service, you must be logged in to the graphical desktop environment and run the
+command from a GUI terminal. You’ll also likely need to approve a polkit request (a graphical popup that asks
+for your password). Trying to disable the user service without being signed in to the graphical environment is a
+recipe for pain, and is why <code class="language-plaintext highlighter-rouge">sudo</code> is not invoked on the second line in the command above.</p>
+
+    </p>
+</div>
+
+<h4 id="create-the-autossh-sunshine-start-script">Create the autossh-sunshine-start script</h4>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-1-tab" data-bs-toggle="tab" data-bs-target="#nano-1-pane" type="button" role="tab" aria-controls="nano-1-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-1-tab" data-bs-toggle="tab" data-bs-target="#vim-1-pane" type="button" role="tab" aria-controls="vim-1-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-1-pane" role="tabpanel" aria-labelledby="nano-1-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/local/bin/autossh-sunshine-start
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-1-pane" role="tabpanel" aria-labelledby="vim-1-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/local/bin/autossh-sunshine-start
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Copy the below script to that location and replace <code class="language-plaintext highlighter-rouge">{USERNAME}</code> wherever it occurs with the username you created
+the SSH public key for in the previous section.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+ssh <span class="nt">-i</span> /home/<span class="o">{</span>USERNAME<span class="o">}</span>/.ssh/id_rsa <span class="o">{</span>USERNAME<span class="o">}</span>@localhost
+<span class="s2">"/home/{USERNAME}/scripts/sunshine.sh"</span>
+</code></pre></div></div>
+
+<div class="admonition attention rounded">
+    <p class="admonition-title">Attention</p>
+    <p>
+        
+<p>This script uses the location of the script in
+<a href="{{ headless_ssh_guide }}#stream-launcher-script">Stream Launcher Script</a>.
+Please complete that section before continuing.</p>
+
+    </p>
+</div>
+
+<p>Once you’ve created the script, be sure to make it executable by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /usr/local/bin/autossh-sunshine-start
+</code></pre></div></div>
+
+<h4 id="create-the-autossh-systemd-service-file">Create the autossh systemd service file</h4>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-2-tab" data-bs-toggle="tab" data-bs-target="#nano-2-pane" type="button" role="tab" aria-controls="nano-2-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-2-tab" data-bs-toggle="tab" data-bs-target="#vim-2-pane" type="button" role="tab" aria-controls="vim-2-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-2-pane" role="tabpanel" aria-labelledby="nano-2-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/systemd/system/autossh-sunshine.service
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-2-pane" role="tabpanel" aria-labelledby="vim-2-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/systemd/system/autossh-sunshine.service
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Copy and paste the below systemd file and save it to the location in the commands above.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=Start sunshine over an localhost SSH connection on boot
+Requires=sshd.service
+After=sshd.service
+
+[Service]
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/local/bin/autossh-sunshine-start
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<p>Make it executable, and enable the service when you’re done.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /etc/systemd/system/autossh-sunshine.service
+<span class="nb">sudo </span>systemctl start autossh-sunshine
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>autossh-sunshine
+</code></pre></div></div>
+
+<p>This point is a good time for a sanity check, so restart your PC and try to sign in to your desktop via Moonlight.
+You should be able to access the login screen, enter your credentials, and control the user session. At this point
+you’ll notice the reason for the next section as your audio will be non-functional and you won’t see any tray icon
+for Sunshine. If you don’t care about audio (and maybe a couple other bugs you might encounter from time to time due
+to the permissions difference between an SSH session and the desktop session), you can consider yourself finished at
+this point!</p>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>You might also notice some issues if you have multiple monitors setup (including the dummy plug), like the mouse
+cursor not being on the right screen for you to login. We will address this in the last step of this guide. It requires
+messing with some configs for SDDM.</p>
+
+    </p>
+</div>
+
+<h3 id="getting-the-audio-working">Getting the audio working</h3>
+
+<p>To get the audio (and tray icon, etc…) working we will create a systemd user service, that will start on a graphical
+login, kill the autossh-sunshine system service, and start Sunshine just like the standard Sunshine service.
+This service will also need to call the autossh-sunshine system service before it is stopped as the user service will
+be killed when we log out of the graphical session, so we want to make sure we restart that SSH service so we don’t
+lose the ability to log back in if we need to.</p>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-3-tab" data-bs-toggle="tab" data-bs-target="#nano-3-pane" type="button" role="tab" aria-controls="nano-3-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-3-tab" data-bs-toggle="tab" data-bs-target="#vim-3-pane" type="button" role="tab" aria-controls="vim-3-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-3-pane" role="tabpanel" aria-labelledby="nano-3-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/lib/systemd/user/sunshine-after-login.service
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-3-pane" role="tabpanel" aria-labelledby="vim-3-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/lib/systemd/user/sunshine-after-login.service
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Once again, copy the below service file into your text editor at the location above.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=Start Sunshine with the permissions of the graphical desktop session
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+# Avoid starting Sunshine before the desktop is fully initialized.
+ExecStartPre=/usr/bin/pkill sunshine
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/sunshine
+ExecStopPost=/usr/bin/systemctl start autossh-sunshine
+
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=xdg-desktop-autostart.target
+</code></pre></div></div>
+
+<p>Make it executable, and enable it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /usr/lib/systemd/user/sunshine-after-login.service
+systemctl <span class="nt">--user</span> <span class="nb">enable </span>sunshine-after-login
+</code></pre></div></div>
+
+<h4 id="polkit-rules-for-sunshine-user-service">Polkit Rules for Sunshine User Service</h4>
+
+<p>Since this is being run with the permissions of the graphical session, we need to make a polkit modification to allow
+it to call the system service autossh-sunshine when this user service is stopped, without prompting us for a password.</p>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-4-tab" data-bs-toggle="tab" data-bs-target="#nano-4-pane" type="button" role="tab" aria-controls="nano-4-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-4-tab" data-bs-toggle="tab" data-bs-target="#vim-4-pane" type="button" role="tab" aria-controls="vim-4-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-4-pane" role="tabpanel" aria-labelledby="nano-4-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/polkit-1/rules.d/sunshine.rules
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-4-pane" role="tabpanel" aria-labelledby="vim-4-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/polkit-1/rules.d/sunshine.rules
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Once again, copy the below to the .rules file in your text editor.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">polkit</span><span class="p">.</span><span class="nx">addRule</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">subject</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">org.freedesktop.systemd1.manage-units</span><span class="dl">"</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">action</span><span class="p">.</span><span class="nx">lookup</span><span class="p">(</span><span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">)</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">autossh-sunshine.service</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">polkit</span><span class="p">.</span><span class="nx">Result</span><span class="p">.</span><span class="nx">YES</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="modifications-to-sudoersd-files">Modifications to sudoers.d files</h4>
+
+<p>Lastly, we need to make a few modifications to the sudoers file for our users. Replace <code class="language-plaintext highlighter-rouge">{USERNAME}</code> below with your
+username. You will be prompted to select either vi or nano for your editor if you’ve not used this command before,
+choose whichever you prefer.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo visudo /etc/sudoers.d/{USERNAME}
+</code></pre></div></div>
+
+<div class="admonition danger rounded">
+    <p class="admonition-title">Danger</p>
+    <p>
+        
+<p>NEVER modify a file in <code class="language-plaintext highlighter-rouge">sudoers.d</code> directly. Always use the <code class="language-plaintext highlighter-rouge">visudo</code> command. This command checks your changes
+before saving the file, and if the resulting changes would break sudo on your system, it will prompt you to fix
+them. Modifying the file with nano or vim directly does not give you this sanity check and introduces the
+possibility of losing sudo access to your machine. Tread carefully, and make a backup.</p>
+
+    </p>
+</div>
+
+<p>As always, copy and paste the below into your user’s <code class="language-plaintext highlighter-rouge">sudoers.d</code> configuration. Replace <code class="language-plaintext highlighter-rouge">{USERNAME}</code> with your username,
+and <code class="language-plaintext highlighter-rouge">{HOSTNAME}</code> with the name of your computer.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{USERNAME} {HOSTNAME} = (root) NOPASSWD: /home/{USERNAME}/scripts/sunshine-setup.sh
+{USERNAME} {HOSTNAME} = (root) NOPASSWD: /bin/sunshine
+{USERNAME} {HOSTNAME} = (root) NOPASSWD: /usr/bin/systemctl start autossh-sunshine
+{USERNAME} {HOSTNAME} = (root) NOPASSWD: /usr/bin/systemctl --user start sunshine-after-login
+# The below is optional, but will allow us to send trigger a shutdown with a sunshine prep command, if desired.
+{USERNAME} {HOSTNAME} = (root) NOPASSWD: /usr/sbin/shutdown
+</code></pre></div></div>
+
+<p>Once again, restart your computer and do a quick test. Make sure you can connect to the PC to login and enter your
+credentials. You should be booted out of the system, and then can reconnect a few seconds later to the logged-in
+desktop session. You should see a tray icon for Sunshine, and the sound should be working (or you may need to manually
+select the sunshine-sink at least the first time).</p>
+
+<p>If you don’t have multiple monitors, at this point you can consider yourself done!</p>
+
+<h3 id="configuring-the-login-screen-layout-for-multiple-monitors">Configuring the login screen layout for multiple monitors</h3>
+
+<p>This is not Sunshine specific, but is a frequent problem I had setting up Sunshine and thought it pertinent to add to
+the guide. If you are using multiple monitors (even a single monitor with a dummy plug may have this problem) you
+might notice the streamed login screen has one or more of the following problems:</p>
+
+<ol>
+  <li>The text is way too small to see (caused by a too-high resolution)</li>
+  <li>The mouse cursor is off on some other screen (caused by not mirroring the displays)</li>
+  <li>There are multiple login screens overlapping each other (caused by differing resolutions, and trying to mirror
+the display).</li>
+</ol>
+
+<h4 id="log-in-to-an-x11-session">Log in to an X11 Session</h4>
+
+<p>This can be fixed, by modifying some scripts called by SDDM on boot. To start though, we need to make sure we’re
+logged into an x11 session, not Wayland or the terminal. As the Wayland session will give us incorrect information,
+and the terminal will give us no information since no graphical environment exists. SDDM initially starts an x11
+session to display the login screen so we need to use xorg commands to change the display configuration.</p>
+
+<p>To do this, log out of your desktop session on the Sunshine host, and somewhere on the lower left of your screen
+(depending on your SDDM theme) there will be some text that on Debian 12 KDE Plasma defaults to saying
+<code class="language-plaintext highlighter-rouge">Session: Plasma (Wayland)</code>. Select this and choose <code class="language-plaintext highlighter-rouge">Plasma (X11)</code> from the drop-down menu and sign in.</p>
+
+<h4 id="find-your-monitor-identifiers">Find your monitor identifiers.</h4>
+
+<p>Open a terminal and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr | <span class="nb">grep</span> <span class="nt">-w</span> connected
+</code></pre></div></div>
+
+<p>This will require some more sleuthing on your part. Different PC hardware, and different monitors / connectors,
+display the names differently. Some start at 0, some start 1. Some spell out “DisplayPort” some, say “DP”. You will
+need to modify all the commands from here on out based on the output of the above command. I will use the output I
+receive below as the example for the rest of this guide.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DisplayPort-0 connected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+DisplayPort-1 connected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+DisplayPort-2 connected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+HDMI-A-0 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 800mm x 450mm
+</code></pre></div></div>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>If I instead run this command on Wayland, I get the following useless output. Hence, the need to sign in to a
+x11 session.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XWAYLAND0 connected 2592x1458+6031+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 600mm x 340mm
+XWAYLAND1 connected 2592x1458+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 480mm x 270mm
+XWAYLAND2 connected primary 3440x1440+2592+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 800mm x 330mm
+XWAYLAND3 connected 2592x1458+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 1440mm x 810mm
+</code></pre></div></div>
+
+    </p>
+</div>
+
+<p>From this, you can see that my monitors are named the following under a x11 session.</p>
+
+<p>DisplayPort-0
+DisplayPort-1
+DisplayPort-2
+HDMI-A-0</p>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>If you have a label maker, now would be a good time to unplug some cables, determine where they are on your
+system, and label the outputs on your graphics card to ease changing your setup in the future.</p>
+
+    </p>
+</div>
+
+<p>In my setup, after moving some inputs I changed my system so that these cables correspond to the below monitors</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Display Name</th>
+      <th>Monitor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DisplayPort-0</td>
+      <td>rightmost 1080p display</td>
+    </tr>
+    <tr>
+      <td>DisplayPort-1</td>
+      <td>leftmost 1080p display</td>
+    </tr>
+    <tr>
+      <td>DisplayPort-2</td>
+      <td>middle 3440x1440 display</td>
+    </tr>
+    <tr>
+      <td>HDMI-A-0</td>
+      <td>4k Roku TV (and dummy plug)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="modify-the-sddm-startup-script">Modify the SDDM startup script</h4>
+
+<p>For my purposes, I would prefer to have the Roku TV (which doubles as my always-on dummy plug) to always display a
+1080p screen on login (this can be changed automatically after login). And I would like to retain the ability to use
+my leftmost monitor to login to my physical desktop, but I’d like to disable my primary and rightmost displays.</p>
+
+<p>To do this, we need to modify the SDDM startup script to shut off DisplayPort-1 and DisplayPort-2, set HDMI-A-0 to
+1080p and mirror it with DisplayPort-1.</p>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nano-5-tab" data-bs-toggle="tab" data-bs-target="#nano-5-pane" type="button" role="tab" aria-controls="nano-5-pane" aria-selected="true">nano</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="vim-5-tab" data-bs-toggle="tab" data-bs-target="#vim-5-pane" type="button" role="tab" aria-controls="vim-5-pane" aria-selected="false">vim</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="nano-5-pane" role="tabpanel" aria-labelledby="nano-5-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/share/sddm/scripts/Xsetup
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="vim-5-pane" role="tabpanel" aria-labelledby="vim-5-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/share/sddm/scripts/Xsetup
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Which will open a script that looks like this. We will not be removing these lines.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># Xsetup - run as root before the login dialog appears</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-e</span> /sbin/prime-offload <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo </span>running NVIDIA Prime setup /sbin/prime-offload
+  /sbin/prime-offload
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>At the bottom of this Xsetup script though, we can add some xrandr commands</p>
+
+<p>To shut a display off, we can use:  <code class="language-plaintext highlighter-rouge">xrandr --output {DISPLAYNAME} --off</code>.</p>
+
+<p>To set a display as the primary and accept
+it’s automatic (usually the maximum, but not always especially on TVs where the default refresh rate may be lower)
+resolution and refresh rate we can use: <code class="language-plaintext highlighter-rouge">xrandr --output {DISPLAYNAME} --auto --primary</code>.</p>
+
+<p>To set a display to a specific resolution we can use: <code class="language-plaintext highlighter-rouge">xrandr --output {DISPLAYNAME} --mode {PIXELWIDTH}x{PIXELLENGTH}</code>.</p>
+
+<p>And lastly, to mirror a display we can use: <code class="language-plaintext highlighter-rouge">xrandr --output {DISPLAYNAME} --same-as {ANOTHER-DISPLAY}</code></p>
+
+<p>So with my desire to mirror my TV and left displays, my Xsetup script now looks like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># Xsetup - run as root before the login dialog appears</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-e</span> /sbin/prime-offload <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo </span>running NVIDIA Prime setup /sbin/prime-offload
+  /sbin/prime-offload
+<span class="k">fi
+
+</span>xrandr <span class="nt">--output</span> DisplayPort-0 <span class="nt">--off</span>
+xrandr <span class="nt">--output</span> DisplayPort-2 <span class="nt">--off</span>
+xrandr <span class="nt">--output</span> DisplayPort-1 <span class="nt">--auto</span> <span class="nt">--primary</span>
+xrandr <span class="nt">--output</span> HDMI-A-0 <span class="nt">--mode</span> 1920x1080
+xrandr <span class="nt">--output</span> HDMI-A-0 <span class="nt">--same-as</span> DisplayPort-1
+</code></pre></div></div>
+
+<p>Save this file, reboot, and you should see your login screen now respects these settings. Make sure when you log
+back in, you select a Wayland session (if that is your preferred session manager).</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Congratulations! You now have Sunshine starting on boot, you can login to your session remotely, you get all the
+benefits of the graphical session permissions, and you can safely shut down your PC with the confidence you can
+turn it back on when needed.</p>
+
+<div class="admonition seealso rounded">
+    <p class="admonition-title">See also</p>
+    <p>
+        
+<p>As Eric Dong recommended, I’ll also send you to automate changing your displays.
+You can add multiple commands, to turn off, or configure as many displays as you’d like with the sunshine prep
+commands. See
+<a href="https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate">Changing Resolution and Refresh Rate</a>
+for more information and remember that the display names for your prep commands, may be different from what you
+found for SDDM.</p>
+
+    </p>
+</div>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#community-guide">community-guide</a>
+          
+            <a href="/tags#community-guide-sunshine">community-guide-sunshine</a>
+          
+            <a href="/tags#linux">linux</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <h1>
+                    <i class="fa-fw fas fa-coins"></i>
+                </h1>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Autostart+Sunshine+on+Boot+without+Auto-Login&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-10-16-autostart-sunshine-on-boot-without-auto-login%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="sr-only">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-10-16-autostart-sunshine-on-boot-without-auto-login%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-10-16-autostart-sunshine-on-boot-without-auto-login%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2024-05-24-discord-call-cancellation-sunshine-windows/" data-toggle="tooltip" data-placement="top" title="Discord Call Cancellation in Sunshine on Windows">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2025-01-06-welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMzlnm84Cil5m"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (let eleLink=0; eleLink < links.length; eleLink ++) {
+            if ((links[eleLink].href.indexOf('.pdf') !== -1)||(links[eleLink].href.indexOf('.doc') !== -1)||(links[eleLink].href.indexOf('.docx') !== -1)) {
+                links[eleLink].onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin-web-widget.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/discord.js"></script>
+
+<script>
+    window.initDiscord()
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2025
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/guides-community/2024-10-16-autostart-sunshine-on-boot-without-auto-login.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -23,6 +23,39 @@
       </item>
     
       <item>
+        <title>Autostart Sunshine on Boot without Auto-Login</title>
+        <description>
+          
+          After following this guide you will be able to: Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature. Have Sunshine initialize to the login screen ready for you to enter your credentials. Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon...
+        </description>
+        <pubDate>Wed, 16 Oct 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/</guid>
+      </item>
+    
+      <item>
+        <title>Discord Call Cancellation in Sunshine on Windows</title>
+        <description>
+          Cancel Discord call audio with Voicemeeter (Standard) - 
+          Voicemeeter Configuration Click “Hardware Out” Set the physical device you receive audio to as your Hardware Out with MME Turn on BUS A for the Virtual Input Windows Configuration Open the sound settings Set your default Playback as Voicemeeter Input Tip Run audio in the background to find the device...
+        </description>
+        <pubDate>Fri, 24 May 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Discord Call Cancellation in Sunshine on Linux</title>
+        <description>
+          
+          Set your normal Sound Output volume to 100% Start Sunshine Set Sound Output to sink-sunshine-stereo (if it isn’t automatic) In Discord, right click Deafen and select your normal Output Device. This is also where you will need to adjust output volume for Discord calls Open qpwgraph Connect sunshine [sunshine-record] to...
+        </description>
+        <pubDate>Thu, 18 Apr 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-04-18-discord-call-cancellation-sunshine-linux/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-04-18-discord-call-cancellation-sunshine-linux/</guid>
+      </item>
+    
+      <item>
         <title>Multi-platform C++ development in CLion</title>
         <description>
           How to set up CLion to handle Linux, macOS, and Windows development in a single project - 
@@ -31,6 +64,28 @@
         <pubDate>Thu, 01 Feb 2024 00:00:00 -0500</pubDate>
         <link>https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</link>
         <guid isPermaLink="true">https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</guid>
+      </item>
+    
+      <item>
+        <title>Remote SSH Headless Sunshine Setup</title>
+        <description>
+          
+          This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug. The virtual display is accelerated by the NVidia GPU using the TwinView configuration. Attention This guide is specific for Xorg and NVidia GPUs. I start the X server...
+        </description>
+        <pubDate>Thu, 14 Sep 2023 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/</guid>
+      </item>
+    
+      <item>
+        <title>Blog Guide</title>
+        <description>
+          
+          Admonitions Usage You can use admonitions with the following syntax: {% include admonition.html type=&quot;important&quot; body=&quot;This is information intended to draw attention.&quot; %} Optionally, a custom title can be added: {% include admonition.html type=&quot;hint&quot; title=&quot;Custom Title&quot; body=&quot;This is information intended to draw attention.&quot; %} Types Valid types of admonitions are: attention...
+        </description>
+        <pubDate>Thu, 01 Jan 1970 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/1970-01-01-blog-guide/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/1970-01-01-blog-guide/</guid>
       </item>
     
   </channel>

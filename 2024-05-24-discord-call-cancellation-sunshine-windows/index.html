@@ -11,14 +11,14 @@
 
   
 
-  <title>Support | LizardByte</title>
+  <title>Discord Call Cancellation in Sunshine on Windows | LizardByte</title>
 
   
   
-  <meta name="author" content="LizardByte">
+  <meta name="author" content="BeeLeDev">
   
 
-  <meta name="description" content="Need support? First, read the documentation! Read the Docs Select projects have the documentation hosted on Read the Docs. Look for the paper icon on the project cards at our home page. Type: Documentation Need more help? Ask questions Discord This is our preferred method of providing support! Please read...">
+  <meta name="description" content="Cancel Discord call audio with Voicemeeter (Standard)">
 
   
   <meta name="theme-color" content="#05FF3B">
@@ -94,7 +94,7 @@
   
   
     
-      <link rel="stylesheet" href="/assets/css/hide-heading.css">
+      <link rel="stylesheet" href="/assets/css/show-search.css">
     
   
 
@@ -102,17 +102,21 @@
 
   
   <meta property="og:site_name" content="LizardByte">
-  <meta property="og:title" content="Support | LizardByte">
-  <meta property="og:description" content="Need support? First, read the documentation! Read the Docs Select projects have the documentation hosted on Read the Docs. Look for the paper icon on the project cards at our home page. Type: Documentation Need more help? Ask questions Discord This is our preferred method of providing support! Please read...">
+  <meta property="og:title" content="Discord Call Cancellation in Sunshine on Windows | LizardByte">
+  <meta property="og:description" content="Cancel Discord call audio with Voicemeeter (Standard)">
 
   
   <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
   
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://app.lizardbyte.dev/support/">
-  <link rel="canonical" href="https://app.lizardbyte.dev/support/">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="BeeLeDev">
+  
+  <meta property="og:article:published_time" content="2024-05-24T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/">
   
 
   
@@ -121,8 +125,8 @@
   <meta name="twitter:site" content="@LizardByteDev">
   <meta name="twitter:creator" content="@LizardByteDev">
 
-  <meta property="twitter:title" content="Support | LizardByte">
-  <meta property="twitter:description" content="Need support? First, read the documentation! Read the Docs Select projects have the documentation hosted on Read the Docs. Look for the paper icon on the project cards at our home page. Type: Documentation Need more help? Ask questions Discord This is our preferred method of providing support! Please read...">
+  <meta property="twitter:title" content="Discord Call Cancellation in Sunshine on Windows | LizardByte">
+  <meta property="twitter:description" content="Cancel Discord call audio with Voicemeeter (Standard)">
 
   
   <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -242,10 +246,21 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>Support</h1>
+        <div class="post-heading">
+          <h1>Discord Call Cancellation in Sunshine on Windows</h1>
+          
+            
+              <h2 class="post-subheading">Cancel Discord call audio with Voicemeeter (Standard)</h2>
+            
           
           
+           
+            
+              By <strong>BeeLeDev</strong><br>
+            
+            <span class="post-meta">Posted on May 24, 2024</span>
+            
+            
           
         </div>
       </div>
@@ -263,154 +278,103 @@
 <main class=" container-md ">
   <div class="row">
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=LizardByte.github.io&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                
+            
+          
+        </div>
       
 
-      <section class="py-5" id="Docs">
-    <div class="row gx-5 justify-content-center">
-        <div class="col-lg-8 col-xl-6">
-            <div class="text-center">
-                <h2 class="fw-bolder">Need support?</h2>
-                <p class="lead fw-normal mb-5">First, read the documentation!</p>
-            </div>
+      
+
+      <div class="blog-post">
+        <h2 id="voicemeeter-configuration">Voicemeeter Configuration</h2>
+<ol>
+  <li>Click “Hardware Out”</li>
+  <li>Set the physical device you receive audio to as your Hardware Out with MME</li>
+  <li>Turn on BUS A for the Virtual Input</li>
+</ol>
+
+<h2 id="windows-configuration">Windows Configuration</h2>
+<ol>
+  <li>Open the sound settings</li>
+  <li>Set your default Playback as Voicemeeter Input</li>
+</ol>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>Run audio in the background to find the device that your Virtual Input is using
+(Voicemeeter In #), you will see the bar to the right of the device have green bars
+going up and down. This device will be referred to as Voicemeeter Input.</p>
+
+    </p>
+</div>
+
+<h2 id="discord-configuration">Discord Configuration</h2>
+<ol>
+  <li>Open the settings</li>
+  <li>Go to Voice &amp; Video</li>
+  <li>Set your Output Device as the physical device you receive audio to</li>
+</ol>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        <p>It is usually the same device you set for Hardware Out in Voicemeeter.</p>
+
+    </p>
+</div>
+
+<h2 id="sunshine-configuration">Sunshine Configuration</h2>
+<ol>
+  <li>Go to Configuration</li>
+  <li>Go to the Audio/Video tab</li>
+  <li>Set Virtual Sink as Voicemeeter Input</li>
+</ol>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        <p>This should be the device you set as default previously in Playback.</p>
+
+    </p>
+</div>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#community-guide">community-guide</a>
+          
+            <a href="/tags#community-guide-sunshine">community-guide-sunshine</a>
+          
+            <a href="/tags#windows">windows</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+            <a href="/tags#discord">discord</a>
+          
         </div>
-    </div>
-
-    <!-- Read the Docs -->
-    <div class="container mb-5 shadow border-0 card-custom rounded-0 position-relative">
-        <div class="d-table-row g-0">
-            <div class="d-table-cell px-3 align-middle text-center">
-                <h1>
-                    <i class="fa-fw fa-solid fa-file-lines"></i>
-                </h1>
-            </div>
-            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
-                <a class="text-decoration-none link-light stretched-link"
-                        href="https://docs.lizardbyte.dev/en/latest/about/overview.html"
-                        target="_blank">
-                    <h4 class="card-title mb-3 fw-bolder crowdin-ignore">Read the Docs</h4>
-                </a>
-                <p class="card-text">
-                    Select projects have the documentation hosted on Read the Docs.
-                    Look for the paper icon on the project cards at our home page.
-                </p>
-                <p class="card-text mx-3">
-                    <small>
-                        <strong>Type:</strong> Documentation
-                    </small>
-                </p>
-                <img class="m-3 crowdin-ignore"
-                     alt="Read the docs"
-                     src="https://img.shields.io/badge/-8CA1AF?style=for-the-badge&logo=readthedocs&labelColor=8CA1AF&color=8CA1AF&logoColor=white&label=Read%20the%20Docs"
-                >
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<section class="py-5" id="Channels">
-    <div class="row gx-5 justify-content-center">
-        <div class="col-lg-8 col-xl-6">
-            <div class="text-center">
-                <h2 class="fw-bolder">Need more help?</h2>
-                <p class="lead fw-normal mb-5">Ask questions</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Discord -->
-    <div class="container mb-5 shadow border-0 card-custom rounded-0 position-relative">
-        <div class="d-table-row g-0">
-            <div class="d-table-cell px-3 align-middle text-center">
-                <h1>
-                    <i class="fa-fw fab fa-discord"></i>
-                </h1>
-            </div>
-            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
-                <a class="text-decoration-none link-light stretched-link"
-                        href="discord">
-                    <h4 class="card-title mb-3 fw-bolder crowdin-ignore">Discord</h4>
-                </a>
-                <p class="card-text">
-                    This is our preferred method of providing support!
-                    Please read the rules, be courteous, and use the appropriate channel
-                    when posting.
-                </p>
-                <p class="card-text mx-3">
-                    <small>
-                        <strong>Type:</strong> Primary Support
-                    </small>
-                </p>
-                <img class="m-3"
-                     alt="Discord"
-                     src="https://img.shields.io/badge/dynamic/json?labelColor=5865F2&color=5865F2&logoColor=ffffff&label=Discord&style=for-the-badge&query=approximate_member_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fdiscord%2Finvite.json&logo=discord"
-                >
-            </div>
-        </div>
-    </div>
-
-    <!-- GitHub -->
-    <div class="container mb-5 shadow border-0 card-custom rounded-0 position-relative">
-        <div class="d-table-row g-0">
-            <div class="d-table-cell px-3 align-middle text-center">
-                <h1>
-                    <i class="fa-fw fab fa-github"></i>
-                </h1>
-            </div>
-            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
-                <a class="text-decoration-none link-light stretched-link"
-                        href="https://github.com/orgs/LizardByte/discussions">
-                    <h4 class="card-title mb-3 fw-bolder crowdin-ignore">GitHub</h4>
-                </a>
-                <p class="card-text">
-                    GitHub <em>Discussions</em> are available for support, feature requests, and general discourse.
-                    Please DO NOT use GitHub issues to ask for support!
-                </p>
-                <p class="card-text mx-3">
-                    <small>
-                        <strong>Type:</strong> Primary Support
-                    </small>
-                </p>
-                <img class="m-3"
-                     alt="GitHub"
-                     src="https://img.shields.io/github/discussions/LizardByte/community?style=for-the-badge&logo=github&logoColor=black&labelColor=white&color=white"
-                >
-            </div>
-        </div>
-    </div>
-
-    <!-- Reddit -->
-    <div class="container mb-5 shadow border-0 card-custom rounded-0 position-relative">
-        <div class="d-table-row g-0">
-            <div class="d-table-cell px-3 align-middle text-center">
-                <h1>
-                    <i class="fa-fw fab fa-reddit-alien"></i>
-                </h1>
-            </div>
-            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
-                <a class="text-decoration-none link-light stretched-link"
-                        href="https://www.reddit.com/r/LizardByte" target="_blank">
-                    <h4 class="card-title mb-3 fw-bolder crowdin-ignore">Reddit</h4>
-                </a>
-                <p class="card-text">
-                    For aliens only! Please read the rules, be courteous, and use the appropriate
-                    flair when posting. Provide your logs when asking for help.
-                </p>
-                <p class="card-text mx-3">
-                    <small>
-                        <strong>Type:</strong> Community Support
-                    </small>
-                </p>
-                <img class="m-3"
-                     alt="Reddit"
-                     src="https://img.shields.io/reddit/subreddit-subscribers/lizardbyte?labelColor=FF4500&color=FF4500&logoColor=ffffff&label=Reddit&style=for-the-badge&logo=reddit"
-                >
-            </div>
-        </div>
-    </div>
-
-</section>
-
+      
 
       
         <div class="after-content">
@@ -465,6 +429,104 @@
       
 
       
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Discord+Call+Cancellation+in+Sunshine+on+Windows&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-05-24-discord-call-cancellation-sunshine-windows%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="sr-only">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-05-24-discord-call-cancellation-sunshine-windows%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-05-24-discord-call-cancellation-sunshine-windows%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2024-04-18-discord-call-cancellation-sunshine-linux/" data-toggle="tooltip" data-placement="top" title="Discord Call Cancellation in Sunshine on Linux">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2024-10-16-autostart-sunshine-on-boot-without-auto-login/" data-toggle="tooltip" data-placement="top" title="Autostart Sunshine on Boot without Auto-Login">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMzlnm84Cil5m"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
 
     </div>
   </div>
@@ -612,7 +674,7 @@
 
       
         &nbsp;&bull;&nbsp;
-        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/support.html" class="text_muted">Edit page</a>
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/guides-community/2024-05-24-discord-call-cancellation-sunshine-windows.md" class="text_muted">Edit page</a>
        
 
       </p>

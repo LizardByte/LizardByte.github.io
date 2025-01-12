@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  
+
+  <title>Remote SSH Headless Sunshine Setup | LizardByte</title>
+
+  
+  
+  <meta name="author" content="e-dong">
+  
+
+  <meta name="description" content="This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug. The virtual display is accelerated by the NVidia GPU using the TwinView configuration. Attention This guide is specific for Xorg and NVidia GPUs. I start the X server...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/styles.css">
+    
+  
+
+  
+  
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Remote SSH Headless Sunshine Setup | LizardByte">
+  <meta property="og:description" content="This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug. The virtual display is accelerated by the NVidia GPU using the TwinView configuration. Attention This guide is specific for Xorg and NVidia GPUs. I start the X server...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="e-dong">
+  
+  <meta property="og:article:published_time" content="2023-09-14T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Remote SSH Headless Sunshine Setup | LizardByte">
+  <meta property="twitter:description" content="This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug. The virtual display is accelerated by the NVidia GPU using the TwinView configuration. Attention This guide is specific for Xorg and NVidia GPUs. I start the X server...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/LizardByte">GitHub</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/en/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Development</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/en/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+              </div>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json' 
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Remote SSH Headless Sunshine Setup</h1>
+          
+          
+           
+            
+              By <strong>e-dong</strong><br>
+            
+            <span class="post-meta">Posted on September 14, 2023</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=LizardByte.github.io&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        <p>This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug.
+The virtual display is accelerated by the NVidia GPU using the TwinView configuration.</p>
+
+<div class="admonition attention rounded">
+    <p class="admonition-title">Attention</p>
+    <p>
+        
+<p>This guide is specific for Xorg and NVidia GPUs. I start the X server using the <code class="language-plaintext highlighter-rouge">startx</code> command.
+I also only tested this on an Artix runit init system on LAN.
+I didn’t have to do anything special with pulseaudio (pipewire untested).</p>
+
+<p>Pipewire does not seem to work when Sunshine is started over an SSH session.
+A workaround to this problem is to kill the Sunshine instance started via SSH, and start a new one
+with the permissions of the desktop session.
+See <a href="#autostart-on-boot-without-auto-login">Autostart on boot without auto-login</a>.</p>
+
+<p>Keep your monitors plugged in until the <a href="#checkpoint">Checkpoint</a> step.</p>
+
+    </p>
+</div>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>Prior to editing any system configurations, you should make a copy of the original file.
+This will allow you to use it for reference or revert your changes easily.</p>
+
+    </p>
+</div>
+
+<h2 id="the-big-picture">The Big Picture</h2>
+<p>Once you are done, you will need to perform these 3 steps:</p>
+
+<ol>
+  <li>Turn on the host machine</li>
+  <li>
+    <p>Start Sunshine on remote host with a script that:</p>
+
+    <ul>
+      <li>Edits permissions of <code class="language-plaintext highlighter-rouge">/dev/uinput</code> (added sudo config to execute script with no password prompt)</li>
+      <li>Starts X server with <code class="language-plaintext highlighter-rouge">startx</code> on virtual display</li>
+      <li>Starts Sunshine</li>
+    </ul>
+  </li>
+  <li>Startup Moonlight on the client of interest and connect to host</li>
+</ol>
+
+<div class="admonition hint rounded">
+    <p class="admonition-title">Hint</p>
+    <p>
+        
+<p>As an alternative to SSH…</p>
+
+<p><strong>Step 2</strong> can be replaced with autologin and starting Sunshine as a service or putting
+<code class="language-plaintext highlighter-rouge">sunshine &amp;</code> in your <code class="language-plaintext highlighter-rouge">.xinitrc</code> file if you start your X server with <code class="language-plaintext highlighter-rouge">startx</code>.
+In this case, the workaround for <code class="language-plaintext highlighter-rouge">/dev/uinput</code> permissions is not needed because the udev rule would be triggered
+for “physical” login.
+See <a href="https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2getting__started.html#linux">Linux Setup</a>.
+I personally think autologin compromises the security of the PC, so I went with the remote SSH route.
+I use the PC more than for gaming, so I don’t need a virtual display everytime I turn on the PC
+(E.g running updates, config changes, file/media server).</p>
+
+    </p>
+</div>
+
+<p>First we will <a href="#host-setup">setup the host</a> and then the <a href="#ssh-client-setup">SSH Client</a>
+(Which may not be the same as the machine running the moonlight client).</p>
+
+<h2 id="host-setup">Host Setup</h2>
+<p>We will be setting up:</p>
+
+<ol>
+  <li><a href="#static-ip-setup">Static IP Setup</a></li>
+  <li><a href="#ssh-server-setup">SSH Server Setup</a></li>
+  <li><a href="#virtual-display-setup">Virtual Display Setup</a></li>
+  <li><a href="#uinput-permissions-workaround">Uinput Permissions Workaround</a></li>
+  <li><a href="#stream-launcher-script">Stream Launcher Script</a></li>
+</ol>
+
+<h2 id="static-ip-setup">Static IP Setup</h2>
+<p>Setup static IP Address for host. For LAN connections you can use DHCP reservation within your assigned range.
+e.g. 192.168.x.x. This will allow you to ssh to the host consistently, so the assigned IP address does
+not change. It is preferred to set this through your router config.</p>
+
+<h2 id="ssh-server-setup">SSH Server Setup</h2>
+
+<div class="admonition hint rounded">
+    <p class="admonition-title">Hint</p>
+    <p>
+        
+<p>Most distros have OpenSSH already installed. If it is not present, install OpenSSH using your package manager.</p>
+
+    </p>
+</div>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="debian-based-0-tab" data-bs-toggle="tab" data-bs-target="#debian-based-0-pane" type="button" role="tab" aria-controls="debian-based-0-pane" aria-selected="true">Debian based</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="arch-based-0-tab" data-bs-toggle="tab" data-bs-target="#arch-based-0-pane" type="button" role="tab" aria-controls="arch-based-0-pane" aria-selected="false">Arch based</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="alpine-based-0-tab" data-bs-toggle="tab" data-bs-target="#alpine-based-0-pane" type="button" role="tab" aria-controls="alpine-based-0-pane" aria-selected="false">Alpine based</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="fedora-based-dnf-0-tab" data-bs-toggle="tab" data-bs-target="#fedora-based-dnf-0-pane" type="button" role="tab" aria-controls="fedora-based-dnf-0-pane" aria-selected="false">Fedora based (dnf)</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="fedora-based-yum-0-tab" data-bs-toggle="tab" data-bs-target="#fedora-based-yum-0-pane" type="button" role="tab" aria-controls="fedora-based-yum-0-pane" aria-selected="false">Fedora based (yum)</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="debian-based-0-pane" role="tabpanel" aria-labelledby="debian-based-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>openssh-server
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="arch-based-0-pane" role="tabpanel" aria-labelledby="arch-based-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> openssh
+<span class="c"># Install openssh-&lt;other_init&gt; if you are not using SystemD</span>
+<span class="c"># e.g. sudo pacman -S openssh-runit</span>
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="alpine-based-0-pane" role="tabpanel" aria-labelledby="alpine-based-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apk update
+<span class="nb">sudo </span>apk add openssh
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="fedora-based-dnf-0-pane" role="tabpanel" aria-labelledby="fedora-based-dnf-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nb">install </span>openssh-server
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="fedora-based-yum-0-pane" role="tabpanel" aria-labelledby="fedora-based-yum-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>openssh-server
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p>Next make sure the OpenSSH daemon is enabled to run when the system starts.</p>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="systemd-0-tab" data-bs-toggle="tab" data-bs-target="#systemd-0-pane" type="button" role="tab" aria-controls="systemd-0-pane" aria-selected="true">SystemD</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="runit-0-tab" data-bs-toggle="tab" data-bs-target="#runit-0-pane" type="button" role="tab" aria-controls="runit-0-pane" aria-selected="false">Runit</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="openrc-0-tab" data-bs-toggle="tab" data-bs-target="#openrc-0-pane" type="button" role="tab" aria-controls="openrc-0-pane" aria-selected="false">OpenRC</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="systemd-0-pane" role="tabpanel" aria-labelledby="systemd-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>sshd.service
+<span class="nb">sudo </span>systemctl start sshd.service  <span class="c"># Starts the service now</span>
+<span class="nb">sudo </span>systemctl status sshd.service  <span class="c"># See if the service is running</span>
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="runit-0-pane" role="tabpanel" aria-labelledby="runit-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/runit/sv/sshd /run/runit/service  <span class="c"># Enables the OpenSSH daemon to run when system starts</span>
+<span class="nb">sudo </span>sv start sshd  <span class="c"># Starts the service now</span>
+<span class="nb">sudo </span>sv status sshd  <span class="c"># See if the service is running</span>
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="openrc-0-pane" role="tabpanel" aria-labelledby="openrc-0-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rc-update add sshd  <span class="c"># Enables service</span>
+rc-status  <span class="c"># List services to verify sshd is enabled</span>
+rc-service sshd start  <span class="c"># Starts the service now</span>
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<p><strong>Disabling PAM in sshd</strong></p>
+
+<p>I noticed when the ssh session is disconnected for any reason, <code class="language-plaintext highlighter-rouge">pulseaudio</code> would disconnect.
+This is due to PAM handling sessions. When running <code class="language-plaintext highlighter-rouge">dmesg</code>, I noticed <code class="language-plaintext highlighter-rouge">elogind</code> would say removed user session.
+In this <a href="https://forums.gentoo.org/viewtopic-t-1090186-start-0.html">Gentoo Forums post</a>,
+someone had a similar issue. Starting the X server in the background and exiting out of the console would cause your
+session to be removed.</p>
+
+<div class="admonition caution rounded">
+    <p class="admonition-title">Caution</p>
+    <p>
+        
+<p>According to this <a href="https://devicetests.com/ssh-usepam-security-session-status">article</a>
+disabling PAM increases security, but reduces certain functionality in terms of session handling.
+<em>Do so at your own risk!</em></p>
+
+    </p>
+</div>
+
+<p>Edit the <code class="language-plaintext highlighter-rouge">sshd_config</code> file with the following to disable PAM.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">usePAM no
+</span></code></pre></div></div>
+
+<p>After making changes to the <code class="language-plaintext highlighter-rouge">sshd_config</code>, restart the sshd service for changes to take effect.</p>
+
+<div class="admonition tip rounded">
+    <p class="admonition-title">Tip</p>
+    <p>
+        
+<p>Run the command to check the ssh configuration prior to restarting the sshd service.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sshd <span class="nt">-t</span> <span class="nt">-f</span> /etc/ssh/sshd_config
+</code></pre></div></div>
+
+<p>An incorrect configuration will prevent the sshd service from starting, which might mean
+losing SSH access to the server.</p>
+
+    </p>
+</div>
+
+<div class="tabs">
+    <ul class="nav nav-underline" role="tablist">
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="systemd-1-tab" data-bs-toggle="tab" data-bs-target="#systemd-1-pane" type="button" role="tab" aria-controls="systemd-1-pane" aria-selected="true">SystemD</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="runit-1-tab" data-bs-toggle="tab" data-bs-target="#runit-1-pane" type="button" role="tab" aria-controls="runit-1-pane" aria-selected="false">Runit</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="openrc-1-tab" data-bs-toggle="tab" data-bs-target="#openrc-1-pane" type="button" role="tab" aria-controls="openrc-1-pane" aria-selected="false">OpenRC</button>
+        </li>
+        
+    </ul>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="systemd-1-pane" role="tabpanel" aria-labelledby="systemd-1-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart sshd.service
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="runit-1-pane" role="tabpanel" aria-labelledby="runit-1-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sv restart sshd
+</code></pre></div></div>
+
+            
+        </div>
+        
+        <div class="tab-pane fade " id="openrc-1-pane" role="tabpanel" aria-labelledby="openrc-1-tab" tabindex="0">
+            
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rc-service sshd restart
+</code></pre></div></div>
+
+            
+        </div>
+        
+    </div>
+</div>
+
+<h2 id="virtual-display-setup">Virtual Display Setup</h2>
+<p>As an alternative to a dummy dongle, you can use this config to create a virtual display.</p>
+
+<div class="admonition important rounded">
+    <p class="admonition-title">Important</p>
+    <p>
+        <p>This is only available for NVidia GPUs using Xorg.</p>
+
+    </p>
+</div>
+
+<div class="admonition hint rounded">
+    <p class="admonition-title">Hint</p>
+    <p>
+        
+<p>Use <code class="language-plaintext highlighter-rouge">xrandr</code> to see name of your active display output.
+Usually it starts with <code class="language-plaintext highlighter-rouge">DP</code> or <code class="language-plaintext highlighter-rouge">HDMI</code>. For me, it is <code class="language-plaintext highlighter-rouge">DP-0</code>.
+Put this name for the <code class="language-plaintext highlighter-rouge">ConnectedMonitor</code> option under the <code class="language-plaintext highlighter-rouge">Device</code> section.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr | <span class="nb">grep</span> <span class="s2">" connected"</span> | <span class="nb">awk</span> <span class="s1">'{ print $1 }'</span>
+</code></pre></div></div>
+
+    </p>
+</div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Section "ServerLayout"
+   Identifier "TwinLayout"
+   Screen 0 "metaScreen" 0 0
+EndSection
+
+Section "Monitor"
+   Identifier "Monitor0"
+   Option "Enable" "true"
+EndSection
+
+Section "Device"
+   Identifier "Card0"
+   Driver "nvidia"
+   VendorName "NVIDIA Corporation"
+   Option "MetaModes" "1920x1080"
+   Option "ConnectedMonitor" "DP-0"
+   Option "ModeValidation" "NoDFPNativeResolutionCheck,NoVirtualSizeCheck,NoMaxPClkCheck,NoHorizSyncCheck,NoVertRefreshCheck,NoWidthAlignmentCheck"
+EndSection
+
+Section "Screen"
+   Identifier "metaScreen"
+   Device "Card0"
+   Monitor "Monitor0"
+   DefaultDepth 24
+   Option "TwinView" "True"
+   SubSection "Display"
+       Modes "1920x1080"
+   EndSubSection
+EndSection
+</span></code></pre></div></div>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>The <code class="language-plaintext highlighter-rouge">ConnectedMonitor</code> tricks the GPU into thinking a monitor is connected,
+even if there is none actually connected! This allows a virtual display to be created that is accelerated with
+your GPU! The <code class="language-plaintext highlighter-rouge">ModeValidation</code> option disables valid resolution checks, so you can choose any
+resolution on the host!</p>
+
+<p><strong>References</strong></p>
+
+<ul>
+  <li><a href="https://github.com/dianariyanto/virtual-display-linux/issues/9#issuecomment-786389065">issue comment on virtual-display-linux</a></li>
+  <li><a href="https://download.nvidia.com/XFree86/Linux-x86/270.29/README/configtwinview.html">Nvidia Documentation on Configuring TwinView</a></li>
+  <li><a href="https://wiki.archlinux.org/title/NVIDIA#TwinView">Arch Wiki Nvidia#TwinView</a></li>
+  <li><a href="https://unix.stackexchange.com/questions/559918/how-to-add-virtual-monitor-with-nvidia-proprietary-driver">Unix Stack Exchange - How to add virtual display monitor with Nvidia proprietary driver</a></li>
+</ul>
+
+    </p>
+</div>
+
+<h2 id="uinput-permissions-workaround">Uinput Permissions Workaround</h2>
+
+<h3 id="steps">Steps</h3>
+<p>We can use <code class="language-plaintext highlighter-rouge">chown</code> to change the permissions from a script. Since this requires <code class="language-plaintext highlighter-rouge">sudo</code>,
+we will need to update the sudo configuration to execute this without being prompted for a password.</p>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code> script to update permissions on <code class="language-plaintext highlighter-rouge">/dev/uinput</code>. Since we aren’t logged into the host,
+the udev rule doesn’t apply.</li>
+  <li>Update user sudo configuration <code class="language-plaintext highlighter-rouge">/etc/sudoers.d/&lt;user&gt;</code> to allow the <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code>
+script to be executed with <code class="language-plaintext highlighter-rouge">sudo</code>.</li>
+</ol>
+
+<div class="admonition note rounded">
+    <p class="admonition-title">Note</p>
+    <p>
+        
+<p>After I setup the :ref:<code class="language-plaintext highlighter-rouge">udev rule &lt;about/setup:install&gt;</code> to get access to <code class="language-plaintext highlighter-rouge">/dev/uinput</code>, I noticed when I sshed
+into the host without physical login, the ACL permissions on <code class="language-plaintext highlighter-rouge">/dev/uinput</code> were not changed. So I asked
+<a href="https://www.reddit.com/r/linux_gaming/comments/14htuzv/does_sshing_into_host_trigger_udev_rule_on_the">reddit</a>.
+I discovered that SSH sessions are not the same as a physical login.
+I suppose it’s not possible for SSH to trigger a udev rule or create a physical login session.</p>
+
+    </p>
+</div>
+
+<h3 id="setup-script">Setup Script</h3>
+<p>This script will take care of any preconditions prior to starting up Sunshine.</p>
+
+<p>Run the following to create a script named something like <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"chown </span><span class="si">$(</span><span class="nb">id</span> <span class="nt">-un</span><span class="si">)</span><span class="s2">:</span><span class="si">$(</span><span class="nb">id</span> <span class="nt">-gn</span><span class="si">)</span><span class="s2"> /dev/uinput"</span> <span class="o">&gt;</span> sunshine-setup.sh <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">chmod</span> +x sunshine-setup.sh
+</code></pre></div></div>
+
+<p>(<strong>Optional</strong>) To Ensure ethernet is being used for streaming, you can block Wi-Fi with <code class="language-plaintext highlighter-rouge">rfkill</code>.</p>
+
+<p>Run this command to append the rfkill block command to the script:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"rfkill block </span><span class="si">$(</span>rfkill list | <span class="nb">grep</span> <span class="s2">"Wireless LAN"</span> <span class="se">\</span>
+  | <span class="nb">sed</span> <span class="s1">'s/^\([[:digit:]]\).*/\1/'</span><span class="si">)</span><span class="s2">"</span> <span class="o">&gt;&gt;</span> sunshine-setup.sh
+</code></pre></div></div>
+
+<h3 id="sudo-configuration">Sudo Configuration</h3>
+<p>We will manually change the permissions of <code class="language-plaintext highlighter-rouge">/dev/uinput</code> using <code class="language-plaintext highlighter-rouge">chown</code>.
+You need to use <code class="language-plaintext highlighter-rouge">sudo</code> to make this change, so add/update the entry in <code class="language-plaintext highlighter-rouge">/etc/sudoers.d/${USER}</code>.</p>
+
+<div class="admonition danger rounded">
+    <p class="admonition-title">Danger</p>
+    <p>
+        
+<p>Do so at your own risk! It is more secure to give sudo and no password prompt to a single script,
+than a generic executable like chown.</p>
+
+    </p>
+</div>
+
+<div class="admonition warning rounded">
+    <p class="admonition-title">Warning</p>
+    <p>
+        
+<p>Be very careful of messing this config up. If you make a typo, <em>YOU LOSE THE ABILITY TO USE SUDO</em>.
+Fortunately, your system is not borked, you will need to login as root to fix the config.
+You may want to setup a backup user / SSH into the host as root to fix the config if this happens.
+Otherwise, you will need to plug your machine back into a monitor and login as root to fix this.
+To enable root login over SSH edit your SSHD config, and add <code class="language-plaintext highlighter-rouge">PermitRootLogin yes</code>, and restart the SSH server.</p>
+
+    </p>
+</div>
+
+<ol>
+  <li>
+    <p>First make a backup of your <code class="language-plaintext highlighter-rouge">/etc/sudoers.d/${USER}</code> file.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo cp</span> /etc/sudoers.d/<span class="k">${</span><span class="nv">USER</span><span class="k">}</span> /etc/sudoers.d/<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>.backup
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">cd</code> to the parent dir of the <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code> script and take note of the full filepath.</li>
+  <li>Execute the following to edit your sudoer config file.</li>
+</ol>
+
+<div class="admonition danger rounded">
+    <p class="admonition-title">Danger</p>
+    <p>
+        
+<p>NEVER modify a file in <code class="language-plaintext highlighter-rouge">sudoers.d</code> directly. Always use the <code class="language-plaintext highlighter-rouge">visudo</code> command. This command checks your changes
+before saving the file, and if the resulting changes would break sudo on your system, it will prompt you to fix
+them. Modifying the file with nano or vim directly does not give you this sanity check and introduces the
+possibility of losing sudo access to your machine. Tread carefully, and make a backup.</p>
+
+    </p>
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>visudo /etc/sudoers.d/<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>
+</code></pre></div></div>
+
+<p>Copy the below configuration into the text editor. Change <code class="language-plaintext highlighter-rouge">${USER}</code> wherever it occurs to your username
+(e.g. if your username is <code class="language-plaintext highlighter-rouge">sunshineisaawesome</code> you should change <code class="language-plaintext highlighter-rouge">${USER}</code> to <code class="language-plaintext highlighter-rouge">sunshineisawesome</code>)
+or modify the path if you placed <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code> in a different area.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="o">{</span>USER<span class="o">}</span> <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL, NOPASSWD: /home/<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>/scripts/sunshine-setup.sh
+</code></pre></div></div>
+
+<p>These changes allow the script to use sudo without being prompted with a password.</p>
+
+<p>e.g. <code class="language-plaintext highlighter-rouge">sudo $(pwd)/sunshine-setup.sh</code></p>
+
+<h2 id="stream-launcher-script">Stream Launcher Script</h2>
+<p>This is the main entrypoint script that will run the <code class="language-plaintext highlighter-rouge">sunshine-setup.sh</code> script, start up X server, and Sunshine.
+The client will call this script that runs on the host via ssh.</p>
+
+<h3 id="sunshine-startup-script">Sunshine Startup Script</h3>
+<p>This guide will refer to this script as <code class="language-plaintext highlighter-rouge">~/scripts/sunshine.sh</code>.
+The setup script will be referred as <code class="language-plaintext highlighter-rouge">~/scripts/sunshine-setup.sh</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+
+<span class="nb">export </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+
+<span class="c"># Check existing X server</span>
+ps <span class="nt">-e</span> | <span class="nb">grep </span>X <span class="o">&gt;</span>/dev/null
+<span class="o">[[</span> <span class="k">${</span><span class="p">?</span><span class="k">}</span> <span class="nt">-ne</span> 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+ <span class="nb">echo</span> <span class="s2">"Starting X server"</span>
+ startx &amp;&gt;/dev/null &amp;
+ <span class="o">[[</span> <span class="k">${</span><span class="p">?</span><span class="k">}</span> <span class="nt">-eq</span> 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+   <span class="nb">echo</span> <span class="s2">"X server started successfully"</span>
+ <span class="o">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"X server failed to start"</span>
+<span class="o">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"X server already running"</span>
+
+<span class="c"># Check if sunshine is already running</span>
+ps <span class="nt">-e</span> | <span class="nb">grep</span> <span class="nt">-e</span> .<span class="k">*</span>sunshine<span class="nv">$ </span><span class="o">&gt;</span>/dev/null
+<span class="o">[[</span> <span class="k">${</span><span class="p">?</span><span class="k">}</span> <span class="nt">-ne</span> 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+ <span class="nb">sudo</span> ~/scripts/sunshine-setup.sh
+ <span class="nb">echo</span> <span class="s2">"Starting Sunshine!"</span>
+ sunshine <span class="o">&gt;</span> /dev/null &amp;
+ <span class="o">[[</span> <span class="k">${</span><span class="p">?</span><span class="k">}</span> <span class="nt">-eq</span> 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+   <span class="nb">echo</span> <span class="s2">"Sunshine started successfully"</span>
+ <span class="o">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"Sunshine failed to start"</span>
+<span class="o">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"Sunshine is already running"</span>
+
+<span class="c"># Add any other Programs that you want to startup automatically</span>
+<span class="c"># e.g.</span>
+<span class="c"># steam &amp;&gt; /dev/null &amp;</span>
+<span class="c"># firefox &amp;&gt; /dev/null &amp;</span>
+<span class="c"># kdeconnect-app &amp;&gt; /dev/null &amp;</span>
+</code></pre></div></div>
+
+<h2 id="ssh-client-setup">SSH Client Setup</h2>
+<p>We will be setting up:</p>
+
+<ol>
+  <li><a href="#ssh-key-authentication-setup">SSH Key Authentication Setup</a></li>
+  <li><a href="#ssh-client-script-optional">SSH Client Script (Optional)</a></li>
+</ol>
+
+<h3 id="ssh-key-authentication-setup">SSH Key Authentication Setup</h3>
+<ol>
+  <li>Setup your SSH keys with <code class="language-plaintext highlighter-rouge">ssh-keygen</code> and use <code class="language-plaintext highlighter-rouge">ssh-copy-id</code> to authorize remote login to your host.
+Run <code class="language-plaintext highlighter-rouge">ssh &lt;user&gt;@&lt;ip_address&gt;</code> to login to your host.
+SSH keys automate login so you don’t need to input your password!</li>
+  <li>
+    <p>Optionally setup a <code class="language-plaintext highlighter-rouge">~/.ssh/config</code> file to simplify the <code class="language-plaintext highlighter-rouge">ssh</code> command</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">Host &lt;some_alias&gt;</span><span class="w">
+</span><span class="gp">    Hostname &lt;ip_address&gt;</span><span class="w">
+</span><span class="gp">    User &lt;username&gt;</span><span class="w">
+</span><span class="gp">    IdentityFile ~/.ssh/&lt;your_private_key&gt;</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>Now you can use <code class="language-plaintext highlighter-rouge">ssh &lt;some_alias&gt;</code>.
+<code class="language-plaintext highlighter-rouge">ssh &lt;some_alias&gt; &lt;commands/script&gt;</code> will execute the command or script on the remote host.</p>
+  </li>
+</ol>
+
+<h3 id="checkpoint">Checkpoint</h3>
+<p>As a sanity check, let’s make sure your setup is working so far!</p>
+
+<h4 id="test-steps">Test Steps</h4>
+<p>With your monitor still plugged into your Sunshine host PC:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">ssh &lt;alias&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">~/scripts/sunshine.sh</code></li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">nvidia-smi</code></p>
+
+    <p>You should see the Sunshine and Xorg processing running:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvidia-smi
+</code></pre></div>    </div>
+
+    <p><em>Output:</em></p>
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">+---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 3070        Off | 00000000:01:00.0  On |                  N/A |
+| 30%   46C    P2              45W / 220W |    549MiB /  8192MiB |      2%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      1393      G   /usr/lib/Xorg                                86MiB |
+|    0   N/A  N/A      1440    C+G   sunshine                                    293MiB |
++---------------------------------------------------------------------------------------+
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check <code class="language-plaintext highlighter-rouge">/dev/uinput</code> permissions</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-l</span> /dev/uinput
+</code></pre></div>    </div>
+
+    <p><em>Output:</em></p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">crw------- 1 &lt;user&gt;</span><span class="w"> </span>&lt;primary_group&gt; 10, 223 Aug 29 17:31 /dev/uinput
+</code></pre></div>    </div>
+  </li>
+  <li>Connect to Sunshine host from a moonlight client</li>
+</ol>
+
+<p>Now kill X and Sunshine by running <code class="language-plaintext highlighter-rouge">pkill X</code> on the host, unplug your monitors from your GPU, and repeat steps 1 - 5.
+You should get the same result.
+With this setup you don’t need to modify the Xorg config regardless if monitors are plugged in or not.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkill X
+</code></pre></div></div>
+
+<h3 id="ssh-client-script-optional">SSH Client Script (Optional)</h3>
+<p>At this point you have a working setup! For convenience, I created this bash script to automate the
+startup of the X server and Sunshine on the host.
+This can be run on Unix systems, or on Windows using the <code class="language-plaintext highlighter-rouge">git-bash</code> or any bash shell.</p>
+
+<p>For Android/iOS you can install Linux emulators, e.g. <code class="language-plaintext highlighter-rouge">Userland</code> for Android and <code class="language-plaintext highlighter-rouge">ISH</code> for iOS.
+The neat part is that you can execute one script to launch Sunshine from your phone or tablet!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+
+<span class="nv">ssh_args</span><span class="o">=</span><span class="s2">"&lt;user&gt;@192.168.X.X"</span> <span class="c"># Or use alias set in ~/.ssh/config</span>
+
+check_ssh<span class="o">(){</span>
+  <span class="nv">result</span><span class="o">=</span>1
+  <span class="c"># Note this checks infinitely, you could update this to have a max # of retries</span>
+  <span class="k">while</span> <span class="o">[[</span> <span class="nv">$result</span> <span class="nt">-ne</span> 0 <span class="o">]]</span>
+  <span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"checking host..."</span>
+    ssh <span class="nv">$ssh_args</span> <span class="s2">"exit 0"</span> 2&gt;/dev/null
+    <span class="nv">result</span><span class="o">=</span><span class="nv">$?</span>
+    <span class="o">[[</span> <span class="nv">$result</span> <span class="nt">-ne</span> 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+      <span class="nb">echo</span> <span class="s2">"Failed to ssh to </span><span class="nv">$ssh_args</span><span class="s2">, with exit code </span><span class="nv">$result</span><span class="s2">"</span>
+    <span class="o">}</span>
+    <span class="nb">sleep </span>3
+  <span class="k">done
+  </span><span class="nb">echo</span> <span class="s2">"Host is ready for streaming!"</span>
+<span class="o">}</span>
+
+start_stream<span class="o">(){</span>
+  <span class="nb">echo</span> <span class="s2">"Starting sunshine server on host..."</span>
+  <span class="nb">echo</span> <span class="s2">"Start moonlight on your client of choice"</span>
+  <span class="c"># -f runs ssh in the background</span>
+  ssh <span class="nt">-f</span> <span class="nv">$ssh_args</span> <span class="s2">"~/scripts/sunshine.sh &amp;"</span>
+<span class="o">}</span>
+
+check_ssh
+start_stream
+<span class="nv">exit_code</span><span class="o">=</span><span class="k">${</span><span class="p">?</span><span class="k">}</span>
+
+<span class="nb">sleep </span>3
+<span class="nb">exit</span> <span class="k">${</span><span class="nv">exit_code</span><span class="k">}</span>
+</code></pre></div></div>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>Congratulations, you can now stream your desktop headless! When trying this the first time,
+keep your monitors close by incase something isn’t working right.</p>
+
+<div class="admonition seealso rounded">
+    <p class="admonition-title">See also</p>
+    <p>
+        
+<p>Now that you have a virtual display, you may want to automate changing the resolution
+and refresh rate prior to connecting to an app. See
+<a href="https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate">Changing Resolution and Refresh Rate</a>
+for more information.</p>
+
+    </p>
+</div>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#community-guide">community-guide</a>
+          
+            <a href="/tags#community-guide-sunshine">community-guide-sunshine</a>
+          
+            <a href="/tags#linux">linux</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <h1>
+                    <i class="fa-fw fas fa-coins"></i>
+                </h1>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Remote+SSH+Headless+Sunshine+Setup&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2023-09-14-remote-ssh-headless-sunshine-setup%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="sr-only">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2023-09-14-remote-ssh-headless-sunshine-setup%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2023-09-14-remote-ssh-headless-sunshine-setup%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/1970-01-01-blog-guide/" data-toggle="tooltip" data-placement="top" title="Blog Guide">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2024-02-01-multi-platform-cpp-development-in-clion/" data-toggle="tooltip" data-placement="top" title="Multi-platform C++ development in CLion">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMzlnm84Cil5m"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (let eleLink=0; eleLink < links.length; eleLink ++) {
+            if ((links[eleLink].href.indexOf('.pdf') !== -1)||(links[eleLink].href.indexOf('.doc') !== -1)||(links[eleLink].href.indexOf('.docx') !== -1)) {
+                links[eleLink].onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin-web-widget.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/discord.js"></script>
+
+<script>
+    window.initDiscord()
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2025
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/guides-community/2023-09-14-remote-ssh-headless-sunshine-setup.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

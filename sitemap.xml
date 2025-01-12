@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://app.lizardbyte.dev/1970-01-01-blog-guide/</loc>
+<lastmod>1970-01-01T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/</loc>
+<lastmod>2023-09-14T00:00:00-04:00</lastmod>
+</url>
+<url>
 <loc>https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</loc>
 <lastmod>2024-02-01T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://app.lizardbyte.dev/2024-04-18-discord-call-cancellation-sunshine-linux/</loc>
+<lastmod>2024-04-18T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/</loc>
+<lastmod>2024-05-24T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/</loc>
+<lastmod>2024-10-16T00:00:00-04:00</lastmod>
 </url>
 <url>
 <loc>https://app.lizardbyte.dev/2025-01-06-welcome/</loc>
@@ -28,5 +48,8 @@
 </url>
 <url>
 <loc>https://app.lizardbyte.dev/terms/</loc>
+</url>
+<url>
+<loc>https://app.lizardbyte.dev/page2/</loc>
 </url>
 </urlset>
