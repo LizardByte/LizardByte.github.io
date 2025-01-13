@@ -1,0 +1,9 @@
+---
+layout: post
+---
+
+{% capture release_heading %}View this release on [GitHub](https://github.com/{{ page.gh-repo }}/releases/tag/{{ page.release-tag }}).{% endcapture %}
+
+{% include admonition.html type="hint" body=release_heading %}
+
+{{ content }}
