@@ -11,13 +11,13 @@ navbar-links:
   GitHub: "https://github.com/LizardByte"
   Resources:
     - Blog: "blog"
-    - Docs: "https://docs.lizardbyte.dev/en/latest/about/overview.html"
+    - Docs: "https://docs.lizardbyte.dev/latest/about/overview.html"
     - Community: "https://github.com/orgs/LizardByte/discussions"
     - Discord: "discord"
     - Support: "support"
     - Status: "https://status.LizardByte.dev"
   Development:
-    - Contributing: "https://docs.lizardbyte.dev/en/latest/developers/contributing.html"
+    - Contributing: "https://docs.lizardbyte.dev/latest/developers/contributing.html"
     - Dashboard: "https://app.lizardbyte.dev/dashboard"
     - Dev Status: "https://status-dev.LizardByte.dev"
 avatar: "/assets/img/navbar-avatar.png"

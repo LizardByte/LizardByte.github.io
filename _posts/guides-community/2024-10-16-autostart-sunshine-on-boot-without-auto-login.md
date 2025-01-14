@@ -599,7 +599,7 @@ turn it back on when needed.
 As Eric Dong recommended, I'll also send you to automate changing your displays.
 You can add multiple commands, to turn off, or configure as many displays as you'd like with the sunshine prep
 commands. See
-[Changing Resolution and Refresh Rate](https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate)
+[Changing Resolution and Refresh Rate](https://docs.lizardbyte.dev/projects/sunshine/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate)
 for more information and remember that the display names for your prep commands, may be different from what you
 found for SDDM.
 " %}
