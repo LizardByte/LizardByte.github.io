@@ -122,7 +122,7 @@ As an alternative to SSH...
 `sunshine &` in your `.xinitrc` file if you start your X server with `startx`.
 In this case, the workaround for `/dev/uinput` permissions is not needed because the udev rule would be triggered
 for \"physical\" login.
-See [Linux Setup](https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2getting__started.html#linux).
+See [Linux Setup](https://docs.lizardbyte.dev/projects/sunshine/master/md_docs_2getting__started.html#linux).
 I personally think autologin compromises the security of the PC, so I went with the remote SSH route.
 I use the PC more than for gaming, so I don't need a virtual display everytime I turn on the PC
 (E.g running updates, config changes, file/media server).
@@ -518,6 +518,6 @@ keep your monitors close by incase something isn't working right.
 {% include admonition.html type="seealso" body="
 Now that you have a virtual display, you may want to automate changing the resolution
 and refresh rate prior to connecting to an app. See
-[Changing Resolution and Refresh Rate](https://docs.lizardbyte.dev/projects/sunshine/en/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate)
+[Changing Resolution and Refresh Rate](https://docs.lizardbyte.dev/projects/sunshine/master/md_docs_2app__examples.html#changing-resolution-and-refresh-rate)
 for more information.
 " %}
