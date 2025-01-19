@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  
+
+  <title>Sunshine v2025.118.151840 Released | LizardByte</title>
+
+  
+  
+  <meta name="author" content="LizardByte-bot">
+  
+
+  <meta name="description" content="Attention This release contains critical security updates. For more information see GHSA-3hrw-xv8h-9499. Please update as soon as possible! This release also contains many new features and bug fixes, including: Implemented automatic resolution and HDR mode changing on Windows. Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows....">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/styles.css">
+    
+  
+
+  
+  
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Sunshine v2025.118.151840 Released | LizardByte">
+  <meta property="og:description" content="Attention This release contains critical security updates. For more information see GHSA-3hrw-xv8h-9499. Please update as soon as possible! This release also contains many new features and bug fixes, including: Implemented automatic resolution and HDR mode changing on Windows. Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows....">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="LizardByte-bot">
+  
+  <meta property="og:article:published_time" content="2025-01-18T00:00:00-05:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Sunshine v2025.118.151840 Released | LizardByte">
+  <meta property="twitter:description" content="Attention This release contains critical security updates. For more information see GHSA-3hrw-xv8h-9499. Please update as soon as possible! This release also contains many new features and bug fixes, including: Implemented automatic resolution and HDR mode changing on Windows. Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows....">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/LizardByte">GitHub</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Development</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+              </div>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json' 
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Sunshine v2025.118.151840 Released</h1>
+          
+          
+           
+            
+              By <strong>LizardByte-bot</strong><br>
+            
+            <span class="post-meta">Posted on January 18, 2025</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=Sunshine&type=fork&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=Sunshine&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        
+
+
+
+
+    
+        
+        
+<div class="admonition hint rounded">
+    <p class="admonition-title">Hint</p>
+    <p>
+        <p>View this release on <a href="https://github.com/LizardByte/Sunshine/releases/tag/">GitHub</a>.</p>
+
+    </p>
+</div>
+
+
+
+<h2 id="attention">Attention</h2>
+
+<p>This release contains critical security updates. For more information see
+<a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-3hrw-xv8h-9499">GHSA-3hrw-xv8h-9499</a>.
+Please update as soon as possible!</p>
+
+<p>This release also contains many new features and bug fixes, including:</p>
+
+<ul>
+  <li>Implemented automatic resolution and HDR mode changing on Windows.</li>
+  <li>Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows.</li>
+  <li>Implemented automatic discovery support for macOS hosts.</li>
+  <li>Added support for capturing displays other than the main display on macOS.</li>
+  <li>Added support for emulating DS5, Nintendo Switch Pro, and Xbox One controllers on Linux.</li>
+  <li>Removed the limit on concurrent streaming sessions.</li>
+  <li>Eliminated the need for driver patching to use NvFBC capture on Linux.</li>
+  <li>Significantly reduced CPU usage for encoding when using AMD GPUs (RDNA or later) on Windows.</li>
+  <li>Fixed video traffic timeout error when streaming from a Hyper-V VM using GPU Paravirtualization.</li>
+  <li>Fixed inability to stream from a Windows machine when using the Microsoft Basic Display Adapter driver.</li>
+  <li>Optimized internal frame handling by eliminating redundant data copies and using functions optimized for SSSE3,
+AVX2, and AVX512.</li>
+  <li>Implemented flow control to reduce the chance of dropped packets by overwhelmed routers or network switches.</li>
+  <li>Reworked the video encoding rate control logic for VA-API to improve bitrate efficiency on Linux.</li>
+  <li>New capture method using Windows.Graphics.Capture API on Windows.
+This is an experimental feature and requires running Sunshine manually.
+It is not compatible with running Sunshine as a service.</li>
+  <li>Clients can now be named and unpaired individually.</li>
+  <li>The web UI now supports dark mode.</li>
+  <li>Checkboxes replace select menus for boolean settings in the web UI.</li>
+  <li>RestAPI improvements.</li>
+</ul>
+
+<p>For a more comprehensive list of user-facing changes, see below.</p>
+
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+  <li>feat(macos/capture): support for capture display other than main display by <a href="https://github.com/TimmyOVO">@TimmyOVO</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2449">#2449</a></li>
+  <li>fix(macos/input): incorrect mouse input for non-main display by <a href="https://github.com/TimmyOVO">@TimmyOVO</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2461">#2461</a></li>
+  <li>webui: Update resolution automation example text with auto refresh rate by <a href="https://github.com/cgarst">@cgarst</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2503">#2503</a></li>
+  <li>fix(linux): add frame processing latency and logging improvements by <a href="https://github.com/gschintgen">@gschintgen</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2502">#2502</a></li>
+  <li>AppImage: add needed VA-API libraries (Intel &amp; AMD) by <a href="https://github.com/gschintgen">@gschintgen</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2429">#2429</a></li>
+  <li>Allow a custom FFmpeg build to be provided using CMake variables by <a href="https://github.com/chewi">@chewi</a> in <a href="https://github.com/LizardByte/Sunshine/pull/1970">#1970</a></li>
+  <li>Fix log message for Periodic Ping by <a href="https://github.com/c3m3gyanesh">@c3m3gyanesh</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2538">#2538</a></li>
+  <li>feat(ui): Dark Mode by <a href="https://github.com/Hazer">@Hazer</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2493">#2493</a></li>
+  <li>build(win): use UCRT64 environment instead of MinGW64. by <a href="https://github.com/tez011">@tez011</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2323">#2323</a></li>
+  <li>feat(win): new capture method, Windows.Graphics.Capture  by <a href="https://github.com/tez011">@tez011</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2580">#2580</a></li>
+  <li>Name and unpair individual clients by <a href="https://github.com/xanderfrangos">@xanderfrangos</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2042">#2042</a></li>
+  <li>feat(audio): custom surround-params by <a href="https://github.com/mariotaku">@mariotaku</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2424">#2424</a></li>
+  <li>Remove the need for a patched nvidia library for NvFBC. by <a href="https://github.com/hgaiser">@hgaiser</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2471">#2471</a></li>
+  <li>build(linux): add homebrew support by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2667">#2667</a></li>
+  <li>fix(macos): Mouse input broken in-game by <a href="https://github.com/Hazer">@Hazer</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2550">#2550</a></li>
+  <li>feat(input/linux): add support for more virtual input devices by <a href="https://github.com/Hazer">@Hazer</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2606">#2606</a></li>
+  <li>fix(linux/input): battery values conversion by <a href="https://github.com/ABeltramo">@ABeltramo</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2715">#2715</a></li>
+  <li>feat: add min_fps_target setting by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/1043">#1043</a></li>
+  <li>fix(upnp): support newer miniupnpc library by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2782">#2782</a></li>
+  <li>macOS: New implementation of service publication by <a href="https://github.com/cathyjf">@cathyjf</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2786">#2786</a></li>
+  <li>build(linux): drop support for AUR by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2819">#2819</a></li>
+  <li>Implement basic network flow control by <a href="https://github.com/ns6089">@ns6089</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2803">#2803</a></li>
+  <li>Provide SSSE3, AVX2, and AVX512 optimized Reed-Solomon functions by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2828">#2828</a></li>
+  <li>Eliminate a redundant alloc+copy of each frame by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2852">#2852</a></li>
+  <li>Implement S/G IO for non-batched sends and eliminate more data copies by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2867">#2867</a></li>
+  <li>Implement S/G IO for batched sends and eliminate another frame copy by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2874">#2874</a></li>
+  <li>Migrate audio pipeline to float from 16-bit integer by <a href="https://github.com/ns6089">@ns6089</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2873">#2873</a></li>
+  <li>Handle CTRL_CLOSE_EVENT on Windows by <a href="https://github.com/ns6089">@ns6089</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2952">#2952</a></li>
+  <li>feat!: drop advertised resolutions and fps by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2924">#2924</a></li>
+  <li>fix(linux): ensure NvFBC capture works after multiple sessions by <a href="https://github.com/insanemal">@insanemal</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3020">#3020</a></li>
+  <li>feat(win/video): support native YUV 4:4:4 encoding by <a href="https://github.com/ns6089">@ns6089</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2533">#2533</a></li>
+  <li>fix(linux): enable lowlatency mode for AMD by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3088">#3088</a></li>
+  <li>fix(nvhttp): wrap TLS socket to ensure graceful closure by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3077">#3077</a></li>
+  <li>fix(mdns): don’t hardcode mDNS instance name by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3084">#3084</a></li>
+  <li>fix(win/video): don’t offload chroma subsampling math to texture sampler when downscaling by <a href="https://github.com/ns6089">@ns6089</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3014">#3014</a></li>
+  <li>build(cmake): Prioritize vendored includes over system-wide by <a href="https://github.com/jmou">@jmou</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3182">#3182</a></li>
+  <li>fix(macos): Touch input broken by <a href="https://github.com/BayLee4">@BayLee4</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3240">#3240</a></li>
+  <li>fix(video): encode at least one frame before capture reinit by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3300">#3300</a></li>
+  <li>fix: Reverse Proxy support by <a href="https://github.com/Degot">@Degot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3173">#3173</a></li>
+  <li>feat(stream)!: remove limit on concurrent sessions and allow quitting apps with active sessions by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3325">#3325</a></li>
+  <li>fix(nvenc): disable filler data in AV1 bitstream by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3336">#3336</a></li>
+  <li>feat(vaapi): add option to enable strict enforcement of frame size by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3332">#3332</a></li>
+  <li>fix(macos): prevent indefinite hanging if screen capture is not granted by <a href="https://github.com/cathyjf">@cathyjf</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3360">#3360</a></li>
+  <li>fix(process): avoid leaking zombies and fds in detached processes by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3379">#3379</a></li>
+  <li>fix(hostname): fix handling of non-ASCII hostnames on Windows by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3382">#3382</a></li>
+  <li>feat(display)!: Add libdisplaydevice dependency and output name mapping by <a href="https://github.com/FrogTheFrog">@FrogTheFrog</a> in <a href="https://github.com/LizardByte/Sunshine/pull/2894">#2894</a></li>
+  <li>fix(nvenc): Enable opt-in client refresh by client by <a href="https://github.com/TheElixZammuto">@TheElixZammuto</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3415">#3415</a></li>
+  <li>fix(shaders/directx): replace modulus with bitwise operator by <a href="https://github.com/iMakeSoftware">@iMakeSoftware</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3499">#3499</a></li>
+  <li>feat(display): Configure display device based on user config by <a href="https://github.com/FrogTheFrog">@FrogTheFrog</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3441">#3441</a></li>
+  <li>fix(confighttp): do not return 200 on errors by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3385">#3385</a></li>
+  <li>feat(display): add display mode remapping option by <a href="https://github.com/FrogTheFrog">@FrogTheFrog</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3529">#3529</a></li>
+  <li>fix(capture/windows): fix capture when using the basic render driver by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3531">#3531</a></li>
+  <li>feat(capture/windows): hook APIs to avoid output reparenting that breaks DDA by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3530">#3530</a></li>
+  <li>fix(checkbox): inverse global prep values for apps by <a href="https://github.com/FrogTheFrog">@FrogTheFrog</a> in <a href="https://github.com/LizardByte/Sunshine/pull/3547">#3547</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+  <li><a href="https://github.com/TimmyOVO">@TimmyOVO</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2449">#2449</a></li>
+  <li><a href="https://github.com/cgarst">@cgarst</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2503">#2503</a></li>
+  <li><a href="https://github.com/skryvel">@skryvel</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2514">#2514</a></li>
+  <li><a href="https://github.com/c3m3gyanesh">@c3m3gyanesh</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2538">#2538</a></li>
+  <li><a href="https://github.com/BeeLeDev">@BeeLeDev</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2555">#2555</a></li>
+  <li><a href="https://github.com/xanderfrangos">@xanderfrangos</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2042">#2042</a></li>
+  <li><a href="https://github.com/hgaiser">@hgaiser</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2471">#2471</a></li>
+  <li><a href="https://github.com/cathyjf">@cathyjf</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2786">#2786</a></li>
+  <li><a href="https://github.com/cfalas">@cfalas</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/2841">#2841</a></li>
+  <li><a href="https://github.com/insanemal">@insanemal</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3020">#3020</a></li>
+  <li><a href="https://github.com/jmou">@jmou</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3183">#3183</a></li>
+  <li><a href="https://github.com/BayLee4">@BayLee4</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3240">#3240</a></li>
+  <li><a href="https://github.com/andygrundman">@andygrundman</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3294">#3294</a></li>
+  <li><a href="https://github.com/midwesternrodent">@midwesternrodent</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3287">#3287</a></li>
+  <li><a href="https://github.com/caveat-makes-software">@caveat-makes-software</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3264">#3264</a></li>
+  <li><a href="https://github.com/Degot">@Degot</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3173">#3173</a></li>
+  <li><a href="https://github.com/soerenkampschroer">@soerenkampschroer</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3348">#3348</a></li>
+  <li><a href="https://github.com/davidemarcoli">@davidemarcoli</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3356">#3356</a></li>
+  <li><a href="https://github.com/MiroKaku">@MiroKaku</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3416">#3416</a></li>
+  <li><a href="https://github.com/petrhanak">@petrhanak</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3490">#3490</a></li>
+  <li><a href="https://github.com/iMakeSoftware">@iMakeSoftware</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3499">#3499</a></li>
+  <li><a href="https://github.com/Gurubaseio">@Gurubaseio</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/3466">#3466</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/LizardByte/Sunshine/compare/v0.23.1…v2025.118.151840</p>
+
+<hr />
+<h2 id="contributors">Contributors</h2>
+<p><a href="https://github.com/ReenigneArcher" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ReenigneArcher"><img src="https://github.com/ReenigneArcher.png?size=40" width="40" height="40" alt="ReenigneArcher" title="ReenigneArcher: 139 merges" /></a><a href="https://github.com/dependabot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, dependabot"><img src="https://github.com/dependabot.png?size=40" width="40" height="40" alt="dependabot" title="dependabot: 98 merges" /></a><a href="https://github.com/cgutman" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cgutman"><img src="https://github.com/cgutman.png?size=40" width="40" height="40" alt="cgutman" title="cgutman: 27 merges" /></a><a href="https://github.com/LizardByte-bot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, LizardByte-bot"><img src="https://github.com/LizardByte-bot.png?size=40" width="40" height="40" alt="LizardByte-bot" title="LizardByte-bot: 21 merges" /></a><a href="https://github.com/ns6089" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ns6089"><img src="https://github.com/ns6089.png?size=40" width="40" height="40" alt="ns6089" title="ns6089: 17 merges" /></a><a href="https://github.com/FrogTheFrog" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, FrogTheFrog"><img src="https://github.com/FrogTheFrog.png?size=40" width="40" height="40" alt="FrogTheFrog" title="FrogTheFrog: 14 merges" /></a><a href="https://github.com/Hazer" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Hazer"><img src="https://github.com/Hazer.png?size=40" width="40" height="40" alt="Hazer" title="Hazer: 8 merges" /></a><a href="https://github.com/gschintgen" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, gschintgen"><img src="https://github.com/gschintgen.png?size=40" width="40" height="40" alt="gschintgen" title="gschintgen: 7 merges" /></a><a href="https://github.com/cathyjf" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cathyjf"><img src="https://github.com/cathyjf.png?size=40" width="40" height="40" alt="cathyjf" title="cathyjf: 5 merges" /></a><a href="https://github.com/TimmyOVO" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, TimmyOVO"><img src="https://github.com/TimmyOVO.png?size=40" width="40" height="40" alt="TimmyOVO" title="TimmyOVO: 3 merges" /></a><a href="https://github.com/jmou" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, jmou"><img src="https://github.com/jmou.png?size=40" width="40" height="40" alt="jmou" title="jmou: 3 merges" /></a><a href="https://github.com/tez011" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, tez011"><img src="https://github.com/tez011.png?size=40" width="40" height="40" alt="tez011" title="tez011: 3 merges" /></a><a href="https://github.com/BayLee4" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, BayLee4"><img src="https://github.com/BayLee4.png?size=40" width="40" height="40" alt="BayLee4" title="BayLee4: 2 merges" /></a><a href="https://github.com/BeeLeDev" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, BeeLeDev"><img src="https://github.com/BeeLeDev.png?size=40" width="40" height="40" alt="BeeLeDev" title="BeeLeDev: 2 merges" /></a><a href="https://github.com/Degot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Degot"><img src="https://github.com/Degot.png?size=40" width="40" height="40" alt="Degot" title="Degot: 2 merges" /></a><a href="https://github.com/Gurubaseio" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Gurubaseio"><img src="https://github.com/Gurubaseio.png?size=40" width="40" height="40" alt="Gurubaseio" title="Gurubaseio: 2 merges" /></a><a href="https://github.com/MiroKaku" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, MiroKaku"><img src="https://github.com/MiroKaku.png?size=40" width="40" height="40" alt="MiroKaku" title="MiroKaku: 2 merges" /></a><a href="https://github.com/andygrundman" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, andygrundman"><img src="https://github.com/andygrundman.png?size=40" width="40" height="40" alt="andygrundman" title="andygrundman: 2 merges" /></a><a href="https://github.com/c3m3gyanesh" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, c3m3gyanesh"><img src="https://github.com/c3m3gyanesh.png?size=40" width="40" height="40" alt="c3m3gyanesh" title="c3m3gyanesh: 2 merges" /></a><a href="https://github.com/caveat-makes-software" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, caveat-makes-software"><img src="https://github.com/caveat-makes-software.png?size=40" width="40" height="40" alt="caveat-makes-software" title="caveat-makes-software: 2 merges" /></a><a href="https://github.com/cfalas" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cfalas"><img src="https://github.com/cfalas.png?size=40" width="40" height="40" alt="cfalas" title="cfalas: 2 merges" /></a><a href="https://github.com/cgarst" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cgarst"><img src="https://github.com/cgarst.png?size=40" width="40" height="40" alt="cgarst" title="cgarst: 2 merges" /></a><a href="https://github.com/chewi" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, chewi"><img src="https://github.com/chewi.png?size=40" width="40" height="40" alt="chewi" title="chewi: 2 merges" /></a><a href="https://github.com/davidemarcoli" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, davidemarcoli"><img src="https://github.com/davidemarcoli.png?size=40" width="40" height="40" alt="davidemarcoli" title="davidemarcoli: 2 merges" /></a><a href="https://github.com/hgaiser" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, hgaiser"><img src="https://github.com/hgaiser.png?size=40" width="40" height="40" alt="hgaiser" title="hgaiser: 2 merges" /></a><a href="https://github.com/iMakeSoftware" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, iMakeSoftware"><img src="https://github.com/iMakeSoftware.png?size=40" width="40" height="40" alt="iMakeSoftware" title="iMakeSoftware: 2 merges" /></a><a href="https://github.com/insanemal" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, insanemal"><img src="https://github.com/insanemal.png?size=40" width="40" height="40" alt="insanemal" title="insanemal: 2 merges" /></a><a href="https://github.com/kelvie" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, kelvie"><img src="https://github.com/kelvie.png?size=40" width="40" height="40" alt="kelvie" title="kelvie: 2 merges" /></a><a href="https://github.com/midwesternrodent" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, midwesternrodent"><img src="https://github.com/midwesternrodent.png?size=40" width="40" height="40" alt="midwesternrodent" title="midwesternrodent: 2 merges" /></a><a href="https://github.com/petrhanak" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, petrhanak"><img src="https://github.com/petrhanak.png?size=40" width="40" height="40" alt="petrhanak" title="petrhanak: 2 merges" /></a><a href="https://github.com/skryvel" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, skryvel"><img src="https://github.com/skryvel.png?size=40" width="40" height="40" alt="skryvel" title="skryvel: 2 merges" /></a><a href="https://github.com/soerenkampschroer" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, soerenkampschroer"><img src="https://github.com/soerenkampschroer.png?size=40" width="40" height="40" alt="soerenkampschroer" title="soerenkampschroer: 2 merges" /></a><a href="https://github.com/xanderfrangos" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, xanderfrangos"><img src="https://github.com/xanderfrangos.png?size=40" width="40" height="40" alt="xanderfrangos" title="xanderfrangos: 2 merges" /></a><a href="https://github.com/ABeltramo" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ABeltramo"><img src="https://github.com/ABeltramo.png?size=40" width="40" height="40" alt="ABeltramo" title="ABeltramo: 1 merge" /></a><a href="https://github.com/Nonary" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Nonary"><img src="https://github.com/Nonary.png?size=40" width="40" height="40" alt="Nonary" title="Nonary: 1 merge" /></a><a href="https://github.com/TheElixZammuto" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, TheElixZammuto"><img src="https://github.com/TheElixZammuto.png?size=40" width="40" height="40" alt="TheElixZammuto" title="TheElixZammuto: 1 merge" /></a><a href="https://github.com/mariotaku" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, mariotaku"><img src="https://github.com/mariotaku.png?size=40" width="40" height="40" alt="mariotaku" title="mariotaku: 1 merge" /></a><a href="https://github.com/sitiom" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, sitiom"><img src="https://github.com/sitiom.png?size=40" width="40" height="40" alt="sitiom" title="sitiom: 1 merge" /></a></p>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#release">release</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <h1>
+                    <i class="fa-fw fas fa-coins"></i>
+                </h1>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Sunshine+v2025.118.151840+Released&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2025-01-18-v2025.118.151840%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="sr-only">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2025-01-18-v2025.118.151840%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2025-01-18-v2025.118.151840%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2025-01-06-welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMzlnm84Cil5m"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (let eleLink=0; eleLink < links.length; eleLink ++) {
+            if ((links[eleLink].href.indexOf('.pdf') !== -1)||(links[eleLink].href.indexOf('.doc') !== -1)||(links[eleLink].href.indexOf('.docx') !== -1)) {
+                links[eleLink].onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/crowdin-web-widget.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2024.921.191855/dist/discord.js"></script>
+
+<script>
+    window.initDiscord()
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2025
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/releases/2025-01-18-v2025.118.151840.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

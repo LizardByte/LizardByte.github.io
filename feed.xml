@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2025.118.151840 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see GHSA-3hrw-xv8h-9499. Please update as soon as possible! This release also contains many new features and bug fixes, including: Implemented automatic resolution and HDR mode changing on Windows. Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows....
+        </description>
+        <pubDate>Sat, 18 Jan 2025 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/</guid>
+      </item>
+    
+      <item>
         <title>Welcome</title>
         <description>
           to the blog of LizardByte! - 
