@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2025.122.141614 Released</title>
+        <description>
+          
+          What’s Changed build(linux)!: remove legacy input option by @ReenigneArcher in #3562 fix(flatpak): fix broken desktop file, icons, and service by @ReenigneArcher in #3561 fix(web-ui): fix new version notification conditions by @ReenigneArcher in #3577 chore(l10n): update translations by @LizardByte-bot in #3563 New Contributors @CodyManess made their first contribution in #3558 Full...
+        </description>
+        <pubDate>Wed, 22 Jan 2025 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2025-01-22-v2025.122.141614/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-22-v2025.122.141614/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2025.118.151840 Released</title>
         <description>
           
