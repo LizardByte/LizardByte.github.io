@@ -69,8 +69,8 @@ giscus:
   hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
   repository: LizardByte/community  # GitHub username/repository eg. "daattali/beautiful-jekyll"
   repository-id: R_kgDOMzlnmw  # ID of your repository, retrieve this info from https://giscus.app
-  category: Announcements  # Category name of your GitHub Discussion posts
-  category-id: DIC_kwDOMzlnm84Cil5m  # ID of your category, retrieve this info from https://giscus.app
+  category: Blog  # Category name of your GitHub Discussion posts
+  category-id: DIC_kwDOMzlnm84CnN1j  # ID of your category, retrieve this info from https://giscus.app
   mapping: pathname
   strict: 1
   reactions-enabled: 1
