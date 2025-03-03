@@ -95,20 +95,20 @@ jobs:
         run: |
           case "${{ inputs.extract_archive }}" in
             *.tar.gz|*.tgz)
-              tar -xzf ${{ inputs.extract_archive }} -C .
+              tar -xzf "${{ inputs.extract_archive }}" -C .
               ;;
             *.tar)
-              tar -xf ${{ inputs.extract_archive }} -C .
+              tar -xf "${{ inputs.extract_archive }}" -C .
               ;;
             *.zip)
-              7z x ${{ inputs.extract_archive }} -o.
+              7z x "${{ inputs.extract_archive }}" -o.
               ;;
             *)
               echo "Unsupported archive format"
               exit 1
               ;;
           esac
-          rm -f ${{ inputs.extract_archive }}
+          rm -f "${{ inputs.extract_archive }}"
 
       - name: Setup project
         if: ${{ github.repository == 'LizardByte/LizardByte.github.io' }}
