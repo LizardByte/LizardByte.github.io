@@ -66,3 +66,77 @@ jobs:
 ```
 
 For additional options see [jekyll-build.yml](.github/workflows/jekyll-build.yml)
+
+### PR Previews
+
+Changes to gh-pages can be previewed, by setting up the project in ReadTheDocs.
+It is recommended to use the following manual configuration:
+
+Initial setup:
+```yml
+Name: LizardByte-gh-pages-<repo_name>  # the project slug cannot be changed after creation
+Repository URL: https://github.com/LizardByte/<repo_name>.git
+Default-branch: master
+Language: English
+```
+
+Project Settings:
+```yml
+Connected-repository: https://github.com/LizardByte/<repo_name>.git
+URL-versioning-scheme: Multiple versions without translations
+Path-for-.readthedocs.yaml:  # only set if not in the root of the repo
+Programming-Language: Other
+Project-homepage: https://app.lizardbyte.dev/<repo_name>
+Description: Preview PRs for gh-pages
+Build-pull-requests-for-this-project: true
+```
+
+Environment Variables:
+```yml
+# REQUIRED
+GITHUB_WORKFLOW: call-jekyll-build / Build Jekyll
+SITE_ARTIFACT: prep.zip  # the name of the artifact to look for in the workflow
+
+# OPTIONAL
+CONFIG_FILE: _config.yml
+EXTRACT_ARCHIVE: pre_built_database.zip  # if there is a nested archive to extract
+GITHUB_TIMEOUT: 10  # timeout in minutes to use when searching for GitHub artifacts, max 15
+THEME_REF: master
+``` 
+
+Additionally, do the following:
+
+1. Deactivate the `stable` version
+2. Make the `latest` version hidden
+3. Add project as a subproject of `LizardByte-gh-pages-main`
+4. Update branch protection rules in GitHub repo settings to require status checks from ReadTheDocs
+5. Add the below `.readthedocs.yaml` file to the root of the repo, or a custom path as specified in the project settings
+
+```yml
+---
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+build:
+  os: ubuntu-24.04
+  tools:
+    ruby: "3.3"
+  apt_packages:
+    - 7zip
+    - jq
+  jobs:
+    install:
+      - |
+        mkdir -p "./tmp"
+        branch="master"
+        base_url="https://raw.githubusercontent.com/LizardByte/LizardByte.github.io"
+        url="${base_url}/refs/heads/${branch}/scripts/readthedocs_build.sh"
+        curl -sSL -o "./tmp/readthedocs_build.sh" "${url}"
+        chmod +x "./tmp/readthedocs_build.sh"
+    build:
+      html:
+        - "./tmp/readthedocs_build.sh"
+
+```
