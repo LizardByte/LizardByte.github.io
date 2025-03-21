@@ -7,7 +7,7 @@ site_artifact=$(echo "$SITE_ARTIFACT" | tr -d "'")
 
 # OPTIONAL ENVIRONMENT VARIABLES (for subprojects)
 config_file=$(echo "$CONFIG_FILE" | tr -d "'")
-extract_archive=$(echo "$EXTRACT_ARCHVIE" | tr -d "'")
+extract_archive=$(echo "$EXTRACT_ARCHIVE" | tr -d "'")
 github_timeout=$GITHUB_TIMEOUT
 theme_ref=$THEME_REF
 
