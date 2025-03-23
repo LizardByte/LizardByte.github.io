@@ -109,7 +109,7 @@ $(document).ready(function(){
                     })
 
                     let star_link = document.createElement("a")
-                    star_link.className = "nav-link nav-link-sm text-white ms-3"
+                    star_link.className = "nav-link nav-link-sm text-white ms-3 crowdin-ignore"
                     star_link.href = `https://star-history.com/#${sorted[repo]['full_name']}`
                     star_link.target = "_blank"
                     star_link.textContent = window.formatNumber(sorted[repo]['stargazers_count'])
@@ -120,7 +120,7 @@ $(document).ready(function(){
                     star_link.prepend(star_link_image)
 
                     let fork_link = document.createElement("a")
-                    fork_link.className = "nav-link nav-link-sm text-white ms-3"
+                    fork_link.className = "nav-link nav-link-sm text-white ms-3 crowdin-ignore"
                     fork_link.href = `https://github.com/${sorted[repo]['full_name']}/network/members`
                     fork_link.target = "_blank"
                     fork_link.textContent = window.formatNumber(sorted[repo]['forks'])
