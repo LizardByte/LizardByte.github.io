@@ -12,6 +12,12 @@ The page is built using jekyll and hosted on GitHub Pages.
 
 [![CrowdIn graph](https://app.lizardbyte.dev/dashboard/crowdin/LizardByte_graph.svg)](https://translate.lizardbyte.dev)
 
+<p align="center">
+  <a href="https://translate.lizardbyte.dev" aria-label="CrowdIn">
+    <img src='https://raw.githubusercontent.com/LizardByte/contributors/refs/heads/dist/crowdin.svg'/>
+  </a>
+</p>
+
 ### Reusable Workflow
 
 This repo contains a reusable workflow to allow for building gh-pages subprojects using the same configuration.
