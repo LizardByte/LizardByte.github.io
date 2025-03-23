@@ -138,9 +138,20 @@ $(document).ready(function(){
                         project_repo = project_repo.toLowerCase();
 
                         if (docs_repo === project_repo) {
+                            let docs_url = readthedocs[docs]['urls']['documentation']
+                            try {
+                                let parsedUrl = new URL(docs_url);
+                                if (parsedUrl.host !== "docs.lizardbyte.dev") {
+                                    continue;
+                                }
+                            } catch (e) {
+                                console.error("Invalid URL:", docs_url);
+                                continue;
+                            }
+
                             let docs_link = document.createElement("a")
                             docs_link.className = "nav-link text-warning ms-3"
-                            docs_link.href = readthedocs[docs]['urls']['documentation']
+                            docs_link.href = docs_url
                             docs_link.target = "_blank"
                             repo_data_row.appendChild(docs_link)
 
