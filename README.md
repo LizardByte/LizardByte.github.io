@@ -14,7 +14,7 @@ The page is built using jekyll and hosted on GitHub Pages.
 
 <p align="center">
   <a href="https://translate.lizardbyte.dev" aria-label="CrowdIn">
-    <img src='https://raw.githubusercontent.com/LizardByte/contributors/refs/heads/dist/crowdin.svg'/>
+    <img src='https://raw.githubusercontent.com/LizardByte/contributors/refs/heads/dist/crowdin.606145.svg'/>
   </a>
 </p>
 
