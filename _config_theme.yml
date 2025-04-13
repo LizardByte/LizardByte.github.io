@@ -63,7 +63,13 @@ sass:
   sass_dir: _sass
   style: compressed
 site-css:
+  - "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2025.326.11214/dist/crowdin-bootstrap-css.css"
   - "/assets/css/styles.css"
+site-js:
+  - "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2025.326.11214/dist/crowdin.js"
+  - "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2025.326.11214/dist/discord.js"
+  - "/assets/js/crowdin-init.js"
+  - "/assets/js/discord-init.js"
 gtag: "G-SSW90X5YZX"
 giscus:
   hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
