@@ -36,6 +36,7 @@ share-links-active:
   twitter: true
   facebook: true
   linkedin: true
+  reddit: true
   vk: false
 remove-ads: true  # remove the "Powered by Beautiful Jekyll" text in the footer
 url-pretty: "app.LizardByte.dev"
