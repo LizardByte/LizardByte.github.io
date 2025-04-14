@@ -25,6 +25,14 @@
 }, 
  
 { 
+"title"    : "Signing Git Commits in Windows", 
+"desc"     : "Signing Git Commits in Windows", 
+"category" : "dev, git, github, guide, windows", 
+"url"      : "/2024-12-08-git-commit-signing-in-windows/", 
+"date"     : "December  8, 2024" 
+}, 
+ 
+{ 
 "title"    : "Autostart Sunshine on Boot without Auto-Login", 
 "desc"     : "Autostart Sunshine on Boot without Auto-Login", 
 "category" : "community-guide, community-guide-sunshine, linux, sunshine", 

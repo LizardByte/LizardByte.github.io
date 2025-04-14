@@ -45,6 +45,17 @@
       </item>
     
       <item>
+        <title>Signing Git Commits in Windows</title>
+        <description>
+          How to sign your Git commits in Windows using GPG and Kleopatra - 
+          Introduction Have you ever wanted to sign your Git commits, and get the fancy Verified badge on your commits in GitHub? This post will show you how to sign your Git commits in Windows using GPG and Kleopatra. Prerequisites Download and install Gpg4win, ensuring that Kleopatra option is selected. Create...
+        </description>
+        <pubDate>Sun, 08 Dec 2024 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/</guid>
+      </item>
+    
+      <item>
         <title>Autostart Sunshine on Boot without Auto-Login</title>
         <description>
           
