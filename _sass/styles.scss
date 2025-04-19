@@ -79,6 +79,10 @@ code {
     height: 40px;
 }
 
+.icon img.invert {
+    filter: invert(1);
+}
+
 /* code blocks */
 .highlight {
   border-radius: 0.5rem;
