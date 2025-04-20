@@ -73,13 +73,21 @@ code {
     transform: scale(1.1);
 }
 
-.icon img {
+.icon img, img.icon {
     /* remove max-width from beautiful-jekyll */
     max-width: none;
-    height: 40px;
+    height: 2.25em;
+}
+.icon-sm img, img.icon-sm {
+    max-width: none;
+    height: 1.25em;
+}
+.icon-lg img, img.icon-lg {
+    max-width: none;
+    height: 3.25em;
 }
 
-.icon img.invert {
+img.invert {
     filter: invert(1);
 }
 
