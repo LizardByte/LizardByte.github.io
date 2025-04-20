@@ -90,6 +90,9 @@ code {
 img.invert {
     filter: invert(1);
 }
+.btn:hover img.invert {
+    filter: invert(0);
+}
 
 /* code blocks */
 .highlight {
