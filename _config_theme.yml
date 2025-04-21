@@ -18,6 +18,7 @@ navbar-links:
     - Status: "https://status.LizardByte.dev"
   Development:
     - Contributing: "https://docs.lizardbyte.dev/latest/developers/contributing.html"
+    - Roadmap: "roadmap"
     - Dashboard: "https://app.lizardbyte.dev/dashboard"
     - Dev Status: "https://status-dev.LizardByte.dev"
 avatar: "/assets/img/navbar-avatar.png"

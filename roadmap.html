@@ -1,0 +1,47 @@
+---
+title: Roadmap
+layout: page
+full-width: true
+cover-img:
+  - /assets/img/banners/roadmap.jpg
+ext-js:
+  - https://cdn.jsdelivr.net/npm/marked@15.0.8/marked.min.js
+js:
+  - /assets/js/roadmap.js
+---
+
+<!-- Roadmap section-->
+<section class="py-5" id="Roadmap">
+    <div class="container my-5">
+        <div class="row gx-5" id="issues-container">
+            <p>Loading roadmap items...</p>
+        </div>
+
+        <div class="row gx-5 justify-content-center mt-4">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <a href="https://github.com/LizardByte/roadmap/issues" target="_blank" class="btn btn-outline-light rounded-0">
+                    View All
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="issueModal" tabindex="-1" aria-labelledby="issueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="issueModalLabel">Issue Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-theme="dark" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="issueModalBody">
+                <!-- Content will be inserted here dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#" class="btn btn-primary" id="viewOnGithub" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
