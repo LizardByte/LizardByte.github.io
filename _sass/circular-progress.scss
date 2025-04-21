@@ -1,0 +1,101 @@
+.circular-button {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: none;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-button:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #2b3035;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circular-button > span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.circular-button .progress-left {
+  left: 0.5px;  // fix gap between left and right progress bars
+}
+
+.circular-button .progress-right {
+  right: 0.5px;  // fix gap between left and right progress bars
+}
+
+.circular-button .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 5px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.circular-button .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border-left: 0;
+  transform-origin: center left;
+}
+
+.circular-button .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-right: 0;
+  transform-origin: center right;
+}
+
+.circular-button .button-content {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #2b3035;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 2;
+  text-align: center;
+}
+
+.circular-button .button-name {
+  font-weight: bold;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.circular-button .button-value {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.circular-button .progress-bar {
+  border-color: #0d6efd;
+}
+
+.circular-button.active .button-content {
+  box-shadow: 0 0 10px 3px rgba(13, 110, 253, 0.5);
+}

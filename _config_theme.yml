@@ -16,6 +16,8 @@ navbar-links:
     - Discord: "discord"
     - Support: "support"
     - Status: "https://status.LizardByte.dev"
+  Tools:
+    - Gamepad Tester: "gamepad-tester"
   Development:
     - Contributing: "https://docs.lizardbyte.dev/latest/developers/contributing.html"
     - Roadmap: "roadmap"
