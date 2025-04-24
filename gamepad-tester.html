@@ -1,0 +1,178 @@
+---
+title: Gamepad Tester
+layout: page
+full-width: true
+css:
+  - /assets/css/hide-heading.css
+ext-js:
+  - https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js
+js:
+  - /assets/js/gamepad-helper.js
+  - /assets/js/gamepad-tester.js
+---
+
+<!-- Gamepad Tester section -->
+<section class="py-0" id="GamepadTester">
+    <div class="container my-0">
+        <div class="row mb-2">
+            <div class="col-12 text-center">
+                <h2 class="fw-bolder mb-1">Gamepad Tester</h2>
+                <p class="lead mb-2">Connect a controller to test its inputs and functionality</p>
+                <div id="gamepad-status" class="alert alert-warning py-1 mb-2">No gamepad detected. Connect a gamepad and press any button.</div>
+            </div>
+        </div>
+
+        <div class="row mb-2" id="gamepad-selector-container" style="display: none;">
+            <div class="col-md-6 mx-auto">
+                <div class="input-group">
+                    <label for="gamepad-selector" class="input-group-text">Gamepad:</label>
+                    <select class="form-select" id="gamepad-selector"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3" id="gamepad-info" style="display: none;">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Gamepad Info</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-sm mb-0">
+                                <tbody>
+                                <tr><th>ID</th><td id="gamepad-id">-</td></tr>
+                                <tr><th>Index</th><td id="gamepad-index">-</td></tr>
+                                <tr><th>Connected</th><td id="gamepad-connected">-</td></tr>
+                                <tr><th>Mapping</th><td id="gamepad-mapping">-</td></tr>
+                                <tr><th>Buttons</th><td id="gamepad-buttons-count">-</td></tr>
+                                <tr><th>Axes</th><td id="gamepad-axes-count">-</td></tr>
+                                <tr><th>Type</th><td id="gamepad-type">-</td></tr>
+                                <tr><th>Name</th><td id="gamepad-name">-</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Vibration Test</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div id="vibration-status" class="small mb-2"></div>
+
+                        <div id="dual-rumble-controls" class="d-none">
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-weak" class="form-label me-2 mb-0" style="width: 100px;">Weak: <span id="weak-value">0.1</span></label>
+                                    <input type="range" class="form-range" id="vibration-weak" min="0" max="1" step="0.01" value="0.1">
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-strong" class="form-label me-2 mb-0" style="width: 100px;">Strong: <span id="strong-value">0.1</span></label>
+                                    <input type="range" class="form-range" id="vibration-strong" min="0" max="1" step="0.01" value="0.1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="simple-vibration-controls" class="d-none">
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-magnitude" class="form-label me-2 mb-0" style="width: 100px;">Magnitude: <span id="magnitude-value">0.5</span></label>
+                                    <input type="range" class="form-range" id="vibration-magnitude" min="0" max="1" step="0.01" value="0.5">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="vibration-duration-controls" class="mb-2">
+                            <div class="d-flex align-items-center">
+                                <label for="vibration-duration" class="form-label me-2 mb-0" style="width: 100px;">Duration: <span id="duration-value">1000</span>ms</label>
+                                <input type="range" class="form-range" id="vibration-duration" min="100" max="5000" step="100" value="1000">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between" id="vibration-buttons">
+                            <button id="vibrate-btn" class="btn btn-sm btn-primary">Vibrate</button>
+                            <button id="stop-vibration-btn" class="btn btn-sm btn-danger">Stop</button>
+                        </div>
+
+                        <div id="vibration-unsupported" class="d-none">
+                            <div class="alert alert-warning mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Vibration not supported by this gamepad or browser.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Buttons</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div id="buttons-container" class="d-flex flex-wrap gap-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Axes</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="row g-1" id="axes-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Sticks</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h6 class="mb-1">Left Stick</h6>
+                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
+                                        <div id="left-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
+                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h6 class="mb-1">Right Stick</h6>
+                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
+                                        <div id="right-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
+                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 d-none">
+                <div class="card bg-dark text-white">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Raw Data</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <pre id="raw-data" class="bg-dark text-light p-2 rounded mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
