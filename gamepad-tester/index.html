@@ -11,14 +11,14 @@
 
   
 
-  <title>Signing Git Commits in Windows | LizardByte</title>
+  <title>Gamepad Tester | LizardByte</title>
 
   
   
-  <meta name="author" content="ReenigneArcher">
+  <meta name="author" content="LizardByte">
   
 
-  <meta name="description" content="How to sign your Git commits in Windows using GPG and Kleopatra">
+  <meta name="description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad: Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad...">
 
   
   <meta name="theme-color" content="#05FF3B">
@@ -96,7 +96,7 @@
   
   
     
-      <link rel="stylesheet" href="/assets/css/show-search.css">
+      <link rel="stylesheet" href="/assets/css/hide-heading.css">
     
   
 
@@ -104,21 +104,17 @@
 
   
   <meta property="og:site_name" content="LizardByte">
-  <meta property="og:title" content="Signing Git Commits in Windows | LizardByte">
-  <meta property="og:description" content="How to sign your Git commits in Windows using GPG and Kleopatra">
+  <meta property="og:title" content="Gamepad Tester | LizardByte">
+  <meta property="og:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad: Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad...">
 
   
   <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
   
 
   
-  <meta property="og:type" content="article">
-  
-  <meta property="og:article:author" content="ReenigneArcher">
-  
-  <meta property="og:article:published_time" content="2024-12-08T00:00:00-05:00">
-  <meta property="og:url" content="https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/">
-  <link rel="canonical" href="https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://app.lizardbyte.dev/gamepad-tester/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/gamepad-tester/">
   
 
   
@@ -127,8 +123,8 @@
   <meta name="twitter:site" content="@LizardByteDev">
   <meta name="twitter:creator" content="@LizardByteDev">
 
-  <meta property="twitter:title" content="Signing Git Commits in Windows | LizardByte">
-  <meta property="twitter:description" content="How to sign your Git commits in Windows using GPG and Kleopatra">
+  <meta property="twitter:title" content="Gamepad Tester | LizardByte">
+  <meta property="twitter:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad: Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad...">
 
   
   <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -256,21 +252,10 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="post-heading">
-          <h1>Signing Git Commits in Windows</h1>
-          
-            
-              <h2 class="post-subheading">How to sign your Git commits in Windows using GPG and Kleopatra</h2>
-            
+        <div class="page-heading">
+          <h1>Gamepad Tester</h1>
           
           
-           
-            
-              By <strong>ReenigneArcher</strong><br>
-            
-            <span class="post-meta">Posted on December 8, 2024</span>
-            
-            
           
         </div>
       </div>
@@ -285,191 +270,177 @@
 </header>
 
 
-<main class=" container-md ">
+<main class=" container-fluid ">
   <div class="row">
-    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
-
+    <div class=" col ">
       
-        
-        
-        
 
-        <div id="header-gh-btns">
-          
-            
-              
-                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
-              
-            
-              
-                  <iframe src="https://ghbtns.com/github-btn.html?user=LizardByte&repo=LizardByte.github.io&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                
-            
-          
+      <!-- Gamepad Tester section -->
+<section class="py-0" id="GamepadTester">
+    <div class="container my-0">
+        <div class="row mb-2">
+            <div class="col-12 text-center">
+                <h2 class="fw-bolder mb-1">Gamepad Tester</h2>
+                <p class="lead mb-2">Connect a controller to test its inputs and functionality</p>
+                <div id="gamepad-status" class="alert alert-warning py-1 mb-2">No gamepad detected. Connect a gamepad and press any button.</div>
+            </div>
         </div>
-      
 
-      
-
-      <div class="blog-post">
-        <h2 id="introduction">Introduction</h2>
-<p>Have you ever wanted to sign your Git commits, and get the fancy <code class="language-plaintext highlighter-rouge">Verified</code> badge on your commits in GitHub?
-This post will show you how to sign your Git commits in Windows using GPG and Kleopatra.</p>
-
-<h2 id="prerequisites">Prerequisites</h2>
-<ol>
-  <li>Download and install <a href="https://www.gpg4win.org/">Gpg4win</a>, ensuring that Kleopatra option is selected.</li>
-</ol>
-
-<h2 id="create-new-openpgp-certificate">Create new OpenPGP certificate</h2>
-<ol>
-  <li>
-    <p>Open Kleopatra and select “New Key Pair”</p>
-
-    <p><img src="/assets/img/posts/2024-12-08-git-commit-signing-in-windows/new-key-pair.png" alt="New Key Pair" /></p>
-  </li>
-  <li>Enter your GitHub username and email. The email must be one you have assigned to your GitHub account.
-You can find your no-reply email https://github.com/settings/emails on this page if you have one set.</li>
-  <li>Optionally, expand “Advanced Options” and change the “Key Material” option. I used “rsa4096”.
-You can also change or disable the expiration date.</li>
-  <li>Select “OK”.</li>
-</ol>
-
-<h2 id="configure-git">Configure git</h2>
-<ol>
-  <li>
-    <p>Open terminal (cmd.exe or PowerShell) and run the following command.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--list-secret-keys</span> <span class="nt">--keyid-format</span> LONG
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Copy the key id. <code class="language-plaintext highlighter-rouge">1234567890ABCDEF</code> is the id in the example below.</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sec   rsa4096/1234567890ABCDEF 2024-12-08 [SC]
-      ABCDEF1234567890ABCDEFGH1234567890ABCDEF
-uid                 [ultimate] GitHub-Username &lt;GitHub-Email-Address&gt;
-ssb   rsa4096/0987654321FEDCBA 2024-12-08 [E]
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Run the following command to configure git to use the key.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.signingkey &lt;KEY-ID&gt;
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>If git cannot find gpg you may need to add the path to the gpg executable to your git configuration.
-You can find the path to gpg by running the following command.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>where gpg
-</code></pre></div>    </div>
-
-    <p>Then add the path to your git configuration.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> gpg.program <span class="s2">"C:</span><span class="se">\P</span><span class="s2">rogram Files (x86)</span><span class="se">\G</span><span class="s2">nuPG</span><span class="se">\b</span><span class="s2">in</span><span class="se">\g</span><span class="s2">pg.exe"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Run the following command to enable commit signing.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> commit.gpgsign <span class="nb">true</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="configure-github">Configure GitHub</h2>
-<ol>
-  <li>Right-click the key in Kleopatra, select “Details”, then “Export”. Select all the contents and copy them.</li>
-  <li>Go to your GitHub account settings, and select “SSH and GPG keys”.</li>
-  <li>Click “New GPG key”. Give the key a title, and paste the contents of the public key into the key field.</li>
-  <li>Click “Add GPG key”.</li>
-</ol>
-
-<h2 id="automatically-start-kleopatra">Automatically start Kleopatra</h2>
-<ol>
-  <li>Open the Windows Task Scheduler.</li>
-  <li>Optionally, create a new folder for the task.</li>
-  <li>Select the folder, and then click “Create Task”.</li>
-  <li>Enter a name for the task, such as “Open Kleopatra”.</li>
-  <li>Select “Run only when user is logged on”.</li>
-  <li>Click the “Triggers” tab, then “New”.</li>
-  <li>Select “At log on” from the “Begin the task” dropdown.</li>
-  <li>Select “Specific user”, and click “OK”.</li>
-  <li>Click the “Actions” tab, then “New”.</li>
-  <li>Click “Browse”, and select the Kleopatra executable.
-The default location is <code class="language-plaintext highlighter-rouge">"C:\Program Files (x86)\Gpg4win\bin\kleopatra.exe"</code></li>
-  <li>In the “Start in” field, enter <code class="language-plaintext highlighter-rouge">%HOMEDRIVE%%HOMEPATH%</code>, and click “OK”.</li>
-  <li>On the “Conditions” tab, uncheck everything.</li>
-  <li>
-    <p>On the settings tab, ensure the following options are set.</p>
-
-    <ul>
-      <li>Allow task to be run on demand (checked)</li>
-      <li>Run task as soon as possible after a scheduled start is missed (checked)</li>
-      <li>If the task fails, restart every 1 minute (checked)</li>
-      <li>Attempt to restart up to 3 times</li>
-      <li>Stop the task if it runs longer than (unchecked)</li>
-      <li>If the running task does not end when requested, force it to stop (checked)</li>
-      <li>If the task is not scheduled to run again, delete it after (unchecked)</li>
-      <li>If the task is already running, then the following rule applies (Do not start a new instance)</li>
-    </ul>
-  </li>
-  <li>Click “OK”.</li>
-</ol>
-
-<h2 id="revoking-a-key">Revoking a Key</h2>
-<p>In some cases you may need to revoke a key. To do this follow the steps below.</p>
-
-<ol>
-  <li>Open Kleopatra, right-click on the key, and select “Revoke Certificate”.</li>
-  <li>Select the reason for revoking the key, and click “Revoke Certificate”.</li>
-  <li>Right-click the key again, select “Details”, then “Export”. Select all the contents and copy them.</li>
-  <li>Go to your GitHub account settings, and select “SSH and GPG keys”.</li>
-  <li>Remove the old key, and click “New GPG key”. Give the key a title (such as “Revoked Key”),
-and paste the contents of the public key into the key field.</li>
-</ol>
-
-<p>Alternatively, this can be done via command line.
-See <a href="https://github.com/orgs/community/discussions/108355#discussioncomment-8476035">How to actually revoke a GitHub GPG key</a></p>
-
-<p>This approach will allow previously verified commits to remain verified.</p>
-
-<h2 id="caveats">Caveats</h2>
-<ul>
-  <li>
-    <p>Commits made before your key was created cannot be verified, even if you amend the commits. This can be annoying if
-you have any WIP commits that you want to amend. A simple workaround for this is to start an interactive rebase,
-and edit each commit to adjust. Finally, when you amend the commit do so with the following command.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">--date</span><span class="o">=</span>now <span class="nt">--no-edit</span> 
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>You should now be able to sign your Git commits in Windows using GPG and Kleopatra. I’d like to give credit to
-Tom Auger for his <a href="https://tau.gr/posts/2018-06-29-how-to-set-up-signing-commits-with-git/">blog post</a> which helped me
-figure out how to do this initially.</p>
-
-      </div>
-
-      
-        <div class="blog-tags">
-          <span>Tags:</span>
-          
-            <a href="/tags#dev">dev</a>
-          
-            <a href="/tags#git">git</a>
-          
-            <a href="/tags#github">github</a>
-          
-            <a href="/tags#guide">guide</a>
-          
-            <a href="/tags#windows">windows</a>
-          
+        <div class="row mb-2" id="gamepad-selector-container" style="display: none;">
+            <div class="col-md-6 mx-auto">
+                <div class="input-group">
+                    <label for="gamepad-selector" class="input-group-text">Gamepad:</label>
+                    <select class="form-select" id="gamepad-selector"></select>
+                </div>
+            </div>
         </div>
-      
+
+        <div class="row g-3" id="gamepad-info" style="display: none;">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Gamepad Info</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-sm mb-0">
+                                <tbody>
+                                <tr><th>ID</th><td id="gamepad-id">-</td></tr>
+                                <tr><th>Index</th><td id="gamepad-index">-</td></tr>
+                                <tr><th>Connected</th><td id="gamepad-connected">-</td></tr>
+                                <tr><th>Mapping</th><td id="gamepad-mapping">-</td></tr>
+                                <tr><th>Buttons</th><td id="gamepad-buttons-count">-</td></tr>
+                                <tr><th>Axes</th><td id="gamepad-axes-count">-</td></tr>
+                                <tr><th>Type</th><td id="gamepad-type">-</td></tr>
+                                <tr><th>Name</th><td id="gamepad-name">-</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Vibration Test</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div id="vibration-status" class="small mb-2"></div>
+
+                        <div id="dual-rumble-controls" class="d-none">
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-weak" class="form-label me-2 mb-0" style="width: 100px;">Weak: <span id="weak-value">0.1</span></label>
+                                    <input type="range" class="form-range" id="vibration-weak" min="0" max="1" step="0.01" value="0.1">
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-strong" class="form-label me-2 mb-0" style="width: 100px;">Strong: <span id="strong-value">0.1</span></label>
+                                    <input type="range" class="form-range" id="vibration-strong" min="0" max="1" step="0.01" value="0.1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="simple-vibration-controls" class="d-none">
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center">
+                                    <label for="vibration-magnitude" class="form-label me-2 mb-0" style="width: 100px;">Magnitude: <span id="magnitude-value">0.5</span></label>
+                                    <input type="range" class="form-range" id="vibration-magnitude" min="0" max="1" step="0.01" value="0.5">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="vibration-duration-controls" class="mb-2">
+                            <div class="d-flex align-items-center">
+                                <label for="vibration-duration" class="form-label me-2 mb-0" style="width: 100px;">Duration: <span id="duration-value">1000</span>ms</label>
+                                <input type="range" class="form-range" id="vibration-duration" min="100" max="5000" step="100" value="1000">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between" id="vibration-buttons">
+                            <button id="vibrate-btn" class="btn btn-sm btn-primary">Vibrate</button>
+                            <button id="stop-vibration-btn" class="btn btn-sm btn-danger">Stop</button>
+                        </div>
+
+                        <div id="vibration-unsupported" class="d-none">
+                            <div class="alert alert-warning mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Vibration not supported by this gamepad or browser.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Buttons</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div id="buttons-container" class="d-flex flex-wrap gap-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Axes</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="row g-1" id="axes-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Sticks</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h6 class="mb-1">Left Stick</h6>
+                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
+                                        <div id="left-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
+                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h6 class="mb-1">Right Stick</h6>
+                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
+                                        <div id="right-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
+                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 d-none">
+                <div class="card bg-dark text-white">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Raw Data</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <pre id="raw-data" class="bg-dark text-light p-2 rounded mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
       
         <div class="after-content">
@@ -524,110 +495,6 @@ figure out how to do this initially.</p>
       
 
       
-        <!-- Check if any share-links are active -->
-
-
-
-
-<section id = "social-share-section">
-  <span class="sr-only">Share: </span>
-
-  
-    <a href="https://twitter.com/intent/tweet?text=Signing+Git+Commits+in+Windows&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-12-08-git-commit-signing-in-windows%2F"
-      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
-      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
-      <span class="sr-only">X (Twitter)</span>
-    </a>
-  
-
-  
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-12-08-git-commit-signing-in-windows%2F"
-      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
-      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
-      <span class="sr-only">Facebook</span>
-    </a>
-  
-
-  
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-12-08-git-commit-signing-in-windows%2F"
-      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
-      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
-      <span class="sr-only">LinkedIn</span>
-    </a>
-  
-
-  
-
-  
-    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2024-12-08-git-commit-signing-in-windows%2F"
-      class="btn btn-social-icon btn-reddit" title="Share on Reddit">
-      <span class="fab fa-fw fa-reddit" aria-hidden="true"></span>
-      <span class="sr-only">Reddit</span>
-    </a>
-  
-
-</section>
-
-
-
-      
-
-      <ul class="pagination blog-pager">
-        
-        <li class="page-item previous">
-          <a class="page-link" href="/2024-10-16-autostart-sunshine-on-boot-without-auto-login/" data-toggle="tooltip" data-placement="top" title="Autostart Sunshine on Boot without Auto-Login">
-            <i class="fas fa-arrow-left" alt="Previous Post"></i>
-            <span class="d-none d-sm-inline-block">Previous Post</span>
-          </a>
-        </li>
-        
-        
-        <li class="page-item next">
-          <a class="page-link" href="/2025-01-06-welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">
-            <span class="d-none d-sm-inline-block">Next Post</span>
-            <i class="fas fa-arrow-right" alt="Next Post"></i>
-          </a>
-        </li>
-        
-      </ul>
-      
-  
-  
-  
-
-  
-
-
-  
-
-
-
-<script src="https://giscus.app/client.js"
-        data-repo="LizardByte/community"
-        data-repo-id="R_kgDOMzlnmw"
-        data-category="Blog"
-        data-category-id="DIC_kwDOMzlnm84CnN1j"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        
-        
-        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
-        data-lang="en"
-        
-            data-loading="lazy"
-        
-        crossorigin="anonymous"
-        async>
-</script>
-
-
-
-  
-
-
 
     </div>
   </div>
@@ -766,7 +633,7 @@ figure out how to do this initially.</p>
 
       
         &nbsp;&bull;&nbsp;
-        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/guides/2024-12-08-git-commit-signing-in-windows.md" class="text_muted">Edit page</a>
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/gamepad-tester.html" class="text_muted">Edit page</a>
        
 
       </p>
@@ -805,7 +672,20 @@ figure out how to do this initially.</p>
 
 
 
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 
+
+  
+
+
+
+  
+    <script src="/assets/js/gamepad-helper.js"></script>
+  
+    <script src="/assets/js/gamepad-tester.js"></script>
+  
 
 
 
