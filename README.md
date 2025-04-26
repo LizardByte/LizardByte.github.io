@@ -25,6 +25,8 @@ This repo contains a reusable workflow to allow for building gh-pages subproject
 ```yml
 ---
 name: Jekyll CI
+permissions:
+  contents: read
 
 on:
  pull_request:
@@ -61,14 +63,14 @@ jobs:
   call-jekyll-build:
     needs: prep
     uses: LizardByte/LizardByte.github.io/.github/workflows/jekyll-build.yml@master
-    with:
-      site_artifact: 'prep'  # any name except 'site' is allowed
-      target_branch: 'gh-pages'
-      clean_gh_pages: true
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
       GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+    with:
+      site_artifact: 'prep'  # any name except 'site' is allowed
+      target_branch: 'gh-pages'
+      clean_gh_pages: true
 ```
 
 For additional options see [jekyll-build.yml](.github/workflows/jekyll-build.yml)
