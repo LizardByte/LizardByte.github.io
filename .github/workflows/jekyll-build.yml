@@ -1,5 +1,7 @@
 ---
 name: Build Jekyll
+permissions:
+  contents: read
 
 on:
   workflow_call:
@@ -83,14 +85,14 @@ jobs:
           path: theme
 
       - name: Download input artifact
-        if: ${{ inputs.site_artifact != '' }}
+        if: inputs.site_artifact != ''
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.site_artifact }}
           path: project
 
       - name: Extract archive
-        if: ${{ inputs.site_artifact != '' && inputs.extract_archive != '' }}
+        if: inputs.site_artifact != '' && inputs.extract_archive != ''
         working-directory: project
         run: |
           case "${{ inputs.extract_archive }}" in
@@ -111,7 +113,7 @@ jobs:
           rm -f "${{ inputs.extract_archive }}"
 
       - name: Setup project
-        if: ${{ github.repository == 'LizardByte/LizardByte.github.io' }}
+        if: github.repository == 'LizardByte/LizardByte.github.io'
         run: |
           mkdir -p ./project
           cp -RT ./theme/ ./project/
@@ -172,8 +174,7 @@ jobs:
           ruby-version: '3.3'
 
       - name: Install dependencies
-        run: |
-          bundle install
+        run: bundle install
 
       - name: Setup Pages
         id: configure-pages
@@ -208,8 +209,7 @@ jobs:
 
       - name: Prepare Artifacts  # uploading artifacts may fail if not zipped due to very large quantity of files
         shell: bash
-        run: |
-          7z a _site.zip ./_site/*
+        run: 7z a _site.zip ./_site/*
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -224,8 +224,8 @@ jobs:
     name: Deploy to Pages
     if: >-
       (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
-      (github.event_name == 'schedule') ||
-      (github.event_name == 'workflow_dispatch')
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -237,11 +237,10 @@ jobs:
           persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of the personal token
           fetch-depth: 0  # otherwise, will fail to push refs to dest repo
 
+      # empty contents of gh-pages
       - name: Clean
-        if: ${{ inputs.clean_gh_pages }}
-        run: |
-          # empty contents of gh-pages
-          rm -f -r ./gh-pages/*
+        if: inputs.clean_gh_pages
+        run: rm -f -r ./gh-pages/*
 
       - name: Download artifact
         uses: actions/download-artifact@v4

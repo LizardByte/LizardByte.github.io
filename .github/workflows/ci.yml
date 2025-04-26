@@ -1,5 +1,7 @@
 ---
 name: Jekyll CI
+permissions:
+  contents: read
 
 on:
   pull_request:
@@ -20,16 +22,18 @@ concurrency:
 jobs:
   call-jekyll-build:
     uses: ./.github/workflows/jekyll-build.yml
-    with:
-      target_branch: gh-pages
-      clean_gh_pages: true
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
       GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+    with:
+      target_branch: gh-pages
+      clean_gh_pages: true
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    permissions:
+      contents: write  # needed for setup-release-action
     runs-on: ubuntu-latest
     steps:
       - name: Setup Release
