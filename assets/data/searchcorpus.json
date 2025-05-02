@@ -114,6 +114,14 @@
 }, 
  
 { 
+"title"    : "Licenses &amp; Attributions", 
+"desc"     : "Licenses &amp; Attributions", 
+"category" : "page", 
+"url"      : "/licenses/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "Privacy", 
 "desc"     : "Privacy", 
 "category" : "page", 

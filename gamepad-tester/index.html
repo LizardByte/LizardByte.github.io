@@ -275,7 +275,11 @@
     <div class=" col ">
       
 
-      <!-- Gamepad Tester section -->
+      <script>
+    window.gamepadHelperVersion = "2025.501.232754";
+</script>
+
+<!-- Gamepad Tester section -->
 <section class="py-0" id="GamepadTester">
     <div class="container my-0">
         <div class="row mb-2">
@@ -404,7 +408,7 @@
                         <div class="row g-2">
                             <div class="col-6">
                                 <div class="stick-container text-center">
-                                    <h6 class="mb-1">Left Stick</h6>
+                                    <h6 class="mb-1">Left</h6>
                                     <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
                                         <div id="left-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
                                         <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
@@ -414,7 +418,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="stick-container text-center">
-                                    <h6 class="mb-1">Right Stick</h6>
+                                    <h6 class="mb-1">Right</h6>
                                     <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
                                         <div id="right-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
                                         <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
@@ -611,6 +615,8 @@
 <a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
 &nbsp;&bull;&nbsp;
 <a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+&nbsp;&bull;&nbsp;
+<a title="Licenses and Attribution" href="/licenses" class="text_muted">Licenses</a>
 
           
         </div>
@@ -674,15 +680,18 @@
 
   
     
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/@lizardbyte/gamepad-helper@2025.501.232754/dist/gamepad-helper.js"></script>
 
 
   
 
 
 
-  
-    <script src="/assets/js/gamepad-helper.js"></script>
   
     <script src="/assets/js/gamepad-tester.js"></script>
   
