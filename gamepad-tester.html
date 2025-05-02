@@ -5,11 +5,14 @@ full-width: true
 css:
   - /assets/css/hide-heading.css
 ext-js:
-  - https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js
+  - https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js
   - https://cdn.jsdelivr.net/npm/@lizardbyte/gamepad-helper@2025.501.232754/dist/gamepad-helper.js
 js:
   - /assets/js/gamepad-tester.js
 ---
+<script>
+    window.gamepadHelperVersion = "{{ site.data.licenses.gamepad-helper.version }}";
+</script>
 
 <!-- Gamepad Tester section -->
 <section class="py-0" id="GamepadTester">

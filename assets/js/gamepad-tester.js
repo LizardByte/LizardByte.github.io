@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const gamepadHelper = new GamepadHelper()
-    const gamepadHelperVersion = '2025.501.232754'
+    const gamepadHelperVersion = window.gamepadHelperVersion;
     let gamepads = {};
     let activeGamepadIndex = null;
     let animationFrameId = null;
@@ -16,20 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         gamepadStatus.classList.add('alert-danger');
         return;
     }
-
-    // Initialize button colors for various states
-    const buttonColors = {
-        'standard': {
-            'inactive': 'btn-outline-primary',
-            'active': 'btn-primary'
-        },
-    };
-
-    // Axis names mapping
-    const axisNames = [
-        'Left Stick X', 'Left Stick Y',
-        'Right Stick X', 'Right Stick Y'
-    ];
 
     // Setup gamepad event listeners
     window.addEventListener("gamepadconnected", function(e) {

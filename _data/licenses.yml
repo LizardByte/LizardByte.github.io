@@ -1,0 +1,50 @@
+---
+gamepad-helper:
+  name: LizardByte/gamepad-helper
+  version: '2025.501.232754'
+  url: https://github.com/LizardByte/gamepad-helper/
+  license: MIT
+shared-web:
+  name: LizardByte/shared-web
+  version: '2025.326.11214'
+  url: https://github.com/LizardByte/shared-web/
+  license: AGPL-3.0
+beautiful-jekyll:
+  name: Beautiful Jekyll
+  url: https://github.com/daattali/beautiful-jekyll/
+  license: MIT
+bootstrap:
+  name: Bootstrap
+  url: https://getbootstrap.com/
+  license: MIT
+bundler:
+  name: Bundler
+  url: https://bundler.io/
+  license: MIT
+button-icons:
+  name: Button Icons and Controls
+  url: https://zacksly.itch.io/
+  license: CC BY 3.0
+chartjs:
+  name: Chart.js
+  version: '4.4.9'
+  url: https://www.chartjs.org/
+  license: MIT
+giscus:
+  name: Giscus
+  url: https://giscus.app/
+  license: MIT
+jekyll:
+  name: Jekyll
+  url: https://jekyllrb.com/
+  license: MIT
+jquery:
+  name: jQuery
+  version: '3.7.1'
+  url: https://jquery.com/
+  license: MIT
+marked:
+  name: Marked
+  version: '15.0.8'
+  url: https://marked.js.org/
+  license: MIT
