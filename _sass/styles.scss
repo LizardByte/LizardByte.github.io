@@ -143,3 +143,19 @@ img.invert {
 table tr:nth-child(2n) {
   background-color: var(--footer-col);
 }
+
+.list-group-item.bg-dark {
+  border-color: var(--navbar-col);
+}
+
+.list-group-item.bg-dark .text-muted {
+  color: var(--text-col);
+}
+
+.list-group-item.bg-dark a {
+  text-decoration: none;
+}
+
+.list-group-item.bg-dark a:hover {
+  text-decoration: underline;
+}

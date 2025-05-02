@@ -1,0 +1,27 @@
+---
+title: Licenses & Attributions
+layout: page
+css:
+  - /assets/css/hide-heading.css
+---
+
+<div class="container py-4">
+    <h2 class="mb-4">Licenses & Attributions</h2>
+
+    <p class="lead">This website makes use of the following third-party tools, libraries, and resources.</p>
+
+    <div class="card bg-dark text-white mb-4">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Dependencies</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for license in site.data.licenses %}
+                {% assign key = license[0] %}
+                {% assign item = license[1] %}
+                {% include license-entry.html item=item %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
