@@ -1,7 +1,7 @@
 ---
 gamepad-helper:
   name: LizardByte/gamepad-helper
-  version: '2025.501.232754'
+  version: '2025.517.134257'
   url: https://github.com/LizardByte/gamepad-helper/
   license: MIT
 shared-web:
