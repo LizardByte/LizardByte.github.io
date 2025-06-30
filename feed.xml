@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2025.628.4510 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-39hj-fxvw-758m GHSA-x97g-h2vp-g2c5 Please update as soon as possible! This release also contains many new features and bug fixes, including: Encoder probing fixes. Display automation is now disabled by default, you can re-enable it in the Sunshing config...
+        </description>
+        <pubDate>Sat, 28 Jun 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-06-28-v2025.628.4510/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-06-28-v2025.628.4510/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2025.122.141614 Released</title>
         <description>
           

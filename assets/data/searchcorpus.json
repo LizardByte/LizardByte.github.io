@@ -1,6 +1,14 @@
 [ 
  
 { 
+"title"    : "Sunshine v2025.628.4510 Released", 
+"desc"     : "Sunshine v2025.628.4510 Released", 
+"category" : "release, sunshine", 
+"url"      : "/2025-06-28-v2025.628.4510/", 
+"date"     : "June 28, 2025" 
+}, 
+ 
+{ 
 "title"    : "Sunshine v2025.122.141614 Released", 
 "desc"     : "Sunshine v2025.122.141614 Released", 
 "category" : "release, sunshine", 
@@ -166,6 +174,14 @@
 "desc"     : "LizardByte", 
 "category" : "page", 
 "url"      : "/page2/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "LizardByte", 
+"desc"     : "LizardByte", 
+"category" : "page", 
+"url"      : "/page3/", 
 "date"     : "January 1, 1970" 
 } 
  
