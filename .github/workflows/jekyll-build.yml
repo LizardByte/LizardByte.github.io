@@ -123,7 +123,7 @@ jobs:
         env:
           TMPDIR: /home/runner/work/tmp
         run: |
-          mkdir -p ${TMPDIR}
+          mkdir -p "${TMPDIR}"
 
           base_dirs=(
             ./theme/third-party/beautiful-jekyll
@@ -148,22 +148,22 @@ jobs:
 
           for base_dir in "${base_dirs[@]}"; do
             for target in "${targets[@]}"; do
-              if [ -e "$base_dir/$target" ]; then
-                cp -rf "$base_dir/$target" ${TMPDIR}/
+              if [ -e "${base_dir}/${target}" ]; then
+                cp -rf "${base_dir}/${target}" "${TMPDIR}/"
               fi
             done
           done
 
           # copy project directory, they should only come from the project repo
-          cp -RTf ./project/ ${TMPDIR}/
+          cp -RTf ./project/ "${TMPDIR}/"
 
           # remove the workspace
           cd ..
-          rm -rf ${GITHUB_WORKSPACE}
+          rm -rf "${GITHUB_WORKSPACE}"
 
           # move the temporary directory to the workspace
-          mv ${TMPDIR} ${GITHUB_WORKSPACE}
-          cd ${GITHUB_WORKSPACE}
+          mv "${TMPDIR}" "${GITHUB_WORKSPACE}"
+          cd "${GITHUB_WORKSPACE}"
 
           # debug contents recursively
           ls -Ra
@@ -183,14 +183,14 @@ jobs:
       - name: Setup CI config
         run: |
           config_file="_config_ci.yml"
-          echo "---" > $config_file
+          echo "---" > "${config_file}"
           if [ "${{ inputs.base_url }}" == '_auto' ]; then
             echo "baseurl: '${{ steps.configure-pages.outputs.base_path }}'" >> $config_file
           else
-            echo "baseurl: '${{ inputs.base_url }}'" >> $config_file
+            echo "baseurl: '${{ inputs.base_url }}'" >> "${config_file}"
           fi
 
-          cat $config_file
+          cat "${config_file}"
 
       - name: Build site
         env:
