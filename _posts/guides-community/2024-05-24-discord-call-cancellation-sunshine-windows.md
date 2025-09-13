@@ -6,7 +6,8 @@ gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
 tags: [community-guide, community-guide-sunshine, windows, sunshine, discord]
 comments: true
-author: BeeLeDev
+authors:
+  - github: BeeLeDev
 ---
 
 ## Voicemeeter Configuration

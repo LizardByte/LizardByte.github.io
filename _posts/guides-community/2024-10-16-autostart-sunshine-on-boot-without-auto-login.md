@@ -5,7 +5,8 @@ gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
 tags: [community-guide, community-guide-sunshine, linux, sunshine]
 comments: true
-author: MidwesternRodent
+authors:
+  - github: MidwesternRodent
 
 editor-tabs:
   - name: 'nano'
@@ -200,7 +201,7 @@ allowed to access this machine over SSH, and will allow us to establish an SSH c
 to the SSH server running on the localhost.
 
 ```bash
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
 {% include admonition.html type="tip" body="

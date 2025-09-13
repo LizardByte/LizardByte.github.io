@@ -131,6 +131,7 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - scripts/
 
 include:
   - .well-known

@@ -7,7 +7,8 @@ gh-badge: [follow, star]
 tags: [clion, c++, cpp, cmake, dev, guide, linux, macos, windows]
 thumbnail-img: /assets/img/thumbnails/clion.png
 comments: true
-author: ReenigneArcher
+authors:
+  - github: ReenigneArcher
 ---
 
 ## Introduction
@@ -37,9 +38,9 @@ and from a single system.
 
    ```Dockerfile
    FROM ubuntu:22.04
-   
+
    RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y install tzdata
-   
+
    RUN apt-get update \
      && apt-get install -y build-essential \
          gcc \

@@ -5,7 +5,8 @@ gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
 tags: [community-guide, community-guide-sunshine, linux, sunshine]
 comments: true
-author: e-dong
+authors:
+  - github: e-dong
 
 distro-tabs:
   - name: 'Debian based'
@@ -24,7 +25,7 @@ distro-tabs:
         # e.g. sudo pacman -S openssh-runit
         ```
   - name: 'Alpine based'
-    content: 
+    content:
       - |
         ```bash
         sudo apk update
@@ -42,7 +43,7 @@ distro-tabs:
         ```bash
         sudo yum install openssh-server
         ```
- 
+
 service-tabs:
   - name: SystemD
     content:
