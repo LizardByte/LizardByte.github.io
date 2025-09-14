@@ -5,7 +5,8 @@ gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
 tags: [community-guide, community-guide-sunshine, linux, sunshine, discord]
 comments: true
-author: RickAndTired
+authors:
+  - github: RickAndTired
 ---
 
 1. Set your normal *Sound Output* volume to 100%

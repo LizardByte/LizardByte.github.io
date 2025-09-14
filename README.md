@@ -59,7 +59,7 @@ jobs:
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 1
-  
+
   call-jekyll-build:
     needs: prep
     uses: LizardByte/LizardByte.github.io/.github/workflows/jekyll-build.yml@master
@@ -110,15 +110,14 @@ CONFIG_FILE: _config.yml
 EXTRACT_ARCHIVE: pre_built_database.zip  # if there is a nested archive to extract
 GITHUB_TIMEOUT: 10  # timeout in minutes to use when searching for GitHub artifacts, max 15
 THEME_REF: master
-``` 
+```
 
 Additionally, do the following:
 
 1. Deactivate the `stable` version
 2. Make the `latest` version hidden
-3. Add project as a subproject of `LizardByte-gh-pages-main`
-4. Update branch protection rules in GitHub repo settings to require status checks from ReadTheDocs
-5. Add the below `.readthedocs.yaml` file to the root of the repo, or a custom path as specified in the project settings
+3. Update branch protection rules in GitHub repo settings to require status checks from ReadTheDocs
+4. Add the below `.readthedocs.yaml` file to the root of the repo, or a custom path as specified in the project settings
 
 ```yml
 ---
