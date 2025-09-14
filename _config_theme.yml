@@ -100,6 +100,18 @@ paginate: 5
 kramdown:
   input: GFM
 
+# Common defaults using YAML anchors
+ALL_PAGES: &ALL_PAGES
+  after-content:
+    - donate.html
+  footer-extra:
+    - footer-extra.html
+ALL_POSTS: &ALL_POSTS
+  comments: true  # add comments to all blog posts
+  social-share: true  # add social media sharing buttons to all blog posts
+  css:
+    - "/assets/css/show-search.css"
+
 # Default YAML values (more information on Jekyll's site)
 defaults:
   - scope:
@@ -107,24 +119,24 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      after-content:
-        - donate.html
-      footer-extra:
-        - footer-extra.html
-      comments: true  # add comments to all blog posts
-      social-share: true  # add social media sharing buttons to all blog posts
-      css:
-        - "/assets/css/show-search.css"
+      <<: *ALL_PAGES
+      <<: *ALL_POSTS
+  - scope:
+      path: "_posts/releases"
+      type: "posts"
+    values:
+      layout: "post"
+      <<: *ALL_PAGES
+      <<: *ALL_POSTS
+      js:
+        - "/assets/js/changelog-links.js"
   - scope:
       path: ""  # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
-      after-content:
-        - donate.html
-      footer-extra:
-        - footer-extra.html
+      <<: *ALL_PAGES
 
-# Exclude these files from production site
+# Exclude these files from the production site
 exclude:
   - Dockerfile
   - Gemfile
