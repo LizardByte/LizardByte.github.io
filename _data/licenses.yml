@@ -1,4 +1,8 @@
 ---
+beautiful-jekyll:
+  name: LizardByte/Beautiful Jekyll Next
+  url: https://github.com/LizardByte/beautiful-jekyll-next/
+  license: MIT
 gamepad-helper:
   name: LizardByte/gamepad-helper
   version: '2025.517.134257'
@@ -9,10 +13,6 @@ shared-web:
   version: '2025.326.11214'
   url: https://github.com/LizardByte/shared-web/
   license: AGPL-3.0
-beautiful-jekyll:
-  name: Beautiful Jekyll
-  url: https://github.com/daattali/beautiful-jekyll/
-  license: MIT
 bootstrap:
   name: Bootstrap
   url: https://getbootstrap.com/
