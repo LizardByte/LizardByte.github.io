@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2025.923.33222 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-6p7j-5v8v-w45h Please update as soon as possible! For a comprehensive list of user-facing changes, see below. What’s Changed fix(power): don’t wake up every 500ms to poll while not streaming by @cgutman in #4051 fix(amf): attempt to use...
+        </description>
+        <pubDate>Tue, 23 Sep 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-09-23-v2025.923.33222/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-09-23-v2025.923.33222/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2025.628.4510 Released</title>
         <description>
           
