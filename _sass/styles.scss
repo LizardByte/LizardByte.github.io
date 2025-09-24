@@ -1,5 +1,9 @@
 @import "admonition";
 
+:root {
+  --bs-list-group-bg: #var(--navbar-col);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
