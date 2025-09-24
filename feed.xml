@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2025.924.154138 Released</title>
+        <description>
+          
+          What’s Changed fix(windows): Correct binPath syntax in install-service.bat by @ReenigneArcher in #4290 build(macos): Remove XCode dependency by @eduardomozart in #4293 New Contributors @eduardomozart made their first contribution in #4293 Full Changelog: https://github.com/LizardByte/Sunshine/compare/v2025.923.33222…v2025.924.154138 Contributors 🛡️ VirusTotal Results: Sunshine-Windows-AMD64-debuginfo.7z Sunshine-Windows-AMD64-installer.exe Sunshine-Windows-AMD64-portable.zip flathub.tar.gz sunshine-debian-trixie-amd64.deb sunshine-debian-trixie-arm64.deb sunshine-ubuntu-22.04-amd64.deb sunshine-ubuntu-22.04-arm64.deb sunshine-ubuntu-24.04-amd64.deb sunshine-ubuntu-24.04-arm64.deb sunshine.AppImage sunshine.pkg.tar.gz sunshine.pkg.tar.zst sunshine.rb...
+        </description>
+        <pubDate>Wed, 24 Sep 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-09-24-v2025.924.154138/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-09-24-v2025.924.154138/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2025.923.33222 Released</title>
         <description>
           
