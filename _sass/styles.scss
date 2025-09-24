@@ -1,9 +1,5 @@
 @import "admonition";
 
-:root {
-  --bs-list-group-bg: #var(--navbar-col);
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -162,4 +158,9 @@ table tr:nth-child(2n) {
 
 .list-group-item.bg-dark a:hover {
   text-decoration: underline;
+}
+
+/* list groups */
+.list-group {
+  --bs-list-group-bg: var(--navbar-col);
 }
