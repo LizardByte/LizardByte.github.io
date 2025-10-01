@@ -1,4 +1,4 @@
-FROM ruby:3.3-bookworm AS base
+FROM ruby:3.4.6-bookworm AS base
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
