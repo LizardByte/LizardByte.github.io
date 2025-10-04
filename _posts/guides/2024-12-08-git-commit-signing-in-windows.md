@@ -4,6 +4,7 @@ title: Signing Git Commits in Windows
 subtitle: How to sign your Git commits in Windows using GPG and Kleopatra
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
+readtime: true
 tags: [dev, git, github, guide, windows]
 comments: true
 authors:

@@ -3,6 +3,7 @@ layout: post
 title: Blog Guide
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
+readtime: true
 tags: []
 comments: false
 

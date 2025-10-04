@@ -3,6 +3,7 @@ layout: post
 title: Autostart Sunshine on Boot without Auto-Login
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
+readtime: true
 tags: [community-guide, community-guide-sunshine, linux, sunshine]
 comments: true
 authors:
