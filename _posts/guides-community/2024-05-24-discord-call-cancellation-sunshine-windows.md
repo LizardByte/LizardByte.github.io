@@ -4,6 +4,7 @@ title: Discord Call Cancellation in Sunshine on Windows
 subtitle: Cancel Discord call audio with Voicemeeter (Standard)
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
+readtime: true
 tags: [community-guide, community-guide-sunshine, windows, sunshine, discord]
 comments: true
 authors:

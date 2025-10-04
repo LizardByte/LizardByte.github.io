@@ -3,6 +3,7 @@ layout: post
 title: Discord Call Cancellation in Sunshine on Linux
 gh-repo: LizardByte/LizardByte.github.io
 gh-badge: [follow, star]
+readtime: true
 tags: [community-guide, community-guide-sunshine, linux, sunshine, discord]
 comments: true
 authors:
