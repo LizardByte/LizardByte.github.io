@@ -38,13 +38,13 @@ jobs:
     steps:
       - name: Setup Release
         id: setup-release
-        uses: LizardByte/actions/actions/release_setup@v2025.929.125237
+        uses: LizardByte/actions/actions/release_setup@v2025.1011.184228
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
 
       - name: Create Release
         id: action
-        uses: LizardByte/actions/actions/release_create@v2025.929.125237
+        uses: LizardByte/actions/actions/release_create@v2025.1011.184228
         with:
           allowUpdates: false
           artifacts: ''
