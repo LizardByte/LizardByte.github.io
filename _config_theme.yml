@@ -3,6 +3,11 @@
 
 title: LizardByte
 author: LizardByte
+
+amazon_products:
+  enabled: true
+  affiliate_tag: 'lizardbyte-blog-20'
+
 navbar-links:
   ❤ Donate:
     - GitHub: "https://github.com/sponsors/LizardByte"
