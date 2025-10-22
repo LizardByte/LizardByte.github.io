@@ -605,6 +605,188 @@ projects.</p>
       
 
       
+<div class="amazon-affiliate-container">
+  <div class="affiliate-disclaimer">
+    <small>
+      <em>#CommissionsEarned | As an Amazon Associate we earn from qualifying purchases.</em>
+    </small>
+  </div>
+
+  <div id="amazon-product-display">
+    <!-- Product will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<script>
+(function() {
+  // Load products from Jekyll data
+  const allProducts = [{"title":"ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)","image":"https://m.media-amazon.com/images/I/815-M4vy8JL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS6S98ZF","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"AMD Ryzen™ 9 9900X 12-Core, 24-Thread Unlocked Desktop Processor","image":"https://m.media-amazon.com/images/I/61dukbEGziL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D6NN87T8","tags":["cpu","computer hardware","gaming","streaming"]},{"title":"Elgato Stream Deck MK.2 – Studio Controller, 15 macro keys, trigger actions in apps and software like OBS, Twitch, ​YouTube and more, works with Mac and PC","image":"https://m.media-amazon.com/images/I/61gtdFnK+UL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09738CV2G","tags":["streaming","accessories","content creation"]},{"title":"Logitech for Creators Blue Microphones Yeti USB Microphone (Blackout)","image":"https://m.media-amazon.com/images/I/61KTMvS5JBL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B00N1YPXW2","tags":["audio","streaming","content creation","accessories"]},{"title":"SAMSUNG 990 PRO SSD 2TB NVMe M.2 PCIe Gen4, M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P2T0B/AM","image":"https://m.media-amazon.com/images/I/71OWtcxKgvL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0BHJJ9Y77","tags":["storage","computer hardware","gaming"]}];
+
+  // Get affiliate tag from site config
+  const affiliateTag = "lizardbyte-blog-20";
+
+  // Get tags from page front matter if available
+  const pageTags = ["clion","c++","cpp","cmake","dev","guide","linux","macos","windows"];
+
+  let filteredProducts = allProducts;
+
+  // Filter products by tags if specified
+  if (pageTags && pageTags.length > 0) {
+    filteredProducts = allProducts.filter(product => {
+      if (!product.tags) return false;
+      // Check if any page tag matches any product tag
+      return pageTags.some(pageTag =>
+        product.tags.some(productTag =>
+          productTag.toLowerCase() === pageTag.toLowerCase()
+        )
+      );
+    });
+
+    // If no products match, fall back to all products
+    if (filteredProducts.length === 0) {
+      filteredProducts = allProducts;
+    }
+  }
+
+  // Shuffle products once at the start for random initial order
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Shuffle products once and keep that order
+  filteredProducts = shuffleArray(filteredProducts);
+
+  let currentProductIndex = 0;
+  let rotationTimer = null;
+
+  function startRotationTimer() {
+    if (rotationTimer) {
+      clearInterval(rotationTimer);
+    }
+    rotationTimer = setInterval(function() {
+      navigateProduct('next');
+    }, 30000); // 30 seconds
+  }
+
+  function navigateProduct(direction) {
+    if (filteredProducts.length === 0) return;
+
+    if (direction === 'next') {
+      currentProductIndex = (currentProductIndex + 1) % filteredProducts.length;
+    } else if (direction === 'prev') {
+      currentProductIndex = (currentProductIndex - 1 + filteredProducts.length) % filteredProducts.length;
+    }
+
+    displayProduct(filteredProducts[currentProductIndex]);
+  }
+
+  function addAffiliateTag(url) {
+    if (!affiliateTag || !url) return url;
+
+    try {
+      const urlObj = new URL(url);
+      urlObj.searchParams.set('tag', affiliateTag);
+      return urlObj.toString();
+    } catch (e) {
+      console.error('Invalid URL:', url);
+      return url;
+    }
+  }
+
+  function displayProduct(product) {
+    if (!product) return;
+
+    const container = document.getElementById('amazon-product-display');
+    if (!container) return;
+
+    // Add affiliate tag to product link
+    const productLink = addAffiliateTag(product.link);
+
+    // Show navigation buttons only if there are multiple products
+    const showNavigation = filteredProducts.length > 1;
+
+    container.innerHTML = `
+      <div class="amazon-product-display">
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-prev" aria-label="Previous product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+        <div class="product-image">
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+            <img src="${product.image}" alt="${product.title}">
+          </a>
+        </div>
+        <div class="product-details">
+          <h4>
+            <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              ${product.title}
+            </a>
+          </h4>
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored" class="product-link">
+            View on Amazon
+          </a>
+          ${product.tags ? `
+            <div class="product-tags">
+              <small>
+                ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+              </small>
+            </div>
+          ` : ''}
+        </div>
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-next" aria-label="Next product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    // Add event listeners for navigation buttons
+    if (showNavigation) {
+      const prevBtn = container.querySelector('.product-nav-prev');
+      const nextBtn = container.querySelector('.product-nav-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          navigateProduct('prev');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          navigateProduct('next');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+    }
+  }
+
+  // Display initial product (first in shuffled array)
+  if (filteredProducts.length > 0) {
+    displayProduct(filteredProducts[currentProductIndex]);
+
+    // Start automatic rotation if there are products
+    if (filteredProducts.length > 1) {
+      startRotationTimer();
+    }
+  }
+})();
+</script>
+
+
+
+      
         <!-- Check if any share-links are active -->
 
 
