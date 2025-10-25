@@ -86,7 +86,7 @@ jobs:
 
       - name: Download input artifact
         if: inputs.site_artifact != ''
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: ${{ inputs.site_artifact }}
           path: project
@@ -212,7 +212,7 @@ jobs:
         run: 7z a _site.zip ./_site/*
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: site
           path: _site.zip
@@ -243,7 +243,7 @@ jobs:
         run: rm -f -r ./gh-pages/*
 
       - name: Download artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: site
           path: gh-pages
