@@ -77,7 +77,7 @@ jobs:
           fi
 
       - name: Checkout theme
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: LizardByte/LizardByte.github.io
           ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || inputs.theme_ref }}
@@ -230,7 +230,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout gh-pages
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.target_branch }}
           path: gh-pages
