@@ -38,7 +38,7 @@ theme_dir="."
 
 # if not the theme project then we need to clone the theme with submodules
 sub_project="false"
-if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
+if [[ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]]; then
   sub_project="true"
   echo "Building a subproject: ${READTHEDOCS_PROJECT}"
   echo "github workflow: ${github_workflow}"
@@ -53,13 +53,13 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
   sleep_interval=10
 
   # fail if the workflow is not set
-  if [ -z "${github_workflow}" ]; then
+  if [[ -z "${github_workflow}" ]]; then
     echo "github_workflow is not set"
     exit 1
   fi
 
   # fail if the site artifact is not set
-  if [ -z "${site_artifact}" ]; then
+  if [[ -z "${site_artifact}" ]]; then
     echo "site_artifact is not set"
     exit 1
   fi
@@ -83,7 +83,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
   count=1
   while true; do
     current_time=$(date +%s)
-    if [ "${current_time}" -gt ${max_time} ]; then
+    if [[ "${current_time}" -gt ${max_time} ]]; then
       echo "Timeout waiting for check runs"
       exit 1
     fi
@@ -95,7 +95,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
 
     echo "Check runs count: ${check_run_count}"
 
-    if [ "${check_run_count}" -gt 0 ]; then
+    if [[ "${check_run_count}" -gt 0 ]]; then
       check_run=$(echo "${check_runs}" | jq -r '.[0]')
       check_job_id=$(echo "${check_run}" | jq -r '.id')
       check_run_html_url=$(echo "${check_run}" | jq -r '.html_url')
@@ -121,7 +121,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
   count=1
   while true; do
     current_time=$(date +%s)
-    if [ "${current_time}" -gt ${max_time} ]; then
+    if [[ "${current_time}" -gt ${max_time} ]]; then
       echo "Timeout waiting for check runs"
       exit 1
     fi
@@ -133,7 +133,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
     check_run_conclusion=$(echo "${check_run_response}" | jq -r '.conclusion')
 
     echo "Check run status: ${check_run_status}"
-    if [ "${check_run_status}" == "completed" ]; then
+    if [[ "${check_run_status}" == "completed" ]]; then
       break
     fi
 
@@ -143,7 +143,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
   done
 
   # if not successful then exit
-  if [ "${check_run_conclusion}" != "success" ]; then
+  if [[ "${check_run_conclusion}" != "success" ]]; then
     echo "Check run did not complete successfully"
     exit 1
   fi
@@ -157,7 +157,7 @@ if [ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]; then
   rm "${project_dir}/artifact.zip"
 
   # if there is a name provided for extract_artifact, then we will extract the nested archive
-  if [ -n "${extract_archive}" ]; then
+  if [[ -n "${extract_archive}" ]]; then
     pushd "${project_dir}"
     case "${extract_archive}" in
       *.tar.gz|*.tgz)
@@ -205,7 +205,7 @@ targets=(
 
 for base_dir in "${base_dirs[@]}"; do
   for target in "${targets[@]}"; do
-    if [ -e "${base_dir}/${target}" ]; then
+    if [[ -e "${base_dir}/${target}" ]]; then
       cp -rf "${base_dir}/${target}" "${TMPDIR}/"
     fi
   done
@@ -225,7 +225,7 @@ echo "_config_theme.yml:"
 cat _config_theme.yml
 
 config_files=_config_rtd.yml,_config_theme.yml
-if [ -n "${config_file}" ] && [ -e "${config_file}" ]; then
+if [[ -n "${config_file}" ]] && [[ -e "${config_file}" ]]; then
   config_files="${config_files},${config_file}"
   echo "config file: ${config_file}"
   cat "${config_file}"
@@ -237,7 +237,7 @@ bundle exec jekyll build \
   --destination "${READTHEDOCS_OUTPUT}html"
 
 # mimic gh-pages
-if [ "${sub_project}" == "true" ]; then
+if [[ "${sub_project}" == "true" ]]; then
   mkdir -p "${READTHEDOCS_OUTPUT}html/${github_repo}/assets"
   cp -RTf "${READTHEDOCS_OUTPUT}html/assets" "${READTHEDOCS_OUTPUT}html/${github_repo}/assets"
 fi
