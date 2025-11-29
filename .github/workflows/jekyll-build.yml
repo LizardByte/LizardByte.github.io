@@ -59,6 +59,15 @@ on:
         description: 'Personal access token of the bot account'
         required: true
 
+env:
+  INPUT_SITE_ARTIFACT: ${{ inputs.site_artifact }}
+  INPUT_EXTRACT_ARCHIVE: ${{ inputs.extract_archive }}
+  INPUT_CONFIG_FILE: ${{ inputs.config_file }}
+  INPUT_TARGET_BRANCH: ${{ inputs.target_branch }}
+  INPUT_CLEAN_GH_PAGES: ${{ inputs.clean_gh_pages }}
+  INPUT_THEME_REF: ${{ inputs.theme_ref }}
+  INPUT_BASE_URL: ${{ inputs.base_url }}
+
 jobs:
   build:
     name: Build Jekyll
@@ -67,7 +76,7 @@ jobs:
       - name: Input validation
         run: |
           error=false
-          if [ "${{ inputs.site_artifact }}" == 'site' ]; then
+          if [ "${INPUT_SITE_ARTIFACT}" == 'site' ]; then
             echo "Artifact name cannot be 'site'"
             error=true
           fi
@@ -80,37 +89,37 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: LizardByte/LizardByte.github.io
-          ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || inputs.theme_ref }}
+          ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || env.INPUT_THEME_REF }}
           submodules: recursive
           path: theme
 
       - name: Download input artifact
-        if: inputs.site_artifact != ''
+        if: env.INPUT_SITE_ARTIFACT != ''
         uses: actions/download-artifact@v6
         with:
-          name: ${{ inputs.site_artifact }}
+          name: ${{ env.INPUT_SITE_ARTIFACT }}
           path: project
 
       - name: Extract archive
-        if: inputs.site_artifact != '' && inputs.extract_archive != ''
+        if: env.INPUT_SITE_ARTIFACT != '' && env.INPUT_EXTRACT_ARCHIVE != ''
         working-directory: project
         run: |
-          case "${{ inputs.extract_archive }}" in
+          case "${INPUT_EXTRACT_ARCHIVE}" in
             *.tar.gz|*.tgz)
-              tar -xzf "${{ inputs.extract_archive }}" -C .
+              tar -xzf "${INPUT_EXTRACT_ARCHIVE}" -C .
               ;;
             *.tar)
-              tar -xf "${{ inputs.extract_archive }}" -C .
+              tar -xf "${INPUT_EXTRACT_ARCHIVE}" -C .
               ;;
             *.zip)
-              7z x "${{ inputs.extract_archive }}" -o.
+              7z x "${INPUT_EXTRACT_ARCHIVE}" -o.
               ;;
             *)
               echo "Unsupported archive format"
               exit 1
               ;;
           esac
-          rm -f "${{ inputs.extract_archive }}"
+          rm -f "${INPUT_EXTRACT_ARCHIVE}"
 
       - name: Setup project
         if: github.repository == 'LizardByte/LizardByte.github.io'
@@ -184,10 +193,10 @@ jobs:
         run: |
           config_file="_config_ci.yml"
           echo "---" > "${config_file}"
-          if [ "${{ inputs.base_url }}" == '_auto' ]; then
+          if [ "${INPUT_BASE_URL}" == '_auto' ]; then
             echo "baseurl: '${{ steps.configure-pages.outputs.base_path }}'" >> $config_file
           else
-            echo "baseurl: '${{ inputs.base_url }}'" >> "${config_file}"
+            echo "baseurl: '${INPUT_BASE_URL}'" >> "${config_file}"
           fi
 
           cat "${config_file}"
@@ -200,12 +209,12 @@ jobs:
         run: |
           # if inputs.config_file exists
           config_files="_config_ci.yml,_config_theme.yml"
-          if [ -e "${{ inputs.config_file }}" ]; then
-            cat ${{ inputs.config_file }}
-            config_files="${config_files},${{ inputs.config_file }}"
+          if [ -e "${INPUT_CONFIG_FILE}" ]; then
+            cat "${INPUT_CONFIG_FILE}"
+            config_files="${config_files},${INPUT_CONFIG_FILE}"
           fi
 
-          bundle exec jekyll build --future --config ${config_files}
+          bundle exec jekyll build --future --config "${config_files}"
 
       - name: Prepare Artifacts  # uploading artifacts may fail if not zipped due to very large quantity of files
         shell: bash
@@ -232,14 +241,14 @@ jobs:
       - name: Checkout gh-pages
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.target_branch }}
+          ref: ${{ env.INPUT_TARGET_BRANCH }}
           path: gh-pages
           persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of the personal token
           fetch-depth: 0  # otherwise, will fail to push refs to dest repo
 
       # empty contents of gh-pages
       - name: Clean
-        if: inputs.clean_gh_pages
+        if: env.INPUT_CLEAN_GH_PAGES == 'true'
         run: rm -f -r ./gh-pages/*
 
       - name: Download artifact
@@ -262,6 +271,6 @@ jobs:
           author_email: ${{ secrets.GH_BOT_EMAIL }}
           author_name: ${{ secrets.GH_BOT_NAME }}
           directory: gh-pages
-          branch: ${{ inputs.target_branch }}
+          branch: ${{ env.INPUT_TARGET_BRANCH }}
           force: false
           message: "Deploy site from ${{ github.sha }}"
