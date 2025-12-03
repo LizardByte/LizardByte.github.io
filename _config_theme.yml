@@ -13,21 +13,25 @@ navbar-links:
     - GitHub: "https://github.com/sponsors/LizardByte"
     - Patreon: "https://patreon.com/LizardByte"
     - PayPal: "https://www.paypal.com/paypalme/ReenigneArcher"
-  GitHub: "https://github.com/LizardByte"
   Resources:
     - Blog: "blog"
-    - Docs: "https://docs.lizardbyte.dev/latest/about/overview.html"
     - Community: "https://github.com/orgs/LizardByte/discussions"
     - Discord: "discord"
-    - Support: "support"
+    - Docs: "https://docs.lizardbyte.dev/latest/about/overview.html"
+    - GitHub: "https://github.com/LizardByte"
     - Status: "https://status.LizardByte.dev"
+    - Support: "support"
   Tools:
     - Gamepad Tester: "gamepad-tester"
+  Downloads:
+    - Packages: "packages"
+    - Homebrew: "https://github.com/LizardByte/homebrew-homebrew"
+    - Pacman: "https://github.com/LizardByte/pacman-repo"
   Development:
     - Contributing: "https://docs.lizardbyte.dev/latest/developers/contributing.html"
-    - Roadmap: "roadmap"
     - Dashboard: "https://app.lizardbyte.dev/dashboard"
     - Dev Status: "https://status-dev.LizardByte.dev"
+    - Roadmap: "roadmap"
 avatar: "/assets/img/navbar-avatar.png"
 round-avatar: true
 social-network-links:
