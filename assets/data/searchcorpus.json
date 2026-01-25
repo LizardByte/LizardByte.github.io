@@ -114,8 +114,8 @@
 }, 
  
 { 
-"title"    : "Discord", 
-"desc"     : "Discord", 
+"title"    : "", 
+"desc"     : "", 
 "category" : "page", 
 "url"      : "/discord/", 
 "date"     : "January 1, 1970" 
