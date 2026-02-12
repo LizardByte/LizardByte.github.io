@@ -86,7 +86,7 @@ jobs:
           fi
 
       - name: Checkout theme
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: LizardByte/LizardByte.github.io
           ref: ${{ github.repository == 'LizardByte/LizardByte.github.io' && github.ref || env.INPUT_THEME_REF }}
@@ -95,7 +95,7 @@ jobs:
 
       - name: Download input artifact
         if: env.INPUT_SITE_ARTIFACT != ''
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0
         with:
           name: ${{ env.INPUT_SITE_ARTIFACT }}
           path: project
@@ -178,7 +178,7 @@ jobs:
           ls -Ra
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@09a7688d3b55cf0e976497ff046b70949eeaccfd  # v1.288.0
         with:
           ruby-version: '3.3'
 
@@ -187,7 +187,7 @@ jobs:
 
       - name: Setup Pages
         id: configure-pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b  # v5.0.0
 
       - name: Setup CI config
         run: |
@@ -221,7 +221,7 @@ jobs:
         run: 7z a _site.zip ./_site/*
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
         with:
           name: site
           path: _site.zip
@@ -239,7 +239,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout gh-pages
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           ref: ${{ env.INPUT_TARGET_BRANCH }}
           path: gh-pages
@@ -252,7 +252,7 @@ jobs:
         run: rm -f -r ./gh-pages/*
 
       - name: Download artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0
         with:
           name: site
           path: gh-pages
