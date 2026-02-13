@@ -1,7 +1,6 @@
 ---
 name: Jekyll CI
-permissions:
-  contents: read
+permissions: {}
 
 on:
   pull_request:
@@ -22,6 +21,8 @@ concurrency:
 jobs:
   call-jekyll-build:
     uses: ./.github/workflows/jekyll-build.yml
+    permissions:
+      contents: read
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
       GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
