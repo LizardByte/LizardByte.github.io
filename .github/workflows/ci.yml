@@ -4,12 +4,6 @@ permissions: {}
 
 on:
   pull_request:
-    branches:
-      - master
-    types:
-      - opened
-      - synchronize
-      - reopened
   push:
     branches:
       - master
@@ -25,7 +19,7 @@ jobs:
       contents: read
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
-      GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
+      GH_BOT_NAME: ${{ vars.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
     with:
       target_branch: gh-pages
