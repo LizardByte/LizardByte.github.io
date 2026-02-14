@@ -19,11 +19,11 @@ jobs:
       contents: read
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
-      GH_BOT_NAME: ${{ vars.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
     with:
-      target_branch: gh-pages
       clean_gh_pages: true
+      gh_bot_name: ${{ vars.GH_BOT_NAME }}
+      target_branch: gh-pages
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
