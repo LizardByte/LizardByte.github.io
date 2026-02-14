@@ -47,12 +47,13 @@ on:
         required: false
         default: ''
         type: string
+      gh_bot_name:
+        description: 'Name of the bot account'
+        required: true
+        type: string
     secrets:
       GH_BOT_EMAIL:
         description: 'Email address of the bot account'
-        required: true
-      GH_BOT_NAME:
-        description: 'Name of the bot account'
         required: true
       GH_BOT_TOKEN:
         description: 'Personal access token of the bot account'
@@ -272,7 +273,7 @@ jobs:
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
           author_email: ${{ secrets.GH_BOT_EMAIL }}
-          author_name: ${{ secrets.GH_BOT_NAME }}
+          author_name: ${{ inputs.gh_bot_name }}
           directory: gh-pages
           branch: ${{ env.INPUT_TARGET_BRANCH }}
           force: false

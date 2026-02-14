@@ -65,9 +65,9 @@ jobs:
     uses: LizardByte/LizardByte.github.io/.github/workflows/jekyll-build.yml@master
     secrets:
       GH_BOT_EMAIL: ${{ secrets.GH_BOT_EMAIL }}
-      GH_BOT_NAME: ${{ secrets.GH_BOT_NAME }}
       GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
     with:
+      gh_bot_name: ${{ vars.GH_BOT_NAME }}
       site_artifact: 'prep'  # any name except 'site' is allowed
       target_branch: 'gh-pages'
       clean_gh_pages: true
