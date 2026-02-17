@@ -33,13 +33,13 @@ js:
 
         <div class="row g-3" id="gamepad-info" style="display: none;">
             <div class="col-md-4">
-                <div class="card bg-dark text-white h-100">
+                <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Gamepad Info</h5>
                     </div>
                     <div class="card-body p-2">
                         <div class="table-responsive">
-                            <table class="table table-dark table-sm mb-0">
+                            <table class="table gamepad-info-table table-sm mb-0">
                                 <tbody>
                                 <tr><th>ID</th><td id="gamepad-id">-</td></tr>
                                 <tr><th>Index</th><td id="gamepad-index">-</td></tr>
@@ -57,7 +57,7 @@ js:
             </div>
 
             <div class="col-md-3">
-                <div class="card bg-dark text-white h-100">
+                <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Vibration Test</h5>
                     </div>
@@ -110,7 +110,7 @@ js:
             </div>
 
             <div class="col-md-5">
-                <div class="card bg-dark text-white h-100">
+                <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Buttons</h5>
                     </div>
@@ -121,7 +121,7 @@ js:
             </div>
 
             <div class="col-md-6">
-                <div class="card bg-dark text-white h-100">
+                <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Axes</h5>
                     </div>
@@ -132,7 +132,7 @@ js:
             </div>
 
             <div class="col-md-6">
-                <div class="card bg-dark text-white h-100">
+                <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Sticks</h5>
                     </div>
@@ -141,20 +141,20 @@ js:
                             <div class="col-6">
                                 <div class="stick-container text-center">
                                     <h6 class="mb-1">Left</h6>
-                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
-                                        <div id="left-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
-                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
-                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    <div class="position-relative mx-auto stick-circle">
+                                        <div id="left-stick-position" class="position-absolute bg-primary stick-position"></div>
+                                        <div class="position-absolute stick-line-vertical"></div>
+                                        <div class="position-absolute stick-line-horizontal"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="stick-container text-center">
                                     <h6 class="mb-1">Right</h6>
-                                    <div class="position-relative mx-auto" style="width: 120px; height: 120px; border: 2px solid #555; border-radius: 50%;">
-                                        <div id="right-stick-position" class="position-absolute bg-primary" style="width: 16px; height: 16px; border-radius: 50%; transform: translate(-50%, -50%);"></div>
-                                        <div class="position-absolute" style="width: 2px; height: 100%; background-color: #555; left: 50%; top: 0;"></div>
-                                        <div class="position-absolute" style="width: 100%; height: 2px; background-color: #555; left: 0; top: 50%;"></div>
+                                    <div class="position-relative mx-auto stick-circle">
+                                        <div id="right-stick-position" class="position-absolute bg-primary stick-position"></div>
+                                        <div class="position-absolute stick-line-vertical"></div>
+                                        <div class="position-absolute stick-line-horizontal"></div>
                                     </div>
                                 </div>
                             </div>
@@ -164,12 +164,12 @@ js:
             </div>
 
             <div class="col-12 d-none">
-                <div class="card bg-dark text-white">
+                <div class="card gamepad-info-card">
                     <div class="card-header py-1">
                         <h5 class="card-title mb-0">Raw Data</h5>
                     </div>
                     <div class="card-body p-2">
-                        <pre id="raw-data" class="bg-dark text-light p-2 rounded mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
+                        <pre id="raw-data" class="gamepad-raw-data p-2 rounded mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
                     </div>
                 </div>
             </div>

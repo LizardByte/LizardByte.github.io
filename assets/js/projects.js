@@ -72,11 +72,11 @@ $(document).ready(function(){
                     banner_link.append(banner)
 
                     let card_body = document.createElement("div")
-                    card_body.className = "card-body text-white p-4 rounded-0"
+                    card_body.className = "card-body p-4 rounded-0"
                     card.appendChild(card_body)
 
                     let card_title_link = document.createElement("a")
-                    card_title_link.className = "text-decoration-none link-light crowdin-ignore"
+                    card_title_link.className = "text-decoration-none project-card-link crowdin-ignore"
                     card_title_link.href = sorted[repo]['html_url']
                     card_title_link.target = "_blank"
                     card_body.appendChild(card_title_link)
@@ -158,7 +158,7 @@ $(document).ready(function(){
                     card_footer.appendChild(repo_data_row)
 
                     let github_link = document.createElement("a")
-                    github_link.className = "nav-link text-white ms-3"
+                    github_link.className = "nav-link project-nav-link ms-3"
                     github_link.href = sorted[repo]['html_url']
                     github_link.target = "_blank"
                     repo_data_row.appendChild(github_link)
@@ -178,7 +178,7 @@ $(document).ready(function(){
                     })
 
                     let star_link = document.createElement("a")
-                    star_link.className = "nav-link nav-link-sm text-white ms-3 crowdin-ignore"
+                    star_link.className = "nav-link nav-link-sm project-nav-link ms-3 crowdin-ignore"
                     star_link.href = `https://star-history.com/#${sorted[repo]['full_name']}`
                     star_link.target = "_blank"
                     star_link.textContent = window.formatNumber(sorted[repo]['stargazers_count'])
@@ -189,7 +189,7 @@ $(document).ready(function(){
                     star_link.prepend(star_link_image)
 
                     let fork_link = document.createElement("a")
-                    fork_link.className = "nav-link nav-link-sm text-white ms-3 crowdin-ignore"
+                    fork_link.className = "nav-link nav-link-sm project-nav-link ms-3 crowdin-ignore"
                     fork_link.href = `https://github.com/${sorted[repo]['full_name']}/network/members`
                     fork_link.target = "_blank"
                     fork_link.textContent = window.formatNumber(sorted[repo]['forks'])
