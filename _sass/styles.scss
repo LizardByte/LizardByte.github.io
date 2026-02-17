@@ -164,3 +164,22 @@ table tr:nth-child(2n) {
 .list-group {
   --bs-list-group-bg: var(--navbar-col);
 }
+
+/* gamepad selector cards */
+.gamepad-selector-card {
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.gamepad-selector-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gamepad-selector-card.border-primary {
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.gamepad-selector-card.border-primary:hover {
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+}
