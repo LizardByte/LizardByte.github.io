@@ -289,6 +289,15 @@ table tr:nth-child(2n) {
   color: var(--hover-col);
 }
 
+/* Support card link styling */
+.support-card-link {
+  color: var(--text-col);
+}
+
+.support-card-link:hover {
+  color: var(--link-col);
+}
+
 /* Language icons - add shadow in light mode for visibility */
 [data-bs-theme="light"] .language-logo {
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 1));

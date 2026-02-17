@@ -17,6 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Watch for theme changes to update button images
+    const themeObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+                // Theme changed, reinitialize buttons with new color scheme
+                if (activeGamepadIndex !== null) {
+                    initGamepadButtons();
+                }
+            }
+        });
+    });
+
+    // Start observing theme changes on the document element
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-bs-theme']
+    });
+
     // Setup gamepad event listeners
     window.addEventListener("gamepadconnected", function(e) {
         gamepads[e.gamepad.index] = e.gamepad;
@@ -158,12 +176,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const controllerType = gamepadHelper.detectControllerType(gamepad.id);
 
+        // Detect current theme - use Black icons for light theme, White icons for dark theme
+        const isDarkTheme = document.documentElement.dataset.bsTheme === 'dark';
+        const colorScheme = isDarkTheme ? 'White' : 'Black';
+
         for (let i = 0; i < gamepad.buttons.length; i++) {
             const buttonName = gamepadHelper.getButtonName(controllerType, i);
             const buttonImagePath = gamepadHelper.getButtonImagePath(
                 controllerType,
                 i,
                 `https://cdn.jsdelivr.net/npm/@lizardbyte/gamepad-helper@${gamepadHelperVersion}/assets/img/gamepads/`,
+                colorScheme
             );
 
             const buttonDiv = document.createElement('div');
