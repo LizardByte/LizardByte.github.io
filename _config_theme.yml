@@ -89,14 +89,14 @@ giscus:
 date_format: "%B %-d, %Y"
 
 # Light theme colors
-page-col: "#ffffff"
-text-col: "#404040"
+page-col: "#f5f5f5"
+text-col: "#212529"
 link-col: "#28a9e6"
 hover-col: "#1c7fb3"
-navbar-col: "#f8f9fa"
+navbar-col: "#e9ecef"
 navbar-text-col: "#212529"
 navbar-border-col: "#dee2e6"
-footer-col: "#f8f9fa"
+footer-col: "#e9ecef"
 footer-text-col: "#6c757d"
 footer-link-col: "#212529"
 footer-hover-col: "#28a9e6"
