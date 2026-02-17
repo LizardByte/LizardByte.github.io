@@ -14,6 +14,13 @@
   --admonition-text: #212529;
   --circular-progress-border: #dee2e6;
   --circular-progress-bg: #e9ecef;
+
+  /* Light theme commit activity colors */
+  --commit-activity-empty: rgba(0, 0, 0, 0.08);
+  --commit-activity-empty-hover: rgba(0, 0, 0, 0.15);
+
+  /* Light theme icon filters */
+  --readthedocs-icon-filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(0%) hue-rotate(180deg) brightness(93%) contrast(90%);
 }
 
 [data-bs-theme="dark"] {
@@ -29,6 +36,13 @@
   --admonition-text: #18191a;
   --circular-progress-border: #2b3035;
   --circular-progress-bg: #2b3035;
+
+  /* Dark theme commit activity colors */
+  --commit-activity-empty: rgba(255, 255, 255, 0.1);
+  --commit-activity-empty-hover: rgba(255, 255, 255, 0.2);
+
+  /* Dark theme icon filters */
+  --readthedocs-icon-filter: brightness(0) saturate(100%) invert(72%) sepia(89%) saturate(455%) hue-rotate(358deg) brightness(103%) contrast(104%);
 }
 
 body {
@@ -273,6 +287,37 @@ table tr:nth-child(2n) {
 
 .project-nav-link:hover {
   color: var(--hover-col);
+}
+
+/* Language icons - add shadow in light mode for visibility */
+[data-bs-theme="light"] .language-logo {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 1));
+}
+
+/* ReadTheDocs icon - theme-aware color */
+.readthedocs-icon {
+  filter: var(--readthedocs-icon-filter);
+}
+
+[data-bs-theme="light"] .readthedocs-icon {
+  filter: var(--readthedocs-icon-filter) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+/* Commit activity graph bars */
+.commit-bar-empty {
+  background-color: var(--commit-activity-empty);
+}
+
+.commit-bar-empty:hover {
+  background-color: var(--commit-activity-empty-hover);
+}
+
+.commit-bar-active {
+  background-color: rgb(64, 196, 99);
+}
+
+.commit-bar-active:hover {
+  opacity: 1 !important;
 }
 
 /* gamepad selector cards */

@@ -1,33 +1,51 @@
 // credit: https://www.adamsdesk.com/posts/admonitions-jekyll
 $primary-color: #fc0;
 $primary-bgcolor: rgba(55.59%, 44.41%, 0%, .4);
-$admonitions:
-    //class (type), icon filename, icon/border color, title bg color
-    // TODO: Can we use font-awesome directly without keeping the svg files in our repo?
-    ('attention', 'exclamation-triangle-solid.svg', '#ff5252', '#564444')
-    ('caution', 'bolt-solid.svg', '#ff9100', '#564b3c')
-    ('danger', 'bolt-solid.svg', '#ff5252', '#564444')
-    ('error', 'times-circle-solid.svg', '#ff5252', '#564444')
-    ('hint', 'question-circle-solid.svg', '#00c953', '#294040')
-    ('important', 'fire-solid.svg', '#ff9100', '#433a38')
-    ('note', 'pen-solid.svg', '#00b0ff', '#293d52')
-    ('seealso', 'info-circle-solid.svg', '#00b0ff', '#293d52')
-    ('tip', 'info-circle-solid.svg', '#00c953', '#294040')
-    ('todo', 'pen-solid.svg')
-    ('warning', 'exclamation-triangle-solid.svg', '#ff9100', '#564b3c')
 
-    //('note', 'pen-solid.svg')
-    //('abstract', 'align-left-solid.svg')
-    //('info', 'info-circle-solid.svg', '#00b0ff', '#293d52')
-    //('tip', 'fire-solid.svg', '#ff9100', '#433a38')
-    //('success', 'check-circle-solid.svg', '#00c953', '#294040')
-    //('question', 'question-circle-solid.svg', '#00b8d4', '#293e4e')
-    //('warning', 'exclamation-triangle-solid.svg', '#ff9100', '#564b3c')
-    //('failure', 'times-circle-solid.svg', '#ff5252', '#564444')
-    //('danger', 'bolt-solid.svg', '#ff1744', '#563e43')
-    //('bug', 'bug-solid.svg', '#f50057', '#553c45')
-    //('example', 'list-ol-solid.svg', '#9e9e9e', '#4c4c4c')
-    //('quote', 'quote-right-solid.svg', '#9e9e9e', '#4c4c4c')
+// Light theme admonition title colors
+$admonitions-light:
+    ('attention', '#ffebee')
+    ('caution', '#fff3e0')
+    ('danger', '#ffebee')
+    ('error', '#ffebee')
+    ('hint', '#e8f5e9')
+    ('important', '#fff3e0')
+    ('note', '#e3f2fd')
+    ('seealso', '#e3f2fd')
+    ('tip', '#e8f5e9')
+    ('todo', '#f5f5f5')
+    ('warning', '#fff3e0')
+;
+
+// Dark theme admonition title colors
+$admonitions-dark:
+    ('attention', '#564444')
+    ('caution', '#564b3c')
+    ('danger', '#564444')
+    ('error', '#564444')
+    ('hint', '#294040')
+    ('important', '#433a38')
+    ('note', '#293d52')
+    ('seealso', '#293d52')
+    ('tip', '#294040')
+    ('todo', '#3a3a3a')
+    ('warning', '#564b3c')
+;
+
+$admonitions:
+    //class (type), icon filename, icon/border color
+    // TODO: Can we use font-awesome directly without keeping the svg files in our repo?
+    ('attention', 'exclamation-triangle-solid.svg', '#ff5252')
+    ('caution', 'bolt-solid.svg', '#ff9100')
+    ('danger', 'bolt-solid.svg', '#ff5252')
+    ('error', 'times-circle-solid.svg', '#ff5252')
+    ('hint', 'question-circle-solid.svg', '#00c953')
+    ('important', 'fire-solid.svg', '#ff9100')
+    ('note', 'pen-solid.svg', '#00b0ff')
+    ('seealso', 'info-circle-solid.svg', '#00b0ff')
+    ('tip', 'info-circle-solid.svg', '#00c953')
+    ('todo', 'pen-solid.svg', '#9e9e9e')
+    ('warning', 'exclamation-triangle-solid.svg', '#ff9100')
 ;
 .admonition {
 	margin: 1.5625em 0;
@@ -47,6 +65,12 @@ $admonitions:
     font-weight: 700;
     line-height: 3rem;
 }
+
+// Light theme - keep title text dark
+[data-bs-theme="light"] .admonition .admonition-title {
+    color: #212529;
+}
+
 .admonition-title::before {
     margin-right: .5rem;
     width: 1.2rem;
@@ -58,15 +82,10 @@ $admonitions:
     background-color: $primary-color;
     vertical-align: text-bottom;
 }
-@each $name, $icon, $icon-color, $title-color in $admonitions {
+@each $name, $icon, $icon-color in $admonitions {
     @if $icon-color {
         .admonition.#{$name} {
             border-left-color: #{$icon-color};
-        }
-    }
-    @if $title-color {
-        .admonition.#{$name} .admonition-title {
-            background-color: #{$title-color};
         }
     }
     .admonition.#{$name} .admonition-title::before {
@@ -75,5 +94,19 @@ $admonitions:
         @if $icon-color {
             background-color: #{$icon-color};
         }
+    }
+}
+
+// Apply light theme title backgrounds
+@each $name, $light-bg in $admonitions-light {
+    [data-bs-theme="light"] .admonition.#{$name} .admonition-title {
+        background-color: #{$light-bg};
+    }
+}
+
+// Apply dark theme title backgrounds
+@each $name, $dark-bg in $admonitions-dark {
+    [data-bs-theme="dark"] .admonition.#{$name} .admonition-title {
+        background-color: #{$dark-bg};
     }
 }

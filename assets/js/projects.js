@@ -122,24 +122,19 @@ $(document).ready(function(){
                             for (let week of commitActivity) {
                                 let bar = document.createElement("div")
                                 let height = maxCommits > 0 ? (week.total / maxCommits) * 100 : 0
+                                let intensity = 0.3 + (height / 100) * 0.7
 
+                                bar.className = week.total === 0 ? 'commit-bar-empty' : 'commit-bar-active'
                                 bar.style.cssText = `
                                     flex: 1;
                                     min-width: 2px;
-                                    background-color: ${week.total === 0 ? 'rgba(255,255,255,0.1)' : 'rgba(64, 196, 99, ' + (0.3 + (height / 100) * 0.7) + ')'};
                                     height: ${Math.max(height, 10)}%;
                                     border-radius: 1px;
                                     transition: all 0.2s ease;
+                                    opacity: ${week.total === 0 ? 1 : intensity};
                                 `
                                 bar.title = `${week.total} commits this week`
 
-                                // Add hover effect
-                                bar.addEventListener('mouseenter', function() {
-                                    this.style.backgroundColor = week.total === 0 ? 'rgba(255,255,255,0.2)' : 'rgba(64, 196, 99, 1)'
-                                })
-                                bar.addEventListener('mouseleave', function() {
-                                    this.style.backgroundColor = week.total === 0 ? 'rgba(255,255,255,0.1)' : 'rgba(64, 196, 99, ' + (0.3 + (height / 100) * 0.7) + ')'
-                                })
 
                                 activity_container.appendChild(bar)
                             }
@@ -225,12 +220,12 @@ $(document).ready(function(){
                             repo_data_row.appendChild(docs_link)
 
                             let docs_link_image = document.createElement("img")
+                            docs_link_image.className = "readthedocs-icon"
                             docs_link_image.src = "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/readthedocs.svg"
                             docs_link_image.alt = "ReadTheDocs"
                             docs_link_image.title = "ReadTheDocs"
                             docs_link_image.style.width = "24px"
                             docs_link_image.style.height = "24px"
-                            docs_link_image.style.filter = "brightness(0) saturate(100%) invert(72%) sepia(89%) saturate(455%) hue-rotate(358deg) brightness(103%) contrast(104%)"
                             docs_link.prepend(docs_link_image)
                         }
                     }
