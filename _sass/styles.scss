@@ -1,11 +1,56 @@
 @import "admonition";
 
+/* Theme-specific variables */
+:root {
+  /* Light theme shadows and backgrounds */
+  --card-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --card-primary-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+  --card-primary-hover-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  --card-primary-bg: rgba(13, 110, 253, 0.08);
+
+  /* Light theme element colors */
+  --pagination-bg: #e9ecef;
+  --pagination-text: #495057;
+  --admonition-text: #212529;
+  --circular-progress-border: #dee2e6;
+  --circular-progress-bg: #e9ecef;
+
+  /* Light theme commit activity colors */
+  --commit-activity-empty: rgba(0, 0, 0, 0.08);
+  --commit-activity-empty-hover: rgba(0, 0, 0, 0.15);
+
+  /* Light theme icon filters */
+  --readthedocs-icon-filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(0%) hue-rotate(180deg) brightness(93%) contrast(90%);
+}
+
+[data-bs-theme="dark"] {
+  /* Dark theme shadows and backgrounds */
+  --card-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --card-primary-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+  --card-primary-hover-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+  --card-primary-bg: rgba(13, 110, 253, 0.15);
+
+  /* Dark theme element colors */
+  --pagination-bg: #111111;
+  --pagination-text: #e4e4e4;
+  --admonition-text: #18191a;
+  --circular-progress-border: #2b3035;
+  --circular-progress-bg: #2b3035;
+
+  /* Dark theme commit activity colors */
+  --commit-activity-empty: rgba(255, 255, 255, 0.1);
+  --commit-activity-empty-hover: rgba(255, 255, 255, 0.2);
+
+  /* Dark theme icon filters */
+  --readthedocs-icon-filter: brightness(0) saturate(100%) invert(72%) sepia(89%) saturate(455%) hue-rotate(358deg) brightness(103%) contrast(104%);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
 
 .box-error, .box-note, .box-warning {
-    color: #18191a;
+    color: var(--admonition-text);
 }
 
 .avatar-img {
@@ -47,8 +92,8 @@ code {
 
 /* page navigation buttons */
 .pagination .page-item .page-link {
-  background-color: #111111;
-  color: #e4e4e4;
+  background-color: var(--pagination-bg);
+  color: var(--pagination-text);
 }
 
 /* shrink logo when navbar shrinks, instead of hiding it */
@@ -144,42 +189,173 @@ table tr:nth-child(2n) {
   background-color: var(--footer-col);
 }
 
-.list-group-item.bg-dark {
+/* License entry styling */
+.list-group {
+  --bs-list-group-bg: var(--navbar-col);
+}
+
+/* License entry styling */
+.license-entry-item {
+  background-color: var(--navbar-col);
+  color: var(--text-col);
   border-color: var(--navbar-col);
 }
 
-.list-group-item.bg-dark .text-muted {
-  color: var(--text-col);
+.license-entry-text-muted {
+  color: var(--footer-text-col);
 }
 
-.list-group-item.bg-dark a {
+.license-entry-link {
+  color: var(--link-col);
   text-decoration: none;
 }
 
-.list-group-item.bg-dark a:hover {
+.license-entry-link:hover {
+  color: var(--hover-col);
   text-decoration: underline;
 }
 
-/* list groups */
-.list-group {
-  --bs-list-group-bg: var(--navbar-col);
+/* License card styling */
+.license-card {
+  background-color: var(--navbar-col);
+  color: var(--text-col);
+}
+
+/* Gamepad info cards */
+.gamepad-info-card {
+  background-color: var(--navbar-col);
+  color: var(--text-col);
+}
+
+.gamepad-info-table {
+  color: var(--text-col);
+}
+
+.gamepad-info-table th,
+.gamepad-info-table td {
+  border-color: var(--footer-col);
+}
+
+.gamepad-raw-data {
+  background-color: var(--footer-col);
+  color: var(--text-col);
+}
+
+/* Stick visualization */
+.stick-circle {
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--navbar-border-col);
+  border-radius: 50%;
+}
+
+.stick-position {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stick-line-vertical {
+  width: 2px;
+  height: 100%;
+  background-color: var(--navbar-border-col);
+  left: 50%;
+  top: 0;
+}
+
+.stick-line-horizontal {
+  width: 100%;
+  height: 2px;
+  background-color: var(--navbar-border-col);
+  left: 0;
+  top: 50%;
+}
+
+/* Project card styling */
+.project-card-link {
+  color: var(--text-col);
+}
+
+.project-card-link:hover {
+  color: var(--link-col);
+}
+
+.project-nav-link {
+  color: var(--text-col);
+}
+
+.project-nav-link:hover {
+  color: var(--hover-col);
+}
+
+/* Support card link styling */
+.support-card-link {
+  color: var(--text-col);
+}
+
+.support-card-link:hover {
+  color: var(--link-col);
+}
+
+/* Language icons - add shadow in light mode for visibility */
+[data-bs-theme="light"] .language-logo {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 1));
+}
+
+/* ReadTheDocs icon - theme-aware color */
+.readthedocs-icon {
+  filter: var(--readthedocs-icon-filter);
+}
+
+[data-bs-theme="light"] .readthedocs-icon {
+  filter: var(--readthedocs-icon-filter) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+/* Commit activity graph bars */
+.commit-bar-empty {
+  background-color: var(--commit-activity-empty);
+}
+
+.commit-bar-empty:hover {
+  background-color: var(--commit-activity-empty-hover);
+}
+
+.commit-bar-active {
+  background-color: rgb(64, 196, 99);
+}
+
+.commit-bar-active:hover {
+  opacity: 1 !important;
 }
 
 /* gamepad selector cards */
 .gamepad-selector-card {
   transition: all 0.2s ease-in-out;
   user-select: none;
+  background-color: var(--navbar-col);
+  color: var(--text-col);
+}
+
+.gamepad-selector-card.border-secondary {
+  background-color: var(--footer-col);
+}
+
+.gamepad-selector-card.border-primary {
+  background-color: var(--card-primary-bg);
+  box-shadow: var(--card-primary-shadow);
 }
 
 .gamepad-selector-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.gamepad-selector-card.border-primary {
-  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .gamepad-selector-card.border-primary:hover {
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+  box-shadow: var(--card-primary-hover-shadow);
+}
+
+/* Override Bootstrap's text-muted to use theme colors */
+.text-muted {
+  color: var(--footer-text-col) !important;
 }
