@@ -49,10 +49,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.box-error, .box-note, .box-warning {
-    color: var(--admonition-text);
-}
-
 .avatar-img {
     background-color: var(--navbar-col);
     border: .05rem;
@@ -82,12 +78,6 @@ code {
   height: 3rem;
   width: 3rem;
   font-size: 1.5rem;
-}
-
-.widgetbot {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 /* page navigation buttons */
