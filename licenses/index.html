@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <!-- Load theme initialization script early to prevent flash of wrong theme -->
+  <script src="/assets/js/theme-init.js"></script>
+  
 
   
 
@@ -246,9 +251,18 @@
               </div>
             </li>
           
+          
+          
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          
           <li class="nav-item">
             <a class="nav-link" id="nav-search-link" href="#" title="Search">
-              <span id="nav-search-icon" class="fa fa-search"></span>
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
               <span id="nav-search-text">Search</span>
             </a>
           </li></ul>
@@ -329,7 +343,7 @@
 
     <p class="lead">This website makes use of the following third-party tools, libraries, and resources.</p>
 
-    <div class="card bg-dark text-white mb-4">
+    <div class="card license-card mb-4">
         <div class="card-header">
             <h5 class="card-title mb-0">Dependencies</h5>
         </div>
@@ -338,13 +352,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>LizardByte/Beautiful Jekyll Next</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://github.com/LizardByte/beautiful-jekyll-next/" target="_blank" class="text-info">https://github.com/LizardByte/beautiful-jekyll-next/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://github.com/LizardByte/beautiful-jekyll-next/" target="_blank" class="license-entry-link">https://github.com/LizardByte/beautiful-jekyll-next/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -354,13 +368,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>LizardByte/gamepad-helper</strong>
             <span class="ms-2 badge bg-secondary">2025.517.134257</span>
-            <small class="d-block text-muted">
-                <a href="https://github.com/LizardByte/gamepad-helper/" target="_blank" class="text-info">https://github.com/LizardByte/gamepad-helper/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://github.com/LizardByte/gamepad-helper/" target="_blank" class="license-entry-link">https://github.com/LizardByte/gamepad-helper/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -370,13 +384,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>LizardByte/shared-web</strong>
             <span class="ms-2 badge bg-secondary">2025.326.11214</span>
-            <small class="d-block text-muted">
-                <a href="https://github.com/LizardByte/shared-web/" target="_blank" class="text-info">https://github.com/LizardByte/shared-web/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://github.com/LizardByte/shared-web/" target="_blank" class="license-entry-link">https://github.com/LizardByte/shared-web/</a>
             </small>
         </div>
         <span class="badge bg-primary">AGPL-3.0</span>
@@ -386,13 +400,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Bootstrap</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://getbootstrap.com/" target="_blank" class="text-info">https://getbootstrap.com/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://getbootstrap.com/" target="_blank" class="license-entry-link">https://getbootstrap.com/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -402,13 +416,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Bundler</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://bundler.io/" target="_blank" class="text-info">https://bundler.io/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://bundler.io/" target="_blank" class="license-entry-link">https://bundler.io/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -418,13 +432,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Button Icons and Controls</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://zacksly.itch.io/" target="_blank" class="text-info">https://zacksly.itch.io/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://zacksly.itch.io/" target="_blank" class="license-entry-link">https://zacksly.itch.io/</a>
             </small>
         </div>
         <span class="badge bg-primary">CC BY 3.0</span>
@@ -434,13 +448,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Chart.js</strong>
             <span class="ms-2 badge bg-secondary">4.4.9</span>
-            <small class="d-block text-muted">
-                <a href="https://www.chartjs.org/" target="_blank" class="text-info">https://www.chartjs.org/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://www.chartjs.org/" target="_blank" class="license-entry-link">https://www.chartjs.org/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -450,13 +464,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Giscus</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://giscus.app/" target="_blank" class="text-info">https://giscus.app/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://giscus.app/" target="_blank" class="license-entry-link">https://giscus.app/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -466,13 +480,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Jekyll</strong>
             
-            <small class="d-block text-muted">
-                <a href="https://jekyllrb.com/" target="_blank" class="text-info">https://jekyllrb.com/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://jekyllrb.com/" target="_blank" class="license-entry-link">https://jekyllrb.com/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -482,13 +496,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>jQuery</strong>
             <span class="ms-2 badge bg-secondary">3.7.1</span>
-            <small class="d-block text-muted">
-                <a href="https://jquery.com/" target="_blank" class="text-info">https://jquery.com/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://jquery.com/" target="_blank" class="license-entry-link">https://jquery.com/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
@@ -498,13 +512,13 @@
                 
                 
                 
-                <li class="list-group-item bg-dark text-white">
+                <li class="list-group-item license-entry-item">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <strong>Marked</strong>
             <span class="ms-2 badge bg-secondary">15.0.8</span>
-            <small class="d-block text-muted">
-                <a href="https://marked.js.org/" target="_blank" class="text-info">https://marked.js.org/</a>
+            <small class="d-block license-entry-text-muted">
+                <a href="https://marked.js.org/" target="_blank" class="license-entry-link">https://marked.js.org/</a>
             </small>
         </div>
         <span class="badge bg-primary">MIT</span>
