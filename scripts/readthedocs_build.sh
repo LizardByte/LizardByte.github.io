@@ -32,6 +32,32 @@ echo "github url: ${github_url}"
 echo "github user: ${github_user}"
 echo "github repo: ${github_repo}"
 
+# For non PR builds, create a dummy index.html and exit early
+# ReadTheDocs sets READTHEDOCS_VERSION_TYPE to "external" for PR/external builds
+rtd_version_type="${READTHEDOCS_VERSION_TYPE:-}"
+echo "ReadTheDocs version type: ${rtd_version_type}"
+if [[ "${rtd_version_type}" != "external" ]]; then
+  echo "Not a pull request build, creating dummy index.html"
+  output_dir="${READTHEDOCS_OUTPUT}html"
+  mkdir -p "${output_dir}"
+  cat > "${output_dir}/index.html" <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview not available</title>
+</head>
+<body>
+<h1>Preview not available</h1>
+<p>Previews are only generated for pull requests.</p>
+</body>
+</html>
+EOF
+  echo "Dummy index.html written to ${output_dir}"
+  exit 0
+fi
+
 # set default directories
 project_dir="."
 theme_dir="."
