@@ -1,12 +1,12 @@
-<li class="list-group-item license-entry-item">
-    <div class="d-flex justify-content-between align-items-center">
+<li class="list-group-item license-entry-item crowdin-ignore">
+    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
         <div>
-            <strong>{{ include.item.name }}</strong>
-            {% if include.item.version %}<span class="ms-2 badge bg-secondary">{{ include.item.version }}</span>{% endif %}
-            <small class="d-block license-entry-text-muted">
-                <a href="{{ include.item.url }}" target="_blank" class="license-entry-link">{{ include.item.url }}</a>
+            <strong class="crowdin-ignore">{{ include.item.name }}</strong>
+            {% if include.item.version %}<span class="ms-2 badge bg-secondary crowdin-ignore">{{ include.item.version }}</span>{% endif %}
+            <small class="d-block license-entry-text-muted crowdin-ignore">
+                <a href="{{ include.item.url }}" target="_blank" class="license-entry-link crowdin-ignore">{{ include.item.url }}</a>
             </small>
         </div>
-        <span class="badge bg-primary">{{ include.item.license }}</span>
+        <span class="badge bg-primary crowdin-ignore">{{ include.item.license }}</span>
     </div>
 </li>
