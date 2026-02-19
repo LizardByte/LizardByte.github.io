@@ -60,18 +60,6 @@ post_search: true
 edit_page_button: true
 navbar-var-length: true
 keywords: "LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server"
-footer-col: "#242526"
-footer-hover-col: "#28a9e6"
-footer-link-col: "#dfdfdf"
-footer-text-col: "#a8aaa8"
-hover-col: "#28a9e6"
-link-col: "#28a9e6"
-navbar-border-col: "#393a3b"
-navbar-col: "#151515"
-navbar-text-col: "#e4e6eb"
-page-col: "#303436"
-text-col: "#e4e4e4"
-mobile-theme-col: "#05FF3B"
 sass:
   sass_dir: _sass
   style: compressed
@@ -81,6 +69,8 @@ site-css:
 site-js:
   - "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2025.326.11214/dist/crowdin.js"
   - "/assets/js/crowdin-init.js"
+theme-switcher: true
+theme-switcher-style: 'button'
 gtag: "G-SSW90X5YZX"
 giscus:
   hostname: giscus.app  # Replace with your giscus instance's hostname if self-hosting
@@ -97,6 +87,36 @@ giscus:
   lang: en
   lazy-loading: true
 date_format: "%B %-d, %Y"
+
+# Light theme colors
+page-col: "#f5f5f5"
+text-col: "#212529"
+link-col: "#28a9e6"
+hover-col: "#1c7fb3"
+navbar-col: "#e9ecef"
+navbar-text-col: "#212529"
+navbar-border-col: "#dee2e6"
+footer-col: "#e9ecef"
+footer-text-col: "#6c757d"
+footer-link-col: "#212529"
+footer-hover-col: "#28a9e6"
+pygments-theme-light: "pygments-styles/ayu-light"
+
+# Dark theme colors
+dark-page-col: "#303436"
+dark-text-col: "#e4e4e4"
+dark-link-col: "#28a9e6"
+dark-hover-col: "#28a9e6"
+dark-navbar-col: "#151515"
+dark-navbar-text-col: "#e4e6eb"
+dark-navbar-border-col: "#393a3b"
+dark-footer-col: "#242526"
+dark-footer-text-col: "#a8aaa8"
+dark-footer-link-col: "#dfdfdf"
+dark-footer-hover-col: "#28a9e6"
+pygments-theme-dark: "pygments-styles/ayu-dark"
+
+mobile-theme-col: "#05FF3B"
 
 # Advanced settings
 timezone: "America/New_York"
