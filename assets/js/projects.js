@@ -124,7 +124,7 @@ $(document).ready(function(){
                                 let height = maxCommits > 0 ? (week.total / maxCommits) * 100 : 0
                                 let intensity = 0.3 + (height / 100) * 0.7
 
-                                bar.className = week.total === 0 ? 'commit-bar-empty' : 'commit-bar-active'
+                                bar.className = week.total === 0 ? 'commit-bar-empty crowdin-ignore' : 'commit-bar-active crowdin-ignore'
                                 bar.style.cssText = `
                                     flex: 1;
                                     min-width: 2px;
@@ -134,7 +134,6 @@ $(document).ready(function(){
                                     opacity: ${week.total === 0 ? 1 : intensity};
                                 `
                                 bar.title = `${week.total} commits this week`
-
 
                                 activity_container.appendChild(bar)
                             }

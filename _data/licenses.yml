@@ -5,12 +5,12 @@ beautiful-jekyll:
   license: MIT
 gamepad-helper:
   name: LizardByte/gamepad-helper
-  version: '2025.517.134257'
+  version: '2026.219.34512'
   url: https://github.com/LizardByte/gamepad-helper/
   license: MIT
 shared-web:
   name: LizardByte/shared-web
-  version: '2025.326.11214'
+  version: '2026.219.33142'
   url: https://github.com/LizardByte/shared-web/
   license: AGPL-3.0
 bootstrap:
