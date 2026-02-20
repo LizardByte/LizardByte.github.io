@@ -23,8 +23,8 @@
   --readthedocs-icon-filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(0%) hue-rotate(180deg) brightness(93%) contrast(90%);
 
   /* Invert options */
-  --invert-standard: invert(1);
-  --invert-hover: invert(0);
+  --invert-standard: invert(0);
+  --invert-hover: invert(1);
 }
 
 [data-bs-theme="dark"] {
@@ -49,8 +49,8 @@
   --readthedocs-icon-filter: brightness(0) saturate(100%) invert(72%) sepia(89%) saturate(455%) hue-rotate(358deg) brightness(103%) contrast(104%);
 
   /* Invert options */
-  --invert-standard: invert(0);
-  --invert-hover: invert(1);
+  --invert-standard: invert(1);
+  --invert-hover: invert(0);
 }
 
 body {
