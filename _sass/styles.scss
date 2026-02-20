@@ -21,6 +21,10 @@
 
   /* Light theme icon filters */
   --readthedocs-icon-filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(0%) hue-rotate(180deg) brightness(93%) contrast(90%);
+
+  /* Invert options */
+  --invert-standard: invert(1);
+  --invert-hover: invert(0);
 }
 
 [data-bs-theme="dark"] {
@@ -43,6 +47,10 @@
 
   /* Dark theme icon filters */
   --readthedocs-icon-filter: brightness(0) saturate(100%) invert(72%) sepia(89%) saturate(455%) hue-rotate(358deg) brightness(103%) contrast(104%);
+
+  /* Invert options */
+  --invert-standard: invert(0);
+  --invert-hover: invert(1);
 }
 
 body {
@@ -127,10 +135,10 @@ code {
 }
 
 img.invert {
-    filter: invert(1);
+    filter: var(--invert-standard);
 }
 .btn:hover img.invert {
-    filter: invert(0);
+    filter: var(--invert-hover);
 }
 
 /* code blocks */
