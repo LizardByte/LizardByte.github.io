@@ -18,6 +18,7 @@ navbar-links:
     - Community: "https://github.com/orgs/LizardByte/discussions"
     - Discord: "discord"
     - Docs: "https://docs.lizardbyte.dev/latest/about/overview.html"
+    - Game DB: "https://app.lizardbyte.dev/GameDB"
     - GitHub: "https://github.com/LizardByte"
     - Status: "https://status.LizardByte.dev"
     - Support: "support"
