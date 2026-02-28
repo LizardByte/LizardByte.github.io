@@ -1,0 +1,17 @@
+<ul class="list-group list-group-flush">
+    {% for license in site.data.licenses %}
+    {% assign item = license[1] %}
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">{{ item.name }}</strong>
+                {% if item.version %}<span class="ms-2 badge bg-secondary crowdin-ignore">{{ item.version }}</span>{% endif %}
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="{{ item.url }}" target="_blank" class="license-entry-link crowdin-ignore">{{ item.url }}</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">{{ item.license }}</span>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

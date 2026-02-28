@@ -15,13 +15,7 @@ css:
             <h5 class="card-title mb-0">Dependencies</h5>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush">
-                {% for license in site.data.licenses %}
-                {% assign key = license[0] %}
-                {% assign item = license[1] %}
-                {% include license-entry.html item=item %}
-                {% endfor %}
-            </ul>
+            {% include license-entries.html %}
         </div>
     </div>
 </div>
