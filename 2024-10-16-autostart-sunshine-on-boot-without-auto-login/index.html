@@ -571,20 +571,20 @@ be sure to generate a pubkey on that machine and append it to the authorized_key
 <p>Modify <code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config</code> with the following changes:</p>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-0-tab" data-bs-toggle="tab" data-bs-target="#nano-0-pane" type="button" role="tab" aria-controls="nano-0-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-0-tab" data-bs-toggle="tab" data-bs-target="#vim-0-pane" type="button" role="tab" aria-controls="vim-0-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-0-pane" role="tabpanel" aria-labelledby="nano-0-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-0-pane" role="tabpanel" aria-labelledby="nano-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/ssh/sshd_config
 </code></pre></div></div>
@@ -592,7 +592,7 @@ be sure to generate a pubkey on that machine and append it to the authorized_key
             
         </div>
         
-        <div class="tab-pane fade " id="vim-0-pane" role="tabpanel" aria-labelledby="vim-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-0-pane" role="tabpanel" aria-labelledby="vim-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/ssh/sshd_config
 </code></pre></div></div>
@@ -694,20 +694,20 @@ recipe for pain, and is why <code class="language-plaintext highlighter-rouge">s
 <h4 id="create-the-autossh-sunshine-start-script">Create the autossh-sunshine-start script</h4>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-1-tab" data-bs-toggle="tab" data-bs-target="#nano-1-pane" type="button" role="tab" aria-controls="nano-1-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-1-tab" data-bs-toggle="tab" data-bs-target="#vim-1-pane" type="button" role="tab" aria-controls="vim-1-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-1-pane" role="tabpanel" aria-labelledby="nano-1-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-1-pane" role="tabpanel" aria-labelledby="nano-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/local/bin/autossh-sunshine-start
 </code></pre></div></div>
@@ -715,7 +715,7 @@ recipe for pain, and is why <code class="language-plaintext highlighter-rouge">s
             
         </div>
         
-        <div class="tab-pane fade " id="vim-1-pane" role="tabpanel" aria-labelledby="vim-1-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-1-pane" role="tabpanel" aria-labelledby="vim-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/local/bin/autossh-sunshine-start
 </code></pre></div></div>
@@ -753,20 +753,20 @@ Please complete that section before continuing.</p>
 <h4 id="create-the-autossh-systemd-service-file">Create the autossh systemd service file</h4>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-2-tab" data-bs-toggle="tab" data-bs-target="#nano-2-pane" type="button" role="tab" aria-controls="nano-2-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-2-tab" data-bs-toggle="tab" data-bs-target="#vim-2-pane" type="button" role="tab" aria-controls="vim-2-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-2-pane" role="tabpanel" aria-labelledby="nano-2-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-2-pane" role="tabpanel" aria-labelledby="nano-2-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/systemd/system/autossh-sunshine.service
 </code></pre></div></div>
@@ -774,7 +774,7 @@ Please complete that section before continuing.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="vim-2-pane" role="tabpanel" aria-labelledby="vim-2-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-2-pane" role="tabpanel" aria-labelledby="vim-2-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/systemd/system/autossh-sunshine.service
 </code></pre></div></div>
@@ -836,20 +836,20 @@ be killed when we log out of the graphical session, so we want to make sure we r
 lose the ability to log back in if we need to.</p>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-3-tab" data-bs-toggle="tab" data-bs-target="#nano-3-pane" type="button" role="tab" aria-controls="nano-3-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-3-tab" data-bs-toggle="tab" data-bs-target="#vim-3-pane" type="button" role="tab" aria-controls="vim-3-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-3-pane" role="tabpanel" aria-labelledby="nano-3-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-3-pane" role="tabpanel" aria-labelledby="nano-3-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/lib/systemd/user/sunshine-after-login.service
 </code></pre></div></div>
@@ -857,7 +857,7 @@ lose the ability to log back in if we need to.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="vim-3-pane" role="tabpanel" aria-labelledby="vim-3-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-3-pane" role="tabpanel" aria-labelledby="vim-3-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/lib/systemd/user/sunshine-after-login.service
 </code></pre></div></div>
@@ -901,20 +901,20 @@ systemctl <span class="nt">--user</span> <span class="nb">enable </span>sunshine
 it to call the system service autossh-sunshine when this user service is stopped, without prompting us for a password.</p>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-4-tab" data-bs-toggle="tab" data-bs-target="#nano-4-pane" type="button" role="tab" aria-controls="nano-4-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-4-tab" data-bs-toggle="tab" data-bs-target="#vim-4-pane" type="button" role="tab" aria-controls="vim-4-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-4-pane" role="tabpanel" aria-labelledby="nano-4-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-4-pane" role="tabpanel" aria-labelledby="nano-4-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/polkit-1/rules.d/sunshine.rules
 </code></pre></div></div>
@@ -922,7 +922,7 @@ it to call the system service autossh-sunshine when this user service is stopped
             
         </div>
         
-        <div class="tab-pane fade " id="vim-4-pane" role="tabpanel" aria-labelledby="vim-4-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-4-pane" role="tabpanel" aria-labelledby="vim-4-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/polkit-1/rules.d/sunshine.rules
 </code></pre></div></div>
@@ -1097,20 +1097,20 @@ my leftmost monitor to login to my physical desktop, but I’d like to disable m
 1080p and mirror it with DisplayPort-1.</p>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="nano-5-tab" data-bs-toggle="tab" data-bs-target="#nano-5-pane" type="button" role="tab" aria-controls="nano-5-pane" aria-selected="true">nano</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="vim-5-tab" data-bs-toggle="tab" data-bs-target="#vim-5-pane" type="button" role="tab" aria-controls="vim-5-pane" aria-selected="false">vim</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="nano-5-pane" role="tabpanel" aria-labelledby="nano-5-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="nano-5-pane" role="tabpanel" aria-labelledby="nano-5-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /usr/share/sddm/scripts/Xsetup
 </code></pre></div></div>
@@ -1118,7 +1118,7 @@ my leftmost monitor to login to my physical desktop, but I’d like to disable m
             
         </div>
         
-        <div class="tab-pane fade " id="vim-5-pane" role="tabpanel" aria-labelledby="vim-5-tab" tabindex="0">
+        <div class="tab-pane fade " id="vim-5-pane" role="tabpanel" aria-labelledby="vim-5-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /usr/share/sddm/scripts/Xsetup
 </code></pre></div></div>

@@ -506,27 +506,27 @@
 <h3 id="example">Example</h3>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="tab-a-tab" data-bs-toggle="tab" data-bs-target="#tab-a-pane" type="button" role="tab" aria-controls="tab-a-pane" aria-selected="true">Tab A</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="tab-b-tab" data-bs-toggle="tab" data-bs-target="#tab-b-pane" type="button" role="tab" aria-controls="tab-b-pane" aria-selected="false">Tab B</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="tab-a-pane" role="tabpanel" aria-labelledby="tab-a-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="tab-a-pane" role="tabpanel" aria-labelledby="tab-a-tab">
             
                 <p>Content of tab A</p>
 
             
         </div>
         
-        <div class="tab-pane fade " id="tab-b-pane" role="tabpanel" aria-labelledby="tab-b-tab" tabindex="0">
+        <div class="tab-pane fade " id="tab-b-pane" role="tabpanel" aria-labelledby="tab-b-tab">
             
                 <p>Content of tab B</p>
 
@@ -553,20 +553,20 @@ The <code class="language-plaintext highlighter-rouge">content</code> field shou
 
 <h4 id="index-0">Index 0</h4>
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="curl-0-tab" data-bs-toggle="tab" data-bs-target="#curl-0-pane" type="button" role="tab" aria-controls="curl-0-pane" aria-selected="true">cURL</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="python-0-tab" data-bs-toggle="tab" data-bs-target="#python-0-pane" type="button" role="tab" aria-controls="python-0-pane" aria-selected="false">Python</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="curl-0-pane" role="tabpanel" aria-labelledby="curl-0-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="curl-0-pane" role="tabpanel" aria-labelledby="curl-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-L</span> https://example.com
 </code></pre></div></div>
@@ -574,7 +574,7 @@ The <code class="language-plaintext highlighter-rouge">content</code> field shou
             
         </div>
         
-        <div class="tab-pane fade " id="python-0-pane" role="tabpanel" aria-labelledby="python-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="python-0-pane" role="tabpanel" aria-labelledby="python-0-tab">
             
                 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://example.com'</span><span class="p">)</span>
@@ -589,20 +589,20 @@ The <code class="language-plaintext highlighter-rouge">content</code> field shou
 
 <h4 id="index-1">Index 1</h4>
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="curl-1-tab" data-bs-toggle="tab" data-bs-target="#curl-1-pane" type="button" role="tab" aria-controls="curl-1-pane" aria-selected="true">cURL</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="python-1-tab" data-bs-toggle="tab" data-bs-target="#python-1-pane" type="button" role="tab" aria-controls="python-1-pane" aria-selected="false">Python</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="curl-1-pane" role="tabpanel" aria-labelledby="curl-1-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="curl-1-pane" role="tabpanel" aria-labelledby="curl-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-L</span> https://google.com
 </code></pre></div></div>
@@ -610,7 +610,7 @@ The <code class="language-plaintext highlighter-rouge">content</code> field shou
             
         </div>
         
-        <div class="tab-pane fade " id="python-1-pane" role="tabpanel" aria-labelledby="python-1-tab" tabindex="0">
+        <div class="tab-pane fade " id="python-1-pane" role="tabpanel" aria-labelledby="python-1-tab">
             
                 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://google.com'</span><span class="p">)</span>

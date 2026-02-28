@@ -483,32 +483,32 @@ not change. It is preferred to set this through your router config.</p>
 </div>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="debian-based-0-tab" data-bs-toggle="tab" data-bs-target="#debian-based-0-pane" type="button" role="tab" aria-controls="debian-based-0-pane" aria-selected="true">Debian based</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="arch-based-0-tab" data-bs-toggle="tab" data-bs-target="#arch-based-0-pane" type="button" role="tab" aria-controls="arch-based-0-pane" aria-selected="false">Arch based</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="alpine-based-0-tab" data-bs-toggle="tab" data-bs-target="#alpine-based-0-pane" type="button" role="tab" aria-controls="alpine-based-0-pane" aria-selected="false">Alpine based</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="fedora-based-dnf-0-tab" data-bs-toggle="tab" data-bs-target="#fedora-based-dnf-0-pane" type="button" role="tab" aria-controls="fedora-based-dnf-0-pane" aria-selected="false">Fedora based (dnf)</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="fedora-based-yum-0-tab" data-bs-toggle="tab" data-bs-target="#fedora-based-yum-0-pane" type="button" role="tab" aria-controls="fedora-based-yum-0-pane" aria-selected="false">Fedora based (yum)</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="debian-based-0-pane" role="tabpanel" aria-labelledby="debian-based-0-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="debian-based-0-pane" role="tabpanel" aria-labelledby="debian-based-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>openssh-server
@@ -517,7 +517,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="arch-based-0-pane" role="tabpanel" aria-labelledby="arch-based-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="arch-based-0-pane" role="tabpanel" aria-labelledby="arch-based-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> openssh
 <span class="c"># Install openssh-&lt;other_init&gt; if you are not using SystemD</span>
@@ -527,7 +527,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="alpine-based-0-pane" role="tabpanel" aria-labelledby="alpine-based-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="alpine-based-0-pane" role="tabpanel" aria-labelledby="alpine-based-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apk update
 <span class="nb">sudo </span>apk add openssh
@@ -536,7 +536,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="fedora-based-dnf-0-pane" role="tabpanel" aria-labelledby="fedora-based-dnf-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="fedora-based-dnf-0-pane" role="tabpanel" aria-labelledby="fedora-based-dnf-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nb">install </span>openssh-server
 </code></pre></div></div>
@@ -544,7 +544,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="fedora-based-yum-0-pane" role="tabpanel" aria-labelledby="fedora-based-yum-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="fedora-based-yum-0-pane" role="tabpanel" aria-labelledby="fedora-based-yum-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>openssh-server
 </code></pre></div></div>
@@ -558,24 +558,24 @@ not change. It is preferred to set this through your router config.</p>
 <p>Next make sure the OpenSSH daemon is enabled to run when the system starts.</p>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="systemd-0-tab" data-bs-toggle="tab" data-bs-target="#systemd-0-pane" type="button" role="tab" aria-controls="systemd-0-pane" aria-selected="true">SystemD</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="runit-0-tab" data-bs-toggle="tab" data-bs-target="#runit-0-pane" type="button" role="tab" aria-controls="runit-0-pane" aria-selected="false">Runit</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="openrc-0-tab" data-bs-toggle="tab" data-bs-target="#openrc-0-pane" type="button" role="tab" aria-controls="openrc-0-pane" aria-selected="false">OpenRC</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="systemd-0-pane" role="tabpanel" aria-labelledby="systemd-0-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="systemd-0-pane" role="tabpanel" aria-labelledby="systemd-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>sshd.service
 <span class="nb">sudo </span>systemctl start sshd.service  <span class="c"># Starts the service now</span>
@@ -585,7 +585,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="runit-0-pane" role="tabpanel" aria-labelledby="runit-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="runit-0-pane" role="tabpanel" aria-labelledby="runit-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/runit/sv/sshd /run/runit/service  <span class="c"># Enables the OpenSSH daemon to run when system starts</span>
 <span class="nb">sudo </span>sv start sshd  <span class="c"># Starts the service now</span>
@@ -595,7 +595,7 @@ not change. It is preferred to set this through your router config.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="openrc-0-pane" role="tabpanel" aria-labelledby="openrc-0-tab" tabindex="0">
+        <div class="tab-pane fade " id="openrc-0-pane" role="tabpanel" aria-labelledby="openrc-0-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rc-update add sshd  <span class="c"># Enables service</span>
 rc-status  <span class="c"># List services to verify sshd is enabled</span>
@@ -650,24 +650,24 @@ losing SSH access to the server.</p>
 </div>
 
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link active" id="systemd-1-tab" data-bs-toggle="tab" data-bs-target="#systemd-1-pane" type="button" role="tab" aria-controls="systemd-1-pane" aria-selected="true">SystemD</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="runit-1-tab" data-bs-toggle="tab" data-bs-target="#runit-1-pane" type="button" role="tab" aria-controls="runit-1-pane" aria-selected="false">Runit</button>
-        </li>
+        </div>
         
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button class="nav-link " id="openrc-1-tab" data-bs-toggle="tab" data-bs-target="#openrc-1-pane" type="button" role="tab" aria-controls="openrc-1-pane" aria-selected="false">OpenRC</button>
-        </li>
+        </div>
         
-    </ul>
+    </div>
     <div class="tab-content">
         
-        <div class="tab-pane fade show active" id="systemd-1-pane" role="tabpanel" aria-labelledby="systemd-1-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="systemd-1-pane" role="tabpanel" aria-labelledby="systemd-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart sshd.service
 </code></pre></div></div>
@@ -675,7 +675,7 @@ losing SSH access to the server.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="runit-1-pane" role="tabpanel" aria-labelledby="runit-1-tab" tabindex="0">
+        <div class="tab-pane fade " id="runit-1-pane" role="tabpanel" aria-labelledby="runit-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sv restart sshd
 </code></pre></div></div>
@@ -683,7 +683,7 @@ losing SSH access to the server.</p>
             
         </div>
         
-        <div class="tab-pane fade " id="openrc-1-pane" role="tabpanel" aria-labelledby="openrc-1-tab" tabindex="0">
+        <div class="tab-pane fade " id="openrc-1-pane" role="tabpanel" aria-labelledby="openrc-1-tab">
             
                 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rc-service sshd restart
 </code></pre></div></div>
