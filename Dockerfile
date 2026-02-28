@@ -37,12 +37,12 @@ targets=(
 for base_dir in "${base_dirs[@]}"; do
   for target in "${targets[@]}"; do
     if [ -e "$base_dir/$target" ]; then
-      cp -rf "$base_dir/$target" ${TMPDIR}/
+      cp -rf "$base_dir/$target" "${TMPDIR}/"
     fi
   done
 done
 
-cp -RTf ./ ${TMPDIR}/
+cp -RTf ./ "${TMPDIR}/"
 
 _SITE
 
@@ -68,7 +68,13 @@ RUN <<_SETUP
 set -e
 
 bundle install
+
+# Create a non-root user and transfer ownership
+useradd --no-create-home --shell /bin/bash jekyll
+chown -R jekyll:jekyll /app
 _SETUP
+
+USER jekyll
 
 # Expose the port that Jekyll will run on
 EXPOSE 4000
