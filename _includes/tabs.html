@@ -1,7 +1,7 @@
 <div class="tabs">
-    <ul class="nav nav-underline" role="tablist">
+    <div class="nav nav-underline" role="tablist">
         {% for tab in include.tabs %}
-        <li class="nav-item" role="presentation">
+        <div class="nav-item">
             <button
                     class="nav-link {% if forloop.first %}active{% endif %}"
                     id="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-tab"
@@ -12,9 +12,9 @@
                     aria-controls="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-pane"
                     aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
             >{{ tab.name }}</button>
-        </li>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
     <div class="tab-content">
         {% for tab in include.tabs %}
         <div
@@ -22,7 +22,6 @@
                 id="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-pane"
                 role="tabpanel"
                 aria-labelledby="{{ tab.name | slugify }}{% if include.index and include.index >= 0 %}-{{ include.index }}{% endif %}-tab"
-                tabindex="0"
         >
             {% if include.index and include.index >= 0 %}
                 {{ tab.content[include.index] | markdownify }}
