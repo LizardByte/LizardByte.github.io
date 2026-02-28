@@ -32,12 +32,7 @@
             Dependencies
         
         
-            
-                {% for license in site.data.licenses %}
-                {% assign key = license[0] %}
-                {% assign item = license[1] %}
-                {% include license-entry.html item=item %}
-                {% endfor %}">
+            {% include license-entries.html %}">
 
   
   <meta name="theme-color" content="#05FF3B">
@@ -133,12 +128,7 @@
             Dependencies
         
         
-            
-                {% for license in site.data.licenses %}
-                {% assign key = license[0] %}
-                {% assign item = license[1] %}
-                {% include license-entry.html item=item %}
-                {% endfor %}">
+            {% include license-entries.html %}">
 
   
   <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -166,12 +156,7 @@
             Dependencies
         
         
-            
-                {% for license in site.data.licenses %}
-                {% assign key = license[0] %}
-                {% assign item = license[1] %}
-                {% include license-entry.html item=item %}
-                {% endfor %}">
+            {% include license-entries.html %}">
 
   
   <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -350,184 +335,163 @@
         </div>
         <div class="card-body">
             <ul class="list-group list-group-flush">
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">LizardByte/Beautiful Jekyll Next</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">LizardByte/Beautiful Jekyll Next</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://github.com/LizardByte/beautiful-jekyll-next/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/beautiful-jekyll-next/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://github.com/LizardByte/beautiful-jekyll-next/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/beautiful-jekyll-next/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
-                
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">LizardByte/gamepad-helper</strong>
-            <span class="ms-2 badge bg-secondary crowdin-ignore">2026.219.34512</span>
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://github.com/LizardByte/gamepad-helper/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/gamepad-helper/</a>
-            </small>
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">LizardByte/gamepad-helper</strong>
+                <span class="ms-2 badge bg-secondary crowdin-ignore">2026.219.34512</span>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://github.com/LizardByte/gamepad-helper/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/gamepad-helper/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
-                
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">LizardByte/shared-web</strong>
-            <span class="ms-2 badge bg-secondary crowdin-ignore">2026.219.33142</span>
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://github.com/LizardByte/shared-web/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/shared-web/</a>
-            </small>
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">LizardByte/shared-web</strong>
+                <span class="ms-2 badge bg-secondary crowdin-ignore">2026.219.33142</span>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://github.com/LizardByte/shared-web/" target="_blank" class="license-entry-link crowdin-ignore">https://github.com/LizardByte/shared-web/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">AGPL-3.0</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">AGPL-3.0</span>
-    </div>
-</li>
-
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Bootstrap</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Bootstrap</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://getbootstrap.com/" target="_blank" class="license-entry-link crowdin-ignore">https://getbootstrap.com/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://getbootstrap.com/" target="_blank" class="license-entry-link crowdin-ignore">https://getbootstrap.com/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Bundler</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Bundler</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://bundler.io/" target="_blank" class="license-entry-link crowdin-ignore">https://bundler.io/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://bundler.io/" target="_blank" class="license-entry-link crowdin-ignore">https://bundler.io/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Button Icons and Controls</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Button Icons and Controls</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://zacksly.itch.io/" target="_blank" class="license-entry-link crowdin-ignore">https://zacksly.itch.io/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://zacksly.itch.io/" target="_blank" class="license-entry-link crowdin-ignore">https://zacksly.itch.io/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">CC BY 3.0</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">CC BY 3.0</span>
-    </div>
-</li>
-
-                
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Chart.js</strong>
-            <span class="ms-2 badge bg-secondary crowdin-ignore">4.4.9</span>
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://www.chartjs.org/" target="_blank" class="license-entry-link crowdin-ignore">https://www.chartjs.org/</a>
-            </small>
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Chart.js</strong>
+                <span class="ms-2 badge bg-secondary crowdin-ignore">4.4.9</span>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://www.chartjs.org/" target="_blank" class="license-entry-link crowdin-ignore">https://www.chartjs.org/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Giscus</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Giscus</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://giscus.app/" target="_blank" class="license-entry-link crowdin-ignore">https://giscus.app/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://giscus.app/" target="_blank" class="license-entry-link crowdin-ignore">https://giscus.app/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Jekyll</strong>
                 
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Jekyll</strong>
-            
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://jekyllrb.com/" target="_blank" class="license-entry-link crowdin-ignore">https://jekyllrb.com/</a>
-            </small>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://jekyllrb.com/" target="_blank" class="license-entry-link crowdin-ignore">https://jekyllrb.com/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
-                
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">jQuery</strong>
-            <span class="ms-2 badge bg-secondary crowdin-ignore">3.7.1</span>
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://jquery.com/" target="_blank" class="license-entry-link crowdin-ignore">https://jquery.com/</a>
-            </small>
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">jQuery</strong>
+                <span class="ms-2 badge bg-secondary crowdin-ignore">3.7.1</span>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://jquery.com/" target="_blank" class="license-entry-link crowdin-ignore">https://jquery.com/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
-
-                
-                
-                
-                <li class="list-group-item license-entry-item crowdin-ignore">
-    <div class="d-flex justify-content-between align-items-center crowdin-ignore">
-        <div>
-            <strong class="crowdin-ignore">Marked</strong>
-            <span class="ms-2 badge bg-secondary crowdin-ignore">15.0.8</span>
-            <small class="d-block license-entry-text-muted crowdin-ignore">
-                <a href="https://marked.js.org/" target="_blank" class="license-entry-link crowdin-ignore">https://marked.js.org/</a>
-            </small>
+    </li>
+    
+    
+    <li class="list-group-item license-entry-item crowdin-ignore">
+        <div class="d-flex justify-content-between align-items-center crowdin-ignore">
+            <div>
+                <strong class="crowdin-ignore">Marked</strong>
+                <span class="ms-2 badge bg-secondary crowdin-ignore">15.0.8</span>
+                <small class="d-block license-entry-text-muted crowdin-ignore">
+                    <a href="https://marked.js.org/" target="_blank" class="license-entry-link crowdin-ignore">https://marked.js.org/</a>
+                </small>
+            </div>
+            <span class="badge bg-primary crowdin-ignore">MIT</span>
         </div>
-        <span class="badge bg-primary crowdin-ignore">MIT</span>
-    </div>
-</li>
+    </li>
+    
+</ul>
 
-                
-            </ul>
         </div>
     </div>
 </div>
@@ -541,9 +505,7 @@
     <div class="container mb-5 shadow border-0 card-custom rounded-0">
         <div class="d-table-row g-0">
             <div class="d-table-cell px-3 align-middle text-center">
-                <h1>
-                    <i class="fa-fw fas fa-coins"></i>
-                </h1>
+                <i class="fa-fw fa-2xl fas fa-coins"></i>
             </div>
             <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
                 <div class="container">
@@ -684,9 +646,9 @@
     {
         if (!document.getElementsByTagName) return false;
         let links = document.getElementsByTagName("a");
-        for (let eleLink=0; eleLink < links.length; eleLink ++) {
-            if ((links[eleLink].href.indexOf('.pdf') !== -1)||(links[eleLink].href.indexOf('.doc') !== -1)||(links[eleLink].href.indexOf('.docx') !== -1)) {
-                links[eleLink].onclick =
+        for (const element of links) {
+            if (element.href.includes('.pdf') || element.href.includes('.doc') || element.href.includes('.docx')) {
+                element.onclick =
                 function() {
                     window.open(this.href);
                     return false;
