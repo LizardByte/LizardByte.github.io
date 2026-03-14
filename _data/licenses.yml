@@ -10,7 +10,7 @@ gamepad-helper:
   license: MIT
 shared-web:
   name: LizardByte/shared-web
-  version: '2026.219.33142'
+  version: '2026.314.32913'
   url: https://github.com/LizardByte/shared-web/
   license: AGPL-3.0
 bootstrap:
