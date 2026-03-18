@@ -10,11 +10,15 @@ The page is built using jekyll and hosted on GitHub Pages.
 
 ### CrowdIn Localization
 
-[![CrowdIn graph](https://app.lizardbyte.dev/dashboard/crowdin/LizardByte_graph.svg)](https://translate.lizardbyte.dev)
+<p align="center">
+  <a href="https://translate.lizardbyte.dev" aria-label="Crowdin completion">
+    <img src='https://raw.githubusercontent.com/LizardByte/i18n/refs/heads/crowdin-progress/LizardByte_graph.svg?'/>
+  </a>
+</p>
 
 <p align="center">
-  <a href="https://translate.lizardbyte.dev" aria-label="CrowdIn">
-    <img src='https://raw.githubusercontent.com/LizardByte/contributors/refs/heads/dist/crowdin.606145.svg'/>
+  <a href="https://translate.lizardbyte.dev" aria-label="Crowdin contributors">
+    <img src='https://raw.githubusercontent.com/LizardByte/contributors/refs/heads/dist/crowdin.606145.svg?'/>
   </a>
 </p>
 
