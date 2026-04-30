@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Themerr-jellyfin v2026.428.1753.46 Released</title>
+        <description>
+          
+          What’s Changed chore: update global workflows by @LizardByte-bot in #374 build(deps): bump LizardByte/setup-release-action from 2024.520.181643 to 2024.524.1411 by @dependabot[bot] in #372 build(deps): bump LizardByte/create-release-action from 2024.516.190229 to 2024.520.211408 by @dependabot[bot] in #351 build(deps): bump SonarAnalyzer.CSharp from 9.25.0.90414 to 9.25.1.91650 by @dependabot[bot] in #373 build(deps): bump xunit.runner.visualstudio from 2.8.0 to 2.8.1...
+        </description>
+        <pubDate>Tue, 28 Apr 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-04-28-v2026.428.1753.46/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-04-28-v2026.428.1753.46/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2025.924.154138 Released</title>
         <description>
           
