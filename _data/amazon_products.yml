@@ -5,10 +5,87 @@
 # Note: The affiliate tag is configured in _config.yml as 'amazon_products.affiliate_tag'
 
 - title: >-
-    ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card
-    (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)
-  image: "https://m.media-amazon.com/images/I/815-M4vy8JL._AC_SL1500_.jpg"
-  link: "https://www.amazon.com/dp/B0DS6S98ZF"
+    ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition Graphics Card, NVIDIA, Desktop
+    (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)
+  image: "https://m.media-amazon.com/images/I/81S9fi6ViFL._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DS6WPTLL"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    GIGABYTE GeForce RTX 5080 Gaming OC 16G Graphics Card, WINDFORCE Cooling System, 16GB 256-bit GDDR7,
+    GV-N5080GAMING OC-16GD Video Card
+  image: "https://m.media-amazon.com/images/I/71lZess7M8L._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DS2R6948"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    ASUS ROG Astral GeForce RTX™ 5090 OC Edition Graphics Card, NVIDIA
+    (PCIe® 5.0, 32GB GDDR7, HDMI®/DP 2.1, 3.8-Slot, 4-Fan Design, Axial-tech Fans,
+    Patented Vapor Chamber, Phase-Change GPU Thermal Pad)
+  image: "https://m.media-amazon.com/images/I/811IbTkEvnL._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DS2WQZ2M"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    ASUS TUF GeForce RTX™ 5080 16GB GDDR7 OC Edition Graphics Card, NVIDIA, Desktop
+    (PCIe® 5.0, HDMI®/DP 2.1, 3.6-Slot, Military-Grade Components, Protective PCB Coating,
+    Axial-tech Fans, Vapor Chamber)
+  image: "https://m.media-amazon.com/images/I/71WSd4clFZL._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DQSMMCSH"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    GIGABYTE GeForce RTX 5090 WINDFORCE OC 32G Graphics Card, WINDFORCE Cooling System,
+    32GB 512-bit GDDR7, GV-N5090WF3OC-32GD Video Card
+  image: "https://m.media-amazon.com/images/I/71hOB-2Rf5L._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DT7GMXHB"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    GIGABYTE Radeon RX 9060 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9060XTGAMING OC-16GD Video Card
+  image: "https://m.media-amazon.com/images/I/71L08TQedJL._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0F91KM1CK"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    GIGABYTE Radeon RX 9070 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9070XTGAMING OC-16GD Video Card
+  image: "https://m.media-amazon.com/images/I/71R7fXnFGCL._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DS2QG2KW"
+  tags:
+    - gpu
+    - computer hardware
+    - gaming
+    - streaming
+
+- title: >-
+    ASUS Prime Radeon™ RX 9070 XT OC Edition Graphics Card, AMD
+    (PCIe 5.0, HDMI/DP 2.1, 2.5-Slot Design, Axial-tech Fans, Ball Bearings, Dual BIOS, GPU Guard)
+  image: "https://m.media-amazon.com/images/I/81huTBuLV+L._AC_SL1500_.jpg"
+  link: "https://www.amazon.com/dp/B0DRRMZDH6"
   tags:
     - gpu
     - computer hardware
