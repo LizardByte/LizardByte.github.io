@@ -114,14 +114,6 @@
  
  
 { 
-"title"    : "Blog", 
-"desc"     : "Blog", 
-"category" : "page", 
-"url"      : "/blog/", 
-"date"     : "January 1, 1970" 
-}, 
- 
-{ 
 "title"    : "", 
 "desc"     : "", 
 "category" : "page", 
@@ -134,6 +126,14 @@
 "desc"     : "Gamepad Tester", 
 "category" : "page", 
 "url"      : "/gamepad-tester/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Blog", 
+"desc"     : "Blog", 
+"category" : "page", 
+"url"      : "/blog/", 
 "date"     : "January 1, 1970" 
 }, 
  
@@ -194,18 +194,18 @@
 }, 
  
 { 
-"title"    : "LizardByte", 
-"desc"     : "LizardByte", 
+"title"    : "Blog", 
+"desc"     : "Blog", 
 "category" : "page", 
-"url"      : "/page2/", 
+"url"      : "/blog/page2/", 
 "date"     : "January 1, 1970" 
 }, 
  
 { 
-"title"    : "LizardByte", 
-"desc"     : "LizardByte", 
+"title"    : "Blog", 
+"desc"     : "Blog", 
 "category" : "page", 
-"url"      : "/page3/", 
+"url"      : "/blog/page3/", 
 "date"     : "January 1, 1970" 
 } 
  
