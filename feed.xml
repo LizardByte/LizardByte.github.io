@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Sunshine v2026.516.143833 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-ph75-mgxh-mv57 Please update as soon as possible! Breaking Changes ViGEmBus is no longer installed automatically. Instead you can install it from the troubleshooting page of the web-ui if needed. CSRF protection has been added to web-ui. If...
+        </description>
+        <pubDate>Sat, 16 May 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-05-16-v2026.516.143833/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-05-16-v2026.516.143833/</guid>
+      </item>
+    
+      <item>
         <title>Themerr-jellyfin v2026.428.1753.46 Released</title>
         <description>
           
