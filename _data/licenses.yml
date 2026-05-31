@@ -5,11 +5,13 @@ beautiful-jekyll:
   license: MIT
 gamepad-helper:
   name: LizardByte/gamepad-helper
+  # renovate: datasource=npm depName=@lizardbyte/gamepad-helper
   version: '2026.219.34512'
   url: https://github.com/LizardByte/gamepad-helper/
   license: MIT
 shared-web:
   name: LizardByte/shared-web
+  # renovate: datasource=npm depName=@lizardbyte/shared-web
   version: '2026.314.32913'
   url: https://github.com/LizardByte/shared-web/
   license: AGPL-3.0
@@ -27,7 +29,8 @@ button-icons:
   license: CC BY 3.0
 chartjs:
   name: Chart.js
-  version: '4.4.9'
+  # renovate: datasource=cdnjs depName=Chart.js packageName=Chart.js/chart.umd.min.js versioning=semver
+  version: '4.5.0'
   url: https://www.chartjs.org/
   license: MIT
 giscus:
@@ -38,13 +41,9 @@ jekyll:
   name: Jekyll
   url: https://jekyllrb.com/
   license: MIT
-jquery:
-  name: jQuery
-  version: '3.7.1'
-  url: https://jquery.com/
-  license: MIT
 marked:
   name: Marked
-  version: '15.0.8'
+  # renovate: datasource=cdnjs depName=marked packageName=marked/lib/marked.umd.min.js versioning=semver
+  version: '16.3.0'
   url: https://marked.js.org/
   license: MIT
