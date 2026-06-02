@@ -1,6 +1,14 @@
 [ 
  
 { 
+"title"    : "Themerr-jellyfin v2026.601.2038.13 Released", 
+"desc"     : "Themerr-jellyfin v2026.601.2038.13 Released", 
+"category" : "release, themerr-jellyfin", 
+"url"      : "/2026-06-01-v2026.601.2038.13/", 
+"date"     : "June  1, 2026" 
+}, 
+ 
+{ 
 "title"    : "Sunshine v2026.516.143833 Released", 
 "desc"     : "Sunshine v2026.516.143833 Released", 
 "category" : "release, sunshine", 
@@ -214,6 +222,14 @@
 "desc"     : "Blog", 
 "category" : "page", 
 "url"      : "/blog/page3/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Blog", 
+"desc"     : "Blog", 
+"category" : "page", 
+"url"      : "/blog/page4/", 
 "date"     : "January 1, 1970" 
 } 
  

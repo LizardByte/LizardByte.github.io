@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Themerr-jellyfin v2026.601.2038.13 Released</title>
+        <description>
+          
+          What’s Changed feat(dashboard): show ThemerrDB availability by @LuckyNoS7evin in #786 fix: ensure plugin and build config use same guid by @LuckyNoS7evin in #791 ci: add JUnit test logger and test results upload by @ReenigneArcher in #794 fix: update pluginUniqueId for config html page by @ReenigneArcher in #796 chore(l10n): update translations...
+        </description>
+        <pubDate>Mon, 01 Jun 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/</guid>
+      </item>
+    
+      <item>
         <title>Sunshine v2026.516.143833 Released</title>
         <description>
           

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">  <!-- //NOSONAR(Web:PageWithoutTitleCheck): _includes/head.html renders the page title. -->
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <!-- Load theme initialization script early to prevent flash of wrong theme -->
+  <script src="/assets/js/theme-init.js"></script>
+  
+
+  
+
+  
+
+  
+
+  <title>Themerr-jellyfin v2026.601.2038.13 Released | LizardByte</title>
+
+  
+  
+  <meta name="author" content="LizardByte-bot">
+  
+
+  <meta name="description" content="What’s Changed feat(dashboard): show ThemerrDB availability by @LuckyNoS7evin in #786 fix: ensure plugin and build config use same guid by @LuckyNoS7evin in #791 ci: add JUnit test logger and test results upload by @ReenigneArcher in #794 fix: update pluginUniqueId for config html page by @ReenigneArcher in #796 chore(l10n): update translations...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  globalThis.dataLayer = globalThis.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+
+
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      
+        
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.314.32913/dist/crowdin-bootstrap-css.css">
+
+
+      
+    
+      
+        <link rel="stylesheet" href="/assets/css/styles.css">
+      
+    
+  
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Themerr-jellyfin v2026.601.2038.13 Released | LizardByte">
+  <meta property="og:description" content="What’s Changed feat(dashboard): show ThemerrDB availability by @LuckyNoS7evin in #786 fix: ensure plugin and build config use same guid by @LuckyNoS7evin in #791 ci: add JUnit test logger and test results upload by @ReenigneArcher in #794 fix: update pluginUniqueId for config html page by @ReenigneArcher in #796 chore(l10n): update translations...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Themerr-jellyfin_624x312.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="LizardByte-bot">
+  
+  <meta property="og:article:published_time" content="2026-06-01T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Themerr-jellyfin v2026.601.2038.13 Released | LizardByte">
+  <meta property="twitter:description" content="What’s Changed feat(dashboard): show ThemerrDB availability by @LuckyNoS7evin in #786 fix: ensure plugin and build config use same guid by @LuckyNoS7evin in #791 ci: add JUnit test logger and test results upload by @ReenigneArcher in #794 fix: update pluginUniqueId for config html page by @ReenigneArcher in #796 chore(l10n): update translations...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Themerr-jellyfin_624x312.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown2" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/GameDB">Game DB</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown3" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/gamepad-tester">Gamepad Tester</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown4" type="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown4">
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/packages">Packages</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/homebrew-homebrew">Homebrew</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/pacman-repo">Pacman</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown5" type="button" data-bs-toggle="dropdown" aria-expanded="false">Development</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown5">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+                    <a class="dropdown-item" href="/roadmap">Roadmap</a>
+              </div>
+            </li>
+          
+          
+          
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.9.2/simple-jekyll-search.min.js"
+    integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n"
+    crossorigin="anonymous"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json'
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Themerr-jellyfin v2026.601.2038.13 Released</h1>
+          
+
+          
+            
+              By
+              
+                <span class="post-author-container">
+                  
+                    <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                      <img src="https://github.com/LizardByte-bot.png?size=40" alt="LizardByte-bot" class="post-author-avatar">
+                    </a>
+                  
+                  <strong>
+                    
+                      <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                        LizardByte-bot
+                      </a>
+                    
+                  </strong>
+                  
+                </span>
+              <br>
+            
+            <span class="post-meta">Posted on June 1, 2026</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+
+
+
+
+
+
+
+
+
+
+          
+            <a href="https://hitscounter.dev/history?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F" target="_blank" rel="noopener noreferrer">
+              <img
+                  class="shields-"
+                  src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F&label=hits&icon=graph-up-arrow&color=blue&message=&style=for-the-badge&tz=UTC"
+                  alt="hits"
+                  
+              >
+            </a>
+          
+
+          
+            
+              
+                  
+                    <object data="https://img.shields.io/github/followers/LizardByte?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte&link=https%3A%2F%2Fgithub.com%2FLizardByte%3Ftab%3Dfollowers" type="image/svg+xml" title="GitHub followers">GitHub followers</object>
+                  
+              
+            
+              
+                  
+                    <object data="https://img.shields.io/github/forks/LizardByte/Themerr-jellyfin?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FThemerr-jellyfin%2Ffork&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FThemerr-jellyfin%2Fforks" type="image/svg+xml" title="GitHub forks">GitHub forks</object>
+                  
+                
+            
+              
+                  
+                    <object data="https://img.shields.io/github/stars/LizardByte/Themerr-jellyfin?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FThemerr-jellyfin&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FThemerr-jellyfin%2Fstargazers" type="image/svg+xml" title="GitHub Repo stars">GitHub Repo stars</object>
+                  
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        
+
+
+
+
+    
+        
+        
+<div class="admonition hint rounded">
+    <p class="admonition-title">Hint</p>
+    <p>
+        <p>View this release on <a href="https://github.com/LizardByte/Themerr-jellyfin/releases/tag/v2026.601.2038.13">GitHub</a>.</p>
+
+    </p>
+</div>
+
+
+
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+  <li>feat(dashboard): show ThemerrDB availability by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/786">#786</a></li>
+  <li>fix: ensure plugin and build config use same guid by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/791">#791</a></li>
+  <li>ci: add JUnit test logger and test results upload by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/794">#794</a></li>
+  <li>fix: update pluginUniqueId for config html page by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/796">#796</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/792">#792</a></li>
+  <li>fix(config): remove discord widget by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/797">#797</a></li>
+  <li>chore(deps): update dependency myst-parser to v5.1.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/799">#799</a></li>
+  <li>fix: migrate data to sqlite database by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/795">#795</a></li>
+  <li>chore: update global workflows by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/807">#807</a></li>
+  <li>fix: add audio stream fallback and ensure YoutubeExplode dependencies by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/810">#810</a></li>
+  <li>perf: use a static HttpClient to prevent socket exhaustion by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/808">#808</a></li>
+  <li>refactor: async/await by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/809">#809</a></li>
+  <li>perf: read GetProgress data directly from SQLite by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/811">#811</a></li>
+  <li>chore(deps): update dependency coverlet.collector to 10.0.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/815">#815</a></li>
+  <li>chore(deps): update dependency coverlet.msbuild to 10.0.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/816">#816</a></li>
+  <li>chore(deps): update codecov/codecov-action action to v6.0.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/818">#818</a></li>
+  <li>chore(deps): update dependency sonaranalyzer.csharp to 10.26.0.140279 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/819">#819</a></li>
+  <li>chore(deps): update dependency jellyfin.controller to 10.11.9 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/821">#821</a></li>
+  <li>feat: replace with themerr theme by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/812">#812</a></li>
+  <li>build: add build_plugin.py script and auto generate build.yaml by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/823">#823</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/822">#822</a></li>
+  <li>build: migrate to pyproject.toml by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/826">#826</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/825">#825</a></li>
+  <li>chore(crowdin): set commit message by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/827">#827</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/828">#828</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.522.121358 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/829">#829</a></li>
+  <li>chore(deps): update dependency jellyfin.controller to 10.11.10 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/830">#830</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.524.145234 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/831">#831</a></li>
+  <li>fix: On replace bypass cache and get fresh YouTube URL from ThemerrDB by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/832">#832</a></li>
+  <li>chore(deps): update dependency sonaranalyzer.csharp to 10.27.0.140913 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/833">#833</a></li>
+  <li>feat: add dashboard filters and make completion progress more granular by <a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/824">#824</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/834">#834</a></li>
+  <li>chore(deps): update dependency microsoft.net.test.sdk to 18.6.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/835">#835</a></li>
+  <li>chore(deps): update actions/setup-dotnet action to v5.3.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/836">#836</a></li>
+  <li>build(python): migrate to uv by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/837">#837</a></li>
+  <li>refactor: sonar fixes by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/838">#838</a></li>
+  <li>chore(docker): sonar fixes by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/841">#841</a></li>
+  <li>refactor: migrate md5 to sha-256 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/842">#842</a></li>
+  <li>fix(config): Update scheduled task trigger on config change by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/840">#840</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+  <li><a href="https://github.com/LuckyNoS7evin">@LuckyNoS7evin</a> made their first contribution in <a href="https://github.com/LizardByte/Themerr-jellyfin/pull/786">#786</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/LizardByte/Themerr-jellyfin/compare/v2026.428.1753.46…v2026.601.2038.13</p>
+
+<hr />
+<h2 id="contributors">Contributors</h2>
+<p><a href="https://github.com/ReenigneArcher" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ReenigneArcher"><img src="https://github.com/ReenigneArcher.png?size=40" width="40" height="40" alt="ReenigneArcher" title="ReenigneArcher: 12 merges" /></a><a href="https://github.com/apps/renovate" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, renovate[bot]"><img src="https://avatars.githubusercontent.com/in/2740?size=40" width="40" height="40" alt="renovate[bot]" title="renovate[bot]: 12 merges" /></a><a href="https://github.com/LuckyNoS7evin" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, LuckyNoS7evin"><img src="https://github.com/LuckyNoS7evin.png?size=40" width="40" height="40" alt="LuckyNoS7evin" title="LuckyNoS7evin: 9 merges" /></a><a href="https://github.com/LizardByte-bot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, LizardByte-bot"><img src="https://github.com/LizardByte-bot.png?size=40" width="40" height="40" alt="LizardByte-bot" title="LizardByte-bot: 6 merges" /></a></p>
+
+<hr />
+<p>📦 <strong>Assets:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>⬇️ Download</th>
+      <th>#️⃣ Download Count</th>
+      <th>🛡️ VirusTotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Themerr-jellyfin/releases/download/v2026.601.2038.13/themerr-jellyfin.zip">themerr-jellyfin.zip</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Themerr-jellyfin/v2026.601.2038.13/themerr-jellyfin.zip?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/Zjg2NGNhOWNmZGMxNzczNmRmMWUxOGRhMjI5MjBmOTY6MTc4MDM0NjM4MA=="><img src="https://badges.cssnr.com/vt/id/sha256:f340ee75657c722ec183fd7aaa034fc81b2cc9c2636b5f5db57da1b0b12f747e?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#release">release</a>
+          
+            <a href="/tags#themerr-jellyfin">themerr-jellyfin</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <i class="fa-fw fa-2xl fas fa-coins"></i>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+<div class="amazon-affiliate-container">
+  <div class="affiliate-disclaimer">
+    <small>
+      <em>#CommissionsEarned | As an Amazon Associate we earn from qualifying purchases.</em>
+    </small>
+  </div>
+
+  <div id="amazon-product-display">
+    <!-- Product will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<script>
+(function() {
+  // Load products from Jekyll data
+  const allProducts = [{"title":"ASUS Prime Radeon™ RX 9070 XT OC Edition Graphics Card, AMD (PCIe 5.0, HDMI/DP 2.1, 2.5-Slot Design, Axial-tech Fans, Ball Bearings, Dual BIOS, GPU Guard)","image":"https://m.media-amazon.com/images/I/81huTBuLV+L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DRRMZDH6","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)","image":"https://m.media-amazon.com/images/I/81S9fi6ViFL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS6WPTLL","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS TUF GeForce RTX™ 5080 16GB GDDR7 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, HDMI®/DP 2.1, 3.6-Slot, Military-Grade Components, Protective PCB Coating, Axial-tech Fans, Vapor Chamber)","image":"https://m.media-amazon.com/images/I/71WSd4clFZL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DQSMMCSH","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS ROG Astral GeForce RTX™ 5090 OC Edition Graphics Card, NVIDIA (PCIe® 5.0, 32GB GDDR7, HDMI®/DP 2.1, 3.8-Slot, 4-Fan Design, Axial-tech Fans, Patented Vapor Chamber, Phase-Change GPU Thermal Pad)","image":"https://m.media-amazon.com/images/I/811IbTkEvnL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2WQZ2M","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9070 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9070XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71R7fXnFGCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2QG2KW","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5080 Gaming OC 16G Graphics Card, WINDFORCE Cooling System, 16GB 256-bit GDDR7, GV-N5080GAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71lZess7M8L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2R6948","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5090 WINDFORCE OC 32G Graphics Card, WINDFORCE Cooling System, 32GB 512-bit GDDR7, GV-N5090WF3OC-32GD Video Card","image":"https://m.media-amazon.com/images/I/71hOB-2Rf5L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DT7GMXHB","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9060 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9060XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71L08TQedJL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F91KM1CK","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"AMD Ryzen™ 9 9900X 12-Core, 24-Thread Unlocked Desktop Processor","image":"https://m.media-amazon.com/images/I/61dukbEGziL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D6NN87T8","tags":["cpu","computer hardware","gaming","streaming"]},{"title":"SAMSUNG 990 PRO SSD 2TB NVMe M.2 PCIe Gen4, M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P2T0B/AM","image":"https://m.media-amazon.com/images/I/71OWtcxKgvL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0BHJJ9Y77","tags":["storage","computer hardware","gaming"]},{"title":"Amazon Fire TV Stick 4K Plus (newest model) with AI-powered Fire TV Search, Wi-Fi 6, stream hundreds of thousands of movies and shows, free & live TV, find shows faster with Alexa+","image":"https://m.media-amazon.com/images/I/61JBEw26D7L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F7Z4QZTT","tags":["streaming"]},{"title":"Amazon Fire TV Cube, with AI-powered Fire TV Search, Hands-free streaming device, find shows faster with Alexa+, Wi-Fi 6E, 4K Ultra HD","image":"https://m.media-amazon.com/images/I/71YRVDg1RCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09BZZ3MM7","tags":["streaming"]},{"title":"Google TV Streamer 4K - Fast Streaming Entertainment on Your TV with Voice Search Remote - Watch Movies, Shows, Live TV, and Netflix in 4K HDR - Smart Home Control - 32 GB of Storage","image":"https://m.media-amazon.com/images/I/510wm50VDHL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D8WJYSF9","tags":["streaming"]},{"title":"NVIDIA Shield Android TV Pro | 4K HDR Streaming Media Player High Performance, Dolby Vision, 3GB RAM, 2X USB, Works with Alexa, Model:945-12897-2500-101","image":"https://m.media-amazon.com/images/I/51ZGCIbrgFL._AC_SL1280_.jpg","link":"https://www.amazon.com/dp/B07YP9FBMM","tags":["streaming"]},{"title":"Nintendo Switch with Neon Blue and Neon Red Joy-Con - Handheld Gaming Console","image":"https://m.media-amazon.com/images/I/71wpE+ZIehL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0BFJWCYTL","tags":["gaming","streaming"]},{"title":"Nintendo Switch 2 System","image":"https://m.media-amazon.com/images/I/714-Fh3ngmL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0F3GWXLTS","tags":["gaming","streaming"]},{"title":"PlayStation 5 Pro Console - 2TB","image":"https://m.media-amazon.com/images/I/51f-7a6i5PL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FTMY4YZ2","tags":["gaming"]},{"title":"PlayStation®5 Digital Edition – 825GB","image":"https://m.media-amazon.com/images/I/516yiK6U+FL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGMYJMG","tags":["gaming"]},{"title":"PlayStation®5 console – 1TB","image":"https://m.media-amazon.com/images/I/51tSjJJl82L._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGTYSL5","tags":["gaming"]},{"title":"Sony Playstation Vita Wi-Fi 2000 Series with Silicone Joystick Covers and AC Adapter Cable (Piano Black) (Renewed)","image":"https://m.media-amazon.com/images/I/71QH7h0GRrL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B089CRM88W","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 512GB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D932YWSZ","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D934SHFG","tags":["gaming","streaming"]},{"title":"Xbox Series X - Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Carbon Black","image":"https://m.media-amazon.com/images/I/61WV2vIMfFL._SL1500_.jpg","link":"https://www.amazon.com/dp/B08H75RTZ8","tags":["gaming","streaming"]},{"title":"Xbox Series X - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/51bq1shHXEL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0DCD9LGHY","tags":["gaming","streaming"]},{"title":"Elgato Stream Deck MK.2 – Studio Controller, 15 macro keys, trigger actions in apps and software like OBS, Twitch, ​YouTube and more, works with Mac and PC","image":"https://m.media-amazon.com/images/I/61gtdFnK+UL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09738CV2G","tags":["streaming","accessories","content creation"]},{"title":"Logitech for Creators Blue Microphones Yeti USB Microphone (Blackout)","image":"https://m.media-amazon.com/images/I/61KTMvS5JBL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B00N1YPXW2","tags":["audio","streaming","content creation","accessories"]},{"title":"SofaBaton X2 Universal Remote with Touchscreen, All in One Universal Remote Control with Powerful Hub, One-Touch Activities, Custom APP, Compatible with Alexa&Google Assistant&Home Assistant","image":"https://m.media-amazon.com/images/I/616sCEAGTtL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0G46KHL8K","tags":["accessories"]}];
+
+  // Get affiliate tag from site config
+  const affiliateTag = "lizardbyte-blog-01-20";
+
+  // Get tags from page front matter if available
+  const pageTags = ["release","themerr-jellyfin"];
+
+  let filteredProducts = allProducts;
+
+  // Filter products by tags if specified
+  if (pageTags && pageTags.length > 0) {
+    filteredProducts = allProducts.filter(product => {
+      if (!product.tags) return false;
+      // Check if any page tag matches any product tag
+      return pageTags.some(pageTag =>
+        product.tags.some(productTag =>
+          productTag.toLowerCase() === pageTag.toLowerCase()
+        )
+      );
+    });
+
+    // If no products match, fall back to all products
+    if (filteredProducts.length === 0) {
+      filteredProducts = allProducts;
+    }
+  }
+
+  // Shuffle products once at the start for random initial order
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Shuffle products once and keep that order
+  filteredProducts = shuffleArray(filteredProducts);
+
+  let currentProductIndex = 0;
+  let rotationTimer = null;
+
+  function startRotationTimer() {
+    if (rotationTimer) {
+      clearInterval(rotationTimer);
+    }
+    rotationTimer = setInterval(function() {
+      navigateProduct('next');
+    }, 30000); // 30 seconds
+  }
+
+  function navigateProduct(direction) {
+    if (filteredProducts.length === 0) return;
+
+    if (direction === 'next') {
+      currentProductIndex = (currentProductIndex + 1) % filteredProducts.length;
+    } else if (direction === 'prev') {
+      currentProductIndex = (currentProductIndex - 1 + filteredProducts.length) % filteredProducts.length;
+    }
+
+    displayProduct(filteredProducts[currentProductIndex]);
+  }
+
+  function addAffiliateTag(url) {
+    if (!affiliateTag || !url) return url;
+
+    try {
+      const urlObj = new URL(url);
+      urlObj.searchParams.set('tag', affiliateTag);
+      return urlObj.toString();
+    } catch (e) {
+      console.error('Invalid URL:', url);
+      return url;
+    }
+  }
+
+  function displayProduct(product) {
+    if (!product) return;
+
+    const container = document.getElementById('amazon-product-display');
+    if (!container) return;
+
+    // Add affiliate tag to product link
+    const productLink = addAffiliateTag(product.link);
+
+    // Show navigation buttons only if there are multiple products
+    const showNavigation = filteredProducts.length > 1;
+
+    container.innerHTML = `
+      <div class="amazon-product-display">
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-prev" aria-label="Previous product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+        <div class="product-image">
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+            <img src="${product.image}" alt="${product.title}">
+          </a>
+        </div>
+        <div class="product-details">
+          <h4>
+            <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              ${product.title}
+            </a>
+          </h4>
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored" class="product-link">
+            View on Amazon
+          </a>
+          ${product.tags ? `
+            <div class="product-tags">
+              <small>
+                ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+              </small>
+            </div>
+          ` : ''}
+        </div>
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-next" aria-label="Next product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    // Add event listeners for navigation buttons
+    if (showNavigation) {
+      const prevBtn = container.querySelector('.product-nav-prev');
+      const nextBtn = container.querySelector('.product-nav-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          navigateProduct('prev');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          navigateProduct('next');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+    }
+  }
+
+  // Display initial product (first in shuffled array)
+  if (filteredProducts.length > 0) {
+    displayProduct(filteredProducts[currentProductIndex]);
+
+    // Start automatic rotation if there are products
+    if (filteredProducts.length > 1) {
+      startRotationTimer();
+    }
+  }
+})();
+</script>
+
+
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="visually-hidden">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Themerr-jellyfin+v2026.601.2038.13+Released&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="visually-hidden">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="visually-hidden">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="visually-hidden">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-06-01-v2026.601.2038.13%2F"
+      class="btn btn-social-icon btn-reddit" title="Share on Reddit">
+      <span class="fab fa-fw fa-reddit" aria-hidden="true"></span>
+      <span class="visually-hidden">Reddit</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2026-05-16-v2026.516.143833/" data-toggle="tooltip" data-placement="top" title="Sunshine v2026.516.143833 Released">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+  
+
+<!-- //NOSONAR(Web:S5725): giscus serves this configurable widget endpoint without immutable SRI-compatible releases. --><script
+        src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Blog"
+        data-category-id="DIC_kwDOMzlnm84CnN1j"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (const element of links) {
+            if (element.href.includes('.pdf') || element.href.includes('.doc') || element.href.includes('.docx')) {
+                element.onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+&nbsp;&bull;&nbsp;
+<a title="Licenses and Attribution" href="/licenses" class="text_muted">Licenses</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/releases/themerr-jellyfin/2026-06-01-v2026.601.2038.13.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.314.32913/dist/crowdin.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/crowdin-init.js"></script>
+    
+  
+
+
+
+
+
+  
+    <script src="/assets/js/changelog-links.js"></script>
+  
+
+
+
+</body>
+</html>
