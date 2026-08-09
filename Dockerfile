@@ -70,11 +70,11 @@ set -e
 bundle install
 
 # Create a non-root user and transfer ownership
-useradd --no-create-home --shell /bin/bash jekyll
+useradd --no-create-home --uid 1000 --shell /bin/bash jekyll
 chown -R jekyll:jekyll /app
 _SETUP
 
-USER jekyll
+USER 1000
 
 # Expose the port that Jekyll will run on
 EXPOSE 4000
