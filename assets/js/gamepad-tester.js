@@ -1,3 +1,12 @@
+function createDPadButtonVisuals(centerX, centerY) {
+    return [
+        { index: 12, tag: 'rect', attributes: { x: centerX - 50, y: centerY - 150, width: 100, height: 115, rx: 18 } },
+        { index: 13, tag: 'rect', attributes: { x: centerX - 50, y: centerY + 40, width: 100, height: 115, rx: 18 } },
+        { index: 14, tag: 'rect', attributes: { x: centerX - 155, y: centerY - 50, width: 115, height: 100, rx: 18 } },
+        { index: 15, tag: 'rect', attributes: { x: centerX + 40, y: centerY - 50, width: 115, height: 100, rx: 18 } }
+    ];
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const gamepadHelper = new GamepadHelper()
     const gamepadHelperVersion = globalThis.gamepadHelperVersion;
@@ -14,15 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const svgNamespace = 'http://www.w3.org/2000/svg';
     const gamepadAssetBasePath = `https://cdn.jsdelivr.net/npm/@lizardbyte/gamepad-helper@${gamepadHelperVersion}/assets/img/gamepads/`;
-    function createDPadButtonVisuals(centerX, centerY) {
-        return [
-            { index: 12, tag: 'rect', attributes: { x: centerX - 50, y: centerY - 150, width: 100, height: 115, rx: 18 } },
-            { index: 13, tag: 'rect', attributes: { x: centerX - 50, y: centerY + 40, width: 100, height: 115, rx: 18 } },
-            { index: 14, tag: 'rect', attributes: { x: centerX - 155, y: centerY - 50, width: 115, height: 100, rx: 18 } },
-            { index: 15, tag: 'rect', attributes: { x: centerX + 40, y: centerY - 50, width: 115, height: 100, rx: 18 } }
-        ];
-    }
-
     const gamepadVisualConfigs = {
         xbox: {
             viewBox: '1050 450 2050 1350',
