@@ -811,6 +811,242 @@ table tr:nth-child(2n) {
   overflow-wrap: anywhere;
 }
 
+/* Fit the complete tester workspace into a typical desktop viewport. */
+@media (min-width: 1200px) {
+  .gamepad-tester.has-gamepad {
+    padding-bottom: 1.25rem !important;
+    padding-top: 1.25rem !important;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-tester-header {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    max-width: none;
+    text-align: left !important;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-kicker,
+  .gamepad-tester.has-gamepad .gamepad-tester-header > .lead,
+  .gamepad-tester.has-gamepad .gamepad-privacy-note {
+    display: none;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-tester-header > h2 {
+    flex: 0 0 auto;
+    font-size: 1.65rem;
+    margin-bottom: 0 !important;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-status {
+    flex: 1 1 auto;
+    margin: 0 !important;
+    max-width: none;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-panel {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    margin-top: 0.85rem !important;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-heading {
+    border-bottom: 0;
+    border-right: 1px solid var(--navbar-border-col);
+    padding: 0.65rem 0.85rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-heading > .small {
+    display: none;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-grid {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 18rem));
+    padding: 0.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-card {
+    gap: 0.55rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-selector-icon {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    margin: 0.75rem 0 0 !important;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > [class*="col-"] {
+    padding: 0;
+    width: auto;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(1) {
+    grid-column: 1 / 8;
+    grid-row: 1;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(2) {
+    grid-column: 8 / 13;
+    grid-row: 1;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(3) {
+    grid-column: 7 / 10;
+    grid-row: 2;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(4) {
+    grid-column: 1 / 7;
+    grid-row: 2;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(5) {
+    grid-column: 10 / 13;
+    grid-row: 2;
+  }
+
+  .gamepad-tester.has-gamepad #gamepad-info > :nth-child(6) {
+    grid-column: 1 / 13;
+    grid-row: 3;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-visual-panel {
+    height: 100%;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-panel-header {
+    gap: 0.5rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-panel-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-panel-eyebrow {
+    font-size: 0.6rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-panel-body {
+    padding: 0.7rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-visual {
+    min-height: 12rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-visual-svg {
+    max-height: 12.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-trigger-visual {
+    padding: 0.3rem;
+    top: 1.25rem;
+    width: 4.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-trigger-visual:first-child {
+    left: max(calc(50% - 22rem), 0.25rem);
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-trigger-visual:last-child {
+    right: max(calc(50% - 22rem), 0.25rem);
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-trigger-image {
+    max-height: 2rem;
+    width: 3rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-button-grid {
+    gap: 0.4rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-button-grid .circular-button {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-button-grid .button-image {
+    max-height: 1.65rem;
+    max-width: 1.65rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-button-grid .button-name {
+    font-size: 0.62rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-button-grid .button-value {
+    font-size: 0.6rem;
+    margin-top: 0.1rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-axis-grid {
+    gap: 0.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-axis {
+    padding: 0.5rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-axis-header {
+    margin-bottom: 0.35rem;
+  }
+
+  .gamepad-tester.has-gamepad .stick-circle {
+    height: 5.75rem;
+    width: 5.75rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-stick-label {
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-capability {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-range-control {
+    margin-bottom: 0.45rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-range-control label {
+    font-size: 0.75rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .gamepad-tester.has-gamepad .form-range {
+    height: 1.15rem;
+  }
+
+  .gamepad-tester.has-gamepad #vibration-buttons .btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.45rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-device-details > summary {
+    padding: 0.55rem 0.75rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-device-details > summary .h5 {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 767.98px) {
   .gamepad-axis-grid,
   .gamepad-details-grid {

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const gamepadSelector = document.getElementById('gamepad-selector');
     const gamepadSelectorContainer = document.getElementById('gamepad-selector-container');
     const gamepadInfoSection = document.getElementById('gamepad-info');
+    const gamepadTester = document.getElementById('GamepadTester');
     const gamepadStatus = document.getElementById('gamepad-status');
     const gamepadStatusMessage = document.getElementById('gamepad-status-message');
     let gamepadVisualButtons = new Map();
@@ -190,10 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
         gamepadSelector.innerHTML = '';
 
         const gamepadIndices = Object.keys(gamepads);
+        const hasGamepads = gamepadIndices.length > 0;
+        gamepadTester.classList.toggle('has-gamepad', hasGamepads);
 
-        if (gamepadIndices.length > 0) {
-            gamepadSelectorContainer.style.display = 'block';
-            gamepadInfoSection.style.display = 'flex';
+        if (hasGamepads) {
+            gamepadSelectorContainer.style.removeProperty('display');
+            gamepadInfoSection.style.removeProperty('display');
 
             gamepadIndices.forEach(index => {
                 const card = document.createElement('button');
