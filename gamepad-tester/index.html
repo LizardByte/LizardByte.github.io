@@ -23,7 +23,7 @@
   <meta name="author" content="LizardByte">
   
 
-  <meta name="description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad or...">
+  <meta name="description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Controller Visual A visual is not available for this controller. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration:...">
 
   
   <meta name="theme-color" content="#05FF3B">
@@ -117,7 +117,7 @@
   
   <meta property="og:site_name" content="LizardByte">
   <meta property="og:title" content="Gamepad Tester | LizardByte">
-  <meta property="og:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad or...">
+  <meta property="og:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Controller Visual A visual is not available for this controller. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration:...">
 
   
   <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -136,7 +136,7 @@
   <meta name="twitter:creator" content="@LizardByteDev">
 
   <meta property="twitter:title" content="Gamepad Tester | LizardByte">
-  <meta property="twitter:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration: 1000ms Vibrate Stop Vibration not supported by this gamepad or...">
+  <meta property="twitter:description" content="Gamepad Tester Connect a controller to test its inputs and functionality No gamepad detected. Connect a gamepad and press any button. Controller Visual A visual is not available for this controller. Gamepad Info ID- Index- Connected- Mapping- Buttons- Axes- Type- Name- Vibration Test Weak: 0.1 Strong: 0.1 Magnitude: 0.5 Duration:...">
 
   
   <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -329,6 +329,19 @@
         </div>
 
         <div class="row g-3" id="gamepad-info" style="display: none;">
+            <div class="col-12">
+                <div class="card gamepad-info-card">
+                    <div class="card-header py-1">
+                        <h5 class="card-title mb-0">Controller Visual</h5>
+                    </div>
+                    <div class="card-body p-2">
+                        <div id="controller-visual" class="gamepad-visual">
+                            <span class="text-muted">A visual is not available for this controller.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-4">
                 <div class="card gamepad-info-card h-100">
                     <div class="card-header py-1">
