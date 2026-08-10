@@ -26,10 +26,10 @@ js:
             </div>
             <h2 class="display-6 fw-bolder mb-2">Gamepad Tester</h2>
             <p class="lead text-muted mb-4">Check buttons, sticks, triggers, axes, and vibration in real time.</p>
-            <div id="gamepad-status" class="alert alert-warning gamepad-status mb-2" role="status" aria-live="polite">
+            <output id="gamepad-status" class="alert alert-warning gamepad-status mb-2" aria-live="polite">
                 <span class="gamepad-status-indicator" aria-hidden="true"></span>
                 <span id="gamepad-status-message">No gamepad detected. Connect a gamepad and press any button.</span>
-            </div>
+            </output>
             <p class="gamepad-privacy-note text-muted mb-0">
                 <i class="fas fa-lock me-1" aria-hidden="true"></i>
                 Input data stays in your browser.
@@ -193,16 +193,16 @@ js:
                         <span class="gamepad-details-action text-muted">Show details <i class="fas fa-chevron-down" aria-hidden="true"></i></span>
                     </summary>
                     <div class="gamepad-panel-body">
-                        <dl class="gamepad-details-grid mb-0">
-                            <div class="gamepad-detail gamepad-detail-wide"><dt>Name</dt><dd id="gamepad-name">-</dd></div>
-                            <div class="gamepad-detail gamepad-detail-wide"><dt>Device ID</dt><dd id="gamepad-id">-</dd></div>
-                            <div class="gamepad-detail"><dt>Type</dt><dd id="gamepad-type">-</dd></div>
-                            <div class="gamepad-detail"><dt>Mapping</dt><dd id="gamepad-mapping">-</dd></div>
-                            <div class="gamepad-detail"><dt>Index</dt><dd id="gamepad-index">-</dd></div>
-                            <div class="gamepad-detail"><dt>Connected</dt><dd id="gamepad-connected">-</dd></div>
-                            <div class="gamepad-detail"><dt>Buttons</dt><dd id="gamepad-buttons-count">-</dd></div>
-                            <div class="gamepad-detail"><dt>Axes</dt><dd id="gamepad-axes-count">-</dd></div>
-                        </dl>
+                        <div class="gamepad-details-grid mb-0">
+                            <dl class="gamepad-detail gamepad-detail-wide"><dt>Name</dt><dd id="gamepad-name">-</dd></dl>
+                            <dl class="gamepad-detail gamepad-detail-wide"><dt>Device ID</dt><dd id="gamepad-id">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Type</dt><dd id="gamepad-type">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Mapping</dt><dd id="gamepad-mapping">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Index</dt><dd id="gamepad-index">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Connected</dt><dd id="gamepad-connected">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Buttons</dt><dd id="gamepad-buttons-count">-</dd></dl>
+                            <dl class="gamepad-detail"><dt>Axes</dt><dd id="gamepad-axes-count">-</dd></dl>
+                        </div>
                     </div>
                 </details>
             </div>
