@@ -16,177 +16,197 @@ js:
 </script>
 
 <!-- Gamepad Tester section -->
-<section class="py-0" id="GamepadTester">
-    <div class="container my-0">
-        <div class="row mb-2">
-            <div class="col-12 text-center">
-                <h2 class="fw-bolder mb-1">Gamepad Tester</h2>
-                <p class="lead mb-2">Connect a controller to test its inputs and functionality</p>
-                <div id="gamepad-status" class="alert alert-warning py-1 mb-2">No gamepad detected. Connect a gamepad and press any button.</div>
+<section class="gamepad-tester py-4 py-lg-5" id="GamepadTester">
+    <div class="container">
+        <header class="gamepad-tester-header mx-auto text-center">
+            <div class="gamepad-kicker mb-2">
+                <i class="fas fa-gamepad" aria-hidden="true"></i>
+                Browser controller diagnostics
             </div>
-        </div>
-
-        <div class="row mb-2" id="gamepad-selector-container" style="display: none;">
-            <div class="col-12">
-                <div class="d-flex flex-wrap gap-2 justify-content-center" id="gamepad-selector"></div>
+            <h2 class="display-6 fw-bolder mb-2">Gamepad Tester</h2>
+            <p class="lead text-muted mb-4">Check buttons, sticks, triggers, axes, and vibration in real time.</p>
+            <div id="gamepad-status" class="alert alert-warning gamepad-status mb-2" role="status" aria-live="polite">
+                <span class="gamepad-status-indicator" aria-hidden="true"></span>
+                <span id="gamepad-status-message">No gamepad detected. Connect a gamepad and press any button.</span>
             </div>
-        </div>
+            <p class="gamepad-privacy-note text-muted mb-0">
+                <i class="fas fa-lock me-1" aria-hidden="true"></i>
+                Input data stays in your browser.
+            </p>
+        </header>
 
-        <div class="row g-3" id="gamepad-info" style="display: none;">
+        <section class="gamepad-selector-panel mt-4" id="gamepad-selector-container" style="display: none;" aria-labelledby="gamepad-selector-heading">
+            <div class="gamepad-selector-heading">
+                <div>
+                    <span class="gamepad-panel-eyebrow">Devices</span>
+                    <h3 class="h5 mb-0" id="gamepad-selector-heading">Connected controllers</h3>
+                </div>
+                <span class="small text-muted">Choose a controller to inspect</span>
+            </div>
+            <div class="gamepad-selector-grid" id="gamepad-selector"></div>
+        </section>
+
+        <div class="row g-4 mt-0" id="gamepad-info" style="display: none;">
             <div class="col-12">
-                <div class="card gamepad-info-card">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Controller Visual</h5>
+                <section class="gamepad-panel gamepad-visual-panel" aria-labelledby="controller-visual-heading">
+                    <div class="gamepad-panel-header">
+                        <div>
+                            <span class="gamepad-panel-eyebrow">Live input</span>
+                            <h3 class="h5 mb-0" id="controller-visual-heading">Controller visual</h3>
+                        </div>
+                        <span class="gamepad-live-badge"><span aria-hidden="true"></span>Live</span>
                     </div>
-                    <div class="card-body p-2">
+                    <div class="gamepad-panel-body gamepad-visual-body">
                         <div id="controller-visual" class="gamepad-visual">
                             <span class="text-muted">A visual is not available for this controller.</span>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
 
-            <div class="col-md-4">
-                <div class="card gamepad-info-card h-100">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Gamepad Info</h5>
+            <div class="col-lg-8">
+                <section class="gamepad-panel h-100" aria-labelledby="buttons-heading">
+                    <div class="gamepad-panel-header">
+                        <div>
+                            <span class="gamepad-panel-eyebrow">Digital and analog</span>
+                            <h3 class="h5 mb-0" id="buttons-heading">Buttons</h3>
+                        </div>
+                        <span class="small text-muted">Press or hold any button</span>
                     </div>
-                    <div class="card-body p-2">
-                        <div class="table-responsive">
-                            <table class="table gamepad-info-table table-sm mb-0">
-                                <tbody>
-                                <tr><th>ID</th><td id="gamepad-id">-</td></tr>
-                                <tr><th>Index</th><td id="gamepad-index">-</td></tr>
-                                <tr><th>Connected</th><td id="gamepad-connected">-</td></tr>
-                                <tr><th>Mapping</th><td id="gamepad-mapping">-</td></tr>
-                                <tr><th>Buttons</th><td id="gamepad-buttons-count">-</td></tr>
-                                <tr><th>Axes</th><td id="gamepad-axes-count">-</td></tr>
-                                <tr><th>Type</th><td id="gamepad-type">-</td></tr>
-                                <tr><th>Name</th><td id="gamepad-name">-</td></tr>
-                                </tbody>
-                            </table>
+                    <div class="gamepad-panel-body">
+                        <div id="buttons-container" class="gamepad-button-grid"></div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <section class="gamepad-panel h-100" aria-labelledby="sticks-heading">
+                    <div class="gamepad-panel-header">
+                        <div>
+                            <span class="gamepad-panel-eyebrow">Position</span>
+                            <h3 class="h5 mb-0" id="sticks-heading">Sticks</h3>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card gamepad-info-card h-100">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Vibration Test</h5>
-                    </div>
-                    <div class="card-body p-2">
-                        <div id="vibration-status" class="small mb-2"></div>
-
-                        <div id="dual-rumble-controls" class="d-none">
-                            <div class="mb-2">
-                                <div class="d-flex align-items-center">
-                                    <label for="vibration-weak" class="form-label me-2 mb-0" style="width: 100px;">Weak: <span id="weak-value">0.1</span></label>
-                                    <input type="range" class="form-range" id="vibration-weak" min="0" max="1" step="0.01" value="0.1">
+                    <div class="gamepad-panel-body">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h4 class="gamepad-stick-label">Left stick</h4>
+                                    <div class="position-relative mx-auto stick-circle">
+                                        <div id="left-stick-position" class="position-absolute stick-position"></div>
+                                        <div class="position-absolute stick-line-vertical"></div>
+                                        <div class="position-absolute stick-line-horizontal"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mb-2">
-                                <div class="d-flex align-items-center">
-                                    <label for="vibration-strong" class="form-label me-2 mb-0" style="width: 100px;">Strong: <span id="strong-value">0.1</span></label>
-                                    <input type="range" class="form-range" id="vibration-strong" min="0" max="1" step="0.01" value="0.1">
+                            <div class="col-6">
+                                <div class="stick-container text-center">
+                                    <h4 class="gamepad-stick-label">Right stick</h4>
+                                    <div class="position-relative mx-auto stick-circle">
+                                        <div id="right-stick-position" class="position-absolute stick-position"></div>
+                                        <div class="position-absolute stick-line-vertical"></div>
+                                        <div class="position-absolute stick-line-horizontal"></div>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-8">
+                <section class="gamepad-panel h-100" aria-labelledby="axes-heading">
+                    <div class="gamepad-panel-header">
+                        <div>
+                            <span class="gamepad-panel-eyebrow">Range -1.00 to 1.00</span>
+                            <h3 class="h5 mb-0" id="axes-heading">Axes</h3>
+                        </div>
+                        <span class="small text-muted">Centered at zero</span>
+                    </div>
+                    <div class="gamepad-panel-body">
+                        <div class="gamepad-axis-grid" id="axes-container"></div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <section class="gamepad-panel h-100" aria-labelledby="vibration-heading">
+                    <div class="gamepad-panel-header">
+                        <div>
+                            <span class="gamepad-panel-eyebrow">Haptics</span>
+                            <h3 class="h5 mb-0" id="vibration-heading">Vibration</h3>
+                        </div>
+                    </div>
+                    <div class="gamepad-panel-body">
+                        <div id="vibration-status" class="gamepad-capability mb-3"></div>
+
+                        <div id="dual-rumble-controls" class="d-none">
+                            <div class="gamepad-range-control">
+                                <label for="vibration-weak">Weak motor <output id="weak-value">0.1</output></label>
+                                <input type="range" class="form-range" id="vibration-weak" min="0" max="1" step="0.01" value="0.1">
+                            </div>
+                            <div class="gamepad-range-control">
+                                <label for="vibration-strong">Strong motor <output id="strong-value">0.1</output></label>
+                                <input type="range" class="form-range" id="vibration-strong" min="0" max="1" step="0.01" value="0.1">
                             </div>
                         </div>
 
                         <div id="simple-vibration-controls" class="d-none">
-                            <div class="mb-2">
-                                <div class="d-flex align-items-center">
-                                    <label for="vibration-magnitude" class="form-label me-2 mb-0" style="width: 100px;">Magnitude: <span id="magnitude-value">0.5</span></label>
-                                    <input type="range" class="form-range" id="vibration-magnitude" min="0" max="1" step="0.01" value="0.5">
-                                </div>
+                            <div class="gamepad-range-control">
+                                <label for="vibration-magnitude">Magnitude <output id="magnitude-value">0.5</output></label>
+                                <input type="range" class="form-range" id="vibration-magnitude" min="0" max="1" step="0.01" value="0.5">
                             </div>
                         </div>
 
-                        <div id="vibration-duration-controls" class="mb-2">
-                            <div class="d-flex align-items-center">
-                                <label for="vibration-duration" class="form-label me-2 mb-0" style="width: 100px;">Duration: <span id="duration-value">1000</span>ms</label>
-                                <input type="range" class="form-range" id="vibration-duration" min="100" max="5000" step="100" value="1000">
-                            </div>
+                        <div id="vibration-duration-controls" class="gamepad-range-control">
+                            <label for="vibration-duration">Duration <span><output id="duration-value">1000</output> ms</span></label>
+                            <input type="range" class="form-range" id="vibration-duration" min="100" max="5000" step="100" value="1000">
                         </div>
 
-                        <div class="d-flex justify-content-between" id="vibration-buttons">
-                            <button id="vibrate-btn" class="btn btn-sm btn-primary">Vibrate</button>
-                            <button id="stop-vibration-btn" class="btn btn-sm btn-danger">Stop</button>
+                        <div class="d-flex gap-2" id="vibration-buttons">
+                            <button id="vibrate-btn" class="btn btn-primary flex-grow-1">
+                                <i class="fas fa-wave-square me-1" aria-hidden="true"></i>Vibrate
+                            </button>
+                            <button id="stop-vibration-btn" class="btn btn-outline-danger">
+                                <i class="fas fa-stop me-1" aria-hidden="true"></i>Stop
+                            </button>
                         </div>
 
                         <div id="vibration-unsupported" class="d-none">
-                            <div class="alert alert-warning mb-0">
-                                <i class="fas fa-exclamation-triangle me-2"></i>Vibration not supported by this gamepad or browser.
+                            <div class="gamepad-inline-notice">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                Vibration is not available for this controller or browser.
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
 
-            <div class="col-md-5">
-                <div class="card gamepad-info-card h-100">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Buttons</h5>
+            <div class="col-12">
+                <details class="gamepad-panel gamepad-device-details">
+                    <summary>
+                        <span>
+                            <span class="gamepad-panel-eyebrow">Technical information</span>
+                            <span class="h5 d-block mb-0">Controller details</span>
+                        </span>
+                        <span class="gamepad-details-action text-muted">Show details <i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                    </summary>
+                    <div class="gamepad-panel-body">
+                        <dl class="gamepad-details-grid mb-0">
+                            <div class="gamepad-detail gamepad-detail-wide"><dt>Name</dt><dd id="gamepad-name">-</dd></div>
+                            <div class="gamepad-detail gamepad-detail-wide"><dt>Device ID</dt><dd id="gamepad-id">-</dd></div>
+                            <div class="gamepad-detail"><dt>Type</dt><dd id="gamepad-type">-</dd></div>
+                            <div class="gamepad-detail"><dt>Mapping</dt><dd id="gamepad-mapping">-</dd></div>
+                            <div class="gamepad-detail"><dt>Index</dt><dd id="gamepad-index">-</dd></div>
+                            <div class="gamepad-detail"><dt>Connected</dt><dd id="gamepad-connected">-</dd></div>
+                            <div class="gamepad-detail"><dt>Buttons</dt><dd id="gamepad-buttons-count">-</dd></div>
+                            <div class="gamepad-detail"><dt>Axes</dt><dd id="gamepad-axes-count">-</dd></div>
+                        </dl>
                     </div>
-                    <div class="card-body p-2">
-                        <div id="buttons-container" class="d-flex flex-wrap gap-1"></div>
-                    </div>
-                </div>
+                </details>
             </div>
 
-            <div class="col-md-6">
-                <div class="card gamepad-info-card h-100">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Axes</h5>
-                    </div>
-                    <div class="card-body p-2">
-                        <div class="row g-1" id="axes-container"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card gamepad-info-card h-100">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Sticks</h5>
-                    </div>
-                    <div class="card-body p-2">
-                        <div class="row g-2">
-                            <div class="col-6">
-                                <div class="stick-container text-center">
-                                    <h6 class="mb-1">Left</h6>
-                                    <div class="position-relative mx-auto stick-circle">
-                                        <div id="left-stick-position" class="position-absolute bg-primary stick-position"></div>
-                                        <div class="position-absolute stick-line-vertical"></div>
-                                        <div class="position-absolute stick-line-horizontal"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stick-container text-center">
-                                    <h6 class="mb-1">Right</h6>
-                                    <div class="position-relative mx-auto stick-circle">
-                                        <div id="right-stick-position" class="position-absolute bg-primary stick-position"></div>
-                                        <div class="position-absolute stick-line-vertical"></div>
-                                        <div class="position-absolute stick-line-horizontal"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 d-none">
-                <div class="card gamepad-info-card">
-                    <div class="card-header py-1">
-                        <h5 class="card-title mb-0">Raw Data</h5>
-                    </div>
-                    <div class="card-body p-2">
-                        <pre id="raw-data" class="gamepad-raw-data p-2 rounded mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
-                    </div>
-                </div>
-            </div>
+            <pre id="raw-data" class="d-none" aria-hidden="true"></pre>
         </div>
     </div>
 </section>
