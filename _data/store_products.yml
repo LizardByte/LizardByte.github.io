@@ -1,0 +1,49 @@
+---
+- id: virtual-hid-driver
+  name: Virtual HID Driver
+  category: Windows software
+  tagline: Modern virtual gamepads for Sunshine on Windows
+  description: >-
+    Unlock expanded virtual controller support in Sunshine with a user-mode driver built and maintained alongside
+    the rest of the LizardByte input stack.
+  cover:
+    src: https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/libvirtualhid-poster-1440x2160.png
+    alt: A green outline of a game controller on a vertical dark green background
+    aspect: portrait
+  screenshots:
+    - src: "https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/\
+        libvirtualhid-control-03.png"
+      alt: libvirtualhid control displaying an active Xbox Series virtual controller
+      caption: Inspect virtual controller input, battery state, and output reports.
+    - src: "https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/\
+        libvirtualhid-control-04.png"
+      alt: libvirtualhid control displaying a DualSense virtual controller
+      caption: Use controller-specific features such as touchpad input and RGB output.
+    - src: "https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/\
+        windows-driver-game-controllers-and-properties.png"
+      alt: Windows Game Controllers and controller properties showing a Virtual HID Framework device
+      caption: Virtual controllers appear in the familiar Windows Game Controllers panel.
+  badges:
+    - label: Windows
+      icon: fa-brands fa-windows
+    - label: Sunshine compatible
+      icon: fa-solid fa-sun
+  prices:
+    - amount: $14.99
+      label: per year
+    - amount: $49.99
+      label: lifetime
+  price_note: One license can be activated on up to five machines.
+  features:
+    - Generic, Xbox One, Xbox Series, DualShock 4, DualSense, and Switch Pro-style profiles
+    - Support for advanced controller features when the selected controller and game provide them
+    - Ongoing driver maintenance and improvements alongside Sunshine and other LizardByte software
+  details:
+    label: Learn more
+    url: https://app.lizardbyte.dev/libvirtualhid/virtual-hid-driver
+  offers:
+    - label: Purchase
+      url: https://buy.polar.sh/polar_cl_zj6Io5NVukXfZSl97ULtFvImfI5L1jbL2cSnc0Y72Pt
+      store: Polar
+      external: true
+      icon: fa-solid fa-cart-shopping
