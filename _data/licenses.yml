@@ -12,7 +12,7 @@ gamepad-helper:
 shared-web:
   name: LizardByte/shared-web
   # renovate: datasource=npm depName=@lizardbyte/shared-web
-  version: '2026.811.210538'
+  version: '2026.812.190302'
   url: https://github.com/LizardByte/shared-web/
   license: AGPL-3.0
 bootstrap:
