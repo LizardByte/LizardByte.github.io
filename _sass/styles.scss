@@ -739,6 +739,21 @@ table tr:nth-child(2n) {
   padding: 0.8rem;
 }
 
+.gamepad-browser-warning {
+  margin-inline: auto;
+  max-width: 46rem;
+}
+
+.gamepad-browser-warning[hidden] {
+  display: none;
+}
+
+.gamepad-browser-warning a {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+}
+
 .gamepad-device-details > summary {
   align-items: center;
   cursor: pointer;
@@ -845,6 +860,12 @@ table tr:nth-child(2n) {
     margin: 0 !important;
     max-width: none;
     padding: 0.65rem 0.85rem;
+  }
+
+  .gamepad-tester.has-gamepad .gamepad-browser-warning {
+    margin-top: 0.75rem !important;
+    max-width: none;
+    padding: 0.55rem 0.75rem;
   }
 
   .gamepad-tester.has-gamepad .gamepad-selector-panel {
