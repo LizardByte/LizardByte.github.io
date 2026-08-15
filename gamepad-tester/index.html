@@ -23,7 +23,7 @@
   <meta name="author" content="LizardByte">
   
 
-  <meta name="description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Devices Connected controllers Choose a controller to inspect Live input Controller visual Live A visual is not available for...">
+  <meta name="description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Firefox versions before 155 can report incorrect buttons and axes for Nintendo Switch controllers. Update to Firefox 155 or...">
 
   
   <meta name="theme-color" content="#05FF3B">
@@ -119,7 +119,7 @@
   
   <meta property="og:site_name" content="LizardByte">
   <meta property="og:title" content="Gamepad Tester | LizardByte">
-  <meta property="og:description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Devices Connected controllers Choose a controller to inspect Live input Controller visual Live A visual is not available for...">
+  <meta property="og:description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Firefox versions before 155 can report incorrect buttons and axes for Nintendo Switch controllers. Update to Firefox 155 or...">
 
   
   <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -138,7 +138,7 @@
   <meta name="twitter:creator" content="@LizardByteDev">
 
   <meta property="twitter:title" content="Gamepad Tester | LizardByte">
-  <meta property="twitter:description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Devices Connected controllers Choose a controller to inspect Live input Controller visual Live A visual is not available for...">
+  <meta property="twitter:description" content="Browser controller diagnostics Gamepad Tester Check buttons, sticks, triggers, axes, and vibration in real time. No gamepad detected. Connect a gamepad and press any button. Input data stays in your browser. Firefox versions before 155 can report incorrect buttons and axes for Nintendo Switch controllers. Update to Firefox 155 or...">
 
   
   <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
@@ -332,6 +332,15 @@
                 Input data stays in your browser.
             </p>
         </header>
+
+        <div id="firefox-switch-warning" class="gamepad-browser-warning gamepad-inline-notice mt-3" aria-live="polite" hidden>
+            <i class="fas fa-triangle-exclamation mt-1" aria-hidden="true"></i>
+            <span>
+                Firefox versions before 155 can report incorrect buttons and axes for Nintendo Switch controllers.
+                Update to Firefox 155 or later, or use another current browser.
+                Details: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1704419" target="_blank" rel="noopener noreferrer">https://bugzilla.mozilla.org/show_bug.cgi?id=1704419</a>
+            </span>
+        </div>
 
         <section class="gamepad-selector-panel mt-4" id="gamepad-selector-container" style="display: none;" aria-labelledby="gamepad-selector-heading">
             <div class="gamepad-selector-heading">

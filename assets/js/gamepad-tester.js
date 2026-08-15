@@ -5,6 +5,13 @@ function createDPadButtonVisuals(shapes) {
     }));
 }
 
+const FIREFOX_SWITCH_GAMEPAD_FIXED_VERSION = 155;
+
+function getFirefoxMajorVersion(userAgent) {
+    const match = /\bFirefox\/(\d+)/.exec(userAgent);
+    return match ? Number.parseInt(match[1], 10) : null;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const gamepadHelper = new GamepadHelper()
     const gamepadHelperVersion = globalThis.gamepadHelperVersion;
@@ -17,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const gamepadTester = document.getElementById('GamepadTester');
     const gamepadStatus = document.getElementById('gamepad-status');
     const gamepadStatusMessage = document.getElementById('gamepad-status-message');
+    const firefoxSwitchWarning = document.getElementById('firefox-switch-warning');
+    const firefoxMajorVersion = getFirefoxMajorVersion(navigator.userAgent);
     let gamepadVisualButtons = new Map();
     let gamepadVisualSticks = [];
     let gamepadVisualTriggers = new Map();
@@ -205,7 +214,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const gamepadIndices = Object.keys(gamepads);
         const hasGamepads = gamepadIndices.length > 0;
+        const hasNintendoSwitchController = Object.values(gamepads).some(gamepad =>
+            gamepadHelper.detectControllerType(gamepad.id) === gamepadHelper.CONTROLLER_TYPES.SWITCH
+        );
         gamepadTester.classList.toggle('has-gamepad', hasGamepads);
+        firefoxSwitchWarning.hidden = !(
+            firefoxMajorVersion !== null
+            && firefoxMajorVersion < FIREFOX_SWITCH_GAMEPAD_FIXED_VERSION
+            && hasNintendoSwitchController
+        );
 
         if (hasGamepads) {
             gamepadSelectorContainer.style.removeProperty('display');
