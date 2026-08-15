@@ -323,10 +323,10 @@
             </div>
             <h2 class="display-6 fw-bolder mb-2">Gamepad Tester</h2>
             <p class="lead text-muted mb-4">Check buttons, sticks, triggers, axes, and vibration in real time.</p>
-            <output id="gamepad-status" class="alert alert-warning gamepad-status mb-2" aria-live="polite">
+            <div id="gamepad-status" class="alert alert-warning gamepad-status mb-2">
                 <span class="gamepad-status-indicator" aria-hidden="true"></span>
-                <span id="gamepad-status-message">No gamepad detected. Connect a gamepad and press any button.</span>
-            </output>
+                <output id="gamepad-status-message" aria-live="polite">No gamepad detected. Connect a gamepad and press any button.</output>
+            </div>
             <p class="gamepad-privacy-note text-muted mb-0">
                 <i class="fas fa-lock me-1" aria-hidden="true"></i>
                 Input data stays in your browser.
