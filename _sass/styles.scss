@@ -805,10 +805,12 @@ table tr:nth-child(2n) {
 }
 
 .gamepad-detail dd {
+  cursor: text;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0;
   overflow-wrap: anywhere;
+  user-select: text;
 }
 
 /* Fit the complete tester workspace into a typical desktop viewport. */
