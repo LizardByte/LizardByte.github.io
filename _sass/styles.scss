@@ -449,8 +449,13 @@ table tr:nth-child(2n) {
   position: relative;
 }
 
-.gamepad-visual > .text-muted {
+.gamepad-visual > .text-muted,
+.gamepad-visual > .gamepad-visual-unavailable {
   grid-column: 1 / -1;
+}
+
+.gamepad-visual-unavailable {
+  color: var(--bs-secondary-color);
 }
 
 .gamepad-visual-svg {
@@ -522,6 +527,10 @@ table tr:nth-child(2n) {
   max-height: 3rem;
   max-width: 100%;
   width: 4rem;
+}
+
+.gamepad-trigger-image-unavailable {
+  display: none;
 }
 
 .gamepad-trigger-name {

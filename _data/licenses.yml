@@ -6,7 +6,7 @@ beautiful-jekyll:
 gamepad-helper:
   name: LizardByte/gamepad-helper
   # renovate: datasource=npm depName=@lizardbyte/gamepad-helper
-  version: '2026.815.220641'
+  version: '2026.816.4539'
   url: https://github.com/LizardByte/gamepad-helper/
   license: MIT
 shared-web:
