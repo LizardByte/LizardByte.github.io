@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Introducing libvirtualhid and Virtual HID Driver</title>
+        <description>
+          A simpler, more capable input system for Sunshine - 
+          Virtual input is the part of Sunshine that turns controls received from Moonlight into button presses, mouse movement, touch input, and other actions on the host. It is mostly invisible when it works well, but it affects nearly every streaming session. Starting with Sunshine v2026.816.192458 (beta), that work is powered...
+        </description>
+        <pubDate>Sun, 16 Aug 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/</guid>
+      </item>
+    
+      <item>
         <title>Themerr-jellyfin v2026.601.2038.13 Released</title>
         <description>
           

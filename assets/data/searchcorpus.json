@@ -1,6 +1,14 @@
 [ 
  
 { 
+"title"    : "Introducing libvirtualhid and Virtual HID Driver", 
+"desc"     : "Introducing libvirtualhid and Virtual HID Driver", 
+"category" : "announcements, Sunshine, libvirtualhid, virtual-input", 
+"url"      : "/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/", 
+"date"     : "August 16, 2026" 
+}, 
+ 
+{ 
 "title"    : "Themerr-jellyfin v2026.601.2038.13 Released", 
 "desc"     : "Themerr-jellyfin v2026.601.2038.13 Released", 
 "category" : "release, themerr-jellyfin", 
@@ -182,6 +190,14 @@
 "desc"     : "Roadmap", 
 "category" : "page", 
 "url"      : "/roadmap/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Store", 
+"desc"     : "Store", 
+"category" : "page", 
+"url"      : "/store/", 
 "date"     : "January 1, 1970" 
 }, 
  

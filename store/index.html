@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">  <!-- //NOSONAR(Web:PageWithoutTitleCheck): _includes/head.html renders the page title. -->
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <!-- Load theme initialization script early to prevent flash of wrong theme -->
+  <script src="/assets/js/theme-init.js"></script>
+  
+
+  
+
+  
+
+  
+
+  <title>Store | LizardByte</title>
+
+  
+  
+  <meta name="author" content="LizardByte">
+  
+
+  <meta name="description" content="{% assign products = site.data.store_products %} {% assign featured_product = false %} {% if products.size == 1 %} {% assign featured_product = true %} {% endif %} LizardByte Store Tools built for better streaming Purchase LizardByte products and help fund continued development across Sunshine and our other open-source projects. Built...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  globalThis.dataLayer = globalThis.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+
+
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      
+        
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin-bootstrap-css.css">
+
+
+      
+    
+      
+        <link rel="stylesheet" href="/assets/css/styles.css">
+      
+    
+  
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/store.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Store | LizardByte">
+  <meta property="og:description" content="{% assign products = site.data.store_products %} {% assign featured_product = false %} {% if products.size == 1 %} {% assign featured_product = true %} {% endif %} LizardByte Store Tools built for better streaming Purchase LizardByte products and help fund continued development across Sunshine and our other open-source projects. Built...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://app.lizardbyte.dev/store/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/store/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Store | LizardByte">
+  <meta property="twitter:description" content="{% assign products = site.data.store_products %} {% assign featured_product = false %} {% if products.size == 1 %} {% assign featured_product = true %} {% endif %} LizardByte Store Tools built for better streaming Purchase LizardByte products and help fund continued development across Sunshine and our other open-source projects. Built...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/assets/img/navbar-avatar.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/store">Store</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown3" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/GameDB">Game DB</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown4" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown4">
+                    <a class="dropdown-item" href="/gamepad-tester">Gamepad Tester</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown5" type="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown5">
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/packages">Packages</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/homebrew-homebrew">Homebrew</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/pacman-repo">Pacman</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown6" type="button" data-bs-toggle="dropdown" aria-expanded="false">Development</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown6">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+                    <a class="dropdown-item" href="/roadmap">Roadmap</a>
+              </div>
+            </li>
+          
+          
+          
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.9.2/simple-jekyll-search.min.js"
+    integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n"
+    crossorigin="anonymous"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json'
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="page-heading">
+          <h1>Store</h1>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-fluid ">
+  <div class="row">
+    <div class=" col ">
+      
+
+      
+
+
+
+<section class="storefront" id="Storefront">
+    <div class="container py-lg-2">
+        <header class="storefront-intro mx-auto mb-4 text-center">
+            <h1 class="storefront-kicker mb-2">
+                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                LizardByte Store
+            </h1>
+            <h2 class="display-6 fw-bolder mb-3">Tools built for better streaming</h2>
+            <p class="lead text-muted mb-0">
+                Purchase LizardByte products and help fund continued development across Sunshine and our other
+                open-source projects.
+            </p>
+        </header>
+
+        <ul class="storefront-assurance list-unstyled" aria-label="Store information">
+            <li>
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                <span>Built by LizardByte</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Trusted checkout providers</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-life-ring" aria-hidden="true"></i>
+                <span>Documentation and support</span>
+            </li>
+        </ul>
+
+        
+            <div class="row g-4 justify-content-center">
+                
+                    <div class="col-12 col-xl-10">
+                        
+<article class="store-product-card store-product-card-featured">
+    <div class="store-product-summary">
+        <div class="store-product-media store-product-media-portrait">
+            <a href="https://app.lizardbyte.dev/libvirtualhid/virtual-hid-driver" aria-label="Learn more about Virtual HID Driver">
+                <img
+                    class="store-product-image crowdin-ignore"
+                    src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/libvirtualhid-poster-1440x2160.png"
+                    alt="A green outline of a game controller on a vertical dark green background"
+                    loading="lazy"
+                >
+            </a>
+            
+                <ul class="store-product-badges list-unstyled" aria-label="Product compatibility">
+                    
+                        <li class="store-product-badge">
+                            <i class="fa-brands fa-windows" aria-hidden="true"></i>
+                            Windows
+                        </li>
+                    
+                        <li class="store-product-badge">
+                            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                            Sunshine compatible
+                        </li>
+                    
+                </ul>
+            
+        </div>
+
+        <div class="store-product-content">
+            <div class="store-product-details">
+                <div class="store-product-heading">
+                    <span class="store-product-category">Windows software</span>
+                    <h3 class="store-product-title">Virtual HID Driver</h3>
+                    <p class="store-product-tagline">Modern virtual gamepads for Sunshine on Windows</p>
+                </div>
+
+                <p class="store-product-description">Unlock expanded virtual controller support in Sunshine with a user-mode driver built and maintained alongside the rest of the LizardByte input stack.</p>
+
+                
+                    <ul class="store-product-features">
+                        
+                            <li>
+                                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                <span>Generic, Xbox One, Xbox Series, DualShock 4, DualSense, and Switch Pro-style profiles</span>
+                            </li>
+                        
+                            <li>
+                                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                <span>Support for advanced controller features when the selected controller and game provide them</span>
+                            </li>
+                        
+                            <li>
+                                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                <span>Ongoing driver maintenance and improvements alongside Sunshine and other LizardByte software</span>
+                            </li>
+                        
+                    </ul>
+                
+            </div>
+
+            <div class="store-product-purchase">
+                
+                    <div class="store-product-prices" aria-label="Pricing options">
+                        
+                            <div class="store-price-option">
+                                <span class="store-price-amount crowdin-ignore">$14.99</span>
+                                <span class="store-price-label">per year</span>
+                            </div>
+                        
+                            <div class="store-price-option">
+                                <span class="store-price-amount crowdin-ignore">$49.99</span>
+                                <span class="store-price-label">lifetime</span>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    <p class="store-product-price-note">
+                        <i class="fa-solid fa-display" aria-hidden="true"></i>
+                        One license can be activated on up to five machines.
+                    </p>
+                
+
+                <div class="store-product-actions">
+                    
+                        <a
+                            class="btn btn-primary"
+                            href="https://buy.polar.sh/polar_cl_zj6Io5NVukXfZSl97ULtFvImfI5L1jbL2cSnc0Y72Pt"
+                            
+                                target="_blank"
+                                rel="noopener"
+                            
+                        >
+                            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                            Purchase
+                            <span class="visually-hidden">
+                                for Virtual HID Driver from Polar
+                            </span>
+                        </a>
+                    
+                    
+                        <a class="btn btn-outline-theme" href="https://app.lizardbyte.dev/libvirtualhid/virtual-hid-driver">
+                            Learn more
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    
+                </div>
+
+                
+                    
+                        <p class="store-product-seller">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            Checkout provided by Polar
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </div>
+
+    
+        <section class="store-product-gallery" aria-labelledby="virtual-hid-driver-screenshots">
+            <div class="store-product-gallery-heading">
+                <span class="store-product-category">Gallery</span>
+                <h4 id="virtual-hid-driver-screenshots">Screenshots</h4>
+            </div>
+            <div class="store-screenshot-grid">
+                
+                    <button
+                        class="store-screenshot-thumbnail"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#virtual-hid-driver-gallery"
+                        data-store-slide="0"
+                        aria-label="View screenshot 1 of 3: libvirtualhid control displaying an active Xbox Series virtual controller"
+                    >
+                        <img
+                            class="crowdin-ignore"
+                            src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/libvirtualhid-control-03.png"
+                            alt=""
+                            loading="lazy"
+                        >
+                        <span class="store-screenshot-expand" aria-hidden="true">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </button>
+                
+                    <button
+                        class="store-screenshot-thumbnail"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#virtual-hid-driver-gallery"
+                        data-store-slide="1"
+                        aria-label="View screenshot 2 of 3: libvirtualhid control displaying a DualSense virtual controller"
+                    >
+                        <img
+                            class="crowdin-ignore"
+                            src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/libvirtualhid-control-04.png"
+                            alt=""
+                            loading="lazy"
+                        >
+                        <span class="store-screenshot-expand" aria-hidden="true">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </button>
+                
+                    <button
+                        class="store-screenshot-thumbnail"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#virtual-hid-driver-gallery"
+                        data-store-slide="2"
+                        aria-label="View screenshot 3 of 3: Windows Game Controllers and controller properties showing a Virtual HID Framework device"
+                    >
+                        <img
+                            class="crowdin-ignore"
+                            src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/windows-driver-game-controllers-and-properties.png"
+                            alt=""
+                            loading="lazy"
+                        >
+                        <span class="store-screenshot-expand" aria-hidden="true">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </button>
+                
+            </div>
+        </section>
+    
+</article>
+
+
+    <div
+        class="modal fade store-gallery-modal"
+        id="virtual-hid-driver-gallery"
+        tabindex="-1"
+        aria-labelledby="virtual-hid-driver-gallery-title"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="virtual-hid-driver-gallery-title">
+                        Virtual HID Driver screenshots
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div
+                        class="carousel slide store-gallery-carousel"
+                        id="virtual-hid-driver-carousel"
+                        data-bs-interval="false"
+                        data-bs-keyboard="true"
+                        tabindex="-1"
+                        aria-label="Virtual HID Driver screenshot viewer"
+                    >
+                        <div class="carousel-inner">
+                            
+                                <figure class="carousel-item active">
+                                    <img
+                                        class="store-gallery-image crowdin-ignore"
+                                        src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/libvirtualhid-control-03.png"
+                                        alt="libvirtualhid control displaying an active Xbox Series virtual controller"
+                                    >
+                                    
+                                        <figcaption class="store-gallery-caption">Inspect virtual controller input, battery state, and output reports.</figcaption>
+                                    
+                                </figure>
+                            
+                                <figure class="carousel-item">
+                                    <img
+                                        class="store-gallery-image crowdin-ignore"
+                                        src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/libvirtualhid-control-04.png"
+                                        alt="libvirtualhid control displaying a DualSense virtual controller"
+                                    >
+                                    
+                                        <figcaption class="store-gallery-caption">Use controller-specific features such as touchpad input and RGB output.</figcaption>
+                                    
+                                </figure>
+                            
+                                <figure class="carousel-item">
+                                    <img
+                                        class="store-gallery-image crowdin-ignore"
+                                        src="https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/docs/images/screenshots/windows-driver-game-controllers-and-properties.png"
+                                        alt="Windows Game Controllers and controller properties showing a Virtual HID Framework device"
+                                    >
+                                    
+                                        <figcaption class="store-gallery-caption">Virtual controllers appear in the familiar Windows Game Controllers panel.</figcaption>
+                                    
+                                </figure>
+                            
+                        </div>
+
+                        
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#virtual-hid-driver-carousel"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous screenshot</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#virtual-hid-driver-carousel"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next screenshot</span>
+                            </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+                
+            </div>
+        
+    </div>
+</section>
+
+
+      
+        <div class="after-content">
+          
+        </div>
+      
+
+      
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (const element of links) {
+            if (element.href.includes('.pdf') || element.href.includes('.doc') || element.href.includes('.docx')) {
+                element.onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+&nbsp;&bull;&nbsp;
+<a title="Licenses and Attribution" href="/licenses" class="text_muted">Licenses</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/store.html" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/crowdin-init.js"></script>
+    
+  
+
+
+
+
+
+  
+    <script src="/assets/js/store.js"></script>
+  
+
+
+
+</body>
+</html>
