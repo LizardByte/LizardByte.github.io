@@ -44,6 +44,6 @@ jekyll:
 marked:
   name: Marked
   # renovate: datasource=cdnjs depName=marked packageName=marked/lib/marked.umd.min.js versioning=semver
-  version: '17.0.1'
+  version: '17.0.6'
   url: https://marked.js.org/
   license: MIT
