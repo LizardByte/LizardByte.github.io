@@ -1,0 +1,200 @@
+{% assign product = include.product %}
+<article class="store-product-card{% if include.featured %} store-product-card-featured{% endif %}">
+    <div class="store-product-summary">
+        <div class="store-product-media store-product-media-{{ product.cover.aspect | default: 'landscape' }}">
+            <a href="{{ product.details.url }}" aria-label="Learn more about {{ product.name | escape }}">
+                <img
+                    class="store-product-image crowdin-ignore"
+                    src="{{ product.cover.src }}"
+                    alt="{{ product.cover.alt | escape }}"
+                    loading="lazy"
+                >
+            </a>
+            {% if product.badges %}
+                <ul class="store-product-badges list-unstyled" aria-label="Product compatibility">
+                    {% for badge in product.badges %}
+                        <li class="store-product-badge">
+                            {% if badge.icon %}<i class="{{ badge.icon }}" aria-hidden="true"></i>{% endif %}
+                            {{ badge.label }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="store-product-content">
+            <div class="store-product-details">
+                <div class="store-product-heading">
+                    <span class="store-product-category">{{ product.category }}</span>
+                    <h3 class="store-product-title">{{ product.name }}</h3>
+                    <p class="store-product-tagline">{{ product.tagline }}</p>
+                </div>
+
+                <p class="store-product-description">{{ product.description }}</p>
+
+                {% if product.features %}
+                    <ul class="store-product-features">
+                        {% for feature in product.features %}
+                            <li>
+                                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                <span>{{ feature }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="store-product-purchase">
+                {% if product.prices %}
+                    <div class="store-product-prices" aria-label="Pricing options">
+                        {% for price in product.prices %}
+                            <div class="store-price-option">
+                                <span class="store-price-amount crowdin-ignore">{{ price.amount }}</span>
+                                <span class="store-price-label">{{ price.label }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if product.price_note %}
+                    <p class="store-product-price-note">
+                        <i class="fa-solid fa-display" aria-hidden="true"></i>
+                        {{ product.price_note }}
+                    </p>
+                {% endif %}
+
+                <div class="store-product-actions">
+                    {% for offer in product.offers %}
+                        <a
+                            class="btn btn-primary"
+                            href="{{ offer.url }}"
+                            {% if offer.external %}
+                                target="_blank"
+                                rel="noopener"
+                            {% endif %}
+                        >
+                            {% if offer.icon %}<i class="{{ offer.icon }}" aria-hidden="true"></i>{% endif %}
+                            {{ offer.label }}
+                            <span class="visually-hidden">
+                                for {{ product.name }}{% if offer.store %} from {{ offer.store }}{% endif %}
+                            </span>
+                        </a>
+                    {% endfor %}
+                    {% if product.details %}
+                        <a class="btn btn-outline-theme" href="{{ product.details.url }}">
+                            {{ product.details.label }}
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+                </div>
+
+                {% for offer in product.offers %}
+                    {% if offer.store %}
+                        <p class="store-product-seller">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            Checkout provided by {{ offer.store }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% if product.screenshots %}
+        <section class="store-product-gallery" aria-labelledby="{{ product.id }}-screenshots">
+            <div class="store-product-gallery-heading">
+                <span class="store-product-category">Gallery</span>
+                <h4 id="{{ product.id }}-screenshots">Screenshots</h4>
+            </div>
+            <div class="store-screenshot-grid">
+                {% for screenshot in product.screenshots %}
+                    <button
+                        class="store-screenshot-thumbnail"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#{{ product.id }}-gallery"
+                        data-store-slide="{{ forloop.index0 }}"
+                        aria-label="View screenshot {{ forloop.index }} of {{ product.screenshots.size }}: {{ screenshot.alt | escape }}"
+                    >
+                        <img
+                            class="crowdin-ignore"
+                            src="{{ screenshot.src }}"
+                            alt=""
+                            loading="lazy"
+                        >
+                        <span class="store-screenshot-expand" aria-hidden="true">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </button>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+</article>
+
+{% if product.screenshots %}
+    <div
+        class="modal fade store-gallery-modal"
+        id="{{ product.id }}-gallery"
+        tabindex="-1"
+        aria-labelledby="{{ product.id }}-gallery-title"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="{{ product.id }}-gallery-title">
+                        {{ product.name }} screenshots
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div
+                        class="carousel slide store-gallery-carousel"
+                        id="{{ product.id }}-carousel"
+                        data-bs-interval="false"
+                        data-bs-keyboard="true"
+                        tabindex="-1"
+                        aria-label="{{ product.name | escape }} screenshot viewer"
+                    >
+                        <div class="carousel-inner">
+                            {% for screenshot in product.screenshots %}
+                                <figure class="carousel-item{% if forloop.first %} active{% endif %}">
+                                    <img
+                                        class="store-gallery-image crowdin-ignore"
+                                        src="{{ screenshot.src }}"
+                                        alt="{{ screenshot.alt | escape }}"
+                                    >
+                                    {% if screenshot.caption %}
+                                        <figcaption class="store-gallery-caption">{{ screenshot.caption }}</figcaption>
+                                    {% endif %}
+                                </figure>
+                            {% endfor %}
+                        </div>
+
+                        {% if product.screenshots.size > 1 %}
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#{{ product.id }}-carousel"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous screenshot</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#{{ product.id }}-carousel"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next screenshot</span>
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

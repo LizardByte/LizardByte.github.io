@@ -1,0 +1,63 @@
+---
+title: Store
+layout: page
+full-width: true
+after-content: []
+css:
+  - /assets/css/store.css
+js:
+  - /assets/js/store.js
+---
+
+{% assign products = site.data.store_products %}
+{% assign featured_product = false %}
+{% if products.size == 1 %}
+    {% assign featured_product = true %}
+{% endif %}
+
+<section class="storefront" id="Storefront">
+    <div class="container py-lg-2">
+        <header class="storefront-intro mx-auto mb-4 text-center">
+            <h1 class="storefront-kicker mb-2">
+                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                LizardByte Store
+            </h1>
+            <h2 class="display-6 fw-bolder mb-3">Tools built for better streaming</h2>
+            <p class="lead text-muted mb-0">
+                Purchase LizardByte products and help fund continued development across Sunshine and our other
+                open-source projects.
+            </p>
+        </header>
+
+        <ul class="storefront-assurance list-unstyled" aria-label="Store information">
+            <li>
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                <span>Built by LizardByte</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Trusted checkout providers</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-life-ring" aria-hidden="true"></i>
+                <span>Documentation and support</span>
+            </li>
+        </ul>
+
+        {% if products and products.size > 0 %}
+            <div class="row g-4 justify-content-center">
+                {% for product in products %}
+                    <div class="{% if featured_product %}col-12 col-xl-10{% else %}col-12 col-md-6 col-xl-4{% endif %}">
+                        {% include store-product-card.html product=product featured=featured_product %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="storefront-empty">
+                <i class="fa-solid fa-box-open fa-2x mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">More products are on the way</h3>
+                <p class="text-muted mb-0">Check back soon for new LizardByte products.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
