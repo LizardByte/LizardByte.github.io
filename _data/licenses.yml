@@ -30,7 +30,7 @@ button-icons:
 chartjs:
   name: Chart.js
   # renovate: datasource=cdnjs depName=Chart.js packageName=Chart.js/chart.umd.min.js versioning=semver
-  version: '4.5.0'
+  version: '4.5.1'
   url: https://www.chartjs.org/
   license: MIT
 giscus:
