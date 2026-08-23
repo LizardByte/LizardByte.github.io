@@ -1,0 +1,60 @@
+<svg class="mouse-visual-svg" viewBox="0 0 360 440" aria-hidden="true" focusable="false">
+    <defs>
+        <linearGradient id="mouse-shell-gradient" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" class="mouse-shell-highlight"></stop>
+            <stop offset="1" class="mouse-shell-shadow"></stop>
+        </linearGradient>
+        <filter id="mouse-shell-shadow" x="-20%" y="-15%" width="140%" height="145%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.2"></feDropShadow>
+        </filter>
+    </defs>
+
+    <path
+        class="mouse-svg-shell"
+        d="M180 18C106 18 58 70 58 144V292C58 373 106 422 180 422S302 373 302 292V144C302 70 254 18 180 18Z"
+        filter="url(#mouse-shell-shadow)"
+    ></path>
+
+    <g class="mouse-svg-control" data-mouse-button="0">
+        <path class="mouse-svg-button-surface" d="M174 32C112 35 70 80 70 144V164H174V32Z"></path>
+    </g>
+    <g class="mouse-svg-control" data-mouse-button="2">
+        <path class="mouse-svg-button-surface" d="M186 32C248 35 290 80 290 144V164H186V32Z"></path>
+    </g>
+
+    <path class="mouse-svg-seam" d="M180 31V164M70 164H290"></path>
+
+    <g class="mouse-svg-control mouse-svg-wheel" data-mouse-button="1">
+        <rect class="mouse-svg-button-surface" x="160" y="67" width="40" height="82" rx="20"></rect>
+        <path class="mouse-svg-button-detail" d="M180 82V94M180 105V117M180 128V136"></path>
+    </g>
+
+    <g class="mouse-svg-scroll-indicator" data-scroll-direction="up">
+        <path class="mouse-svg-scroll-arrow" d="M180 36L166 53H174V63H186V53H194L180 36Z"></path>
+    </g>
+    <g class="mouse-svg-scroll-indicator" data-scroll-direction="down">
+        <path class="mouse-svg-scroll-arrow" d="M180 180L194 163H186V153H174V163H166L180 180Z"></path>
+    </g>
+    <g class="mouse-svg-scroll-indicator" data-scroll-direction="left">
+        <path class="mouse-svg-scroll-arrow" d="M124 108L141 94V102H153V114H141V122L124 108Z"></path>
+    </g>
+    <g class="mouse-svg-scroll-indicator" data-scroll-direction="right">
+        <path class="mouse-svg-scroll-arrow" d="M236 108L219 122V114H207V102H219V94L236 108Z"></path>
+    </g>
+
+    <g class="mouse-svg-side-button-shadow" aria-hidden="true">
+        <rect x="39" y="188" width="48" height="40" rx="13"></rect>
+        <rect x="39" y="238" width="48" height="40" rx="13"></rect>
+    </g>
+    <g class="mouse-svg-control" data-mouse-button="4">
+        <rect class="mouse-svg-button-surface" x="42" y="185" width="42" height="38" rx="12"></rect>
+        <path class="mouse-svg-button-detail" d="M57 197L69 204L57 211"></path>
+    </g>
+    <g class="mouse-svg-control" data-mouse-button="3">
+        <rect class="mouse-svg-button-surface" x="42" y="235" width="42" height="38" rx="12"></rect>
+        <path class="mouse-svg-button-detail" d="M69 247L57 254L69 261"></path>
+    </g>
+
+    <path class="mouse-svg-accent" d="M180 190V381"></path>
+    <path class="mouse-svg-base-highlight" d="M89 306C101 360 132 389 180 389S259 360 271 306"></path>
+</svg>
