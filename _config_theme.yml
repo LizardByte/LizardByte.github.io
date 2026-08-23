@@ -25,6 +25,7 @@ navbar-links:
     - Support: "support"
   Tools:
     - Gamepad Tester: "gamepad-tester"
+    - Mouse Tester: "mouse-tester"
   Downloads:
     - Packages: "https://app.lizardbyte.dev/packages"
     - Homebrew: "https://github.com/LizardByte/homebrew-homebrew"

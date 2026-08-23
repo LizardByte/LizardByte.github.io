@@ -1,0 +1,174 @@
+---
+title: Mouse Tester
+layout: page
+full-width: true
+css:
+  - /assets/css/hide-heading.css
+  - /assets/css/mouse-tester.css
+js:
+  - /assets/js/mouse-tester.js
+---
+
+<!-- Mouse Tester section -->
+<section class="mouse-tester py-4 py-lg-5" id="MouseTester">
+    <div class="container">
+        <header class="mouse-tester-header mx-auto text-center">
+            <div class="mouse-kicker mb-2">
+                <i class="fas fa-computer-mouse" aria-hidden="true"></i>
+                Browser mouse diagnostics
+            </div>
+            <h2 class="display-6 fw-bolder mb-2">Mouse Tester</h2>
+            <p class="lead text-muted mb-4">Check buttons, movement, and scrolling in real time.</p>
+            <div id="mouse-status" class="alert alert-warning mouse-status mb-2">
+                <span class="mouse-status-indicator" aria-hidden="true"></span>
+                <output id="mouse-status-message" aria-live="polite">Move, click, or scroll inside the test area to begin.</output>
+            </div>
+            <p class="mouse-privacy-note text-muted mb-0">
+                <i class="fas fa-lock me-1" aria-hidden="true"></i>
+                Input data stays in your browser.
+            </p>
+        </header>
+
+        <div id="firefox-mouse-buttons-warning" class="mouse-browser-warning mouse-inline-notice mt-3" aria-live="polite" hidden>
+            <i class="fas fa-triangle-exclamation mt-1" aria-hidden="true"></i>
+            <span>
+                Firefox may use Back and Forward mouse buttons for browser navigation even when this tester detects the button press.
+                Testing either button may navigate this tab.
+                Details: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1933746" target="_blank" rel="noopener noreferrer">Mozilla bug 1933746</a>.
+            </span>
+        </div>
+
+        <div class="row g-4 mt-0 mouse-workspace">
+            <div class="col-xl-7">
+                <section class="mouse-panel mouse-visual-panel h-100" aria-labelledby="mouse-visual-heading">
+                    <div class="mouse-panel-header">
+                        <div>
+                            <span class="mouse-panel-eyebrow">Live input</span>
+                            <h3 class="h5 mb-0" id="mouse-visual-heading">Mouse visual</h3>
+                        </div>
+                        <span class="mouse-live-badge"><span aria-hidden="true"></span>Listening</span>
+                    </div>
+                    <div class="mouse-panel-body mouse-visual-body">
+                        <section
+                            id="mouse-capture-surface"
+                            class="mouse-capture-surface"
+                            tabindex="-1"
+                            aria-label="Mouse input test area"
+                            aria-describedby="mouse-capture-instructions"
+                        >
+                            {% include mouse-tester.svg %}
+                            <span id="mouse-position-indicator" class="mouse-position-indicator" hidden aria-hidden="true"></span>
+                            <p id="mouse-capture-instructions" class="mouse-capture-instructions mb-0">
+                                Move, click, and scroll anywhere in this panel.
+                                Right-click is disabled only while testing here.
+                                Back and Forward buttons may navigate this tab in Firefox.
+                            </p>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-xl-5 d-flex flex-column gap-3">
+                <section class="mouse-panel" aria-labelledby="mouse-buttons-heading">
+                    <div class="mouse-panel-header">
+                        <div>
+                            <span class="mouse-panel-eyebrow">Digital input</span>
+                            <h3 class="h5 mb-0" id="mouse-buttons-heading">Buttons</h3>
+                        </div>
+                        <button id="mouse-reset" class="btn btn-sm btn-outline-secondary" type="button">
+                            <i class="fas fa-rotate-left me-1" aria-hidden="true"></i>Reset
+                        </button>
+                    </div>
+                    <div class="mouse-panel-body">
+                        <div class="mouse-button-grid">
+                            <div class="mouse-button-card" data-mouse-button="0">
+                                <span class="mouse-button-number">1</span>
+                                <span class="mouse-button-name">Primary</span>
+                                <output class="mouse-button-state" id="mouse-button-0-state">Released</output>
+                                <span class="mouse-button-count"><output id="mouse-button-0-count">0</output> presses</span>
+                            </div>
+                            <div class="mouse-button-card" data-mouse-button="1">
+                                <span class="mouse-button-number">3</span>
+                                <span class="mouse-button-name">Wheel</span>
+                                <output class="mouse-button-state" id="mouse-button-1-state">Released</output>
+                                <span class="mouse-button-count"><output id="mouse-button-1-count">0</output> presses</span>
+                            </div>
+                            <div class="mouse-button-card" data-mouse-button="2">
+                                <span class="mouse-button-number">2</span>
+                                <span class="mouse-button-name">Secondary</span>
+                                <output class="mouse-button-state" id="mouse-button-2-state">Released</output>
+                                <span class="mouse-button-count"><output id="mouse-button-2-count">0</output> presses</span>
+                            </div>
+                            <div class="mouse-button-card" data-mouse-button="3">
+                                <span class="mouse-button-number">4</span>
+                                <span class="mouse-button-name">Back</span>
+                                <output class="mouse-button-state" id="mouse-button-3-state">Released</output>
+                                <span class="mouse-button-count"><output id="mouse-button-3-count">0</output> presses</span>
+                            </div>
+                            <div class="mouse-button-card" data-mouse-button="4">
+                                <span class="mouse-button-number">5</span>
+                                <span class="mouse-button-name">Forward</span>
+                                <output class="mouse-button-state" id="mouse-button-4-state">Released</output>
+                                <span class="mouse-button-count"><output id="mouse-button-4-count">0</output> presses</span>
+                            </div>
+                        </div>
+                        <p class="small text-muted mt-3 mb-0">
+                            Extra button reporting can vary by mouse, operating system, and browser.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="mouse-panel flex-grow-1" aria-labelledby="mouse-events-heading">
+                    <div class="mouse-panel-header">
+                        <div>
+                            <span class="mouse-panel-eyebrow">Browser events</span>
+                            <h3 class="h5 mb-0" id="mouse-events-heading">Movement and wheel</h3>
+                        </div>
+                        <span class="small text-muted">Values update inside the test area</span>
+                    </div>
+                    <div class="mouse-panel-body">
+                        <h4 class="mouse-metric-heading">Movement</h4>
+                        <div class="mouse-metric-grid">
+                            <dl class="mouse-metric"><dt>Horizontal delta</dt><dd><output id="mouse-movement-x">0</output> px</dd></dl>
+                            <dl class="mouse-metric"><dt>Vertical delta</dt><dd><output id="mouse-movement-y">0</output> px</dd></dl>
+                            <dl class="mouse-metric"><dt>Position</dt><dd><output id="mouse-position">0, 0</output></dd></dl>
+                            <dl class="mouse-metric"><dt>Total distance</dt><dd><output id="mouse-distance">0</output> px</dd></dl>
+                            <dl class="mouse-metric"><dt>Move events</dt><dd><output id="mouse-move-events">0</output></dd></dl>
+                            <dl class="mouse-metric"><dt>Double clicks</dt><dd><output id="mouse-double-clicks">0</output></dd></dl>
+                        </div>
+
+                        <h4 class="mouse-metric-heading mt-3">Wheel</h4>
+                        <div class="mouse-metric-grid mouse-wheel-grid">
+                            <dl class="mouse-metric"><dt>Horizontal</dt><dd><output id="mouse-wheel-x">0 px</output></dd></dl>
+                            <dl class="mouse-metric"><dt>Vertical</dt><dd><output id="mouse-wheel-y">0 px</output></dd></dl>
+                            <dl class="mouse-metric"><dt>Direction</dt><dd><output id="mouse-wheel-direction">Idle</output></dd></dl>
+                            <dl class="mouse-metric"><dt>Wheel events</dt><dd><output id="mouse-wheel-events">0</output></dd></dl>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12">
+                <details class="mouse-panel mouse-event-details">
+                    <summary>
+                        <span>
+                            <span class="mouse-panel-eyebrow">Technical information</span>
+                            <span class="h5 d-block mb-0">Event details</span>
+                        </span>
+                        <span class="mouse-details-action text-muted">Show details <i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                    </summary>
+                    <div class="mouse-panel-body">
+                        <div class="mouse-details-grid mb-0">
+                            <dl class="mouse-detail mouse-detail-wide"><dt>Input APIs</dt><dd>MouseEvent and WheelEvent</dd></dl>
+                            <dl class="mouse-detail mouse-detail-wide"><dt>Capture scope</dt><dd>Test area only</dd></dl>
+                            <dl class="mouse-detail"><dt>Active buttons bitmask</dt><dd><output id="mouse-active-buttons">0 (none)</output></dd></dl>
+                            <dl class="mouse-detail"><dt>Last event</dt><dd><output id="mouse-last-event">None</output></dd></dl>
+                            <dl class="mouse-detail"><dt>Wheel delta mode</dt><dd><output id="mouse-wheel-mode">Pixels</output></dd></dl>
+                            <dl class="mouse-detail"><dt>Browser support</dt><dd><output id="mouse-browser-support">Checking</output></dd></dl>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
