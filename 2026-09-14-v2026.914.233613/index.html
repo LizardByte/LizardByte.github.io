@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">  <!-- //NOSONAR(Web:PageWithoutTitleCheck): _includes/head.html renders the page title. -->
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <!-- Load theme initialization script early to prevent flash of wrong theme -->
+  <script src="/assets/js/theme-init.js"></script>
+  
+
+  
+
+  
+
+  
+
+  <title>Sunshine v2026.914.233613 Released | LizardByte</title>
+
+  
+  
+  <meta name="author" content="LizardByte-bot">
+  
+
+  <meta name="description" content="‼️ Attention This release contains a high-severity security update for Linux hosts. For more information, see: GHSA-fp6g-27w5-489j Linux users should update as soon as possible! ⚠️ Breaking changes and migration notes Windows hosts using Virtual HID Driver must update to version 2026.914.1218.10 or newer. Earlier driver versions are not supported...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  globalThis.dataLayer = globalThis.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+
+
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      
+        
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin-bootstrap-css.css">
+
+
+      
+    
+      
+        <link rel="stylesheet" href="/assets/css/styles.css">
+      
+    
+  
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Sunshine v2026.914.233613 Released | LizardByte">
+  <meta property="og:description" content="‼️ Attention This release contains a high-severity security update for Linux hosts. For more information, see: GHSA-fp6g-27w5-489j Linux users should update as soon as possible! ⚠️ Breaking changes and migration notes Windows hosts using Virtual HID Driver must update to version 2026.914.1218.10 or newer. Earlier driver versions are not supported...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Sunshine_624x312.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="LizardByte-bot">
+  
+  <meta property="og:article:published_time" content="2026-09-14T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2026-09-14-v2026.914.233613/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2026-09-14-v2026.914.233613/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Sunshine v2026.914.233613 Released | LizardByte">
+  <meta property="twitter:description" content="‼️ Attention This release contains a high-severity security update for Linux hosts. For more information, see: GHSA-fp6g-27w5-489j Linux users should update as soon as possible! ⚠️ Breaking changes and migration notes Windows hosts using Virtual HID Driver must update to version 2026.914.1218.10 or newer. Earlier driver versions are not supported...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Sunshine_624x312.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/store">Store</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown3" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/GameDB">Game DB</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown4" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown4">
+                    <a class="dropdown-item" href="/gamepad-tester">Gamepad Tester</a>
+                    <a class="dropdown-item" href="/mouse-tester">Mouse Tester</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown5" type="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown5">
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/packages">Packages</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/homebrew-homebrew">Homebrew</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/pacman-repo">Pacman</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown6" type="button" data-bs-toggle="dropdown" aria-expanded="false">Development</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown6">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+                    <a class="dropdown-item" href="/roadmap">Roadmap</a>
+              </div>
+            </li>
+          
+          
+          
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.9.2/simple-jekyll-search.min.js"
+    integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n"
+    crossorigin="anonymous"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json'
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Sunshine v2026.914.233613 Released</h1>
+          
+
+          
+            
+              By
+              
+                <span class="post-author-container">
+                  
+                    <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                      <img src="https://github.com/LizardByte-bot.png?size=40" alt="LizardByte-bot" class="post-author-avatar">
+                    </a>
+                  
+                  <strong>
+                    
+                      <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                        LizardByte-bot
+                      </a>
+                    
+                  </strong>
+                  
+                </span>
+              <br>
+            
+            <span class="post-meta">Posted on September 14, 2026</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+
+
+
+
+
+
+
+
+
+
+          
+            <a href="https://hitscounter.dev/history?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F" target="_blank" rel="noopener noreferrer">
+              <img
+                  class="shields-"
+                  src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F&label=hits&icon=graph-up-arrow&color=blue&message=&style=for-the-badge&tz=UTC"
+                  alt="hits"
+                  
+              >
+            </a>
+          
+
+          
+            
+              
+                  
+                    <object data="https://img.shields.io/github/followers/LizardByte?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte&link=https%3A%2F%2Fgithub.com%2FLizardByte%3Ftab%3Dfollowers" type="image/svg+xml" title="GitHub followers">GitHub followers</object>
+                  
+              
+            
+              
+                  
+                    <object data="https://img.shields.io/github/forks/LizardByte/Sunshine?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Ffork&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Fforks" type="image/svg+xml" title="GitHub forks">GitHub forks</object>
+                  
+                
+            
+              
+                  
+                    <object data="https://img.shields.io/github/stars/LizardByte/Sunshine?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Fstargazers" type="image/svg+xml" title="GitHub Repo stars">GitHub Repo stars</object>
+                  
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        
+
+
+
+
+    
+    
+    
+    
+<div class="admonition hint rounded">
+    <p class="admonition-title">
+        <i data-lucide="circle-question-mark" aria-hidden="true"></i>
+        Hint
+    </p>
+    <p>
+        <p>View this release on <a href="https://github.com/LizardByte/Sunshine/releases/tag/v2026.914.233613">GitHub</a>.</p>
+
+    </p>
+</div>
+
+
+
+<h2 id="️-attention">‼️ Attention</h2>
+
+<p>This release contains a high-severity security update for Linux hosts. For more information, see:</p>
+
+<ul>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-fp6g-27w5-489j">GHSA-fp6g-27w5-489j</a></li>
+</ul>
+
+<p>Linux users should update as soon as possible!</p>
+
+<h2 id="️-breaking-changes-and-migration-notes">⚠️ Breaking changes and migration notes</h2>
+
+<ul>
+  <li>Windows hosts using Virtual HID Driver must update to version <code class="language-plaintext highlighter-rouge">2026.914.1218.10</code> or newer. Earlier driver versions are not supported by this Sunshine release.</li>
+</ul>
+
+<h2 id="-highlights">✨ Highlights</h2>
+
+<ul>
+  <li><strong>Clearer Windows virtual-input choices.</strong> A new <code class="language-plaintext highlighter-rouge">gamepad_driver</code> setting lets users choose all available drivers, only Virtual HID Driver, or only ViGEmBus. Selecting ViGEmBus also suppresses Virtual HID Driver notifications. (<a href="https://github.com/LizardByte/Sunshine/pull/5653">#5653</a>)</li>
+  <li><strong>More reliable Linux capture and encoding.</strong> This release fixes multi-plane DMA-BUF handling for wlroots capture, corrects variable-rate behavior across KWin versions, and allows Portal capture with VA-API to use high-priority EGL contexts. (<a href="https://github.com/LizardByte/Sunshine/pull/5699">#5699</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5705">#5705</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5709">#5709</a>)</li>
+  <li><strong>Improved encoder compatibility.</strong> Updated to FFmpeg 9. Fixes include accurate AV1 and HEVC capability detection, FFmpeg 9 Vulkan queue support, NVENC support in Linux builds without CUDA, and ARM64 NVENC DLL loading on NVIDIA RTX Spark. (<a href="https://github.com/LizardByte/Sunshine/pull/5554">#5554</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5675">#5675</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5698">#5698</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5682">#5682</a>)</li>
+  <li><strong>Correct network-interface binding.</strong> Sunshine now consistently respects the configured <code class="language-plaintext highlighter-rouge">bind_address</code>, including IPv4 addresses in dual-stack mode, and Web UI links use the configured address correctly. (<a href="https://github.com/LizardByte/Sunshine/pull/5700">#5700</a>)</li>
+  <li><strong>Easier XDG Portal recovery.</strong> Linux and FreeBSD users can clear a stale Portal restore token directly from the Troubleshooting page and select their display again. (<a href="https://github.com/LizardByte/Sunshine/pull/5701">#5701</a>)</li>
+  <li><strong>Broader Linux availability.</strong> Release coverage now includes Alpine Linux 3.24 packages, openSUSE Leap 16.0 and Tumbleweed builds, and Ubuntu 26.10 packages.</li>
+</ul>
+
+<p>For a comprehensive list of changes, see below.</p>
+
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+  <li>chore(deps): update dependency @lucide/vue to v1.42.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5636">#5636</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5634">#5634</a></li>
+  <li>chore(deps): Update build-deps to v2026.905.170812 by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5637">#5637</a></li>
+  <li>build(Linux): enable openSUSE Leap 16.0 and Tumbleweed by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5633">#5633</a></li>
+  <li>chore(flatpak): update org.kde.Platform runtime to 6.11 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5639">#5639</a></li>
+  <li>feat(config): add gamepad_driver option by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5653">#5653</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5632">#5632</a></li>
+  <li>chore(deps): update dependency marked to v18.0.12 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5648">#5648</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">874ac95</code> to <code class="language-plaintext highlighter-rouge">62e0663</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5657">#5657</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.909.30231 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5664">#5664</a></li>
+  <li>chore(deps): update ubuntu docker tag to v26 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5666">#5666</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.6 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5665">#5665</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.43.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5655">#5655</a></li>
+  <li>ci(homebrew): run tests in separate step by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5669">#5669</a></li>
+  <li>fix(deps): fix legacy nvenc presets and bump third-party/build-deps by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5668">#5668</a></li>
+  <li>build(Linux): add Alpine packages by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/4987">#4987</a></li>
+  <li>fix(linux/vulkan): use vkGetDeviceQueue2 with FFmpeg 9.0 queue flags by <a href="https://github.com/solidv">@solidv</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5675">#5675</a></li>
+  <li>build(Linux): harden Qt6 dependency detection by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5679">#5679</a></li>
+  <li>fix(av1,hevc): stop av1 probes from clobbering hevc results by <a href="https://github.com/bitness">@bitness</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5554">#5554</a></li>
+  <li>fix(api): return the final result of pairing by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5680">#5680</a></li>
+  <li>fix(nvapi,nvenc): Load ARM64 DLLs on RTX Spark by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5682">#5682</a></li>
+  <li>ci(homebrew): skip more_space action for release job by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5683">#5683</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.44.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5674">#5674</a></li>
+  <li>fix(web-ui): localize config categories by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5688">#5688</a></li>
+  <li>ci(homebrew): drop sonoma by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5689">#5689</a></li>
+  <li>build(deps): bump third-party/plasma-wayland-protocols from <code class="language-plaintext highlighter-rouge">4c015e9</code> to <code class="language-plaintext highlighter-rouge">382dfab</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5687">#5687</a></li>
+  <li>build(deps): bump third-party/doxyconfig from <code class="language-plaintext highlighter-rouge">b87f7e4</code> to <code class="language-plaintext highlighter-rouge">212e309</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5686">#5686</a></li>
+  <li>fix: missing initializers and incorrect default for native_pen_touch by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5693">#5693</a></li>
+  <li>build(Linux): add Ubuntu 26.10 Docker bake target by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5622">#5622</a></li>
+  <li>fix(linux): handle NVENC in builds without CUDA by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5698">#5698</a></li>
+  <li>fix(network): respect configured bind address by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5700">#5700</a></li>
+  <li>fix(web-ui): add XDG Portal token reset by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5701">#5701</a></li>
+  <li>fix(linux): export all Wayland DMA-BUF planes by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5699">#5699</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.45.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5694">#5694</a></li>
+  <li>build(deps): bump third-party/doxyconfig from <code class="language-plaintext highlighter-rouge">212e309</code> to <code class="language-plaintext highlighter-rouge">419127b</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5703">#5703</a></li>
+  <li>build(deps): bump packaging/linux/flatpak/deps/flatpak-builder-tools from <code class="language-plaintext highlighter-rouge">1fc3219</code> to <code class="language-plaintext highlighter-rouge">de2225a</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5702">#5702</a></li>
+  <li>fix(pipewire): extend KWin version check to handle 6.8 beta/RC versions by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5704">#5704</a></li>
+  <li>fix(linux): repair privileged DRM worker build by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5706">#5706</a></li>
+  <li>fix(pipewire): gate variable rate to KWin 5.x.x - 6.7.79 (up to stable 6.7 series) by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5705">#5705</a></li>
+  <li>test: PowerShell tests with Pester and Sonar fixes by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5708">#5708</a></li>
+  <li>test(linux): synchronize environment sanitizer tests by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5710">#5710</a></li>
+  <li>build(copr): use cuda redistributatle for Fedora builds by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5719">#5719</a></li>
+  <li>build(linux): fix ubuntu 26.10 aarch64 artifact extraction by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5720">#5720</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.46.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5715">#5715</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5714">#5714</a></li>
+  <li>chore(deps): update dependency vite to v8.3.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5711">#5711</a></li>
+  <li>chore(deps): update dependency windows to v2025 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5712">#5712</a></li>
+  <li>feat(linux): use privileged EGL worker thread by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5709">#5709</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v10.1.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5684">#5684</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5654">#5654</a></li>
+  <li>chore(deps): bump libvirtualhid by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5722">#5722</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+  <li><a href="https://github.com/solidv">@solidv</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5675">#5675</a></li>
+  <li><a href="https://github.com/bitness">@bitness</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5554">#5554</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/LizardByte/Sunshine/compare/v2026.906.222525…v2026.914.233613</p>
+
+<hr />
+<h2 id="contributors">Contributors</h2>
+<p><a href="https://github.com/ReenigneArcher" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ReenigneArcher"><img src="https://github.com/ReenigneArcher.png?size=40" width="40" height="40" alt="ReenigneArcher" title="ReenigneArcher: 22 merges" /></a><a href="https://github.com/apps/renovate" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, renovate[bot]"><img src="https://avatars.githubusercontent.com/in/2740?size=40" width="40" height="40" alt="renovate[bot]" title="renovate[bot]: 14 merges" /></a><a href="https://github.com/apps/dependabot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, dependabot[bot]"><img src="https://avatars.githubusercontent.com/in/29110?size=40" width="40" height="40" alt="dependabot[bot]" title="dependabot[bot]: 5 merges" /></a><a href="https://github.com/LizardByte-bot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, LizardByte-bot"><img src="https://github.com/LizardByte-bot.png?size=40" width="40" height="40" alt="LizardByte-bot" title="LizardByte-bot: 3 merges" /></a><a href="https://github.com/psyke83" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, psyke83"><img src="https://github.com/psyke83.png?size=40" width="40" height="40" alt="psyke83" title="psyke83: 3 merges" /></a><a href="https://github.com/cgutman" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cgutman"><img src="https://github.com/cgutman.png?size=40" width="40" height="40" alt="cgutman" title="cgutman: 2 merges" /></a><a href="https://github.com/bitness" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, bitness"><img src="https://github.com/bitness.png?size=40" width="40" height="40" alt="bitness" title="bitness: 1 merge" /></a><a href="https://github.com/solidv" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, solidv"><img src="https://github.com/solidv.png?size=40" width="40" height="40" alt="solidv" title="solidv: 1 merge" /></a></p>
+
+<hr />
+<p>📦 <strong>Assets:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>⬇️ Download</th>
+      <th>#️⃣ Download Count</th>
+      <th>🛡️ VirusTotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-FreeBSD-15.1-amd64.pkg">Sunshine-FreeBSD-15.1-amd64.pkg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-FreeBSD-15.1-amd64.pkg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OTY2NDYyYzgyNjMyMzYwNjFhYzM1NzMyODNkZTM0ZmU6MTc4OTQzNDYyNw=="><img src="https://badges.cssnr.com/vt/id/sha256:811a6f9c1482e8237f626ff3f9b2c5355b09c36a6459caa3955017172349107f?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-AMD64-debuginfo.7z">Sunshine-Windows-AMD64-debuginfo.7z</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-AMD64-debuginfo.7z?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MDBhNzVkZTQxOWJjZTdmMzkyZjczYjgzNjc0OWFhNmE6MTc4OTQzNDYzMA=="><img src="https://badges.cssnr.com/vt/id/sha256:9ce055b2ae55b044a7c460ef17834f6e3e8178f31a276ae8aebc3c50a8953d9d?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-AMD64-installer.msi">Sunshine-Windows-AMD64-installer.msi</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-AMD64-installer.msi?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZTNjYjBjM2E2MDkyYTA4NjY2ZmJmNmJhYmExMWViMDc6MTc4OTQzNDYzMg=="><img src="https://badges.cssnr.com/vt/id/sha256:1d7fed8beecd5889dc7ff14cf9f42d6d38f37c3066c13c6c2a5f4e91847e0ccf?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-AMD64-lite.zip">Sunshine-Windows-AMD64-lite.zip</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-AMD64-lite.zip?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzExNGRmYTE3NGM2ZjNhODc3MTM4ZThhNGMzODY3ZWM6MTc4OTQzNDYzNA=="><img src="https://badges.cssnr.com/vt/id/sha256:233008e46f4c0e501a586cbfd6c4fd4a4c0d414a0b5fc7f13c070eb92ec3824b?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-ARM64-debuginfo.7z">Sunshine-Windows-ARM64-debuginfo.7z</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-ARM64-debuginfo.7z?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTY4MGU4NmU3NjViYjUzM2U0MzJlYjA1NWM1ZjJlYTM6MTc4OTQzNDY4OA=="><img src="https://badges.cssnr.com/vt/id/sha256:42235bbacf87ddd19174103791ca17c133d1223c15d8e0e779de91aaed40c697?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-ARM64-installer.msi">Sunshine-Windows-ARM64-installer.msi</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-ARM64-installer.msi?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTQ4ZGMwYjZjOTA5NTExNTM3NTBhMWUyMzY3NzZkNzQ6MTc4OTQzNDY5Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:1e211404b924fcf421657c71e1aaa95cf1f76e172cacf8ff8430beacc0e30e4a?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-Windows-ARM64-lite.zip">Sunshine-Windows-ARM64-lite.zip</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-Windows-ARM64-lite.zip?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZDZmMmJjZWIyM2QwMWZmODc3NDFjYzg3ZDIxZmIzZmQ6MTc4OTQzNDY5OQ=="><img src="https://badges.cssnr.com/vt/id/sha256:5042736897b2078e3af55f8b2bf8604bf0cd0ceb9d54ada251c4f1c7e352ba24?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-macOS-arm64.dmg">Sunshine-macOS-arm64.dmg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-macOS-arm64.dmg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzM1Yjg5NTFjZjJmYjdmZTc3MWExN2RmYTk3MWZhZGY6MTc4OTQzNDcwMQ=="><img src="https://badges.cssnr.com/vt/id/sha256:795f03a389c5726f9a7b15f501dc1ddf204b442cae565859ac83aae027a9e07c?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-macOS-x86_64.dmg">Sunshine-macOS-x86_64.dmg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-macOS-x86_64.dmg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OTA3NWVhM2Q5YjU3OGIwMTQyNmU5MjRhNDg0Njg1MzY6MTc4OTQzNDcwMw=="><img src="https://badges.cssnr.com/vt/id/sha256:764b11674babac0cd838c2883359207a481c462f355ccbfd1ec91f6d44672101?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine_2026.914.233613_aarch64.AppImage">Sunshine_2026.914.233613_aarch64.AppImage</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine_2026.914.233613_aarch64.AppImage?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NmNhMzE1ZmQ5MzMzZDk3NjA1YzJmNjI4OTc2YzI1NGQ6MTc4OTQzNDc1MA=="><img src="https://badges.cssnr.com/vt/id/sha256:d352134d9e6161ac1e3d7d1699fb0e5eff0a3460eee4d5cc131d52b04cb91152?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine_2026.914.233613_x86_64.AppImage">Sunshine_2026.914.233613_x86_64.AppImage</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine_2026.914.233613_x86_64.AppImage?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTExYzc0NTcyZWMwMzE3NGI5ODQ4ODQ4NTA3MzE2YzE6MTc4OTQzNDc1Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:6f80297a853bcf8cda114ff131b5c0a8c9a4d96a2a9c3dee1f04c39c54206846?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/flathub.tar.gz">flathub.tar.gz</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/flathub.tar.gz?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZmZlNDQxMmU3YjViZGM0NzAzNDIxNzdkMWY2NjczNTk6MTc4OTQzNDc1Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:153683d312d577d9763a764385bb65df31d3aec9dad9bea725f60bde123c6ec6?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine-2026.914.233613-1-x86_64.pkg.tar.zst">sunshine-2026.914.233613-1-x86_64.pkg.tar.zst</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine-2026.914.233613-1-x86_64.pkg.tar.zst?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzYyMjU3OGNhMzhhNjY0MjdmOTM4MWM5YzBmODNkMWM6MTc4OTQzNDc2Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:17eb8c4d823a2693038f40aeeab56943ef0d5d6ace8ac90b3693905b0acbba87?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine.pkg.tar.gz">sunshine.pkg.tar.gz</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine.pkg.tar.gz?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzA4YmExODVkYWVlYWI0YzE0OTcyODY5Y2E4NzNhY2U6MTc4OTQzNDc3NQ=="><img src="https://badges.cssnr.com/vt/id/sha256:0185f9bc8d2d5119ae3ba7d5d3dc754c9760081cdf75ce71c2b429417a832a27?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine.rb">sunshine.rb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine.rb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YTNjODczZGU3MDM4MGU3ZTgxZWM1OGMzMWZmYzRiZWY6MTc4OTQzNDgxMQ=="><img src="https://badges.cssnr.com/vt/id/sha256:d72d656caff6451309e5f48024479f6457269e28ed468665d50095d113b419e6?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_amd64.deb">sunshine_2026.914.233613-1+debiantrixie_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTIxZWMzYWViNjE0NTk2YmU2NjQ5ZmRkYzk3MWQyMmI6MTc4OTQzNDgxMw=="><img src="https://badges.cssnr.com/vt/id/sha256:a86f858cbae57f60ecebd445402ee0295c1c057b857bd45d44c2ea2d255cbbfb?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_arm64.deb">sunshine_2026.914.233613-1+debiantrixie_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MmVmNTVhZjY0MjRjMzMxZDUyZmFkYzhhYmI4ZWM4N2U6MTc4OTQzNDgyMg=="><img src="https://badges.cssnr.com/vt/id/sha256:45f250a6bae3629bd67d6856356e5d838569fbe4f6128440124c727a3d5fef5e?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu22.04_amd64.deb">sunshine_2026.914.233613-1+ubuntu22.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu22.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MGViYjAzYjY0NzA1NmVkYWE1NzViMGU0Yjg4YTUxMjk6MTc4OTQzNDgzNw=="><img src="https://badges.cssnr.com/vt/id/sha256:c7645396027b0601a09d49de89674b80b3c9ac7a3dffe0d52703738dab072f1c?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu22.04_arm64.deb">sunshine_2026.914.233613-1+ubuntu22.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu22.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/N2IzNGQyNDlmYzE4NTEwMjkzOWZkMzUzZmE2N2NmYWY6MTc4OTQzNDg1Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:4c1aa45bf17a8fe5bb73d7dbe4399a349be057f87884cdec75952362d5c6b437?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu24.04_amd64.deb">sunshine_2026.914.233613-1+ubuntu24.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu24.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OWIyNTE3ZjI1MjUyNzNlYWI5ZmRjZGNmMDkxZDM4NDg6MTc4OTQzNDg3Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:c38e9c705f650f8705f61702717e99bec34044c5028fcb8f23a08fe041292c21?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu24.04_arm64.deb">sunshine_2026.914.233613-1+ubuntu24.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu24.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MGM1ZTgxMjViYzc0NDczMDE5MDk0NTZhNjIxMTg4N2U6MTc4OTQzNDg4Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:5751c22cf0b9253b459d7f42103f1c422594363a5881e21bd1ce845218226888?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.04_amd64.deb">sunshine_2026.914.233613-1+ubuntu26.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZTc3YWU5MTJlMGRlYmRhYTIwZWYzMTNhNTc0Y2NkZWQ6MTc4OTQzNDg5Nw=="><img src="https://badges.cssnr.com/vt/id/sha256:b8a8ceeeb2b3f30a18a994ad268c94e0c91170f33a864c7aad31eed927ad7d47?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.04_arm64.deb">sunshine_2026.914.233613-1+ubuntu26.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YmM5ZGI4YmFlYmU5YmI1ODI2MmIwYzFhODlhZTgyMDY6MTc4OTQzNDkxMw=="><img src="https://badges.cssnr.com/vt/id/sha256:174fa9123362c93eac164554a0651ecab17d64d9525fccd9974964fceec553af?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.10_amd64.deb">sunshine_2026.914.233613-1+ubuntu26.10_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.10_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZDdhM2U5OTQ3OThiNGU3MzUxY2ZiYjkyODcwZTcwMzc6MTc4OTQzNDkyNw=="><img src="https://badges.cssnr.com/vt/id/sha256:1cedccbf3ce7836f1e83a74c23dd8dd7b49e2a0d341198f5b3ca47145244aedd?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.10_arm64.deb">sunshine_2026.914.233613-1+ubuntu26.10_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613-1+ubuntu26.10_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/N2JlMDJjMzhmYWE5MmEyOWUwNGM5NDU5YjcwNWI1NWE6MTc4OTQzNDk0Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:faaa60bca2bbcd24eed79c0e4a66d5725b1b026a33059df37142dd8c65641b38?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613_alpine3.24_aarch64.apk">sunshine_2026.914.233613_alpine3.24_aarch64.apk</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613_alpine3.24_aarch64.apk?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MjQxMGU3OWZlOTVhNDYyZmU3ZGU0ODE0NDRhYzZlNGQ6MTc4OTQzNDk1Nw=="><img src="https://badges.cssnr.com/vt/id/sha256:fab3e172f60a7cb1c159fc18cca131774078f9368a53da2e5a14e0112fa12897?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613_alpine3.24_x86_64.apk">sunshine_2026.914.233613_alpine3.24_x86_64.apk</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_2026.914.233613_alpine3.24_x86_64.apk?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OGZlYmU5YTg3NzYxMTlkMTU0OGI1MDkxNTc2MWMyNjA6MTc4OTQzNDk3Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:ecae627e14e3a86a36910721d24769db7fd0f9b9d46be4313943fa73be92b68e?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_aarch64.flatpak">sunshine_aarch64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_aarch64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NTE3MDA5YTlhNDUxYTg5YzUyMTcyYjMzMjExYWU0ZGY6MTc4OTQzNDk4OQ=="><img src="https://badges.cssnr.com/vt/id/sha256:46cfb76fbb4639c662e3307f7f55fa228ed00120c09d62b262114475568cedea?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_debug_aarch64.flatpak">sunshine_debug_aarch64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_debug_aarch64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OGFhY2NjNzRmMTIyZjlmMWVlNDYxZjJmMzZkYzZkNmU6MTc4OTQzNTAwMg=="><img src="https://badges.cssnr.com/vt/id/sha256:7fcc926095e2b665148a2e37d8f96350eb05a927e3781a9faf984fc6129b9722?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_debug_x86_64.flatpak">sunshine_debug_x86_64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_debug_x86_64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YTg0OGIzMDgyMWE0MDNiN2NmMWI1OWY4NGMzMjE4OWY6MTc4OTQzNTAxNw=="><img src="https://badges.cssnr.com/vt/id/sha256:38b2283527559b4b3c854bc0a4ff50f4c8c7db79ae86e75a1c3aa787e921fe18?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_x86_64.flatpak">sunshine_x86_64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/sunshine_x86_64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NjkwZGExMWMwZGY2NWU1NzllYjEyYTczNjk2MWFmM2M6MTc4OTQzNTAzNg=="><img src="https://badges.cssnr.com/vt/id/sha256:c17a368d845d8cc73d3f19ef5c0a87a961f1b908bf9eba91ca13c998e3e8b2e6?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc43.aarch64.rpm">Sunshine-2026.914.233613-1.fc43.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc43.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MGUwZDA4N2VhZDdiNmE0MmU1MGYwZDA5MjcyZjBmNGM6MTc4OTQzNzgyNg=="><img src="https://badges.cssnr.com/vt/id/sha256:c57db800dc688b52fa2237ca1ceee55b76f5caa057c27d44b6888d3cfd783889?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc43.x86_64.rpm">Sunshine-2026.914.233613-1.fc43.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc43.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZmI5ZWM5ODBjZjk1NmJkMmQ3N2EwNTJhMTI3MWQ1ODc6MTc4OTQzNzgyOA=="><img src="https://badges.cssnr.com/vt/id/sha256:e44612e6e85458a183dc47a535c93c367ecf7f260b05daeac54bf0f4f5637080?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc44.aarch64.rpm">Sunshine-2026.914.233613-1.fc44.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc44.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YmFhZTZjZGNlMWRhZDMzOGM4NjU1Nzk4YzJiY2Q3MmM6MTc4OTQzNzgzMA=="><img src="https://badges.cssnr.com/vt/id/sha256:1b2782828cc998c160eb5545082783e278df2f94d72b603a92143ffc7295f50c?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc44.x86_64.rpm">Sunshine-2026.914.233613-1.fc44.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc44.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NzZhNTBjYjQ1NzFiM2Q2ZGI5MGVmMzk2MWFjNGNhYTY6MTc4OTQzNzgzMQ=="><img src="https://badges.cssnr.com/vt/id/sha256:2abb16033ecde677f5c45322b39b6d6ae4cf297ac3e36707aa90bd3911d0e00f?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc45.aarch64.rpm">Sunshine-2026.914.233613-1.fc45.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc45.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YzUzMmY5ZmE5NWQzMWVjNzQwNjRmOTNjNWJjYmIyNGE6MTc4OTQzNzg4Ng=="><img src="https://badges.cssnr.com/vt/id/sha256:b46d98b0f675833814e61372c26faf35f128e137a4f4763d1b083dfbca87a7e2?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc45.x86_64.rpm">Sunshine-2026.914.233613-1.fc45.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc45.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZDY4ZTEwODIxYjIwNTUyMjBjNzM5NWRhNTk4ZDBiMjg6MTc4OTQzNzg4Nw=="><img src="https://badges.cssnr.com/vt/id/sha256:a46b83e8c8e6c8fc2e0601464b43e9c3fd2f67907a23b537ea64ff58ba4fadf3?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc46.aarch64.rpm">Sunshine-2026.914.233613-1.fc46.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc46.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MjRlMjQ5ODJjMmM1NGMwZGVlNzE1MzNjNzc1MTVkZTg6MTc4OTQzNzg4OQ=="><img src="https://badges.cssnr.com/vt/id/sha256:92e1b0cadfb2055fe5c8a52e3b9082147d20d951f21aac7efa50e89a9873b4ac?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.fc46.x86_64.rpm">Sunshine-2026.914.233613-1.fc46.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.fc46.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YWY3YzY3ZDJjN2RjOWM5Y2E4MTAzMDFiMmI2MjU5MzA6MTc4OTQzNzg5MA=="><img src="https://badges.cssnr.com/vt/id/sha256:451c6c1ccee6edaa8734f12cd3fb9b0ffe2ce3d21cfe2681c9e9fd8c17c859c1?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.suse.lp160.aarch64.rpm">Sunshine-2026.914.233613-1.suse.lp160.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.suse.lp160.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YTg0OTBlYjQ5Yjc0MWFiYTZjMjNkNjc3NjAwMWRhYzY6MTc4OTQzNzkwMw=="><img src="https://badges.cssnr.com/vt/id/sha256:da1af15e431f6fa704c7ba905e07eac368e47cdcdc629e3004489a2b75b61a58?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.suse.lp160.x86_64.rpm">Sunshine-2026.914.233613-1.suse.lp160.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.suse.lp160.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MDRhMzg3NWU0Yjk2YWQwOTBjMmEyMWY5M2FjYTg5N2Y6MTc4OTQzNzk0OQ=="><img src="https://badges.cssnr.com/vt/id/sha256:092b631afd236098f45641eed1ce67c237e67b7ff52d9d391ba83eafac9101eb?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.suse.tw.aarch64.rpm">Sunshine-2026.914.233613-1.suse.tw.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.suse.tw.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NmFkODhhMmQ5ZGE4OTVlZDBlNmMxMmJjM2IyNzdhZjY6MTc4OTQzNzk1MA=="><img src="https://badges.cssnr.com/vt/id/sha256:873e90263144bf45f378519cb069c6507514a67a686275e667e9973c012bd113?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/Sunshine-2026.914.233613-1.suse.tw.x86_64.rpm">Sunshine-2026.914.233613-1.suse.tw.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.914.233613/Sunshine-2026.914.233613-1.suse.tw.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OGM3ZmY1YjNhMTRkYWI0MDE0YTgwODNiNWIwZjMwZTY6MTc4OTQzNzk1Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:33418d232f959ac1698c6f11f90e25bb018c33da5cbf616c3a18b412de67d7e4?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#release">release</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <i class="fa-fw fa-2xl fas fa-coins"></i>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+<div class="amazon-affiliate-container">
+  <div class="affiliate-disclaimer">
+    <small>
+      <em>#CommissionsEarned | As an Amazon Associate we earn from qualifying purchases.</em>
+    </small>
+  </div>
+
+  <div id="amazon-product-display">
+    <!-- Product will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<script>
+(function() {
+  // Load products from Jekyll data
+  const allProducts = [{"title":"ASUS Prime Radeon™ RX 9070 XT OC Edition Graphics Card, AMD (PCIe 5.0, HDMI/DP 2.1, 2.5-Slot Design, Axial-tech Fans, Ball Bearings, Dual BIOS, GPU Guard)","image":"https://m.media-amazon.com/images/I/81huTBuLV+L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DRRMZDH6","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)","image":"https://m.media-amazon.com/images/I/81S9fi6ViFL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS6WPTLL","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS TUF GeForce RTX™ 5080 16GB GDDR7 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, HDMI®/DP 2.1, 3.6-Slot, Military-Grade Components, Protective PCB Coating, Axial-tech Fans, Vapor Chamber)","image":"https://m.media-amazon.com/images/I/71WSd4clFZL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DQSMMCSH","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS ROG Astral GeForce RTX™ 5090 OC Edition Graphics Card, NVIDIA (PCIe® 5.0, 32GB GDDR7, HDMI®/DP 2.1, 3.8-Slot, 4-Fan Design, Axial-tech Fans, Patented Vapor Chamber, Phase-Change GPU Thermal Pad)","image":"https://m.media-amazon.com/images/I/811IbTkEvnL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2WQZ2M","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9070 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9070XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71R7fXnFGCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2QG2KW","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5080 Gaming OC 16G Graphics Card, WINDFORCE Cooling System, 16GB 256-bit GDDR7, GV-N5080GAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71lZess7M8L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2R6948","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5090 WINDFORCE OC 32G Graphics Card, WINDFORCE Cooling System, 32GB 512-bit GDDR7, GV-N5090WF3OC-32GD Video Card","image":"https://m.media-amazon.com/images/I/71hOB-2Rf5L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DT7GMXHB","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9060 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9060XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71L08TQedJL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F91KM1CK","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"AMD Ryzen™ 9 9900X 12-Core, 24-Thread Unlocked Desktop Processor","image":"https://m.media-amazon.com/images/I/61dukbEGziL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D6NN87T8","tags":["cpu","computer hardware","gaming","streaming"]},{"title":"SAMSUNG 990 PRO SSD 2TB NVMe M.2 PCIe Gen4, M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P2T0B/AM","image":"https://m.media-amazon.com/images/I/71OWtcxKgvL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0BHJJ9Y77","tags":["storage","computer hardware","gaming"]},{"title":"Amazon Fire TV Stick 4K Plus (newest model) with AI-powered Fire TV Search, Wi-Fi 6, stream hundreds of thousands of movies and shows, free & live TV, find shows faster with Alexa+","image":"https://m.media-amazon.com/images/I/61JBEw26D7L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F7Z4QZTT","tags":["streaming"]},{"title":"Amazon Fire TV Cube, with AI-powered Fire TV Search, Hands-free streaming device, find shows faster with Alexa+, Wi-Fi 6E, 4K Ultra HD","image":"https://m.media-amazon.com/images/I/71YRVDg1RCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09BZZ3MM7","tags":["streaming"]},{"title":"Google TV Streamer 4K - Fast Streaming Entertainment on Your TV with Voice Search Remote - Watch Movies, Shows, Live TV, and Netflix in 4K HDR - Smart Home Control - 32 GB of Storage","image":"https://m.media-amazon.com/images/I/510wm50VDHL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D8WJYSF9","tags":["streaming"]},{"title":"NVIDIA Shield Android TV Pro | 4K HDR Streaming Media Player High Performance, Dolby Vision, 3GB RAM, 2X USB, Works with Alexa, Model:945-12897-2500-101","image":"https://m.media-amazon.com/images/I/51ZGCIbrgFL._AC_SL1280_.jpg","link":"https://www.amazon.com/dp/B07YP9FBMM","tags":["streaming"]},{"title":"Nintendo Switch with Neon Blue and Neon Red Joy-Con - Handheld Gaming Console","image":"https://m.media-amazon.com/images/I/71wpE+ZIehL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0BFJWCYTL","tags":["gaming","streaming"]},{"title":"Nintendo Switch 2 System","image":"https://m.media-amazon.com/images/I/714-Fh3ngmL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0F3GWXLTS","tags":["gaming","streaming"]},{"title":"PlayStation 5 Pro Console - 2TB","image":"https://m.media-amazon.com/images/I/51f-7a6i5PL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FTMY4YZ2","tags":["gaming"]},{"title":"PlayStation®5 Digital Edition – 825GB","image":"https://m.media-amazon.com/images/I/516yiK6U+FL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGMYJMG","tags":["gaming"]},{"title":"PlayStation®5 console – 1TB","image":"https://m.media-amazon.com/images/I/51tSjJJl82L._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGTYSL5","tags":["gaming"]},{"title":"Sony Playstation Vita Wi-Fi 2000 Series with Silicone Joystick Covers and AC Adapter Cable (Piano Black) (Renewed)","image":"https://m.media-amazon.com/images/I/71QH7h0GRrL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B089CRM88W","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 512GB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D932YWSZ","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D934SHFG","tags":["gaming","streaming"]},{"title":"Xbox Series X - Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Carbon Black","image":"https://m.media-amazon.com/images/I/61WV2vIMfFL._SL1500_.jpg","link":"https://www.amazon.com/dp/B08H75RTZ8","tags":["gaming","streaming"]},{"title":"Xbox Series X - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/51bq1shHXEL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0DCD9LGHY","tags":["gaming","streaming"]},{"title":"Elgato Stream Deck MK.2 – Studio Controller, 15 macro keys, trigger actions in apps and software like OBS, Twitch, YouTube and more, works with Mac and PC","image":"https://m.media-amazon.com/images/I/61gtdFnK+UL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09738CV2G","tags":["streaming","accessories","content creation"]},{"title":"Logitech for Creators Blue Microphones Yeti USB Microphone (Blackout)","image":"https://m.media-amazon.com/images/I/61KTMvS5JBL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B00N1YPXW2","tags":["audio","streaming","content creation","accessories"]},{"title":"SofaBaton X2 Universal Remote with Touchscreen, All in One Universal Remote Control with Powerful Hub, One-Touch Activities, Custom APP, Compatible with Alexa&Google Assistant&Home Assistant","image":"https://m.media-amazon.com/images/I/616sCEAGTtL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0G46KHL8K","tags":["accessories"]}];
+
+  // Get affiliate tag from site config
+  const affiliateTag = "lizardbyte-blog-01-20";
+
+  // Get tags from page front matter if available
+  const pageTags = ["release","sunshine"];
+
+  let filteredProducts = allProducts;
+
+  // Filter products by tags if specified
+  if (pageTags && pageTags.length > 0) {
+    filteredProducts = allProducts.filter(product => {
+      if (!product.tags) return false;
+      // Check if any page tag matches any product tag
+      return pageTags.some(pageTag =>
+        product.tags.some(productTag =>
+          productTag.toLowerCase() === pageTag.toLowerCase()
+        )
+      );
+    });
+
+    // If no products match, fall back to all products
+    if (filteredProducts.length === 0) {
+      filteredProducts = allProducts;
+    }
+  }
+
+  // Shuffle products once at the start for random initial order
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Shuffle products once and keep that order
+  filteredProducts = shuffleArray(filteredProducts);
+
+  let currentProductIndex = 0;
+  let rotationTimer = null;
+
+  function startRotationTimer() {
+    if (rotationTimer) {
+      clearInterval(rotationTimer);
+    }
+    rotationTimer = setInterval(function() {
+      navigateProduct('next');
+    }, 30000); // 30 seconds
+  }
+
+  function navigateProduct(direction) {
+    if (filteredProducts.length === 0) return;
+
+    if (direction === 'next') {
+      currentProductIndex = (currentProductIndex + 1) % filteredProducts.length;
+    } else if (direction === 'prev') {
+      currentProductIndex = (currentProductIndex - 1 + filteredProducts.length) % filteredProducts.length;
+    }
+
+    displayProduct(filteredProducts[currentProductIndex]);
+  }
+
+  function addAffiliateTag(url) {
+    if (!affiliateTag || !url) return url;
+
+    try {
+      const urlObj = new URL(url);
+      urlObj.searchParams.set('tag', affiliateTag);
+      return urlObj.toString();
+    } catch (e) {
+      console.error('Invalid URL:', url);
+      return url;
+    }
+  }
+
+  function displayProduct(product) {
+    if (!product) return;
+
+    const container = document.getElementById('amazon-product-display');
+    if (!container) return;
+
+    // Add affiliate tag to product link
+    const productLink = addAffiliateTag(product.link);
+
+    // Show navigation buttons only if there are multiple products
+    const showNavigation = filteredProducts.length > 1;
+
+    container.innerHTML = `
+      <div class="amazon-product-display">
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-prev" aria-label="Previous product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+        <div class="product-image">
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+            <img src="${product.image}" alt="${product.title}">
+          </a>
+        </div>
+        <div class="product-details">
+          <h4>
+            <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              ${product.title}
+            </a>
+          </h4>
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored" class="product-link">
+            View on Amazon
+          </a>
+          ${product.tags ? `
+            <div class="product-tags">
+              <small>
+                ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+              </small>
+            </div>
+          ` : ''}
+        </div>
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-next" aria-label="Next product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    // Add event listeners for navigation buttons
+    if (showNavigation) {
+      const prevBtn = container.querySelector('.product-nav-prev');
+      const nextBtn = container.querySelector('.product-nav-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          navigateProduct('prev');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          navigateProduct('next');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+    }
+  }
+
+  // Display initial product (first in shuffled array)
+  if (filteredProducts.length > 0) {
+    displayProduct(filteredProducts[currentProductIndex]);
+
+    // Start automatic rotation if there are products
+    if (filteredProducts.length > 1) {
+      startRotationTimer();
+    }
+  }
+})();
+</script>
+
+
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="visually-hidden">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Sunshine+v2026.914.233613+Released&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="visually-hidden">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="visually-hidden">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="visually-hidden">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-14-v2026.914.233613%2F"
+      class="btn btn-social-icon btn-reddit" title="Share on Reddit">
+      <span class="fab fa-fw fa-reddit" aria-hidden="true"></span>
+      <span class="visually-hidden">Reddit</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2026-09-14-v2026.914.1218.10/" data-toggle="tooltip" data-placement="top" title="libvirtualhid v2026.914.1218.10 Released">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2026-09-15-v2026.915.1549.59/" data-toggle="tooltip" data-placement="top" title="Themerr-jellyfin v2026.915.1549.59 Released">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+  
+
+<!-- //NOSONAR(Web:S5725): giscus serves this configurable widget endpoint without immutable SRI-compatible releases. --><script
+        src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Blog"
+        data-category-id="DIC_kwDOMzlnm84CnN1j"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (const element of links) {
+            if (element.href.includes('.pdf') || element.href.includes('.doc') || element.href.includes('.docx')) {
+                element.onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+&nbsp;&bull;&nbsp;
+<a title="Licenses and Attribution" href="/licenses" class="text_muted">Licenses</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/releases/sunshine/2026-09-14-v2026.914.233613.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/crowdin-init.js"></script>
+    
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/lucide@1.45.0/dist/umd/lucide.min.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/lucide-init.js"></script>
+    
+  
+    
+      <script src="/assets/js/tabs.js"></script>
+    
+  
+
+
+
+
+
+  
+    <script src="/assets/js/changelog-links.js"></script>
+  
+
+
+
+</body>
+</html>
