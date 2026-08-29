@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">  <!-- //NOSONAR(Web:PageWithoutTitleCheck): _includes/head.html renders the page title. -->
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <!-- Load theme initialization script early to prevent flash of wrong theme -->
+  <script src="/assets/js/theme-init.js"></script>
+  
+
+  
+
+  
+
+  
+
+  <title>Sunshine v2026.906.222525 Released | LizardByte</title>
+
+  
+  
+  <meta name="author" content="LizardByte-bot">
+  
+
+  <meta name="description" content="‼️ Attention This release contains critical security updates. For more information see the following: GHSA-6w33-pjh7-p77c GHSA-6jvv-jqr7-m6m3 GHSA-36ff-frg7-492f GHSA-26q2-58j6-qmvv GHSA-c428-87f8-rrv5 Please update as soon as possible! ⚠️ Breaking changes and migration notes Windows NSIS (.exe) installers have been discontinued. Use the WiX-based .msi installer instead. Windows portable packages were renamed. Sunshine-Windows-{arch}-portable.zip...">
+
+  
+  <meta name="theme-color" content="#05FF3B">
+  
+
+  
+  <meta name="keywords" content="LizardByte,Sunshine,Moonlight,self-hosted,gamestreaming,gamestream,game,streaming,media server">
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="LizardByte" href="https://app.lizardbyte.dev/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSW90X5YZX"></script>
+<script>
+  globalThis.dataLayer = globalThis.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSW90X5YZX');
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+
+
+    
+      
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      
+        
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin-bootstrap-css.css">
+
+
+      
+    
+      
+        <link rel="stylesheet" href="/assets/css/styles.css">
+      
+    
+  
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/show-search.css">
+    
+  
+
+  
+
+  
+  <meta property="og:site_name" content="LizardByte">
+  <meta property="og:title" content="Sunshine v2026.906.222525 Released | LizardByte">
+  <meta property="og:description" content="‼️ Attention This release contains critical security updates. For more information see the following: GHSA-6w33-pjh7-p77c GHSA-6jvv-jqr7-m6m3 GHSA-36ff-frg7-492f GHSA-26q2-58j6-qmvv GHSA-c428-87f8-rrv5 Please update as soon as possible! ⚠️ Breaking changes and migration notes Windows NSIS (.exe) installers have been discontinued. Use the WiX-based .msi installer instead. Windows portable packages were renamed. Sunshine-Windows-{arch}-portable.zip...">
+
+  
+  <meta property="og:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Sunshine_624x312.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="LizardByte-bot">
+  
+  <meta property="og:article:published_time" content="2026-09-06T00:00:00-04:00">
+  <meta property="og:url" content="https://app.lizardbyte.dev/2026-09-06-v2026.906.222525/">
+  <link rel="canonical" href="https://app.lizardbyte.dev/2026-09-06-v2026.906.222525/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@LizardByteDev">
+  <meta name="twitter:creator" content="@LizardByteDev">
+
+  <meta property="twitter:title" content="Sunshine v2026.906.222525 Released | LizardByte">
+  <meta property="twitter:description" content="‼️ Attention This release contains critical security updates. For more information see the following: GHSA-6w33-pjh7-p77c GHSA-6jvv-jqr7-m6m3 GHSA-36ff-frg7-492f GHSA-26q2-58j6-qmvv GHSA-c428-87f8-rrv5 Please update as soon as possible! ⚠️ Breaking changes and migration notes Windows NSIS (.exe) installers have been discontinued. Use the WiX-based .msi installer instead. Windows portable packages were renamed. Sunshine-Windows-{arch}-portable.zip...">
+
+  
+  <meta name="twitter:image" content="https://app.lizardbyte.dev/dashboard/github/openGraphImages/Sunshine_624x312.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+  <div class="container-fluid"><a class="navbar-brand" href="https://app.lizardbyte.dev/">LizardByte</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown1" type="button" data-bs-toggle="dropdown" aria-expanded="false">❤ Donate</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="https://github.com/sponsors/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://patreon.com/LizardByte">Patreon</a>
+                    <a class="dropdown-item" href="https://www.paypal.com/paypalme/ReenigneArcher">PayPal</a>
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/store">Store</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown3" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                    <a class="dropdown-item" href="https://github.com/orgs/LizardByte/discussions">Community</a>
+                    <a class="dropdown-item" href="/discord">Discord</a>
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/about/overview.html">Docs</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/GameDB">Game DB</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte">GitHub</a>
+                    <a class="dropdown-item" href="https://status.LizardByte.dev">Status</a>
+                    <a class="dropdown-item" href="/support">Support</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown4" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown4">
+                    <a class="dropdown-item" href="/gamepad-tester">Gamepad Tester</a>
+                    <a class="dropdown-item" href="/mouse-tester">Mouse Tester</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown5" type="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown5">
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/packages">Packages</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/homebrew-homebrew">Homebrew</a>
+                    <a class="dropdown-item" href="https://github.com/LizardByte/pacman-repo">Pacman</a>
+              </div>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown6" type="button" data-bs-toggle="dropdown" aria-expanded="false">Development</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown6">
+                    <a class="dropdown-item" href="https://docs.lizardbyte.dev/latest/developers/contributing.html">Contributing</a>
+                    <a class="dropdown-item" href="https://app.lizardbyte.dev/dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="https://status-dev.LizardByte.dev">Dev Status</a>
+                    <a class="dropdown-item" href="/roadmap">Roadmap</a>
+              </div>
+            </li>
+          
+          
+          
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li></ul>
+    </div>
+
+    
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="https://app.lizardbyte.dev/">
+            <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/navbar-avatar.png" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.9.2/simple-jekyll-search.min.js"
+    integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n"
+    crossorigin="anonymous"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: '/assets/data/searchcorpus.json'
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Sunshine v2026.906.222525 Released</h1>
+          
+
+          
+            
+              By
+              
+                <span class="post-author-container">
+                  
+                    <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                      <img src="https://github.com/LizardByte-bot.png?size=40" alt="LizardByte-bot" class="post-author-avatar">
+                    </a>
+                  
+                  <strong>
+                    
+                      <a href="https://github.com/LizardByte-bot" target="_blank" rel="noopener noreferrer" class="post-author-link">
+                        LizardByte-bot
+                      </a>
+                    
+                  </strong>
+                  
+                </span>
+              <br>
+            
+            <span class="post-meta">Posted on September 6, 2026</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+
+
+
+
+
+
+
+
+
+
+          
+            <a href="https://hitscounter.dev/history?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F" target="_blank" rel="noopener noreferrer">
+              <img
+                  class="shields-"
+                  src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F&label=hits&icon=graph-up-arrow&color=blue&message=&style=for-the-badge&tz=UTC"
+                  alt="hits"
+                  
+              >
+            </a>
+          
+
+          
+            
+              
+                  
+                    <object data="https://img.shields.io/github/followers/LizardByte?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte&link=https%3A%2F%2Fgithub.com%2FLizardByte%3Ftab%3Dfollowers" type="image/svg+xml" title="GitHub followers">GitHub followers</object>
+                  
+              
+            
+              
+                  
+                    <object data="https://img.shields.io/github/forks/LizardByte/Sunshine?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Ffork&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Fforks" type="image/svg+xml" title="GitHub forks">GitHub forks</object>
+                  
+                
+            
+              
+                  
+                    <object data="https://img.shields.io/github/stars/LizardByte/Sunshine?color=blue&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine&link=https%3A%2F%2Fgithub.com%2FLizardByte%2FSunshine%2Fstargazers" type="image/svg+xml" title="GitHub Repo stars">GitHub Repo stars</object>
+                  
+                
+            
+          
+        </div>
+      
+
+      
+
+      <div class="blog-post">
+        
+
+
+
+
+    
+    
+    
+    
+<div class="admonition hint rounded">
+    <p class="admonition-title">
+        <i data-lucide="circle-question-mark" aria-hidden="true"></i>
+        Hint
+    </p>
+    <p>
+        <p>View this release on <a href="https://github.com/LizardByte/Sunshine/releases/tag/v2026.906.222525">GitHub</a>.</p>
+
+    </p>
+</div>
+
+
+
+<h2 id="️-attention">‼️ Attention</h2>
+
+<p>This release contains critical security updates. For more information see the following:</p>
+
+<ul>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-6w33-pjh7-p77c">GHSA-6w33-pjh7-p77c</a></li>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-6jvv-jqr7-m6m3">GHSA-6jvv-jqr7-m6m3</a></li>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-36ff-frg7-492f">GHSA-36ff-frg7-492f</a></li>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-26q2-58j6-qmvv">GHSA-26q2-58j6-qmvv</a></li>
+  <li><a href="https://github.com/LizardByte/Sunshine/security/advisories/GHSA-c428-87f8-rrv5">GHSA-c428-87f8-rrv5</a></li>
+</ul>
+
+<p>Please update as soon as possible!</p>
+
+<h2 id="️-breaking-changes-and-migration-notes">⚠️ Breaking changes and migration notes</h2>
+
+<ul>
+  <li><strong>Windows NSIS (<code class="language-plaintext highlighter-rouge">.exe</code>) installers have been discontinued.</strong> Use the WiX-based <code class="language-plaintext highlighter-rouge">.msi</code> installer instead.</li>
+  <li><strong>Windows portable packages were renamed.</strong> <code class="language-plaintext highlighter-rouge">Sunshine-Windows-{arch}-portable.zip</code> is now <code class="language-plaintext highlighter-rouge">Sunshine-Windows-{arch}-lite.zip</code>. Update any fixed download URLs or automation. (<a href="https://github.com/LizardByte/Sunshine/pull/5405">#5405</a>)</li>
+  <li><strong>Linux KMS display indices may be reordered.</strong> Configurations using a numeric <code class="language-plaintext highlighter-rouge">output_name</code> may need to reselect their display. Connector names such as <code class="language-plaintext highlighter-rouge">DP-1</code> or <code class="language-plaintext highlighter-rouge">HDMI-A-1</code> are now recommended. (<a href="https://github.com/LizardByte/Sunshine/pull/5489">#5489</a>)</li>
+  <li><strong>Sunshine has migrated to libvirtualhid.</strong> It replaces Inputtino on Linux and ViGEmBus as the primary input backend on Windows AMD64, and also handles additional input functionality on macOS. Virtual-device names, controller identities, permissions, and application-specific mappings may change. (<a href="https://github.com/LizardByte/Sunshine/pull/5368">#5368</a>)
+    <ul>
+      <li>On Windows, full driver-backed gamepad, Raw Input keyboard, and Raw Input mouse support requires the separately installed Virtual HID Driver, an active machine license, and driver version <code class="language-plaintext highlighter-rouge">2026.905.2300.20</code> or newer. You can purchase a license from the Sunshine web-ui or our <a href="https://app.lizardbyte.dev/store">store</a>. Lifetime and yearly subscription options are available.</li>
+      <li>Existing ViGEmBus installations remain available only as a limited Xbox 360 and DualShock 4 fallback. Sunshine no longer bundles or installs ViGEmBus.</li>
+      <li>Automatic gamepad emulation may now expose an Xbox Series controller instead of the previous Windows Xbox 360 or Linux Xbox One controller. Games and controller profiles may need to be reconfigured.</li>
+      <li>See the <a href="https://app.lizardbyte.dev/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/">Introducing libvirtualhid and Virtual HID Driver</a> blog post for more information.</li>
+    </ul>
+  </li>
+  <li><strong>The input configuration key <code class="language-plaintext highlighter-rouge">ds5_inputtino_randomize_mac</code> was renamed to <code class="language-plaintext highlighter-rouge">virtualhid_randomize_mac</code>.</strong> The old key is no longer recognized.</li>
+  <li><strong>The ViGEmBus Web API was replaced.</strong> <code class="language-plaintext highlighter-rouge">GET /api/vigembus/status</code> and <code class="language-plaintext highlighter-rouge">POST /api/vigembus/install</code> were removed. Integrations should migrate to <code class="language-plaintext highlighter-rouge">GET /api/virtual-input/status</code> and the new <code class="language-plaintext highlighter-rouge">/api/virtual-input/license</code> endpoints.</li>
+  <li><strong>Linux release filenames changed.</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sunshine.AppImage</code> is now versioned and architecture-specific, for example <code class="language-plaintext highlighter-rouge">Sunshine_2026.906.222525_x86_64.AppImage</code>.</li>
+      <li>Debian and Ubuntu packages now use native versioned filenames, for example <code class="language-plaintext highlighter-rouge">sunshine_2026.906.222525-1+ubuntu24.04_amd64.deb</code>.</li>
+      <li>Automation using fixed GitHub release URLs must be updated.</li>
+    </ul>
+  </li>
+  <li><strong>The prebuilt platform matrix changed.</strong>
+    <ul>
+      <li>The minimum supported FreeBSD release increased from 14.4 to 15.1.</li>
+      <li>Prebuilt FreeBSD aarch64 packages were removed; aarch64 users must compile Sunshine themselves. (<a href="https://github.com/LizardByte/Sunshine/pull/5516">#5516</a>)</li>
+      <li>Fedora 42 and openSUSE Leap 15.6 RPMs are no longer attached to GitHub releases.</li>
+    </ul>
+  </li>
+  <li><strong>Sunshine no longer opens the Web UI automatically at startup.</strong> Open it manually when configuration is needed. (<a href="https://github.com/LizardByte/Sunshine/pull/5329">#5329</a>)</li>
+  <li><strong>Log files now rotate at startup.</strong> Previous logs are retained as <code class="language-plaintext highlighter-rouge">.1</code> through <code class="language-plaintext highlighter-rouge">.5</code>; log collectors may need rotation-aware handling. (<a href="https://github.com/LizardByte/Sunshine/pull/5485">#5485</a>)</li>
+</ul>
+
+<h3 id="source-builders-and-downstream-packagers">Source builders and downstream packagers</h3>
+
+<ul>
+  <li>The minimum required CMake version increased from 3.20 to 3.24.</li>
+  <li>The system tray migrated to Qt on every platform. Downstream packages must provide the applicable Qt Widgets and SVG dependencies. (<a href="https://github.com/LizardByte/Sunshine/pull/5260">#5260</a>)</li>
+  <li>Python development dependencies moved from pip extras to <code class="language-plaintext highlighter-rouge">uv</code> dependency groups. Existing <code class="language-plaintext highlighter-rouge">pip install ".[test]"</code>, <code class="language-plaintext highlighter-rouge">.[lint]</code>, and similar workflows must migrate to <code class="language-plaintext highlighter-rouge">uv sync</code> and <code class="language-plaintext highlighter-rouge">uv run</code>. (<a href="https://github.com/LizardByte/Sunshine/pull/5222">#5222</a>)</li>
+  <li>Several build paths and submodules were removed or relocated, including Inputtino, GoogleTest, nanors, nv-codec-headers, the Flatpak shared-modules checkout, and the version-specific Ubuntu Dockerfiles. Downstream scripts and patches referencing these paths must be updated.</li>
+</ul>
+
+<h2 id="-highlights">✨ Highlights</h2>
+
+<ul>
+  <li><strong>Expanded virtual input support.</strong> The new libvirtualhid integration adds Xbox 360, Xbox One, Xbox Series, DualShock 4, DualSense, Nintendo Switch Pro, and generic virtual gamepad profiles, along with broader keyboard, mouse, touchscreen, pen, and trackpad support. (<a href="https://github.com/LizardByte/Sunshine/pull/5368">#5368</a>)</li>
+  <li><strong>Continued NVENC support for older NVIDIA GPUs on Windows.</strong> Sunshine now dynamically selects a compatible NVIDIA Video Codec SDK version at runtime, preserving hardware encoding support on older NVIDIA cards while retaining support for newer hardware. (<a href="https://github.com/LizardByte/Sunshine/pull/5451">#5451</a>)</li>
+  <li><strong>Hardware YUV 4:4:4 and HDR encoding on NVIDIA Linux systems.</strong> CUDA and CUDA-GL capture paths can now provide higher-quality chroma reproduction, including HDR configurations. (<a href="https://github.com/LizardByte/Sunshine/pull/4965">#4965</a>, <a href="https://github.com/LizardByte/Sunshine/pull/5315">#5315</a>)</li>
+  <li><strong>Improved VA-API controls.</strong> New rate-control, quality, and block-level bitrate-control options provide greater control over AMD and Intel encoding behavior. (<a href="https://github.com/LizardByte/Sunshine/pull/5388">#5388</a>)</li>
+  <li><strong>Major Wayland and PipeWire improvements.</strong> This release improves DMA-BUF modifier support, display switching, variable-rate capture, fractional refresh rates, unpaced capture, software-encoder buffers, and compatibility with KWin and other compositors.</li>
+  <li><strong>More reliable Linux display selection.</strong> Connector names such as <code class="language-plaintext highlighter-rouge">DP-1</code> and <code class="language-plaintext highlighter-rouge">HDMI-A-1</code> can now be used instead of unstable numeric display indices. (<a href="https://github.com/LizardByte/Sunshine/pull/5423">#5423</a>)</li>
+  <li><strong>Qt-based system tray across all platforms.</strong> Sunshine now uses a unified, cross-platform tray implementation with improved behavior on Linux, macOS, Windows, AppImage, and Flatpak installations. (<a href="https://github.com/LizardByte/Sunshine/pull/5260">#5260</a>)</li>
+  <li><strong>Improved macOS display management.</strong> Sunshine now uses libdisplaydevice to enumerate displays and apply or restore display changes, alongside improved scroll handling, display wake behavior, and microphone permission support. (<a href="https://github.com/LizardByte/Sunshine/pull/5338">#5338</a>)</li>
+  <li><strong>Native aarch64 AppImage support.</strong> Linux ARM64 users can now download an official AppImage. (<a href="https://github.com/LizardByte/Sunshine/pull/5627">#5627</a>)</li>
+  <li><strong>Better Web UI application management.</strong> The Applications page now supports filtering and searching, with refreshed Add, Edit, and Delete workflows and broader layout improvements.</li>
+  <li><strong>More resilient streaming behavior.</strong> Highlights include automatic SDR fallback when HDR is unavailable, improved video reinitialization, corrected fractional frame pacing, better modifier-key handling, and use of the configured Windows audio sink.</li>
+  <li><strong>Rotating logs and improved diagnostics.</strong> Startup logs are preserved across multiple runs, making crashes and initialization failures easier to troubleshoot. (<a href="https://github.com/LizardByte/Sunshine/pull/5485">#5485</a>)</li>
+  <li><strong>Per-session client identification.</strong> Launched applications can read the connected client name from the new <code class="language-plaintext highlighter-rouge">SUNSHINE_CLIENT_NAME</code> environment variable. (<a href="https://github.com/LizardByte/Sunshine/pull/5465">#5465</a>)</li>
+  <li><strong>Configurable RTSP packet size.</strong> The new <code class="language-plaintext highlighter-rouge">packetsize</code> option can improve compatibility with clients or networks that cannot configure an appropriate packet size themselves. (<a href="https://github.com/LizardByte/Sunshine/pull/5153">#5153</a>)</li>
+  <li><strong>Easier Linux installation and updates through Cloudsmith.</strong> Official Sunshine DEB and RPM repositories are now available in stable and beta channels, allowing updates through <code class="language-plaintext highlighter-rouge">apt</code>, <code class="language-plaintext highlighter-rouge">dnf</code>, or <code class="language-plaintext highlighter-rouge">zypper</code>. See <a href="https://app.lizardbyte.dev/2026-09-05-introducing-lizardbyte-cloudsmith-repositories/">Introducing LizardByte’s Cloudsmith repositories</a> for setup instructions.</li>
+</ul>
+
+<p>For a comprehensive list of changes, see below.</p>
+
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+  <li>build(deps): bump third-party/inputtino from <code class="language-plaintext highlighter-rouge">f4ce2b0</code> to <code class="language-plaintext highlighter-rouge">b887f6a</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5135">#5135</a></li>
+  <li>fix(macos): scale remote scroll input using macOS scroll speed by <a href="https://github.com/martona">@martona</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5133">#5133</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.3 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5139">#5139</a></li>
+  <li>chore: fixes for release automation by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5142">#5142</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.4 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5143">#5143</a></li>
+  <li>chore(deps): update dependency date-fns to v4.2.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5145">#5145</a></li>
+  <li>chore(deps): update codecov/codecov-action action to v6.0.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5149">#5149</a></li>
+  <li>fix(web): disconnect only the disabled client instead of all sessions by <a href="https://github.com/neatnoise">@neatnoise</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5138">#5138</a></li>
+  <li>chore(deps): update dependency marked to v18.0.4 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5151">#5151</a></li>
+  <li>chore: rename copilot-instructions.md to AGENTS.md by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5156">#5156</a></li>
+  <li>fix(Windows-installer): move ViGEmBus to ThirdParty group by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5157">#5157</a></li>
+  <li>feat(rtsp): add option to limit packetsize for clients that cannot configure it by <a href="https://github.com/httpstorm">@httpstorm</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5153">#5153</a></li>
+  <li>feat(web-ui): Added Filtering &amp; Searching to the Apps page by <a href="https://github.com/Noklef">@Noklef</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5158">#5158</a></li>
+  <li>build(deps): bump packaging/linux/flatpak/deps/flatpak-builder-tools from <code class="language-plaintext highlighter-rouge">dda10aa</code> to <code class="language-plaintext highlighter-rouge">ee65dc7</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5155">#5155</a></li>
+  <li>chore(crowdin): set commit message by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5160">#5160</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5161">#5161</a></li>
+  <li>fix(web): the packetsize upper limit is 65535 by <a href="https://github.com/httpstorm">@httpstorm</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5167">#5167</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5162">#5162</a></li>
+  <li>chore(deps): update dependency date-fns to v4.3.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5172">#5172</a></li>
+  <li>build(deps): bump packaging/linux/flatpak/deps/flatpak-builder-tools from <code class="language-plaintext highlighter-rouge">ee65dc7</code> to <code class="language-plaintext highlighter-rouge">96e2fe8</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5165">#5165</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.522.121358 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5173">#5173</a></li>
+  <li>fix(web-ui): add documentation link and version-aware URLs by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5176">#5176</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.524.145234 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5177">#5177</a></li>
+  <li>chore(deps): migrate from lucide-vue-next to @lucide/vue by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5179">#5179</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5178">#5178</a></li>
+  <li>chore: Add CLion run configuration for ‘sunshine’ by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5181">#5181</a></li>
+  <li>build(freebsd): fix npm install by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5182">#5182</a></li>
+  <li>fix(linux): migrate to qt tray by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/4907">#4907</a></li>
+  <li>fix: explicitly check construct function error in thread_safe.h by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5184">#5184</a></li>
+  <li>build(macos): quote SHOULD_SIGN env expansion in install script by <a href="https://github.com/Nottlespike">@Nottlespike</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5185">#5185</a></li>
+  <li>fix(macos/packaging): add NSLocalNetworkUsageDescription so Bonjour can register by <a href="https://github.com/Nottlespike">@Nottlespike</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5186">#5186</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5193">#5193</a></li>
+  <li>fix(linux/vulkan): preserve host aspect ratio in encoder output by <a href="https://github.com/hebo6">@hebo6</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5130">#5130</a></li>
+  <li>fix(macos): drop max_ref_frames=1 for h264_videotoolbox and enable PARALLEL_ENCODING by <a href="https://github.com/Nottlespike">@Nottlespike</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5200">#5200</a></li>
+  <li>chore(deps): update dependency vue to v3.5.35 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5204">#5204</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5196">#5196</a></li>
+  <li>build(Archlinux): Shallow clone dependent submodules by <a href="https://github.com/alexytomi">@alexytomi</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5206">#5206</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.17.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5210">#5210</a></li>
+  <li>chore(deps): update actions/setup-dotnet action to v5.3.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5208">#5208</a></li>
+  <li>fix(linux/vulkan): Ensure RADV vulkan video encoding is enabled on newer versions of Mesa by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5211">#5211</a></li>
+  <li>fix(linux/kwin): retry init with fully dropped elevated privileges in case KWin is missing CAP_SYS_NICE on linux by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5212">#5212</a></li>
+  <li>feat(web-ui): Updated <code class="language-plaintext highlighter-rouge">Add</code> / <code class="language-plaintext highlighter-rouge">Edit</code> app form to use modals + new <code class="language-plaintext highlighter-rouge">Delete</code> App UI flow by <a href="https://github.com/Noklef">@Noklef</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5166">#5166</a></li>
+  <li>chore(deps): bump wayland-protocols to 1.48 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5219">#5219</a></li>
+  <li>chore(deps): update dependency date-fns to v4.4.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5215">#5215</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5220">#5220</a></li>
+  <li>build(deps): bump third-party/tray from <code class="language-plaintext highlighter-rouge">6332649</code> to <code class="language-plaintext highlighter-rouge">df9af11</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5221">#5221</a></li>
+  <li>build(python): migrate to uv by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5222">#5222</a></li>
+  <li>build(homebrew): fix service install on linux by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5223">#5223</a></li>
+  <li>chore(gh-pages): remove unused jquery dependency by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5235">#5235</a></li>
+  <li>docs(contributing): refresh clang-format guidance by <a href="https://github.com/Sev7een">@Sev7een</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5233">#5233</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.4.6 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5226">#5226</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5229">#5229</a></li>
+  <li>chore(deps): update dependency bootstrap-icons to v1.13.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5239">#5239</a></li>
+  <li>chore(deps): update dependency vite to v6.4.3 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5238">#5238</a></li>
+  <li>chore(deps): update official github actions to v6.0.3 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5242">#5242</a></li>
+  <li>chore(deps): update dependency simple-icons to v13 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5243">#5243</a></li>
+  <li>chore(deps): update dependency simple-icons to v16 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5248">#5248</a></li>
+  <li>chore(deps): use lizardbyte-common for python helpers by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5250">#5250</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.605.34721 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5253">#5253</a></li>
+  <li>chore(deps): update dependency marked to v18.0.5 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5251">#5251</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v8.2.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5245">#5245</a></li>
+  <li>chore(deps): update codecov/codecov-action action to v7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5262">#5262</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.5 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5256">#5256</a></li>
+  <li>build(deps): bump packaging/linux/flatpak/deps/flatpak-builder-tools from <code class="language-plaintext highlighter-rouge">96e2fe8</code> to <code class="language-plaintext highlighter-rouge">ac5a296</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5263">#5263</a></li>
+  <li>build(deps): bump third-party/wayland-protocols from <code class="language-plaintext highlighter-rouge">02e63e7</code> to <code class="language-plaintext highlighter-rouge">ee78491</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5271">#5271</a></li>
+  <li>chore(homebrew): bump ubuntu to 24.04 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5272">#5272</a></li>
+  <li>fix(wayland): support DMA-BUF modifiers for wlroots capture by <a href="https://github.com/joeknock90">@joeknock90</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5132">#5132</a></li>
+  <li>chore(deps): bump libdisplaydevice by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5280">#5280</a></li>
+  <li>chore(deps): update vue monorepo to v3.5.37 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5281">#5281</a></li>
+  <li>fix(tray): fix compiling without system tray enabled by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5284">#5284</a></li>
+  <li>chore(deps): update msys2/setup-msys2 action to v2.32.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5285">#5285</a></li>
+  <li>chore(deps): update lucide monorepo to v1.18.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5287">#5287</a></li>
+  <li>chore(deps): update vue monorepo to v3.5.38 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5283">#5283</a></li>
+  <li>build(Linux/AppImage): replace gtk plugin with qt plugin for system tray by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5295">#5295</a></li>
+  <li>feat(linux): Add hardware yuv444 chromasubsampling support on nvidia cards (cuda/cuda gl) by <a href="https://github.com/Sheynar">@Sheynar</a> in <a href="https://github.com/LizardByte/Sunshine/pull/4965">#4965</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5269">#5269</a></li>
+  <li>build(deps): bump third-party/tray from <code class="language-plaintext highlighter-rouge">df9af11</code> to <code class="language-plaintext highlighter-rouge">8ea4c68</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5296">#5296</a></li>
+  <li>chore(deps): update lucide monorepo to v1.20.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5297">#5297</a></li>
+  <li>fix(macos): wake sleeping display at the beginning of capture session by <a href="https://github.com/martona">@martona</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5291">#5291</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5254">#5254</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.4.7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5301">#5301</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.6 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5300">#5300</a></li>
+  <li>chore(deps): update official github actions to v7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5307">#5307</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.4.8 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5303">#5303</a></li>
+  <li>chore(deps): update lucide monorepo to v1.21.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5304">#5304</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5311">#5311</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5314">#5314</a></li>
+  <li>feat(linux/pipewire): add fallback to node id if connection via object serial fails by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5302">#5302</a></li>
+  <li>build(deps): bump third-party/lizardbyte-common from <code class="language-plaintext highlighter-rouge">c049430</code> to <code class="language-plaintext highlighter-rouge">8d7dcc9</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5306">#5306</a></li>
+  <li>build(deps): fix building on Linux with DRM capture disabled by <a href="https://github.com/chewi">@chewi</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5224">#5224</a></li>
+  <li>build(homebrew): fix formula audit by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5317">#5317</a></li>
+  <li>feat(linux/xdgportal): Add support for pipewire-serial by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5060">#5060</a></li>
+  <li>feat(linux/kwin): log object serial when available on stream creation by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5299">#5299</a></li>
+  <li>chore(deps): update devdependencies (non-major) by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5320">#5320</a></li>
+  <li>build(deps): bump third-party/build-deps from <code class="language-plaintext highlighter-rouge">fce763b</code> to <code class="language-plaintext highlighter-rouge">9d09f31</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5324">#5324</a></li>
+  <li>chore(deps): update official github actions by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5325">#5325</a></li>
+  <li>chore(deps): update official github actions (major) by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5326">#5326</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">2600bea</code> to <code class="language-plaintext highlighter-rouge">47b4d33</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5327">#5327</a></li>
+  <li>build(deps): bump third-party/nvapi from <code class="language-plaintext highlighter-rouge">9b181ea</code> to <code class="language-plaintext highlighter-rouge">cd6918f</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5328">#5328</a></li>
+  <li>fix(crypto): OpenSSL 4.x compatibility by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5330">#5330</a></li>
+  <li>fix(linux/cuda-gl): gl:[00000501] error regression by <a href="https://github.com/Sheynar">@Sheynar</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5310">#5310</a></li>
+  <li>feat(linux/cuda-gl): Allow YUV4:2:0 HDR and YUV4:4:4 HDR on nvidia cards by <a href="https://github.com/Sheynar">@Sheynar</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5315">#5315</a></li>
+  <li>fix(input): don’t send ALT when right-alt is remapped to meta by <a href="https://github.com/ap-1">@ap-1</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5318">#5318</a></li>
+  <li>build(homebrew): reduce test duplication and add test coverage for macOS by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5331">#5331</a></li>
+  <li>chore(deps): update dependency vue to v3.5.39 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5333">#5333</a></li>
+  <li>chore(deps): update dependency vite-plugin-ejs to v1.8.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5334">#5334</a></li>
+  <li>fix(web-ui): don’t open ui automatically on app start by <a href="https://github.com/s-h-a-d-o-w">@s-h-a-d-o-w</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5329">#5329</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.625.20301 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5335">#5335</a></li>
+  <li>docs(doxygen): enforce warn if undocumented by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5337">#5337</a></li>
+  <li>chore(deps): update dependency vite-plugin-ejs to v2 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5336">#5336</a></li>
+  <li>fix(video): fix video stream freezing on capture re-init (e.g. pipewire display switch) by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5249">#5249</a></li>
+  <li>build(homebrew): fix build with cuda on linux by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5342">#5342</a></li>
+  <li>feat(web-ui): UI consistency / layout uplifts by <a href="https://github.com/Noklef">@Noklef</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5225">#5225</a></li>
+  <li>docs(gh-pages): add Moonlight Tizen to clients by <a href="https://github.com/eduardomozart">@eduardomozart</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5343">#5343</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5344">#5344</a></li>
+  <li>chore(deps): update actions/setup-dotnet action to v5.4.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5339">#5339</a></li>
+  <li>build(homebrew): force cuda on Linux by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5345">#5345</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.4.9 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5348">#5348</a></li>
+  <li>chore(deps): update actions/cache action to v6.1.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5349">#5349</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5347">#5347</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5352">#5352</a></li>
+  <li>fix(video): avoid UAF crashes during video reinit (reproducible on Vulkan) by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5346">#5346</a></li>
+  <li>build(FreeBSD): adjust CI Python dependency groups by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5355">#5355</a></li>
+  <li>fix(video): avoid nullptr deref segfault on encode session teardown by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5257">#5257</a></li>
+  <li>fix(flatpak): system tray permission by <a href="https://github.com/haroldm">@haroldm</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5354">#5354</a></li>
+  <li>feat(linux): pace capture at exact fractional NTSC framerates by <a href="https://github.com/djadjka">@djadjka</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5282">#5282</a></li>
+  <li>chore: use lizardbyte-common in c++ by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5356">#5356</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.22.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5358">#5358</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5359">#5359</a></li>
+  <li>build(linux): avoid network for appstream cli &amp; add missing deps by <a href="https://github.com/HurricanePootis">@HurricanePootis</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5363">#5363</a></li>
+  <li>fix(linux/pipewire): avoid memory leaks by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5360">#5360</a></li>
+  <li>feat(macOS): libdispalydevice integration by <a href="https://github.com/martona">@martona</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5338">#5338</a></li>
+  <li>perf(deps): switch to upstream nanors runtime dispatching by <a href="https://github.com/cgutman">@cgutman</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5369">#5369</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.23.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5365">#5365</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">99c45d3</code> to <code class="language-plaintext highlighter-rouge">1f76427</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5375">#5375</a></li>
+  <li>build(deps): bump third-party/nanors from <code class="language-plaintext highlighter-rouge">57ee5e9</code> to <code class="language-plaintext highlighter-rouge">c3529fd</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5376">#5376</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v8.3.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5379">#5379</a></li>
+  <li>build(Linux): Allow building with Vulkan but without Wayland by <a href="https://github.com/chewi">@chewi</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5377">#5377</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5383">#5383</a></li>
+  <li>chore: revise bug report template for clarity and rules by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5387">#5387</a></li>
+  <li>chore(sonar): ignore submodules by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5390">#5390</a></li>
+  <li>ci: fix PR checkouts on arch and flatpak by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5391">#5391</a></li>
+  <li>chore: Remove setuptools from glad dependencies by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5392">#5392</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">1f76427</code> to <code class="language-plaintext highlighter-rouge">2ea4775</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5382">#5382</a></li>
+  <li>chore: move nanors to moonlight-common-c submodule by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5393">#5393</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5386">#5386</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v8.3.2 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5389">#5389</a></li>
+  <li>fix(linux): drop implicit DRM master for card fds by <a href="https://github.com/sakinami0839">@sakinami0839</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5286">#5286</a></li>
+  <li>refactor(sonar): migrate worker threads to std::jthread by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5398">#5398</a></li>
+  <li>chore(packaging): Drop Windows NSIS builds and rename ZIP to lite by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5405">#5405</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5403">#5403</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">2ea4775</code> to <code class="language-plaintext highlighter-rouge">82e2514</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5402">#5402</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.24.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5396">#5396</a></li>
+  <li>chore(deps): update dependency marked to v18.0.6 - autoclosed by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5395">#5395</a></li>
+  <li>fix(linux): avoid memory leak from unnecessary encoder re-probing by <a href="https://github.com/neatnoise">@neatnoise</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5404">#5404</a></li>
+  <li>chore(deps): Update build-deps to v2026.713.132551 by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5409">#5409</a></li>
+  <li>chore(sonar): change NOSONAR comment style by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5410">#5410</a></li>
+  <li>chore(deps): update actions/setup-node action to v7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5413">#5413</a></li>
+  <li>feat(linux/vaapi): VAAPI encoder improvements by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5388">#5388</a></li>
+  <li>chore(deps): update dependency @vitejs/plugin-vue to v6.0.8 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5418">#5418</a></li>
+  <li>fix(docs/linux): add Portal and EGL context tips by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5419">#5419</a></li>
+  <li>fix(packaging/windows): Allow WiX installer downgrades by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5435">#5435</a></li>
+  <li>feat(linux): use connector name as default display name on linux by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5423">#5423</a></li>
+  <li>chore(deps): update actions/checkout action to v7.0.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5412">#5412</a></li>
+  <li>chore(deps): update actions/setup-dotnet action to v6 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5422">#5422</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.1 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5426">#5426</a></li>
+  <li>chore(deps): update dependency marked to v18.0.7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5433">#5433</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.25.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5424">#5424</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5434">#5434</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5431">#5431</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">82e2514</code> to <code class="language-plaintext highlighter-rouge">703a069</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5428">#5428</a></li>
+  <li>chore(deps): update dependency vue to v3.5.40 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5421">#5421</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.2 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5436">#5436</a></li>
+  <li>chore(deps): update actions/setup-python action to v7 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5437">#5437</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v9 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5438">#5438</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5420">#5420</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">703a069</code> to <code class="language-plaintext highlighter-rouge">e41355e</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5439">#5439</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.26.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5440">#5440</a></li>
+  <li>refactor: clients section to dynamically fetch from app-directory by <a href="https://github.com/eduardomozart">@eduardomozart</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5380">#5380</a></li>
+  <li>fix(amf): wire h264_amf coder and profile mapping by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5442">#5442</a></li>
+  <li>chore: bump FreeBSD version from 14.4 to 15.1 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5445">#5445</a></li>
+  <li>chore: move nv-codec-headers to build-deps submodule by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5449">#5449</a></li>
+  <li>fix(linux/kms): use same methodology for display name matching and list generation by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5448">#5448</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5450">#5450</a></li>
+  <li>fix(nvenc): dynamic nv codec sdk selection by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5451">#5451</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.27.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5452">#5452</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.8 - autoclosed by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5453">#5453</a></li>
+  <li>chore(deps): Update build-deps to v2026.724.203728 by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5446">#5446</a></li>
+  <li>build(deps): bump third-party/lizardbyte-common from <code class="language-plaintext highlighter-rouge">06cd442</code> to <code class="language-plaintext highlighter-rouge">011ad2b</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5457">#5457</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5455">#5455</a></li>
+  <li>chore: migrate to qt tray for all platforms by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5260">#5260</a></li>
+  <li>fix(FreeBSD): Qt6 tray dependency package by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5458">#5458</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.728.214955 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5459">#5459</a></li>
+  <li>test(tray): add system tray tests by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/4221">#4221</a></li>
+  <li>fix(web-ui): Welcome page styling by <a href="https://github.com/Noklef">@Noklef</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5466">#5466</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.3 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5478">#5478</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.28.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5463">#5463</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5470">#5470</a></li>
+  <li>chore(deps): update dependency marked to v18.0.9 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5473">#5473</a></li>
+  <li>chore(deps): update dependency vue to v3.5.41 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5475">#5475</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5479">#5479</a></li>
+  <li>chore(docker): fix hadolint SC3014 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5482">#5482</a></li>
+  <li>build(macOS): fix macOS framework signing glob by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5483">#5483</a></li>
+  <li>build(macOS): sign only valid framework bundles by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5484">#5484</a></li>
+  <li>feat(logging): rotating log files by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5485">#5485</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5487">#5487</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.30.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5486">#5486</a></li>
+  <li>build(unix): add nv-codec-headers include path by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5488">#5488</a></li>
+  <li>ci: add workflow to publish PR artifacts by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5491">#5491</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.31.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5493">#5493</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5492">#5492</a></li>
+  <li>fix(linux/kms)!: Use connector type index from KMS instead of self calculation by <a href="https://github.com/Kishi85">@Kishi85</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5489">#5489</a></li>
+  <li>build(windows): default to qt6-static by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5497">#5497</a></li>
+  <li>feat(input): implement libvirtualhid adding new gamepad styles by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5368">#5368</a></li>
+  <li>ci(FreeBSD): remove aarch64 by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5516">#5516</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5514">#5514</a></li>
+  <li>fix(virtual-hid): remove license expiration by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5517">#5517</a></li>
+  <li>build(homebrew): normalize remapped LCOV source paths by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5518">#5518</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5507">#5507</a></li>
+  <li>fix(macOS): update build script and ci with explicit Qt6 paths by <a href="https://github.com/eduardomozart">@eduardomozart</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5502">#5502</a></li>
+  <li>chore(deps): update astral-sh/setup-uv action to v10 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5501">#5501</a></li>
+  <li>chore(deps): update dependency marked to v18.0.10 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5521">#5521</a></li>
+  <li>fix(linux/pipewire): restore dummy buffer for software encoders and fix buffer ownership by <a href="https://github.com/luanweslley77">@luanweslley77</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5495">#5495</a></li>
+  <li>fix(linux/freebsd): truncate thread names to 15 characters by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5527">#5527</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.32.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5528">#5528</a></li>
+  <li>chore: update global workflows by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5525">#5525</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.33.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5533">#5533</a></li>
+  <li>fix(macOS): System tray icon disappears when restarting Sunshine by <a href="https://github.com/eduardomozart">@eduardomozart</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5504">#5504</a></li>
+  <li>fix(input): preserve aux gamepad data and bump libvirtualhid by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5531">#5531</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5535">#5535</a></li>
+  <li>fix(wayland): use the current wl_output mode by <a href="https://github.com/zacharydenton">@zacharydenton</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5150">#5150</a></li>
+  <li>feat(amf): add amd_max_au_size option by <a href="https://github.com/pollopopo">@pollopopo</a> in <a href="https://github.com/LizardByte/Sunshine/pull/4926">#4926</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5539">#5539</a></li>
+  <li>chore: update Virtual HID requirements and mouse refresh by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5547">#5547</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.4 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5540">#5540</a></li>
+  <li>build(deps): bump third-party/moonlight-common-c from <code class="language-plaintext highlighter-rouge">e41355e</code> to <code class="language-plaintext highlighter-rouge">874ac95</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5541">#5541</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.9 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5546">#5546</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5543">#5543</a></li>
+  <li>fix(linux/publish): release the Avahi client when the poll loop stops by <a href="https://github.com/nikzasel">@nikzasel</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5545">#5545</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5548">#5548</a></li>
+  <li>build(deps): bump third-party/lizardbyte-common from <code class="language-plaintext highlighter-rouge">011ad2b</code> to <code class="language-plaintext highlighter-rouge">ffc027d</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5550">#5550</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5551">#5551</a></li>
+  <li>chore: add branding images by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5552">#5552</a></li>
+  <li>fix(pipewire): gate variable rate capture and fix fractional framerates by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5538">#5538</a></li>
+  <li>chore(deps): update dependency marked to v18.0.11 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5555">#5555</a></li>
+  <li>chore(deps): update dependency vue-i18n to v11.4.10 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5556">#5556</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5557">#5557</a></li>
+  <li>feat(input): update libvirtualhid integration by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5563">#5563</a></li>
+  <li>chore(deps): update vmactions/freebsd-vm action to v1.5.5 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5561">#5561</a></li>
+  <li>chore(deps): update dependency vue to v3.5.42 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5560">#5560</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.35.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5565">#5565</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5559">#5559</a></li>
+  <li>chore(deps): add vite override for codecov plugin by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5576">#5576</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.829.140353 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5577">#5577</a></li>
+  <li>chore(deps): update dependency vite to v8 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5578">#5578</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5579">#5579</a></li>
+  <li>fix(linux/pipewire): try variable rate for non-KWin compositors by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5569">#5569</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.37.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5581">#5581</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5582">#5582</a></li>
+  <li>feat(session): add SUNSHINE_CLIENT_NAME environment variable by <a href="https://github.com/oryschakj">@oryschakj</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5465">#5465</a></li>
+  <li>fix(windows/installer): PATH update reg add /f option ordering by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5584">#5584</a></li>
+  <li>chore(deps): lock file maintenance by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5588">#5588</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.38.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5587">#5587</a></li>
+  <li>fix(video): fall back to SDR when HDR isn’t supported by <a href="https://github.com/matix753">@matix753</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5429">#5429</a></li>
+  <li>fix(windows): capture the configured audio sink instead of the default device by <a href="https://github.com/tonyctalope">@tonyctalope</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5408">#5408</a></li>
+  <li>fix(input): track/release client keycode for modifiers by <a href="https://github.com/sethdmoore">@sethdmoore</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5558">#5558</a></li>
+  <li>ci: sonar fixes by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5594">#5594</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5583">#5583</a></li>
+  <li>docs: fix typo automaticaly -&gt; automatically by <a href="https://github.com/vaibhav8a">@vaibhav8a</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5573">#5573</a></li>
+  <li>fix: iterator/stat utility edge cases and add tests by <a href="https://github.com/dasepmoch">@dasepmoch</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5308">#5308</a></li>
+  <li>build(Linux): use compiler-selected libgcov for coverage by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5597">#5597</a></li>
+  <li>build(deps): bump packaging/linux/flatpak/deps/flatpak-builder-tools from <code class="language-plaintext highlighter-rouge">ac5a296</code> to <code class="language-plaintext highlighter-rouge">1fc3219</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5595">#5595</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.39.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5596">#5596</a></li>
+  <li>build(Windows): resolve system Node.js package by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5599">#5599</a></li>
+  <li>refactor: pairing flow, pairing tests, and inline struct comments by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5602">#5602</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.40.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5606">#5606</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5600">#5600</a></li>
+  <li>build(docker): add bake config by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5607">#5607</a></li>
+  <li>chore(deps): update dependency @lucide/vue to v1.41.0 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5609">#5609</a></li>
+  <li>build(flatpak): drop imagemagick dep by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5610">#5610</a></li>
+  <li>ci: add Cloudsmith packaging support by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5611">#5611</a></li>
+  <li>ci(release): avoid workflow concurrency deadlock by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5612">#5612</a></li>
+  <li>chore(deps): update lizardbyte/actions action to v2026.905.43751 by <a href="https://github.com/apps/renovate">@renovate[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5614">#5614</a></li>
+  <li>chore: update global workflows by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5616">#5616</a></li>
+  <li>style(homebrew): fix homebrew validation by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5620">#5620</a></li>
+  <li>build(deps): bump third-party/lizardbyte-common from <code class="language-plaintext highlighter-rouge">ffc027d</code> to <code class="language-plaintext highlighter-rouge">f9d91e1</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5624">#5624</a></li>
+  <li>chore(deps): bump libvirtualhid by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5585">#5585</a></li>
+  <li>fix(macOS): enable microphone permission flow by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5621">#5621</a></li>
+  <li>build(deps): bump third-party/tray from <code class="language-plaintext highlighter-rouge">1d0d696</code> to <code class="language-plaintext highlighter-rouge">c329d9f</code> by <a href="https://github.com/apps/dependabot">@dependabot[bot]</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5630">#5630</a></li>
+  <li>build(Linux): add aarch64 AppImage by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5627">#5627</a></li>
+  <li>chore(l10n): update translations by <a href="https://github.com/LizardByte-bot">@LizardByte-bot</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5626">#5626</a></li>
+  <li>ci(FreeBSD): enable docs by <a href="https://github.com/ReenigneArcher">@ReenigneArcher</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5631">#5631</a></li>
+  <li>feat(linux/pipewire): add support for unpaced capture when appropriate by <a href="https://github.com/psyke83">@psyke83</a> in <a href="https://github.com/LizardByte/Sunshine/pull/5629">#5629</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+  <li><a href="https://github.com/httpstorm">@httpstorm</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5153">#5153</a></li>
+  <li><a href="https://github.com/Noklef">@Noklef</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5158">#5158</a></li>
+  <li><a href="https://github.com/Nottlespike">@Nottlespike</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5185">#5185</a></li>
+  <li><a href="https://github.com/hebo6">@hebo6</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5130">#5130</a></li>
+  <li><a href="https://github.com/alexytomi">@alexytomi</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5206">#5206</a></li>
+  <li><a href="https://github.com/Sev7een">@Sev7een</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5233">#5233</a></li>
+  <li><a href="https://github.com/joeknock90">@joeknock90</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5132">#5132</a></li>
+  <li><a href="https://github.com/Sheynar">@Sheynar</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/4965">#4965</a></li>
+  <li><a href="https://github.com/ap-1">@ap-1</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5318">#5318</a></li>
+  <li><a href="https://github.com/s-h-a-d-o-w">@s-h-a-d-o-w</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5329">#5329</a></li>
+  <li><a href="https://github.com/haroldm">@haroldm</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5354">#5354</a></li>
+  <li><a href="https://github.com/djadjka">@djadjka</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5282">#5282</a></li>
+  <li><a href="https://github.com/HurricanePootis">@HurricanePootis</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5363">#5363</a></li>
+  <li><a href="https://github.com/sakinami0839">@sakinami0839</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5286">#5286</a></li>
+  <li><a href="https://github.com/luanweslley77">@luanweslley77</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5495">#5495</a></li>
+  <li><a href="https://github.com/zacharydenton">@zacharydenton</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5150">#5150</a></li>
+  <li><a href="https://github.com/pollopopo">@pollopopo</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/4926">#4926</a></li>
+  <li><a href="https://github.com/nikzasel">@nikzasel</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5545">#5545</a></li>
+  <li><a href="https://github.com/oryschakj">@oryschakj</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5465">#5465</a></li>
+  <li><a href="https://github.com/matix753">@matix753</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5429">#5429</a></li>
+  <li><a href="https://github.com/tonyctalope">@tonyctalope</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5408">#5408</a></li>
+  <li><a href="https://github.com/sethdmoore">@sethdmoore</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5558">#5558</a></li>
+  <li><a href="https://github.com/vaibhav8a">@vaibhav8a</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5573">#5573</a></li>
+  <li><a href="https://github.com/dasepmoch">@dasepmoch</a> made their first contribution in <a href="https://github.com/LizardByte/Sunshine/pull/5308">#5308</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/LizardByte/Sunshine/compare/v2026.516.143833…v2026.906.222525</p>
+
+<hr />
+<h2 id="contributors">Contributors</h2>
+<p><a href="https://github.com/apps/renovate" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, renovate[bot]"><img src="https://avatars.githubusercontent.com/in/2740?size=40" width="40" height="40" alt="renovate[bot]" title="renovate[bot]: 101 merges" /></a><a href="https://github.com/ReenigneArcher" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ReenigneArcher"><img src="https://github.com/ReenigneArcher.png?size=40" width="40" height="40" alt="ReenigneArcher" title="ReenigneArcher: 71 merges" /></a><a href="https://github.com/LizardByte-bot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, LizardByte-bot"><img src="https://github.com/LizardByte-bot.png?size=40" width="40" height="40" alt="LizardByte-bot" title="LizardByte-bot: 34 merges" /></a><a href="https://github.com/apps/dependabot" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, dependabot[bot]"><img src="https://avatars.githubusercontent.com/in/29110?size=40" width="40" height="40" alt="dependabot[bot]" title="dependabot[bot]: 23 merges" /></a><a href="https://github.com/Kishi85" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Kishi85"><img src="https://github.com/Kishi85.png?size=40" width="40" height="40" alt="Kishi85" title="Kishi85: 13 merges" /></a><a href="https://github.com/psyke83" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, psyke83"><img src="https://github.com/psyke83.png?size=40" width="40" height="40" alt="psyke83" title="psyke83: 7 merges" /></a><a href="https://github.com/Noklef" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Noklef"><img src="https://github.com/Noklef.png?size=40" width="40" height="40" alt="Noklef" title="Noklef: 4 merges" /></a><a href="https://github.com/eduardomozart" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, eduardomozart"><img src="https://github.com/eduardomozart.png?size=40" width="40" height="40" alt="eduardomozart" title="eduardomozart: 4 merges" /></a><a href="https://github.com/Nottlespike" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Nottlespike"><img src="https://github.com/Nottlespike.png?size=40" width="40" height="40" alt="Nottlespike" title="Nottlespike: 3 merges" /></a><a href="https://github.com/Sheynar" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Sheynar"><img src="https://github.com/Sheynar.png?size=40" width="40" height="40" alt="Sheynar" title="Sheynar: 3 merges" /></a><a href="https://github.com/martona" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, martona"><img src="https://github.com/martona.png?size=40" width="40" height="40" alt="martona" title="martona: 3 merges" /></a><a href="https://github.com/chewi" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, chewi"><img src="https://github.com/chewi.png?size=40" width="40" height="40" alt="chewi" title="chewi: 2 merges" /></a><a href="https://github.com/httpstorm" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, httpstorm"><img src="https://github.com/httpstorm.png?size=40" width="40" height="40" alt="httpstorm" title="httpstorm: 2 merges" /></a><a href="https://github.com/neatnoise" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, neatnoise"><img src="https://github.com/neatnoise.png?size=40" width="40" height="40" alt="neatnoise" title="neatnoise: 2 merges" /></a><a href="https://github.com/HurricanePootis" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, HurricanePootis"><img src="https://github.com/HurricanePootis.png?size=40" width="40" height="40" alt="HurricanePootis" title="HurricanePootis: 1 merge" /></a><a href="https://github.com/Sev7een" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, Sev7een"><img src="https://github.com/Sev7een.png?size=40" width="40" height="40" alt="Sev7een" title="Sev7een: 1 merge" /></a><a href="https://github.com/alexytomi" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, alexytomi"><img src="https://github.com/alexytomi.png?size=40" width="40" height="40" alt="alexytomi" title="alexytomi: 1 merge" /></a><a href="https://github.com/ap-1" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, ap-1"><img src="https://github.com/ap-1.png?size=40" width="40" height="40" alt="ap-1" title="ap-1: 1 merge" /></a><a href="https://github.com/cgutman" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, cgutman"><img src="https://github.com/cgutman.png?size=40" width="40" height="40" alt="cgutman" title="cgutman: 1 merge" /></a><a href="https://github.com/dasepmoch" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, dasepmoch"><img src="https://github.com/dasepmoch.png?size=40" width="40" height="40" alt="dasepmoch" title="dasepmoch: 1 merge" /></a><a href="https://github.com/djadjka" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, djadjka"><img src="https://github.com/djadjka.png?size=40" width="40" height="40" alt="djadjka" title="djadjka: 1 merge" /></a><a href="https://github.com/haroldm" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, haroldm"><img src="https://github.com/haroldm.png?size=40" width="40" height="40" alt="haroldm" title="haroldm: 1 merge" /></a><a href="https://github.com/hebo6" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, hebo6"><img src="https://github.com/hebo6.png?size=40" width="40" height="40" alt="hebo6" title="hebo6: 1 merge" /></a><a href="https://github.com/joeknock90" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, joeknock90"><img src="https://github.com/joeknock90.png?size=40" width="40" height="40" alt="joeknock90" title="joeknock90: 1 merge" /></a><a href="https://github.com/luanweslley77" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, luanweslley77"><img src="https://github.com/luanweslley77.png?size=40" width="40" height="40" alt="luanweslley77" title="luanweslley77: 1 merge" /></a><a href="https://github.com/matix753" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, matix753"><img src="https://github.com/matix753.png?size=40" width="40" height="40" alt="matix753" title="matix753: 1 merge" /></a><a href="https://github.com/nikzasel" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, nikzasel"><img src="https://github.com/nikzasel.png?size=40" width="40" height="40" alt="nikzasel" title="nikzasel: 1 merge" /></a><a href="https://github.com/oryschakj" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, oryschakj"><img src="https://github.com/oryschakj.png?size=40" width="40" height="40" alt="oryschakj" title="oryschakj: 1 merge" /></a><a href="https://github.com/pollopopo" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, pollopopo"><img src="https://github.com/pollopopo.png?size=40" width="40" height="40" alt="pollopopo" title="pollopopo: 1 merge" /></a><a href="https://github.com/s-h-a-d-o-w" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, s-h-a-d-o-w"><img src="https://github.com/s-h-a-d-o-w.png?size=40" width="40" height="40" alt="s-h-a-d-o-w" title="s-h-a-d-o-w: 1 merge" /></a><a href="https://github.com/sakinami0839" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, sakinami0839"><img src="https://github.com/sakinami0839.png?size=40" width="40" height="40" alt="sakinami0839" title="sakinami0839: 1 merge" /></a><a href="https://github.com/sethdmoore" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, sethdmoore"><img src="https://github.com/sethdmoore.png?size=40" width="40" height="40" alt="sethdmoore" title="sethdmoore: 1 merge" /></a><a href="https://github.com/tonyctalope" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, tonyctalope"><img src="https://github.com/tonyctalope.png?size=40" width="40" height="40" alt="tonyctalope" title="tonyctalope: 1 merge" /></a><a href="https://github.com/vaibhav8a" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, vaibhav8a"><img src="https://github.com/vaibhav8a.png?size=40" width="40" height="40" alt="vaibhav8a" title="vaibhav8a: 1 merge" /></a><a href="https://github.com/zacharydenton" target="_blank" rel="external noopener noreferrer" aria-label="GitHub profile of contributor, zacharydenton"><img src="https://github.com/zacharydenton.png?size=40" width="40" height="40" alt="zacharydenton" title="zacharydenton: 1 merge" /></a></p>
+
+<hr />
+<p>📦 <strong>Assets:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>⬇️ Download</th>
+      <th>#️⃣ Download Count</th>
+      <th>🛡️ VirusTotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-FreeBSD-15.1-amd64.pkg">Sunshine-FreeBSD-15.1-amd64.pkg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-FreeBSD-15.1-amd64.pkg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ODk2YzMyZWU0MzRhNWIyOTI1YWI0MDhhYTg3NDRmMWM6MTc4ODczNzEzOA=="><img src="https://badges.cssnr.com/vt/id/sha256:f110ec8575f4a27413de85c16303671e9432ad517620fd26052af0f19c182711?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-AMD64-debuginfo.7z">Sunshine-Windows-AMD64-debuginfo.7z</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-AMD64-debuginfo.7z?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YTcwZjc3YzRiY2I3OGFiZTEyYzQ4OGNmZWZhNjhmMWY6MTc4ODczNzE0MQ=="><img src="https://badges.cssnr.com/vt/id/sha256:aab38698964ef67c521c2b6129090e24158e6a0f986b601047476441d1f3851e?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-AMD64-installer.msi">Sunshine-Windows-AMD64-installer.msi</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-AMD64-installer.msi?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/Nzk0NzMyMmMwNGJmNGVhNjU0ZWQ0YWVkNzY4NGZiZWI6MTc4ODczNzE0Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:59ed473a5bd77c6886f74674d9424336e829bae40494c76f9d69b3d5bd2bc89d?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-AMD64-lite.zip">Sunshine-Windows-AMD64-lite.zip</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-AMD64-lite.zip?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZmQxMDlmNGE5OTI3NDkyOGUxMjA0ODg1NjU4NjkxYzg6MTc4ODczNzE0NA=="><img src="https://badges.cssnr.com/vt/id/sha256:50f4123dd15a6817513589c912581260c34cc4a58e9a5f3071ebac3d92c94c15?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-ARM64-debuginfo.7z">Sunshine-Windows-ARM64-debuginfo.7z</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-ARM64-debuginfo.7z?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MDFjZWRiNDNlOGFjYmMwMWVkZjJiZGU2MDI1YWFhNzU6MTc4ODczNzE5OA=="><img src="https://badges.cssnr.com/vt/id/sha256:4ba0909aacdaf8b3f48f8b9ec274a2a700328525ab32ca188340e9d571155273?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-ARM64-installer.msi">Sunshine-Windows-ARM64-installer.msi</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-ARM64-installer.msi?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NzdlNDE1NTYxY2U2ZGUwYTY3MTY3ZmJmMmFmNzRhNmI6MTc4ODczNzIwMg=="><img src="https://badges.cssnr.com/vt/id/sha256:94a5f7cb1f923c1f9b7d2933faf67fdca6db334f833b85c181c69daae5dcb9c5?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-Windows-ARM64-lite.zip">Sunshine-Windows-ARM64-lite.zip</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-Windows-ARM64-lite.zip?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZTQ1NDQ3ODJhYTQ0NGI1Y2VhOGZlMmFkOWYzMzFiMmU6MTc4ODczNzIwNw=="><img src="https://badges.cssnr.com/vt/id/sha256:f0e269153997150bf9ecf563eb5f098022405eb5d281154704c4148b7bd2cfc2?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-macOS-arm64.dmg">Sunshine-macOS-arm64.dmg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-macOS-arm64.dmg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NmQyOWNlMjBiNTc0YjNkOTI1N2RiYjA4NjEzMDQwNDU6MTc4ODczNzIwOQ=="><img src="https://badges.cssnr.com/vt/id/sha256:b630d35a184d8eaff39c5104f3c6a0c40e91ddc447ccf7a0c5b24706465fab6a?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-macOS-x86_64.dmg">Sunshine-macOS-x86_64.dmg</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-macOS-x86_64.dmg?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OTFmY2NiYWI2YWE2OTE4YmZhN2Y5NmU2ZjM2ZTFiOWI6MTc4ODczNzIxMw=="><img src="https://badges.cssnr.com/vt/id/sha256:f81e7a1d17ab9def735bb78b47252b656f446fe0b652b198d1b0c5a2b970f0aa?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine_2026.906.222525_aarch64.AppImage">Sunshine_2026.906.222525_aarch64.AppImage</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine_2026.906.222525_aarch64.AppImage?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MGQ0NjNiOGZhODhiZjE4OTc0MjIwODAyNjVmOGI4Yzc6MTc4ODczNzI2MA=="><img src="https://badges.cssnr.com/vt/id/sha256:4b36fb86601a9c833daf96fc55729df2fe76586f16553a4bc19bef7a99832813?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine_2026.906.222525_x86_64.AppImage">Sunshine_2026.906.222525_x86_64.AppImage</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine_2026.906.222525_x86_64.AppImage?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NTVkNWFhNWJmNWZlNmY2MTBiZGE0YTFiMTYzNmMyOGE6MTc4ODczNzI2Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:a5db4ce988def0565a0da420185abbb9b3989f009ecbdafe78f223fe6f45e384?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/flathub.tar.gz">flathub.tar.gz</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/flathub.tar.gz?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MmU5YmFkMDVjYWFiOGE5OTZhZGIxMzU5YjhhMGNkZTc6MTc4ODczNzI2Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:25ea645500e5b0bc610580c25ae4100d95d60576d57badb16d2d1095a510931a?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine-2026.906.222525-1-x86_64.pkg.tar.zst">sunshine-2026.906.222525-1-x86_64.pkg.tar.zst</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine-2026.906.222525-1-x86_64.pkg.tar.zst?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/Mjg1MWE2MmM4ZDQ5NmZhY2ZjNDI3MDk1M2I5MGIxOWY6MTc4ODczNzI3Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:efe1f0229f9d6da026d8d4d8d93f70211965a1d125defff71b747dd8b6cdd42a?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine.pkg.tar.gz">sunshine.pkg.tar.gz</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine.pkg.tar.gz?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OTgxM2E4NjYxMDM1NTA5ZTg0ZDY0ZTY5NjY4MTZmNjQ6MTc4ODczNzI4Ng=="><img src="https://badges.cssnr.com/vt/id/sha256:660be4780e5702a6958a70da6aaa87561087d0953657da442fdeafddf144fd2b?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine.rb">sunshine.rb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine.rb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/M2ZhMDQ4YzhiMTRjMjVmOTUwOGNhZTUxYjFjZWFmNWM6MTc4ODczNzMyMQ=="><img src="https://badges.cssnr.com/vt/id/sha256:6f9f6b28a9122ca49fb88aaa5a208d1c5f4fe0a242dc7ccd4cafd12cb11e2604?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+debiantrixie_amd64.deb">sunshine_2026.906.222525-1+debiantrixie_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+debiantrixie_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NDRlOGRjZWIyODE5NmMzOWUzN2ZlNGE5YWQzNzQzNTk6MTc4ODczNzMyNA=="><img src="https://badges.cssnr.com/vt/id/sha256:c87f226920ad83055a898be1f0c7540307593e92d8b0baf1f076909758db8ca0?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+debiantrixie_arm64.deb">sunshine_2026.906.222525-1+debiantrixie_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+debiantrixie_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MmE5ZjUyNjM1OTZlN2U5Y2JiZTVmMzI4MTczNDUxMjA6MTc4ODczNzMzMw=="><img src="https://badges.cssnr.com/vt/id/sha256:dd96aaabb2b89b8ca5659a30ae5b161969f8cf3c4c31b01e7bd3ac5d65ebfcf1?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu22.04_amd64.deb">sunshine_2026.906.222525-1+ubuntu22.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu22.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZjFjODYwMThkNzIwNTQyOWU2MmRhNWZlMTYwYTgyMTU6MTc4ODczNzM0OA=="><img src="https://badges.cssnr.com/vt/id/sha256:d3ec5713022d55da2a0c849f89d509281a3202412af1c24e2be3a752d95a5025?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu22.04_arm64.deb">sunshine_2026.906.222525-1+ubuntu22.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu22.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/Y2U0NjNkOWY3ZmJhMGNiYWM4YTBkMTQzY2Y4ZjVkZGE6MTc4ODczNzM2Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:539a95e15ad4b90d98f9b8453f70e2d81bbf1f9350a08c127f32e057a2e1ebbf?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu24.04_amd64.deb">sunshine_2026.906.222525-1+ubuntu24.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu24.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/M2JhNDZiNjRhN2ZjNTMyYjhkOWVjZmFkYmEwZDMwMWE6MTc4ODczNzM4Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:044f68a144f2beb8c38094828c789b5c1ae376ff07a6b095c901d15abf742a32?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu24.04_arm64.deb">sunshine_2026.906.222525-1+ubuntu24.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu24.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OTVhMDlhNzdhZDdkM2U0YjljYzY4MDQ1MmQyNzg2M2E6MTc4ODczNzM5NA=="><img src="https://badges.cssnr.com/vt/id/sha256:17a20e57e9fd547a01adb818c172ec8481f2ac95cd1421ac976a96e056c5a073?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu26.04_amd64.deb">sunshine_2026.906.222525-1+ubuntu26.04_amd64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu26.04_amd64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MjE2OWM0NDUxYjg2MDMyZDlmNjFiNzQxZWEwYzkyOTk6MTc4ODczNzQxMA=="><img src="https://badges.cssnr.com/vt/id/sha256:454fde456eb8f429f94e5a1297cb6f2f55a46bbab4832f71752ec5bc9b0fa453?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu26.04_arm64.deb">sunshine_2026.906.222525-1+ubuntu26.04_arm64.deb</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_2026.906.222525-1+ubuntu26.04_arm64.deb?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZjI3YzRiNDkxMTJmODU1NDdiYTQ4MTkyZjgyMDNkMjY6MTc4ODczNzQyNA=="><img src="https://badges.cssnr.com/vt/id/sha256:3c644e82a8f34c24b69f40ead920c328f0d939ea07e8c476ef3a6507c551d996?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_aarch64.flatpak">sunshine_aarch64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_aarch64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/ZGM1ZjJlOTdhYWQ2MjFkNzNhMDdhYWI5OTU4MGM1MGQ6MTc4ODczNzQzOQ=="><img src="https://badges.cssnr.com/vt/id/sha256:30027cc11876e0a66efe95606d14de7cddf2326cdee60b83dcd5bdc0f9924787?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_debug_aarch64.flatpak">sunshine_debug_aarch64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_debug_aarch64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzViNjY0MjZhMmM4NWI1ZjNmM2U1ZDU3NTdkYmU1ZTM6MTc4ODczNzQ1Mw=="><img src="https://badges.cssnr.com/vt/id/sha256:a9b1ea734c7029fff4584d7eb50cce5fe9f938cc7dd748817319828572270c63?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_debug_x86_64.flatpak">sunshine_debug_x86_64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_debug_x86_64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTM3YmQ5M2Q4NTY2ZGE5M2I1ZGM0YzJiNTQwMmQ4NzU6MTc4ODczNzQ2OA=="><img src="https://badges.cssnr.com/vt/id/sha256:d90bcf0afebbe737e54a4f55d411d07e6973ff5a67764732eb14e2ef13b23a5e?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/sunshine_x86_64.flatpak">sunshine_x86_64.flatpak</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/sunshine_x86_64.flatpak?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MTczM2I2NGQ0YzI4ZDc3ZmZhMzkzN2I0MGZiYTg0MGY6MTc4ODczNzQ4NA=="><img src="https://badges.cssnr.com/vt/id/sha256:f3d13424291c7b9d50b88ca007c26acb7aca5a924be44082d380d20c1ac078f9?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc43.aarch64.rpm">Sunshine-2026.906.222525-1.fc43.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc43.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/YTYzZTE2ZmUyYzRhODE2MDE2MDE3ODU2ZDMyMTkzMmE6MTc4ODczOTkwOQ=="><img src="https://badges.cssnr.com/vt/id/sha256:aed9650656c6be4f7ef89210892a9275903cb9404f11aaf1b3ba99e48b9063e8?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc43.x86_64.rpm">Sunshine-2026.906.222525-1.fc43.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc43.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MzljNzhkNzczNzRhZjRlZTFkODIxZGIwODYxZjBiODE6MTc4ODczOTkxMA=="><img src="https://badges.cssnr.com/vt/id/sha256:79073e463971225438f455df6841cc0aa0ea72a8d36f4dd3b93c380792636d92?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc44.aarch64.rpm">Sunshine-2026.906.222525-1.fc44.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc44.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/MDNhMGM0ZjFlZDVkYTVlMzI5ZjM3NzJlZTM3NDcxZGE6MTc4ODczOTkxMg=="><img src="https://badges.cssnr.com/vt/id/sha256:7289bddd50a921788cb2833d6c3824057f0650703c9a69d1cae8bfb867f0df1f?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc44.x86_64.rpm">Sunshine-2026.906.222525-1.fc44.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc44.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/Zjg5MTE4ZmM4MWJhYmRmMDA4NGUzY2I2ODBjZGExNmQ6MTc4ODczOTkxMw=="><img src="https://badges.cssnr.com/vt/id/sha256:345e97d98ba896dcc3521f8b85c50a6c1f720cdc41e349b9047441374e24bce3?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc45.aarch64.rpm">Sunshine-2026.906.222525-1.fc45.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc45.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NGUwZTc0YTA2MTlmNTVhMWNjYjYzZTFmY2MxMWNkZTQ6MTc4ODczOTk2OQ=="><img src="https://badges.cssnr.com/vt/id/sha256:061e3c5dc0adbad92e35d9331e8c594a7ee4d2996572fdf86e4e342a46fd132d?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc45.x86_64.rpm">Sunshine-2026.906.222525-1.fc45.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc45.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OGY5NjcwM2U5Y2YzZDlmMTQzZjhhZDQ3ZDM1MjkyODc6MTc4ODczOTk3MA=="><img src="https://badges.cssnr.com/vt/id/sha256:4f5906f9e20e639162995574c79f775474b51742bce1455058985a1f1ce44b04?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc46.aarch64.rpm">Sunshine-2026.906.222525-1.fc46.aarch64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc46.aarch64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/NzM4NDc4Mjk5YTM4MzYyMGJkODU1ZTk5NDdmODdkOGI6MTc4ODczOTk3MQ=="><img src="https://badges.cssnr.com/vt/id/sha256:1775d7579498699a91386e8f8734b74d7bb1c6a76f5f8974fdfa922c146b9909?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/LizardByte/Sunshine/releases/download/v2026.906.222525/Sunshine-2026.906.222525-1.fc46.x86_64.rpm">Sunshine-2026.906.222525-1.fc46.x86_64.rpm</a></td>
+      <td><img src="https://img.shields.io/github/downloads/LizardByte/Sunshine/v2026.906.222525/Sunshine-2026.906.222525-1.fc46.x86_64.rpm?style=flat-square&amp;label=&amp;displayAssetName=false" alt="Downloads" /></td>
+      <td><a href="https://www.virustotal.com/gui/file-analysis/OGE1MDAzYzg5OTRjOGQ2YmJhNTU4ODM3ZWI2NzI2ZjI6MTc4ODczOTk3Mg=="><img src="https://badges.cssnr.com/vt/id/sha256:e95665137fe1f4ddb7c96ef86773f8be1b4cb31b23d3e3838293347afa4ed8f8?style=flat-square&amp;icon=virustotal&amp;label=" alt="VirusTotal" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#release">release</a>
+          
+            <a href="/tags#sunshine">sunshine</a>
+          
+        </div>
+      
+
+      
+        <div class="after-content">
+          
+            <!-- Donate section-->
+<section class="p-5" id="Donate">
+    <div class="container mb-5 shadow border-0 card-custom rounded-0">
+        <div class="d-table-row g-0">
+            <div class="d-table-cell px-3 align-middle text-center">
+                <i class="fa-fw fa-2xl fas fa-coins"></i>
+            </div>
+            <div class="col-sm-auto border-white my-3 px-3 py-2 border-start">
+                <div class="container">
+                    <h4 class="card-title mb-3 fw-bolder">Donate</h4>
+                </div>
+                <a
+                    class="text-decoration-none"
+                    href="https://github.com/sponsors/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="GitHub Sponsors"
+                         src="https://img.shields.io/github/sponsors/lizardbyte?label=Github%20Sponsors&style=for-the-badge&color=green&logo=githubsponsors"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.patreon.com/LizardByte"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="Patreon"
+                         src="https://img.shields.io/badge/dynamic/json?color=green&label=Patreon&style=for-the-badge&query=patron_count&url=https%3A%2F%2Fapp.lizardbyte.dev%2Fdashboard%2Fpatreon%2FLizardByte.json&logo=patreon"
+                    >
+                </a>
+                <a
+                    class="text-decoration-none"
+                    href="https://www.paypal.com/paypalme/ReenigneArcher"
+                    target="_blank">
+                    <img class="m-3 crowdin-ignore"
+                         alt="PayPal"
+                         src="https://img.shields.io/static/v1?style=for-the-badge&label=PayPal&message=Donate&color=green&logo=paypal"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+          
+        </div>
+      
+
+      
+<div class="amazon-affiliate-container">
+  <div class="affiliate-disclaimer">
+    <small>
+      <em>#CommissionsEarned | As an Amazon Associate we earn from qualifying purchases.</em>
+    </small>
+  </div>
+
+  <div id="amazon-product-display">
+    <!-- Product will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<script>
+(function() {
+  // Load products from Jekyll data
+  const allProducts = [{"title":"ASUS Prime Radeon™ RX 9070 XT OC Edition Graphics Card, AMD (PCIe 5.0, HDMI/DP 2.1, 2.5-Slot Design, Axial-tech Fans, Ball Bearings, Dual BIOS, GPU Guard)","image":"https://m.media-amazon.com/images/I/81huTBuLV+L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DRRMZDH6","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)","image":"https://m.media-amazon.com/images/I/81S9fi6ViFL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS6WPTLL","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS TUF GeForce RTX™ 5080 16GB GDDR7 OC Edition Graphics Card, NVIDIA, Desktop (PCIe® 5.0, HDMI®/DP 2.1, 3.6-Slot, Military-Grade Components, Protective PCB Coating, Axial-tech Fans, Vapor Chamber)","image":"https://m.media-amazon.com/images/I/71WSd4clFZL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DQSMMCSH","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"ASUS ROG Astral GeForce RTX™ 5090 OC Edition Graphics Card, NVIDIA (PCIe® 5.0, 32GB GDDR7, HDMI®/DP 2.1, 3.8-Slot, 4-Fan Design, Axial-tech Fans, Patented Vapor Chamber, Phase-Change GPU Thermal Pad)","image":"https://m.media-amazon.com/images/I/811IbTkEvnL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2WQZ2M","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9070 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9070XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71R7fXnFGCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2QG2KW","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5080 Gaming OC 16G Graphics Card, WINDFORCE Cooling System, 16GB 256-bit GDDR7, GV-N5080GAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71lZess7M8L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DS2R6948","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE GeForce RTX 5090 WINDFORCE OC 32G Graphics Card, WINDFORCE Cooling System, 32GB 512-bit GDDR7, GV-N5090WF3OC-32GD Video Card","image":"https://m.media-amazon.com/images/I/71hOB-2Rf5L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0DT7GMXHB","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"GIGABYTE Radeon RX 9060 XT Gaming OC 16G Graphics Card, PCIe 5.0, 16GB GDDR6, GV-R9060XTGAMING OC-16GD Video Card","image":"https://m.media-amazon.com/images/I/71L08TQedJL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F91KM1CK","tags":["gpu","computer hardware","gaming","streaming"]},{"title":"AMD Ryzen™ 9 9900X 12-Core, 24-Thread Unlocked Desktop Processor","image":"https://m.media-amazon.com/images/I/61dukbEGziL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D6NN87T8","tags":["cpu","computer hardware","gaming","streaming"]},{"title":"SAMSUNG 990 PRO SSD 2TB NVMe M.2 PCIe Gen4, M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P2T0B/AM","image":"https://m.media-amazon.com/images/I/71OWtcxKgvL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0BHJJ9Y77","tags":["storage","computer hardware","gaming"]},{"title":"Amazon Fire TV Stick 4K Plus (newest model) with AI-powered Fire TV Search, Wi-Fi 6, stream hundreds of thousands of movies and shows, free & live TV, find shows faster with Alexa+","image":"https://m.media-amazon.com/images/I/61JBEw26D7L._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0F7Z4QZTT","tags":["streaming"]},{"title":"Amazon Fire TV Cube, with AI-powered Fire TV Search, Hands-free streaming device, find shows faster with Alexa+, Wi-Fi 6E, 4K Ultra HD","image":"https://m.media-amazon.com/images/I/71YRVDg1RCL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09BZZ3MM7","tags":["streaming"]},{"title":"Google TV Streamer 4K - Fast Streaming Entertainment on Your TV with Voice Search Remote - Watch Movies, Shows, Live TV, and Netflix in 4K HDR - Smart Home Control - 32 GB of Storage","image":"https://m.media-amazon.com/images/I/510wm50VDHL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0D8WJYSF9","tags":["streaming"]},{"title":"NVIDIA Shield Android TV Pro | 4K HDR Streaming Media Player High Performance, Dolby Vision, 3GB RAM, 2X USB, Works with Alexa, Model:945-12897-2500-101","image":"https://m.media-amazon.com/images/I/51ZGCIbrgFL._AC_SL1280_.jpg","link":"https://www.amazon.com/dp/B07YP9FBMM","tags":["streaming"]},{"title":"Nintendo Switch with Neon Blue and Neon Red Joy-Con - Handheld Gaming Console","image":"https://m.media-amazon.com/images/I/71wpE+ZIehL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0BFJWCYTL","tags":["gaming","streaming"]},{"title":"Nintendo Switch 2 System","image":"https://m.media-amazon.com/images/I/714-Fh3ngmL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0F3GWXLTS","tags":["gaming","streaming"]},{"title":"PlayStation 5 Pro Console - 2TB","image":"https://m.media-amazon.com/images/I/51f-7a6i5PL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FTMY4YZ2","tags":["gaming"]},{"title":"PlayStation®5 Digital Edition – 825GB","image":"https://m.media-amazon.com/images/I/516yiK6U+FL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGMYJMG","tags":["gaming"]},{"title":"PlayStation®5 console – 1TB","image":"https://m.media-amazon.com/images/I/51tSjJJl82L._SL1500_.jpg","link":"https://www.amazon.com/dp/B0FRGTYSL5","tags":["gaming"]},{"title":"Sony Playstation Vita Wi-Fi 2000 Series with Silicone Joystick Covers and AC Adapter Cable (Piano Black) (Renewed)","image":"https://m.media-amazon.com/images/I/71QH7h0GRrL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B089CRM88W","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 512GB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D932YWSZ","tags":["gaming","streaming"]},{"title":"Xbox Series S - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/61PI59RfWvL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0D934SHFG","tags":["gaming","streaming"]},{"title":"Xbox Series X - Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Carbon Black","image":"https://m.media-amazon.com/images/I/61WV2vIMfFL._SL1500_.jpg","link":"https://www.amazon.com/dp/B08H75RTZ8","tags":["gaming","streaming"]},{"title":"Xbox Series X - All Digital Gaming Console - 1TB SSD - Includes Wireless Controller - 4K Gaming - 120FPS - Robot White","image":"https://m.media-amazon.com/images/I/51bq1shHXEL._SL1500_.jpg","link":"https://www.amazon.com/dp/B0DCD9LGHY","tags":["gaming","streaming"]},{"title":"Elgato Stream Deck MK.2 – Studio Controller, 15 macro keys, trigger actions in apps and software like OBS, Twitch, YouTube and more, works with Mac and PC","image":"https://m.media-amazon.com/images/I/61gtdFnK+UL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B09738CV2G","tags":["streaming","accessories","content creation"]},{"title":"Logitech for Creators Blue Microphones Yeti USB Microphone (Blackout)","image":"https://m.media-amazon.com/images/I/61KTMvS5JBL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B00N1YPXW2","tags":["audio","streaming","content creation","accessories"]},{"title":"SofaBaton X2 Universal Remote with Touchscreen, All in One Universal Remote Control with Powerful Hub, One-Touch Activities, Custom APP, Compatible with Alexa&Google Assistant&Home Assistant","image":"https://m.media-amazon.com/images/I/616sCEAGTtL._AC_SL1500_.jpg","link":"https://www.amazon.com/dp/B0G46KHL8K","tags":["accessories"]}];
+
+  // Get affiliate tag from site config
+  const affiliateTag = "lizardbyte-blog-01-20";
+
+  // Get tags from page front matter if available
+  const pageTags = ["release","sunshine"];
+
+  let filteredProducts = allProducts;
+
+  // Filter products by tags if specified
+  if (pageTags && pageTags.length > 0) {
+    filteredProducts = allProducts.filter(product => {
+      if (!product.tags) return false;
+      // Check if any page tag matches any product tag
+      return pageTags.some(pageTag =>
+        product.tags.some(productTag =>
+          productTag.toLowerCase() === pageTag.toLowerCase()
+        )
+      );
+    });
+
+    // If no products match, fall back to all products
+    if (filteredProducts.length === 0) {
+      filteredProducts = allProducts;
+    }
+  }
+
+  // Shuffle products once at the start for random initial order
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Shuffle products once and keep that order
+  filteredProducts = shuffleArray(filteredProducts);
+
+  let currentProductIndex = 0;
+  let rotationTimer = null;
+
+  function startRotationTimer() {
+    if (rotationTimer) {
+      clearInterval(rotationTimer);
+    }
+    rotationTimer = setInterval(function() {
+      navigateProduct('next');
+    }, 30000); // 30 seconds
+  }
+
+  function navigateProduct(direction) {
+    if (filteredProducts.length === 0) return;
+
+    if (direction === 'next') {
+      currentProductIndex = (currentProductIndex + 1) % filteredProducts.length;
+    } else if (direction === 'prev') {
+      currentProductIndex = (currentProductIndex - 1 + filteredProducts.length) % filteredProducts.length;
+    }
+
+    displayProduct(filteredProducts[currentProductIndex]);
+  }
+
+  function addAffiliateTag(url) {
+    if (!affiliateTag || !url) return url;
+
+    try {
+      const urlObj = new URL(url);
+      urlObj.searchParams.set('tag', affiliateTag);
+      return urlObj.toString();
+    } catch (e) {
+      console.error('Invalid URL:', url);
+      return url;
+    }
+  }
+
+  function displayProduct(product) {
+    if (!product) return;
+
+    const container = document.getElementById('amazon-product-display');
+    if (!container) return;
+
+    // Add affiliate tag to product link
+    const productLink = addAffiliateTag(product.link);
+
+    // Show navigation buttons only if there are multiple products
+    const showNavigation = filteredProducts.length > 1;
+
+    container.innerHTML = `
+      <div class="amazon-product-display">
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-prev" aria-label="Previous product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+        <div class="product-image">
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+            <img src="${product.image}" alt="${product.title}">
+          </a>
+        </div>
+        <div class="product-details">
+          <h4>
+            <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              ${product.title}
+            </a>
+          </h4>
+          <a href="${productLink}" target="_blank" rel="noopener noreferrer nofollow sponsored" class="product-link">
+            View on Amazon
+          </a>
+          ${product.tags ? `
+            <div class="product-tags">
+              <small>
+                ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+              </small>
+            </div>
+          ` : ''}
+        </div>
+        ${showNavigation ? `
+          <button class="product-nav-btn product-nav-next" aria-label="Next product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    // Add event listeners for navigation buttons
+    if (showNavigation) {
+      const prevBtn = container.querySelector('.product-nav-prev');
+      const nextBtn = container.querySelector('.product-nav-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          navigateProduct('prev');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          navigateProduct('next');
+          startRotationTimer(); // Reset timer on manual navigation
+        });
+      }
+    }
+  }
+
+  // Display initial product (first in shuffled array)
+  if (filteredProducts.length > 0) {
+    displayProduct(filteredProducts[currentProductIndex]);
+
+    // Start automatic rotation if there are products
+    if (filteredProducts.length > 1) {
+      startRotationTimer();
+    }
+  }
+})();
+</script>
+
+
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="visually-hidden">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Sunshine+v2026.906.222525+Released&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on X (Twitter)">
+      <span class="fab fa-fw fa-x-twitter" aria-hidden="true"></span>
+      <span class="visually-hidden">X (Twitter)</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="visually-hidden">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="visually-hidden">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fapp.lizardbyte.dev%2F2026-09-06-v2026.906.222525%2F"
+      class="btn btn-social-icon btn-reddit" title="Share on Reddit">
+      <span class="fab fa-fw fa-reddit" aria-hidden="true"></span>
+      <span class="visually-hidden">Reddit</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2026-09-05-v2026.905.2300.20/" data-toggle="tooltip" data-placement="top" title="libvirtualhid v2026.905.2300.20 Released">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2026-09-11-sunshine-alpine-linux-packages/" data-toggle="tooltip" data-placement="top" title="Sunshine now has Alpine Linux packages">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+  
+
+<!-- //NOSONAR(Web:S5725): giscus serves this configurable widget endpoint without immutable SRI-compatible releases. --><script
+        src="https://giscus.app/client.js"
+        data-repo="LizardByte/community"
+        data-repo-id="R_kgDOMzlnmw"
+        data-category="Blog"
+        data-category-id="DIC_kwDOMzlnm84CnN1j"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        
+        
+        data-theme="https://app.lizardbyte.dev/assets/css/giscus.css"
+        data-lang="en"
+        
+            data-loading="lazy"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+  
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://discord.com/invite/d6MpcrbYQs" title="Discord">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Discord</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/LizardByteDev" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/LizardByte" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/LizardByte" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Patreon</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://reddit.com/r/LizardByte" title="Reddit">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">Reddit</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/LizardByteDev" title="X (Twitter)">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">X (Twitter)</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/c/LizardByteDev" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="visually-hidden">YouTube</span>
+   </a>
+  </li></ul>
+
+
+      
+        <div class="footer-custom-content">
+          
+            <script>
+    //open external links in a new window
+    function external_new_window() {
+        for(let c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+            let b = c[a];
+            if(b.getAttribute("href") && b.hostname !== location.hostname) {
+                b.target = "_blank";
+                b.rel = "noopener";
+            }
+        }
+    }
+
+    //open PDF links in a new window
+    function pdf_new_window ()
+    {
+        if (!document.getElementsByTagName) return false;
+        let links = document.getElementsByTagName("a");
+        for (const element of links) {
+            if (element.href.includes('.pdf') || element.href.includes('.doc') || element.href.includes('.docx')) {
+                element.onclick =
+                function() {
+                    window.open(this.href);
+                    return false;
+                }
+            }
+        }
+    }
+    pdf_new_window();
+    external_new_window();
+</script>
+
+
+<a title="Privacy Policy" href="/privacy" class="text_muted">Privacy</a>
+&nbsp;&bull;&nbsp;
+<a title="Terms and Conditions" href="/terms" class="text_muted">Terms</a>
+&nbsp;&bull;&nbsp;
+<a title="Licenses and Attribution" href="/licenses" class="text_muted">Licenses</a>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        LizardByte
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://app.lizardbyte.dev/">app.LizardByte.dev</a>
+        </span>
+      
+
+      
+
+      
+        &nbsp;&bull;&nbsp;
+        <a title="Edit this page on GitHub" href="https://github.com/LizardByte/LizardByte.github.io/edit/gh-pages/_posts/releases/sunshine/2026-09-06-v2026.906.222525.md" class="text_muted">Edit page</a>
+       
+
+      </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <script src="/assets/js/beautifuljekyll.js"></script>
+  
+
+
+
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/crowdin-init.js"></script>
+    
+  
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/lucide@1.44.0/dist/umd/lucide.min.js"></script>
+
+
+    
+  
+    
+      <script src="/assets/js/lucide-init.js"></script>
+    
+  
+    
+      <script src="/assets/js/tabs.js"></script>
+    
+  
+
+
+
+
+
+  
+    <script src="/assets/js/changelog-links.js"></script>
+  
+
+
+
+</body>
+</html>
