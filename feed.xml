@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>LizardByte</title>
+    
+    
+    <description>LizardByte</description>
+    
+    <link>https://app.lizardbyte.dev/</link>
+    <atom:link href="https://app.lizardbyte.dev/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>libvirtualhid v2026.829.2338.54 Released</title>
+        <description>
+          
+          Breaking Changes For those using Virtual HID Driver with Sunshine, this release requires Sunshine v2026.830.44125 or newer Highlighted Changes Xbox One/Series gamepads now support impulse (rumble) triggers on Linux Switch Pro gamepads now support gryo/motion on both Windows and Linux Keyboard is now a HID device on Windows, with fallback...
+        </description>
+        <pubDate>Sat, 29 Aug 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-08-29-v2026.829.2338.54/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-08-29-v2026.829.2338.54/</guid>
+      </item>
+    
+      <item>
+        <title>libvirtualhid v2026.824.1240.30 Released</title>
+        <description>
+          
+          What’s Changed fix(driver): add Win10 WUDFRd driver path by @ReenigneArcher in #93 ci: add release notifier workflow by @ReenigneArcher in #96 chore: update global workflows by @LizardByte-bot in #90 fix(gamepad)!: improve PlayStation controller compatibility by @ReenigneArcher in #94 fix(macOS): correct right and middle mouse drag handling by @mkrusen in #95...
+        </description>
+        <pubDate>Mon, 24 Aug 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-08-24-v2026.824.1240.30/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-08-24-v2026.824.1240.30/</guid>
+      </item>
+    
+      <item>
+        <title>Introducing libvirtualhid and Virtual HID Driver</title>
+        <description>
+          A simpler, more capable input system for Sunshine - 
+          Virtual input is the part of Sunshine that turns controls received from Moonlight into button presses, mouse movement, touch input, and other actions on the host. It is mostly invisible when it works well, but it affects nearly every streaming session. Starting with Sunshine v2026.816.192458 (beta), that work is powered...
+        </description>
+        <pubDate>Sun, 16 Aug 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-08-16-introducing-libvirtualhid-and-virtual-hid-driver/</guid>
+      </item>
+    
+      <item>
+        <title>Themerr-jellyfin v2026.601.2038.13 Released</title>
+        <description>
+          
+          What’s Changed feat(dashboard): show ThemerrDB availability by @LuckyNoS7evin in #786 fix: ensure plugin and build config use same guid by @LuckyNoS7evin in #791 ci: add JUnit test logger and test results upload by @ReenigneArcher in #794 fix: update pluginUniqueId for config html page by @ReenigneArcher in #796 chore(l10n): update translations...
+        </description>
+        <pubDate>Mon, 01 Jun 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-06-01-v2026.601.2038.13/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2026.516.143833 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-ph75-mgxh-mv57 Please update as soon as possible! Breaking Changes ViGEmBus is no longer installed automatically. Instead you can install it from the troubleshooting page of the web-ui if needed. CSRF protection has been added to web-ui. If...
+        </description>
+        <pubDate>Sat, 16 May 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-05-16-v2026.516.143833/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-05-16-v2026.516.143833/</guid>
+      </item>
+    
+      <item>
+        <title>Themerr-jellyfin v2026.428.1753.46 Released</title>
+        <description>
+          
+          What’s Changed chore: update global workflows by @LizardByte-bot in #374 build(deps): bump LizardByte/setup-release-action from 2024.520.181643 to 2024.524.1411 by @dependabot[bot] in #372 build(deps): bump LizardByte/create-release-action from 2024.516.190229 to 2024.520.211408 by @dependabot[bot] in #351 build(deps): bump SonarAnalyzer.CSharp from 9.25.0.90414 to 9.25.1.91650 by @dependabot[bot] in #373 build(deps): bump xunit.runner.visualstudio from 2.8.0 to 2.8.1...
+        </description>
+        <pubDate>Tue, 28 Apr 2026 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2026-04-28-v2026.428.1753.46/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2026-04-28-v2026.428.1753.46/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2025.924.154138 Released</title>
+        <description>
+          
+          What’s Changed fix(windows): Correct binPath syntax in install-service.bat by @ReenigneArcher in #4290 build(macos): Remove XCode dependency by @eduardomozart in #4293 New Contributors @eduardomozart made their first contribution in #4293 Full Changelog: https://github.com/LizardByte/Sunshine/compare/v2025.923.33222…v2025.924.154138 Contributors 🛡️ VirusTotal Results: Sunshine-Windows-AMD64-debuginfo.7z Sunshine-Windows-AMD64-installer.exe Sunshine-Windows-AMD64-portable.zip flathub.tar.gz sunshine-debian-trixie-amd64.deb sunshine-debian-trixie-arm64.deb sunshine-ubuntu-22.04-amd64.deb sunshine-ubuntu-22.04-arm64.deb sunshine-ubuntu-24.04-amd64.deb sunshine-ubuntu-24.04-arm64.deb sunshine.AppImage sunshine.pkg.tar.gz sunshine.pkg.tar.zst sunshine.rb...
+        </description>
+        <pubDate>Wed, 24 Sep 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-09-24-v2025.924.154138/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-09-24-v2025.924.154138/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2025.923.33222 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-6p7j-5v8v-w45h Please update as soon as possible! For a comprehensive list of user-facing changes, see below. What’s Changed fix(power): don’t wake up every 500ms to poll while not streaming by @cgutman in #4051 fix(amf): attempt to use...
+        </description>
+        <pubDate>Tue, 23 Sep 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-09-23-v2025.923.33222/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-09-23-v2025.923.33222/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2025.628.4510 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see the following: GHSA-39hj-fxvw-758m GHSA-x97g-h2vp-g2c5 Please update as soon as possible! This release also contains many new features and bug fixes, including: Encoder probing fixes. Display automation is now disabled by default, you can re-enable it in the Sunshing config...
+        </description>
+        <pubDate>Sat, 28 Jun 2025 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2025-06-28-v2025.628.4510/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-06-28-v2025.628.4510/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2025.122.141614 Released</title>
+        <description>
+          
+          What’s Changed build(linux)!: remove legacy input option by @ReenigneArcher in #3562 fix(flatpak): fix broken desktop file, icons, and service by @ReenigneArcher in #3561 fix(web-ui): fix new version notification conditions by @ReenigneArcher in #3577 chore(l10n): update translations by @LizardByte-bot in #3563 New Contributors @CodyManess made their first contribution in #3558 Full...
+        </description>
+        <pubDate>Wed, 22 Jan 2025 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2025-01-22-v2025.122.141614/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-22-v2025.122.141614/</guid>
+      </item>
+    
+      <item>
+        <title>Sunshine v2025.118.151840 Released</title>
+        <description>
+          
+          Attention This release contains critical security updates. For more information see GHSA-3hrw-xv8h-9499. Please update as soon as possible! This release also contains many new features and bug fixes, including: Implemented automatic resolution and HDR mode changing on Windows. Implemented YUV 4:4:4 encoding support for Intel and NVIDIA GPUs on Windows....
+        </description>
+        <pubDate>Sat, 18 Jan 2025 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-18-v2025.118.151840/</guid>
+      </item>
+    
+      <item>
+        <title>Welcome</title>
+        <description>
+          to the blog of LizardByte! - 
+          We’re thrilled to have you here. This blog is your go-to source for all the latest announcements, updates, and news about LizardByte projects. Whether you’re a developer, a tech enthusiast, or just curious about what we do, you’ll find valuable insights and information here. What to Expect Announcements: Stay updated...
+        </description>
+        <pubDate>Mon, 06 Jan 2025 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2025-01-06-welcome/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2025-01-06-welcome/</guid>
+      </item>
+    
+      <item>
+        <title>Signing Git Commits in Windows</title>
+        <description>
+          How to sign your Git commits in Windows using GPG and Kleopatra - 
+          Introduction Have you ever wanted to sign your Git commits, and get the fancy Verified badge on your commits in GitHub? This post will show you how to sign your Git commits in Windows using GPG and Kleopatra. Prerequisites Download and install Gpg4win, ensuring that Kleopatra option is selected. Create...
+        </description>
+        <pubDate>Sun, 08 Dec 2024 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-12-08-git-commit-signing-in-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Autostart Sunshine on Boot without Auto-Login</title>
+        <description>
+          
+          After following this guide you will be able to: Turn on the Sunshine host via Moonlight’s Wake on LAN (WoL) feature. Have Sunshine initialize to the login screen ready for you to enter your credentials. Login to your desktop session remotely, and have your pipewire audio and Sunshine tray icon...
+        </description>
+        <pubDate>Wed, 16 Oct 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-10-16-autostart-sunshine-on-boot-without-auto-login/</guid>
+      </item>
+    
+      <item>
+        <title>Discord Call Cancellation in Sunshine on Windows</title>
+        <description>
+          Cancel Discord call audio with Voicemeeter (Standard) - 
+          Voicemeeter Configuration Click “Hardware Out” Set the physical device you receive audio to as your Hardware Out with MME Turn on BUS A for the Virtual Input Windows Configuration Open the sound settings Set your default Playback as Voicemeeter Input Tip Run audio in the background to find the device...
+        </description>
+        <pubDate>Fri, 24 May 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-05-24-discord-call-cancellation-sunshine-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Discord Call Cancellation in Sunshine on Linux</title>
+        <description>
+          
+          Set your normal Sound Output volume to 100% Start Sunshine Set Sound Output to sink-sunshine-stereo (if it isn’t automatic) In Discord, right click Deafen and select your normal Output Device. This is also where you will need to adjust output volume for Discord calls Open qpwgraph Connect sunshine [sunshine-record] to...
+        </description>
+        <pubDate>Thu, 18 Apr 2024 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2024-04-18-discord-call-cancellation-sunshine-linux/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-04-18-discord-call-cancellation-sunshine-linux/</guid>
+      </item>
+    
+      <item>
+        <title>Multi-platform C++ development in CLion</title>
+        <description>
+          How to set up CLion to handle Linux, macOS, and Windows development in a single project - 
+          Introduction When developing multiplatform C++ projects, it can be frustrating to have to switch between different systems to develop, inspect, and test your code. This is especially true when you are working on a project that has dependencies. Without the proper setup, you may find your IDE complaining about missing...
+        </description>
+        <pubDate>Thu, 01 Feb 2024 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2024-02-01-multi-platform-cpp-development-in-clion/</guid>
+      </item>
+    
+      <item>
+        <title>Remote SSH Headless Sunshine Setup</title>
+        <description>
+          
+          This is a guide to setup remote SSH into host to startup X server and Sunshine without physical login and dummy plug. The virtual display is accelerated by the NVidia GPU using the TwinView configuration. Attention This guide is specific for Xorg and NVidia GPUs. I start the X server...
+        </description>
+        <pubDate>Thu, 14 Sep 2023 00:00:00 -0400</pubDate>
+        <link>https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/2023-09-14-remote-ssh-headless-sunshine-setup/</guid>
+      </item>
+    
+      <item>
+        <title>Blog Guide</title>
+        <description>
+          
+          Admonitions Usage You can use admonitions with the following syntax: {% include admonition.html type=&quot;important&quot; body=&quot;This is information intended to draw attention.&quot; %} Optionally, a custom title can be added: {% include admonition.html type=&quot;hint&quot; title=&quot;Custom Title&quot; body=&quot;This is information intended to draw attention.&quot; %} Types Valid types of admonitions are: attention...
+        </description>
+        <pubDate>Thu, 01 Jan 1970 00:00:00 -0500</pubDate>
+        <link>https://app.lizardbyte.dev/1970-01-01-blog-guide/</link>
+        <guid isPermaLink="true">https://app.lizardbyte.dev/1970-01-01-blog-guide/</guid>
+      </item>
+    
+  </channel>
+</rss>
