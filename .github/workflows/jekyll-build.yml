@@ -5,6 +5,11 @@ permissions: {}
 on:
   workflow_call:
     inputs:
+      amend:
+        description: 'Amend the current deployment commit instead of creating a new commit'
+        required: false
+        default: true
+        type: boolean
       site_artifact:
         description: 'Artifact name to download'
         required: false
@@ -29,6 +34,16 @@ on:
         type: string
       clean_gh_pages:
         description: 'Clean gh-pages before deploying'
+        required: false
+        default: true
+        type: boolean
+      force:
+        description: 'Force-push the deployment branch'
+        required: false
+        default: true
+        type: boolean
+      squash_history:
+        description: 'Replace existing deployment history with a single commit, then amend it on future deployments'
         required: false
         default: true
         type: boolean
@@ -60,11 +75,14 @@ on:
         required: true
 
 env:
+  INPUT_AMEND: ${{ inputs.amend }}
   INPUT_SITE_ARTIFACT: ${{ inputs.site_artifact }}
   INPUT_EXTRACT_ARCHIVE: ${{ inputs.extract_archive }}
   INPUT_CONFIG_FILE: ${{ inputs.config_file }}
   INPUT_TARGET_BRANCH: ${{ inputs.target_branch }}
   INPUT_CLEAN_GH_PAGES: ${{ inputs.clean_gh_pages }}
+  INPUT_FORCE: ${{ inputs.force }}
+  INPUT_SQUASH_HISTORY: ${{ inputs.squash_history }}
   INPUT_THEME_REF: ${{ inputs.theme_ref }}
   INPUT_BASE_URL: ${{ inputs.base_url }}
 
@@ -251,6 +269,32 @@ jobs:
           fetch-depth: 0  # otherwise, will fail to push refs to dest repo
           filter: blob:none
 
+      - name: Prepare deployment history
+        id: deployment-history
+        working-directory: gh-pages
+        env:
+          AMEND: ${{ inputs.amend }}
+          FORCE: ${{ inputs.force }}
+          SQUASH_HISTORY: ${{ inputs.squash_history }}
+        run: |
+          amend="${AMEND}"
+
+          if [[ "${FORCE}" != "true" ]] &&
+             { [[ "${AMEND}" == "true" ]] || [[ "${SQUASH_HISTORY}" == "true" ]]; }; then
+            echo "::error::force must be enabled when amend or squash_history is enabled."
+            exit 1
+          fi
+
+          if [[ "${SQUASH_HISTORY}" == "true" ]]; then
+            commit_count="$(git rev-list --count HEAD)"
+            if ((commit_count > 1)) || [[ "${AMEND}" != "true" ]]; then
+              git checkout --orphan deployment
+              amend=false
+            fi
+          fi
+
+          echo "amend=${amend}" >> "${GITHUB_OUTPUT}"
+
       # empty contents of gh-pages
       - name: Clean
         if: env.INPUT_CLEAN_GH_PAGES == 'true'
@@ -277,5 +321,6 @@ jobs:
           author_name: ${{ inputs.gh_bot_name }}
           directory: gh-pages
           branch: ${{ env.INPUT_TARGET_BRANCH }}
-          force: false
+          amend: ${{ steps.deployment-history.outputs.amend }}
+          force: ${{ inputs.force }}
           message: "Deploy site from ${{ github.sha }}"
