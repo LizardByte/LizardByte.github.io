@@ -67,6 +67,8 @@ RUN <<_SETUP
 #!/bin/bash
 set -e
 
+bundle config set --local deployment true
+bundle config set --local path /usr/local/bundle
 bundle install
 
 # Create a non-root user and transfer ownership
