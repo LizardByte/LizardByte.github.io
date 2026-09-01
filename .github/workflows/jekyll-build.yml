@@ -171,6 +171,7 @@ jobs:
             favicon.ico
             feed.xml
             Gemfile
+            Gemfile.lock
             staticman.yml
             tags.html
           )
