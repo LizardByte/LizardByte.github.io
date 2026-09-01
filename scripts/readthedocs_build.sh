@@ -178,7 +178,7 @@ if [[ "${READTHEDOCS_PROJECT}" != "lizardbyte-gh-pages-main" ]]; then
   artifact_url="https://nightly.link/${github_user}/${github_repo}/actions/runs/${check_run_id}/${site_artifact}"
 
   # download and extract the ZIP artifact
-  curl -sL "${artifact_url}" -o "${project_dir}/artifact.zip"
+  curl --proto '=https' -sL "${artifact_url}" -o "${project_dir}/artifact.zip"
   7z x "${project_dir}/artifact.zip" -o"${project_dir}"
   rm "${project_dir}/artifact.zip"
 
