@@ -41,6 +41,12 @@ jekyll:
   name: Jekyll
   url: https://jekyllrb.com/
   license: MIT
+lucide:
+  name: Lucide
+  # renovate: datasource=npm depName=lucide
+  version: '1.41.0'
+  url: https://lucide.dev/
+  license: ISC
 marked:
   name: Marked
   # renovate: datasource=cdnjs depName=marked packageName=marked/lib/marked.umd.min.js versioning=semver

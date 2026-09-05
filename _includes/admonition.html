@@ -4,30 +4,34 @@
 
 {% if include.type.size > 0 and include.body.size > 0 %}
     {% assign types = "
-        attention:Attention,
-        caution:Caution,
-        danger:Danger,
-        error:Error,
-        hint:Hint,
-        important:Important,
-        note:Note,
-        seealso:See also,
-        tip:Tip,
-        todo: TODO,
-        warning:Warning" | split: "," %}
-        {% assign title = include.title | default: "" %}
-        {% if title == "" %}
-        {% for type in types %}
-            {% assign typeKeyVal = type | split: ":" %}
-            {% assign typeKey = typeKeyVal[0] | strip %}
-            {% assign typeValue = typeKeyVal[1] | strip %}
-            {% if typeKey == include.type %}
-                {% assign title = typeValue %}
+        attention:Attention:triangle-alert,
+        caution:Caution:shield-alert,
+        danger:Danger:octagon-alert,
+        error:Error:circle-x,
+        hint:Hint:circle-question-mark,
+        important:Important:flame,
+        note:Note:pencil,
+        seealso:See also:book-open,
+        tip:Tip:lightbulb,
+        todo:TODO:list-checks,
+        warning:Warning:triangle-alert" | split: "," %}
+    {% assign title = include.title | default: "" %}
+    {% assign icon = "" %}
+    {% for type in types %}
+        {% assign typeKeyVal = type | split: ":" %}
+        {% assign typeKey = typeKeyVal[0] | strip %}
+        {% if typeKey == include.type %}
+            {% assign icon = typeKeyVal[2] | strip %}
+            {% if title == "" %}
+                {% assign title = typeKeyVal[1] | strip %}
             {% endif %}
-        {% endfor %}
-    {% endif %}
+        {% endif %}
+    {% endfor %}
 <div class="admonition {{ include.type }} rounded">
-    <p class="admonition-title">{{ title }}</p>
+    <p class="admonition-title">
+        {% if icon != "" %}<i data-lucide="{{ icon }}" aria-hidden="true"></i>{% endif %}
+        {{ title }}
+    </p>
     <p>
         {{ include.body | markdownify }}
     </p>
