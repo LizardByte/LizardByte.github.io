@@ -33,19 +33,18 @@ $admonitions-dark:
 ;
 
 $admonitions:
-    //class (type), icon filename, icon/border color
-    // TODO: Can we use font-awesome directly without keeping the svg files in our repo?
-    ('attention', 'exclamation-triangle-solid.svg', '#ff5252')
-    ('caution', 'bolt-solid.svg', '#ff9100')
-    ('danger', 'bolt-solid.svg', '#ff5252')
-    ('error', 'times-circle-solid.svg', '#ff5252')
-    ('hint', 'question-circle-solid.svg', '#00c953')
-    ('important', 'fire-solid.svg', '#ff9100')
-    ('note', 'pen-solid.svg', '#00b0ff')
-    ('seealso', 'info-circle-solid.svg', '#00b0ff')
-    ('tip', 'info-circle-solid.svg', '#00c953')
-    ('todo', 'pen-solid.svg', '#9e9e9e')
-    ('warning', 'exclamation-triangle-solid.svg', '#ff9100')
+    // class (type), icon/border color
+    ('attention', '#ff5252')
+    ('caution', '#ff9100')
+    ('danger', '#ff5252')
+    ('error', '#ff5252')
+    ('hint', '#00c953')
+    ('important', '#ff9100')
+    ('note', '#00b0ff')
+    ('seealso', '#00b0ff')
+    ('tip', '#00c953')
+    ('todo', '#9e9e9e')
+    ('warning', '#ff9100')
 ;
 .admonition {
 	margin: 1.5625em 0;
@@ -71,28 +70,23 @@ $admonitions:
     color: #212529;
 }
 
-.admonition-title::before {
+.admonition .admonition-title svg {
+    color: $primary-color;
+    display: inline-block;
     margin-right: .5rem;
     width: 1.2rem;
     height: 1.2rem;
-    display: inline-block;
-    content: '';
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    background-color: $primary-color;
     vertical-align: text-bottom;
 }
-@each $name, $icon, $icon-color in $admonitions {
+@each $name, $icon-color in $admonitions {
     @if $icon-color {
         .admonition.#{$name} {
             border-left-color: #{$icon-color};
         }
     }
-    .admonition.#{$name} .admonition-title::before {
-        -webkit-mask: url("/assets/img/icons/#{$icon}") no-repeat 50% 50%;
-        mask: url("/assets/img/icons/#{$icon}") no-repeat 50% 50%;
+    .admonition.#{$name} .admonition-title svg {
         @if $icon-color {
-            background-color: #{$icon-color};
+            color: #{$icon-color};
         }
     }
 }
