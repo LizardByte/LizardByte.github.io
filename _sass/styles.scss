@@ -14,6 +14,8 @@
   --admonition-text: #212529;
   --circular-progress-border: #dee2e6;
   --circular-progress-bg: #e9ecef;
+  --tabs-hover-bg: rgba(40, 169, 230, 0.1);
+  --tabs-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
 
   /* Light theme commit activity colors */
   --commit-activity-empty: rgba(0, 0, 0, 0.08);
@@ -40,6 +42,8 @@
   --admonition-text: #18191a;
   --circular-progress-border: #2b3035;
   --circular-progress-bg: #2b3035;
+  --tabs-hover-bg: rgba(40, 169, 230, 0.16);
+  --tabs-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.24);
 
   /* Dark theme commit activity colors */
   --commit-activity-empty: rgba(255, 255, 255, 0.1);
@@ -162,24 +166,50 @@ img.invert {
 /* CSS for tabs */
 .tabs {
   background-color: var(--footer-col);
-  padding: 1rem;
+  border: 1px solid var(--navbar-border-col);
+  border-radius: 0.75rem;
+  box-shadow: var(--tabs-shadow);
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+.tabs > .nav {
+  border-bottom: 1px solid var(--navbar-border-col);
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.5rem 0;
 }
 .tabs .nav-link {
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   color: var(--link-col);
+  font-weight: 600;
+  padding: 0.625rem 1rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
 }
 .tabs .nav-link:hover {
+  background-color: var(--tabs-hover-bg);
   color: var(--hover-col);
 }
-.tabs .nav-link.active {
-  color: var(--text-col);
-  border-color: var(--text-col);
+.tabs .nav-link:focus-visible {
+  outline: 0.1875rem solid var(--link-col);
+  outline-offset: -0.1875rem;
 }
-.tab-content {
-  background-color: var(--navbar-col);
-  padding: 1rem;
-  margin-top: 1rem;
-  border: 1px solid var(--page-col);
-  border-radius: 0.5rem;
+.tabs .nav-link.active,
+.tabs .nav-link.active:hover {
+  background-color: var(--page-col);
+  border-color: var(--navbar-border-col);
+  color: var(--text-col);
+  margin-bottom: -1px;
+}
+.tabs > .tab-content {
+  background-color: var(--page-col);
+  padding: 1.25rem;
+}
+.tabs > .tab-content > .tab-pane > :last-child {
+  margin-bottom: 0;
 }
 
 /* tables */

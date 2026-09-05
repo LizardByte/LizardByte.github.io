@@ -118,6 +118,7 @@ You can use indexed tabs with the following syntax:
 
 The tabs object must have a `name` and `content` field.
 The `content` field should be an array of strings when using indexed tabs.
+Groups with the same tab names in the same order are linked, so selecting a tab in one group selects it in all of them.
 
 ### Examples
 
