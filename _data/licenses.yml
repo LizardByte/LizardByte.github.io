@@ -44,7 +44,7 @@ jekyll:
 lucide:
   name: Lucide
   # renovate: datasource=npm depName=lucide
-  version: '1.42.0'
+  version: '1.43.0'
   url: https://lucide.dev/
   license: ISC
 marked:
