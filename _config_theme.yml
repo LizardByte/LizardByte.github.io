@@ -72,7 +72,7 @@ site-css:
 site-js:
   - href: "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin.js"
   - "/assets/js/crowdin-init.js"
-  - href: "https://cdn.jsdelivr.net/npm/lucide@1.43.0/dist/umd/lucide.min.js"
+  - href: "https://cdn.jsdelivr.net/npm/lucide@1.44.0/dist/umd/lucide.min.js"
   - "/assets/js/lucide-init.js"
   - "/assets/js/tabs.js"
 theme-switcher: true
