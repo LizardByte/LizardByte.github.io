@@ -50,12 +50,11 @@ features involved, it may process:
 
 * Reddit account IDs and usernames, subreddit IDs, activity counts, rank experience, and last-activity timestamps for
   ranks and leaderboards.
-* Comment IDs and comment text. Comment text is used while detecting and responding to supported commands and is not
-  retained in active application records; the bot retains the comment ID and whether processing completed to prevent
-  duplicate processing.
-* Submission IDs, titles, text, authors, timestamps, links, flair, and the author's public profile image while preparing
-  notifications. Active application records retain the submission ID, flair metadata, and notification delivery status
-  and timestamp, but not the submission title, text, author, link, or profile image.
+* Comment IDs, authors, text, timestamps, processing status, and parsed supported-command metadata. This information is
+  retained to award activity-based rank experience, respond to supported commands, and prevent duplicate processing.
+* Submission IDs, titles, text, authors, timestamps, links, flair metadata, and notification delivery status and
+  timestamps. This information is retained to award activity-based rank experience, prepare notifications, and prevent
+  duplicate processing. The author's public Reddit profile image is also processed when preparing a notification.
 
 The bot posts Reddit submission notifications to a restricted Discord channel. Those notifications may include the
 Reddit username and public profile image, submission title and text, link, flair, and timestamp, and remain in Discord
@@ -74,14 +73,15 @@ notifications are posted only to restricted Discord channels available to author
 ### Storage and Retention
 
 Application records are stored in access-controlled systems managed by LizardByte and its service providers and are
-available only to authorized maintainers. Operational logs are similarly access-controlled.
+available only to authorized maintainers. Operational logs are similarly access-controlled and may include Reddit
+submission metadata or supported command text needed to operate and troubleshoot the application.
 
-Account-linking, rank, and processing-status records are retained while needed to provide those features. Operational
-logs are removed on a rolling basis, and records posted to restricted Discord channels are retained until an authorized
-moderator removes them. Users may request access to, correction of, or deletion of their stored application data through
-the [LizardByte support portal](https://app.lizardbyte.dev/support/). We may retain limited information when necessary for
-security, abuse prevention, legal compliance, or resolving disputes. Requests to delete Reddit personal data will be
-completed within 10 days.
+Account-linking, rank, Reddit activity, and processing-status records are retained while needed to provide those
+features. Operational logs are removed on a rolling basis, and records posted to restricted Discord channels are
+retained until an authorized moderator removes them. Users may request access to, correction of, or deletion of their
+stored application data through the [LizardByte support portal](https://app.lizardbyte.dev/support/). We may retain
+limited information when necessary for security, abuse prevention, legal compliance, or resolving disputes. Requests
+to delete Reddit personal data will be completed within 10 days.
 
 ## Website Visitors
 
