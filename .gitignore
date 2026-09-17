@@ -1,4 +1,11 @@
 # ignore JetBrains project
 .idea/
 
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore test results
+coverage/
+junit.xml
+
 _site/
