@@ -1,0 +1,47 @@
+{
+  "name": "@lizardbyte/lizardbyte.github.io",
+  "version": "0.0.0",
+  "description": "LizardByte's Jekyll website",
+  "files": [
+    "assets/js/release-versions.js"
+  ],
+  "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "assets/js/release-versions.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.cjs"
+    ]
+  },
+  "scripts": {
+    "build": "echo \"No Node.js build step required\"",
+    "test": "npm-run-all test:unit test:report test:lint",
+    "test:lint": "eslint assets/js/release-versions.js tests",
+    "test:report": "jest --reporters=jest-junit",
+    "test:unit": "jest --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@jest/globals": "30.5.1",
+    "eslint": "10.10.0",
+    "eslint-plugin-jest": "29.16.6",
+    "globals": "17.12.0",
+    "jest": "30.5.1",
+    "jest-junit": "17.0.0",
+    "npm-run-all2": "9.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizardByte/LizardByte.github.io.git"
+  }
+}
