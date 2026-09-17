@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateStatus(`Gamepad ${e.gamepad.id} connected`);
 
         // Start the loop if it's not already running
-        if (!animationFrameId) {
+        if (animationFrameId === null) {
             startGamepadLoop();
         }
     });
@@ -149,11 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Initialize controls for the selected gamepad
-            if (activeGamepadIndex !== null) {
-                initGamepadButtons();
-                initGamepadAxes();
-                initGamepadVisual();
-            }
+            initGamepadButtons();
+            initGamepadAxes();
+            initGamepadVisual();
         } else {
             gamepadSelectorContainer.style.display = 'none';
             gamepadInfoSection.style.display = 'none';
@@ -161,9 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initGamepadVisual() {
-        const gamepad = activeGamepadIndex === null
-            ? null
-            : navigator.getGamepads()[activeGamepadIndex];
+        const gamepad = navigator.getGamepads()[activeGamepadIndex];
         gamepadVisualizer.mount(gamepad);
     }
 
@@ -171,8 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function initGamepadButtons() {
         const buttonsContainer = document.getElementById('buttons-container');
         buttonsContainer.innerHTML = '';
-
-        if (activeGamepadIndex === null) return;
 
         const gamepad = navigator.getGamepads()[activeGamepadIndex];
         if (!gamepad) return;
@@ -240,8 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function initGamepadAxes() {
         const axesContainer = document.getElementById('axes-container');
         axesContainer.innerHTML = '';
-
-        if (activeGamepadIndex === null) return;
 
         const gamepad = navigator.getGamepads()[activeGamepadIndex];
         if (!gamepad) return;
@@ -529,24 +521,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the gamepad polling loop
     function startGamepadLoop() {
-        if (animationFrameId) return;
-
         // Make sure UI elements are initialized when starting the loop
-        if (activeGamepadIndex !== null) {
-            initGamepadButtons();
-            initGamepadAxes();
-            initGamepadVisual();
-        }
+        initGamepadButtons();
+        initGamepadAxes();
+        initGamepadVisual();
 
         gamepadLoop();
     }
 
     // Stop the gamepad polling loop
     function stopGamepadLoop() {
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
     }
 
     // The main gamepad polling loop

@@ -25,6 +25,7 @@ export default [
             ecmaVersion: 2022,
             sourceType: 'commonjs',
             globals: {
+                ...globals.browser,
                 ...globals.node,
                 ...globals.jest,
             },
