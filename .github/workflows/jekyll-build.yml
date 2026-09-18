@@ -201,7 +201,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@984c0c890880bbf811283d6f09c4607c62d210a4  # v1.323.0
         with:
-          ruby-version: '3.3'
+          ruby-version: '4.0.2'
 
       - name: Install dependencies
         run: |
