@@ -67,10 +67,10 @@ sass:
   sass_dir: _sass
   style: compressed
 site-css:
-  - href: "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin-bootstrap-css.css"
+  - href: "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.920.12131/dist/crowdin-bootstrap-css.css"
   - "/assets/css/styles.css"
 site-js:
-  - href: "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.812.190302/dist/crowdin.js"
+  - href: "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.920.12131/dist/crowdin.js"
   - "/assets/js/crowdin-init.js"
   - href: "https://cdn.jsdelivr.net/npm/lucide@1.45.0/dist/umd/lucide.min.js"
   - "/assets/js/lucide-init.js"
