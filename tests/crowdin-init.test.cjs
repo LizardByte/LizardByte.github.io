@@ -12,5 +12,5 @@ test('initializes CrowdIn with the organization name', () => {
 
     require('../assets/js/crowdin-init.js');
 
-    expect(globalThis.initCrowdIn).toHaveBeenCalledWith('LizardByte', null);
+    expect(globalThis.initCrowdIn).toHaveBeenCalledWith('LizardByte', 'jekyll');
 });
