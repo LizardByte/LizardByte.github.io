@@ -271,4 +271,4 @@ fi
 echo "Build finished"
 echo "Output directory: ${READTHEDOCS_OUTPUT}html"
 echo "Listing output directory:"
-ls -Ra "${READTHEDOCS_OUTPUT}"
+ls -R "${READTHEDOCS_OUTPUT}"
