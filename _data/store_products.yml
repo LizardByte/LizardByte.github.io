@@ -1,11 +1,13 @@
 ---
 - id: virtual-hid-driver
-  name: Virtual HID Driver
-  category: Windows software
-  tagline: Modern virtual gamepads for Sunshine on Windows
+  name: Virtual HID Broker License
+  category: Windows and macOS software
+  tagline: Virtual gamepads for compatible apps on Windows and macOS
   description: >-
-    Unlock expanded virtual controller support in Sunshine with a user-mode driver built and maintained alongside
-    the rest of the LizardByte input stack.
+    Activate Virtual HID Broker to let compatible applications create virtual gamepads on Windows and macOS.
+    Windows uses a user-mode driver and local broker; macOS uses a signed broker. Both packages include
+    Virtual HID Control for creating and testing virtual gamepads. Virtual HID Broker does not bypass
+    anti-cheat restrictions on virtual gamepad input.
   cover:
     src: https://raw.githubusercontent.com/LizardByte/libvirtualhid/refs/heads/master/libvirtualhid-poster-1440x2160.png
     alt: A green outline of a game controller on a vertical dark green background
@@ -25,19 +27,20 @@
       caption: Virtual controllers appear in the familiar Windows Game Controllers panel.
   badges:
     - label: Windows
-      icon: fa-brands fa-windows
+      icon_img: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/windows.svg
+    - label: macOS
+      icon_img: https://cdn.jsdelivr.net/npm/simple-icons@16/icons/macos.svg
     - label: Sunshine compatible
-      icon: fa-solid fa-sun
   prices:
     - amount: $14.99
       label: per year
     - amount: $49.99
       label: lifetime
-  price_note: One license can be activated on up to five machines.
+  price_note: One license can be activated on up to five machines. The yearly option includes a free trial.
   features:
-    - Generic, Xbox One, Xbox Series, DualShock 4, DualSense, and Switch Pro-style profiles
-    - Support for advanced controller features when the selected controller and game provide them
-    - Ongoing driver maintenance and improvements alongside Sunshine and other LizardByte software
+    - Generic, Xbox 360, Xbox One, Xbox Series, DualShock 4, DualSense, and Switch Pro-style profiles
+    - Support for advanced controller features when the selected controller, platform, and game provide them
+    - Ongoing broker and Windows driver maintenance alongside Sunshine and other LizardByte software
   details:
     label: Learn more
     url: https://app.lizardbyte.dev/libvirtualhid/virtual-hid-driver
@@ -46,4 +49,4 @@
       url: https://buy.polar.sh/polar_cl_zj6Io5NVukXfZSl97ULtFvImfI5L1jbL2cSnc0Y72Pt
       store: Polar
       external: true
-      icon: fa-solid fa-cart-shopping
+      icon: shopping-cart
