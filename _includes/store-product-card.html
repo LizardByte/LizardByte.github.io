@@ -14,7 +14,9 @@
                 <ul class="store-product-badges list-unstyled" aria-label="Product compatibility">
                     {% for badge in product.badges %}
                         <li class="store-product-badge">
-                            {% if badge.icon %}<i class="{{ badge.icon }}" aria-hidden="true"></i>{% endif %}
+                            {% if badge.icon_img %}
+                                <img class="store-product-badge-icon" src="{{ badge.icon_img }}" alt="" width="16" height="16">
+                            {% endif %}
                             {{ badge.label }}
                         </li>
                     {% endfor %}
@@ -36,7 +38,7 @@
                     <ul class="store-product-features">
                         {% for feature in product.features %}
                             <li>
-                                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                <i data-lucide="circle-check" aria-hidden="true"></i>
                                 <span>{{ feature }}</span>
                             </li>
                         {% endfor %}
@@ -58,7 +60,7 @@
 
                 {% if product.price_note %}
                     <p class="store-product-price-note">
-                        <i class="fa-solid fa-display" aria-hidden="true"></i>
+                        <i data-lucide="monitor" aria-hidden="true"></i>
                         {{ product.price_note }}
                     </p>
                 {% endif %}
@@ -73,7 +75,7 @@
                                 rel="noopener"
                             {% endif %}
                         >
-                            {% if offer.icon %}<i class="{{ offer.icon }}" aria-hidden="true"></i>{% endif %}
+                            {% if offer.icon %}<i data-lucide="{{ offer.icon }}" aria-hidden="true"></i>{% endif %}
                             {{ offer.label }}
                             <span class="visually-hidden">
                                 for {{ product.name }}{% if offer.store %} from {{ offer.store }}{% endif %}
@@ -83,7 +85,7 @@
                     {% if product.details %}
                         <a class="btn btn-outline-theme" href="{{ product.details.url }}">
                             {{ product.details.label }}
-                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            <i data-lucide="arrow-right" aria-hidden="true"></i>
                         </a>
                     {% endif %}
                 </div>
@@ -91,7 +93,7 @@
                 {% for offer in product.offers %}
                     {% if offer.store %}
                         <p class="store-product-seller">
-                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <i data-lucide="lock" aria-hidden="true"></i>
                             Checkout provided by {{ offer.store }}
                         </p>
                     {% endif %}
@@ -123,7 +125,7 @@
                             loading="lazy"
                         >
                         <span class="store-screenshot-expand" aria-hidden="true">
-                            <i class="fa-solid fa-expand"></i>
+                            <i data-lucide="expand" aria-hidden="true"></i>
                         </span>
                     </button>
                 {% endfor %}
