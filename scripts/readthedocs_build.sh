@@ -245,6 +245,8 @@ cd "${TMPDIR}"
 gem install bundle
 bundle install
 echo "baseurl: ${READTHEDOCS_VERSION}" > _config_rtd.yml
+# Shared root links need the preview prefix without consumer repository paths.
+echo "root_baseurl: /${READTHEDOCS_VERSION}" >> _config_rtd.yml
 echo "_config_rtd.yml:"
 cat _config_rtd.yml
 echo "_config_theme.yml:"
