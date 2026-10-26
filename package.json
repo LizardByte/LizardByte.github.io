@@ -39,7 +39,7 @@
     "jest": "30.5.2",
     "jest-environment-jsdom": "30.5.2",
     "jest-junit": "17.0.0",
-    "npm-run-all2": "9.0.3"
+    "npm-run-all2": "9.0.4"
   },
   "repository": {
     "type": "git",
