@@ -112,7 +112,7 @@ function loadCommitActivity(repo, card_footer) {
                     height: ${Math.max(height, 10)}%;
                     border-radius: 1px;
                     transition: all 0.2s ease;
-                    opacity: ${week.total === 0 ? 1 : intensity};
+                    --commit-bar-opacity: ${intensity};
                 `
                 bar.title = `${week.total} commits this week`
                 activity_container.appendChild(bar)

@@ -110,7 +110,7 @@ describe('project cards', () => {
         globalThis.fetch = jest.fn(url => {
             if (url.endsWith('/readthedocs/projects.json')) return Promise.resolve(response(docs));
             if (url.endsWith('/github/repos.json')) return Promise.resolve(response([...skipped, zero, featured, normal]));
-            if (url.includes('/commitActivity/normal.json')) return Promise.resolve(response([{ total: 0 }, { total: 10 }]));
+            if (url.includes('/commitActivity/normal.json')) return Promise.resolve(response([{ total: 0 }, { total: 5 }, { total: 10 }]));
             if (url.includes('/commitActivity/featured.json')) return Promise.reject(new Error('no activity'));
             if (url.includes('/commitActivity/zero.json')) return Promise.resolve(response([{ total: 0 }]));
             if (url.includes('/languages/normal.json')) return Promise.resolve(response({ 'C++': 90, JavaScript: 10 }));
@@ -131,7 +131,11 @@ describe('project cards', () => {
         expect(document.querySelector('.readthedocs-icon').closest('a').href).toBe('https://docs.lizardbyte.dev/projects/normal');
         expect(document.querySelectorAll('.language-logo')).toHaveLength(2);
         expect(document.querySelector('.language-logo').src).toContain('C%2B%2B.svg');
-        expect(document.querySelectorAll('.commit-bar-active')).toHaveLength(1);
+        const activeBars = document.querySelectorAll('.commit-bar-active');
+        expect(activeBars).toHaveLength(2);
+        expect(Number(activeBars[0].style.getPropertyValue('--commit-bar-opacity'))).toBeCloseTo(0.65);
+        expect(Number(activeBars[1].style.getPropertyValue('--commit-bar-opacity'))).toBe(1);
+        expect(activeBars[0].style.opacity).toBe('');
         expect(document.querySelectorAll('.commit-bar-empty')).toHaveLength(2);
         expect(document.querySelector('a[href="https://app.lizardbyte.dev/normal/"]')).not.toBeNull();
         expect(globalThis.formatNumber).toHaveBeenCalled();
