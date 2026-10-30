@@ -17,16 +17,16 @@ js:
 </script>
 
 <!-- Gamepad Tester section -->
-<section class="gamepad-tester py-4 py-lg-5" id="GamepadTester">
+<section class="gamepad-tester" id="GamepadTester">
     <div class="container">
-        <header class="gamepad-tester-header mx-auto text-center">
+        <header class="gamepad-tester-header mx-auto">
             <div class="gamepad-kicker mb-2">
                 <i class="fas fa-gamepad" aria-hidden="true"></i>
                 Browser controller diagnostics
             </div>
-            <h2 class="display-6 fw-bolder mb-2">Gamepad Tester</h2>
+            <h2 class="display-6 fw-bolder">Gamepad Tester</h2>
             <p class="lead text-muted mb-4">Check buttons, sticks, triggers, axes, and vibration in real time.</p>
-            <div id="gamepad-status" class="alert alert-warning gamepad-status mb-2">
+            <div id="gamepad-status" class="alert alert-warning gamepad-status">
                 <span class="gamepad-status-indicator" aria-hidden="true"></span>
                 <output id="gamepad-status-message" aria-live="polite">No gamepad detected. Connect a gamepad and press any button.</output>
             </div>
@@ -36,7 +36,7 @@ js:
             </p>
         </header>
 
-        <div id="firefox-switch-warning" class="gamepad-browser-warning gamepad-inline-notice mt-3" aria-live="polite" hidden>
+        <div id="firefox-switch-warning" class="gamepad-browser-warning gamepad-inline-notice" aria-live="polite" hidden>
             <i class="fas fa-triangle-exclamation mt-1" aria-hidden="true"></i>
             <span>
                 Firefox versions before 155 can report incorrect buttons and axes for Nintendo Switch controllers.
@@ -45,7 +45,7 @@ js:
             </span>
         </div>
 
-        <section class="gamepad-selector-panel mt-4" id="gamepad-selector-container" style="display: none;" aria-labelledby="gamepad-selector-heading">
+        <section class="gamepad-selector-panel" id="gamepad-selector-container" style="display: none;" aria-labelledby="gamepad-selector-heading">
             <div class="gamepad-selector-heading">
                 <div>
                     <span class="gamepad-panel-eyebrow">Devices</span>
@@ -56,7 +56,7 @@ js:
             <div class="gamepad-selector-grid" id="gamepad-selector"></div>
         </section>
 
-        <div class="row g-4 mt-0" id="gamepad-info" style="display: none;">
+        <div class="row g-4" id="gamepad-info" style="display: none;">
             <div class="col-12">
                 <section class="gamepad-panel gamepad-visual-panel" aria-labelledby="controller-visual-heading">
                     <div class="gamepad-panel-header">
@@ -148,7 +148,7 @@ js:
                         </div>
                     </div>
                     <div class="gamepad-panel-body">
-                        <div id="vibration-status" class="gamepad-capability mb-3"></div>
+                        <div id="vibration-status" class="gamepad-capability"></div>
 
                         <div id="dual-rumble-controls" class="d-none">
                             <div class="gamepad-range-control">

@@ -70,11 +70,11 @@ body {
 
 .card-body, .card-custom, .card-footer, .card-img-top, .cr-picker-button, .cr-picker-submenu {
     --bs-bg-opacity: 1;
-    background-color: var(--navbar-col) !important;
+    background-color: var(--navbar-col);
 }
 
 .modal-content {
-    background-color: var(--footer-col) !important;
+    background-color: var(--footer-col);
 }
 
 /* in line code */
@@ -101,11 +101,11 @@ code {
 /* shrink logo when navbar shrinks, instead of hiding it */
 .navbar-custom.top-nav-short .avatar-container {
   width: 3.125rem;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transition: none !important;
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
 }
 
 /* hide search button */
@@ -117,8 +117,10 @@ code {
 .hover-zoom {
     overflow: hidden;
 }
-.hover-zoom img {
-    transition: all 1.5s ease;
+@media (prefers-reduced-motion: no-preference) {
+    .hover-zoom img {
+        transition: transform 1.5s ease;
+    }
 }
 .hover-zoom:hover img {
     transform: scale(1.1);
@@ -250,12 +252,35 @@ table tr:nth-child(2n) {
 }
 
 /* Gamepad tester */
+.gamepad-tester,
+.mouse-tester {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .gamepad-tester,
+  .mouse-tester {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+
 .gamepad-tester .container {
   max-width: 82rem;
 }
 
 .gamepad-tester-header {
   max-width: 52rem;
+  text-align: center;
+}
+
+.gamepad-tester-header > h2 {
+  margin-bottom: 0.5rem;
+}
+
+#gamepad-info {
+  margin-top: 0;
 }
 
 .gamepad-kicker,
@@ -282,6 +307,7 @@ table tr:nth-child(2n) {
   color: var(--text-col);
   display: flex;
   gap: 0.75rem;
+  margin-bottom: 0.5rem;
   margin-inline: auto;
   max-width: 46rem;
   padding: 0.8rem 1rem;
@@ -331,6 +357,10 @@ table tr:nth-child(2n) {
 
 .gamepad-privacy-note {
   font-size: 0.78rem;
+}
+
+.gamepad-selector-panel {
+  margin-top: 1.5rem;
 }
 
 .gamepad-selector-panel,
@@ -725,6 +755,7 @@ table tr:nth-child(2n) {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  margin-bottom: 1rem;
   min-height: 1.5rem;
 }
 
@@ -780,6 +811,7 @@ table tr:nth-child(2n) {
 
 .gamepad-browser-warning {
   margin-inline: auto;
+  margin-top: 1rem;
   max-width: 46rem;
 }
 
@@ -870,8 +902,8 @@ table tr:nth-child(2n) {
 /* Fit the complete tester workspace into a typical desktop viewport. */
 @media (min-width: 1200px) {
   .gamepad-tester.has-gamepad {
-    padding-bottom: 1.25rem !important;
-    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
   }
 
   .gamepad-tester.has-gamepad .gamepad-tester-header {
@@ -879,7 +911,7 @@ table tr:nth-child(2n) {
     display: flex;
     gap: 1rem;
     max-width: none;
-    text-align: left !important;
+    text-align: left;
   }
 
   .gamepad-tester.has-gamepad .gamepad-kicker,
@@ -891,18 +923,18 @@ table tr:nth-child(2n) {
   .gamepad-tester.has-gamepad .gamepad-tester-header > h2 {
     flex: 0 0 auto;
     font-size: 1.65rem;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .gamepad-tester.has-gamepad .gamepad-status {
     flex: 1 1 auto;
-    margin: 0 !important;
+    margin: 0;
     max-width: none;
     padding: 0.65rem 0.85rem;
   }
 
   .gamepad-tester.has-gamepad .gamepad-browser-warning {
-    margin-top: 0.75rem !important;
+    margin-top: 0.75rem;
     max-width: none;
     padding: 0.55rem 0.75rem;
   }
@@ -910,7 +942,7 @@ table tr:nth-child(2n) {
   .gamepad-tester.has-gamepad .gamepad-selector-panel {
     display: grid;
     grid-template-columns: 13rem minmax(0, 1fr);
-    margin-top: 0.85rem !important;
+    margin-top: 0.85rem;
   }
 
   .gamepad-tester.has-gamepad .gamepad-selector-heading {
@@ -945,7 +977,7 @@ table tr:nth-child(2n) {
     display: grid;
     gap: 0.75rem;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    margin: 0.75rem 0 0 !important;
+    margin: 0.75rem 0 0;
   }
 
   .gamepad-tester.has-gamepad #gamepad-info > [class*="col-"] {
@@ -1079,7 +1111,7 @@ table tr:nth-child(2n) {
   }
 
   .gamepad-tester.has-gamepad .gamepad-capability {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem;
   }
 
   .gamepad-tester.has-gamepad .gamepad-range-control {
@@ -1177,6 +1209,11 @@ table tr:nth-child(2n) {
 
 .mouse-tester-header {
   max-width: 52rem;
+  text-align: center;
+}
+
+.mouse-tester-header > h2 {
+  margin-bottom: 0.5rem;
 }
 
 .mouse-kicker,
@@ -1203,6 +1240,7 @@ table tr:nth-child(2n) {
   color: var(--text-col);
   display: flex;
   gap: 0.75rem;
+  margin-bottom: 0.5rem;
   margin-inline: auto;
   max-width: 46rem;
   padding: 0.8rem 1rem;
@@ -1267,6 +1305,7 @@ table tr:nth-child(2n) {
 
 .mouse-browser-warning {
   margin-inline: auto;
+  margin-top: 1rem;
   max-width: 46rem;
 }
 
@@ -1281,7 +1320,7 @@ table tr:nth-child(2n) {
 }
 
 .mouse-workspace {
-  margin-top: 1.5rem !important;
+  margin-top: 1.5rem;
 }
 
 .mouse-panel {
@@ -1648,8 +1687,8 @@ table tr:nth-child(2n) {
 
 @media (min-width: 1200px) {
   .mouse-tester {
-    padding-bottom: 1.25rem !important;
-    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
   }
 
   .mouse-tester-header {
@@ -1657,7 +1696,7 @@ table tr:nth-child(2n) {
     display: flex;
     gap: 1rem;
     max-width: none;
-    text-align: left !important;
+    text-align: left;
   }
 
   .mouse-tester-header .mouse-kicker,
@@ -1669,22 +1708,22 @@ table tr:nth-child(2n) {
   .mouse-tester-header > h2 {
     flex: 0 0 auto;
     font-size: 1.65rem;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .mouse-status {
     flex: 1 1 auto;
-    margin: 0 !important;
+    margin: 0;
     max-width: none;
     padding: 0.65rem 0.85rem;
   }
 
   .mouse-workspace {
-    margin-top: 0.75rem !important;
+    margin-top: 0.75rem;
   }
 
   .mouse-browser-warning {
-    margin-top: 0.75rem !important;
+    margin-top: 0.75rem;
     max-width: none;
     padding: 0.55rem 0.75rem;
   }
@@ -1825,15 +1864,16 @@ table tr:nth-child(2n) {
 
 .commit-bar-active {
   background-color: rgb(64, 196, 99);
+  opacity: var(--commit-bar-opacity, 1);
 }
 
 .commit-bar-active:hover {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
-/* Override Bootstrap's text-muted to use theme colors */
+/* Supply Bootstrap's text-muted utility with the theme color. */
 .text-muted {
-  color: var(--footer-text-col) !important;
+  --bs-secondary-color: var(--footer-text-col);
 }
 
 /* Theme-aware outline button: dark border/text in light mode, light in dark mode */
