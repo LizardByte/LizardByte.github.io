@@ -22,10 +22,11 @@ its current location in the [LizardByte organization](https://github.com/LizardB
 | GitHub organization                                 | Repositories moving from LizardByte                        | Planned project website   |
 | --------------------------------------------------- | ---------------------------------------------------------- | ------------------------- |
 | [KokoStreamTV](https://github.com/KokoStreamTV)     | `Koko`                                                     | `koko.lizardbyte.dev`     |
-| [SunshineStream](https://github.com/SunshineStream) | `Sunshine`                                                 | `sunshine.lizardbyte.dev` |
+| [SunshineStream](https://github.com/SunshineStream) | `Sunshine`, `awesome-sunshine`                             | `sunshine.lizardbyte.dev` |
 | [Themerr](https://github.com/Themerr)               | `Themerr`, `ThemerrDB`, `Themerr-jellyfin`, `Themerr-kodi` | `themerr.lizardbyte.dev`  |
 
-**SunshineStream** will be home to Sunshine, our self-hosted game stream host for Moonlight.
+**SunshineStream** will be home to Sunshine, our self-hosted game stream host for Moonlight, and
+awesome-sunshine, the collection of Sunshine tools, scripts, guides, and companion software.
 **Themerr** will bring the theme song manager and ThemerrDB together under one project organization.
 **KokoStreamTV** will be home to Koko, our self-hosted media server, which remains under development.
 
