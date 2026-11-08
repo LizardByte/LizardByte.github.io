@@ -11,7 +11,7 @@ export default [
         ],
     },
     {
-        files: ['assets/js/release-versions.js'],
+        files: ['assets/js/release-versions.js', 'assets/js/projects.js'],
         languageOptions: {
             globals: {
                 ...globals.browser,
