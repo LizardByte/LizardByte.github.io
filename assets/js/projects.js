@@ -282,8 +282,9 @@ function updateProjectFilters(cards, organizations) {
         column.hidden = !matches
         if (matches) count += 1
     }
+    const noun = count === 1 ? "project" : "projects"
     document.getElementById("project-status").textContent = count
-        ? `${count} ${count === 1 ? "project" : "projects"}` : "No projects match your search."
+        ? `${count} ${noun}` : "No projects match your search."
 
     const scope = organization ? [organization] : organizations
     const query = [...scope.map(name => `org:${name}`), "archived:true"].join(" ")

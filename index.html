@@ -84,7 +84,8 @@ js:
                        placeholder="Name, organization, or description" aria-controls="project-container">
             </div>
         </div>
-        <p id="project-status" class="text-muted" role="status" aria-live="polite">Loading projects&hellip;</p>
+        <output id="project-status" class="d-block text-muted mb-3" aria-live="polite"
+                for="project-organization project-search">Loading projects&hellip;</output>
         <div class="row gx-5" id="project-container"></div>
 
         <div class="row gx-5 justify-content-center mt-4">
