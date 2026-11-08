@@ -71,11 +71,27 @@ js:
                 </div>
             </div>
         </div>
+        <div class="row g-3 mb-3">
+            <div class="col-md-4">
+                <label for="project-organization" class="form-label">Organization</label>
+                <select id="project-organization" class="form-select" disabled>
+                    <option value="">All organizations</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                <label for="project-search" class="form-label">Search projects</label>
+                <input id="project-search" type="search" class="form-control" disabled
+                       placeholder="Name, organization, or description" aria-controls="project-container">
+            </div>
+        </div>
+        <output id="project-status" class="d-block text-muted mb-3" aria-live="polite"
+                for="project-organization project-search">Loading projects&hellip;</output>
         <div class="row gx-5" id="project-container"></div>
 
         <div class="row gx-5 justify-content-center mt-4">
             <div class="col-lg-8 col-xl-6 text-center">
-                <a href="https://github.com/orgs/LizardByte/repositories?q=archived%3Atrue" target="_blank" class="btn btn-outline-light rounded-0">
+                <a id="archived-projects-link" target="_blank" rel="noopener noreferrer" aria-disabled="true"
+                   class="btn btn-outline-light rounded-0 disabled">
                     Archived Projects
                 </a>
             </div>

@@ -20,6 +20,22 @@ This repo contains the source files for the [LizardByte](https://app.lizardbyte.
 
 The page is built using jekyll and hosted on GitHub Pages.
 
+### Project discovery
+
+The Projects section reads public repository data from dashboard's `github/repos.json` and the
+[organization registry](https://github.com/LizardByte/.github/blob/master/organizations.json).
+The registry drives organization filtering and the archived-project search. Project search matches
+repository names, organizations, and descriptions; each card shows its organization.
+
+This consumer requires the multi-org dashboard catalog: banners use `dashboard_paths.banner_small`,
+activity and languages use `dashboard_key`, and Read the Docs links match `dashboard_aliases`.
+Transfers and renames therefore retain the existing asset URLs. Filtering reuses the rendered cards
+without fetching their assets again.
+
+Project titles and banners link to a repository's HTTP(S) `homepage`, or its GitHub page when no valid
+homepage is configured. Set that field to the project's public site, including its new subdomain.
+The consumer does not infer a site URL from an organization or repository name.
+
 ### CrowdIn Localization
 
 <p align="center">

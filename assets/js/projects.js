@@ -5,6 +5,7 @@ let container
 let org_name = "LizardByte"
 let base_url = `https://app.${org_name.toLowerCase()}.dev`
 let cache_repo = "dashboard"
+const organizations_url = "https://raw.githubusercontent.com/LizardByte/.github/master/organizations.json"
 let shared_web_url = "https://cdn.jsdelivr.net/npm/@lizardbyte/shared-web@2026.1107.31840"
 
 
@@ -36,9 +37,31 @@ function fetchJson(url) {
 }
 
 function shouldProcessRepo(repo) {
+    if (repo['private'] === true) return false;
     if (repo['archived'] === true) return false;
     if (repo['description'] === null) return false;
     return !(repo['fork'] === true && !repo['topics'].includes("featured-fork"));
+}
+
+function projectUrl(repo) {
+    try {
+        const homepage = new URL(repo.homepage)
+        if (["https:", "http:"].includes(homepage.protocol)) return homepage.href
+    } catch {
+        // Repositories without a valid homepage link to GitHub.
+    }
+    return repo.html_url
+}
+
+function githubIdentity(value) {
+    try {
+        const url = new URL(value.replace(/^git@github\.com:/i, "https://github.com/"))
+        const parts = url.pathname.split("/").filter(Boolean)
+        if (url.hostname !== "github.com" || parts.length !== 2) return null
+        return parts.join("/").replace(/\.git$/i, "").toLowerCase()
+    } catch {
+        return null
+    }
 }
 
 function createBannerElement(repo) {
@@ -47,17 +70,18 @@ function createBannerElement(repo) {
 
     let banner_link = document.createElement("a")
     banner_link.className = "crowdin-ignore"
-    banner_link.href = repo['html_url']
+    banner_link.href = projectUrl(repo)
     banner_link.target = "_blank"
+    banner_link.rel = "noopener noreferrer"
     banner_div.append(banner_link)
 
     let banner = document.createElement("img")
     banner.className = "card-img-top rounded-0"
-    banner.src = `${base_url}/${cache_repo}/github/openGraphImages/${repo['name']}_624x312.png`
+    banner.src = `${base_url}/${cache_repo}/${repo.dashboard_paths.banner_small}`
     banner.alt = ""
     banner_link.append(banner)
 
-    return { banner_div, banner_link }
+    return banner_div
 }
 
 function createCardBody(repo) {
@@ -66,8 +90,9 @@ function createCardBody(repo) {
 
     let card_title_link = document.createElement("a")
     card_title_link.className = "text-decoration-none project-card-link crowdin-ignore"
-    card_title_link.href = repo['html_url']
+    card_title_link.href = projectUrl(repo)
     card_title_link.target = "_blank"
+    card_title_link.rel = "noopener noreferrer"
     card_body.appendChild(card_title_link)
 
     let card_title_text = document.createElement("h5")
@@ -83,16 +108,21 @@ function createCardBody(repo) {
 
     card_title_link.appendChild(card_title_text)
 
+    const organization = document.createElement("p")
+    organization.className = "project-organization small text-muted crowdin-ignore"
+    organization.textContent = repo.owner.login
+    card_body.appendChild(organization)
+
     let card_paragraph = document.createElement("p")
     card_paragraph.className = "card-text mb-0"
     card_paragraph.textContent = repo['description']
     card_body.appendChild(card_paragraph)
 
-    return { card_body, card_title_link }
+    return card_body
 }
 
 function loadCommitActivity(repo, card_footer) {
-    fetchJson(`${base_url}/${cache_repo}/github/commitActivity/${repo['name']}.json`)
+    fetchJson(`${base_url}/${cache_repo}/github/commitActivity/${repo.dashboard_key}.json`)
         .then(function (commitActivity) {
             let activity_container = document.createElement("div")
             activity_container.className = "commit-activity-graph mt-2 mb-2 mx-3"
@@ -125,7 +155,7 @@ function loadCommitActivity(repo, card_footer) {
         })
 }
 
-function createRepoDataRow(repo, card_footer, banner_link, card_title_link) {
+function createRepoDataRow(repo, card_footer) {
     let repo_data_row = document.createElement("div")
     repo_data_row.className = "d-flex align-items-center"
     card_footer.appendChild(repo_data_row)
@@ -139,15 +169,6 @@ function createRepoDataRow(repo, card_footer, banner_link, card_title_link) {
     let github_link_image = document.createElement("i")
     github_link_image.className = "fa-fw fa-brands fa-github"
     github_link.prepend(github_link_image)
-
-    fetchWithNoCache(`${base_url}/${repo['name']}/`)
-        .then(function (response) {
-            if (!response.ok) return
-
-            banner_link.href = `${base_url}/${repo['name']}/`
-            card_title_link.href = `${base_url}/${repo['name']}/`
-        })
-        .catch(function () {})
 
     let star_link = document.createElement("a")
     star_link.className = "nav-link nav-link-sm project-nav-link ms-3 crowdin-ignore"
@@ -176,10 +197,8 @@ function createRepoDataRow(repo, card_footer, banner_link, card_title_link) {
 
 function addDocsLink(repo, readthedocs, repo_data_row) {
     for (let docs in readthedocs) {
-        let docs_repo = readthedocs[docs]['repository']['url'].toLowerCase();
-        let project_repo = repo['clone_url'].toLowerCase();
-
-        if (docs_repo !== project_repo) continue;
+        const docs_repo = githubIdentity(readthedocs[docs]['repository']['url']);
+        if (!repo.dashboard_aliases.some(alias => alias.toLowerCase() === docs_repo)) continue;
 
         let docs_url = readthedocs[docs]['urls']['documentation']
         try {
@@ -208,7 +227,7 @@ function addDocsLink(repo, readthedocs, repo_data_row) {
 }
 
 function loadLanguageIcons(repo, card_footer) {
-    fetchJson(`${base_url}/${cache_repo}/github/languages/${repo['name']}.json`)
+    fetchJson(`${base_url}/${cache_repo}/github/languages/${repo.dashboard_key}.json`)
         .then(function (languages) {
             let language_data_row = document.createElement("div")
             language_data_row.className = "card-group p-3 align-items-center"
@@ -236,11 +255,9 @@ function buildRepoCard(repo, readthedocs) {
     card.className = "card h-100 shadow border-0 rounded-0"
     column.appendChild(card)
 
-    let { banner_div, banner_link } = createBannerElement(repo)
-    card.append(banner_div)
+    card.append(createBannerElement(repo))
 
-    let { card_body, card_title_link } = createCardBody(repo)
-    card.appendChild(card_body)
+    card.appendChild(createCardBody(repo))
 
     let card_footer = document.createElement("div")
     card_footer.className = "card-footer p-2 pt-0 border-0 rounded-0"
@@ -248,9 +265,57 @@ function buildRepoCard(repo, readthedocs) {
 
     loadCommitActivity(repo, card_footer)
 
-    let repo_data_row = createRepoDataRow(repo, card_footer, banner_link, card_title_link)
+    let repo_data_row = createRepoDataRow(repo, card_footer)
     addDocsLink(repo, readthedocs, repo_data_row)
     loadLanguageIcons(repo, card_footer)
+    return column
+}
+
+function updateProjectFilters(cards, organizations) {
+    const organization = document.getElementById("project-organization").value
+    const terms = document.getElementById("project-search").value.toLowerCase().trim().split(/\s+/).filter(Boolean)
+    let count = 0
+    for (const { repo, column } of cards) {
+        const text = `${repo.full_name} ${repo.description}`.toLowerCase()
+        const matches = (!organization || repo.owner.login.toLowerCase() === organization.toLowerCase())
+            && terms.every(term => text.includes(term))
+        column.hidden = !matches
+        if (matches) count += 1
+    }
+    const noun = count === 1 ? "project" : "projects"
+    document.getElementById("project-status").textContent = count
+        ? `${count} ${noun}` : "No projects match your search."
+
+    const scope = organization ? [organization] : organizations
+    const query = [...scope.map(name => `org:${name}`), "archived:true"].join(" ")
+    const archive = document.getElementById("archived-projects-link")
+    archive.href = `https://github.com/search?${new URLSearchParams({ q: query, type: "repositories" })}`
+    archive.classList.remove("disabled")
+    archive.removeAttribute("aria-disabled")
+}
+
+function createProjectBrowser(repos, readthedocs, organizations) {
+    if (!Array.isArray(organizations) || !organizations.length
+        || organizations.some(name => typeof name !== "string" || !/^[a-z\d][a-z\d-]*$/i.test(name))) {
+        throw new Error("Invalid organization registry")
+    }
+    const organization = document.getElementById("project-organization")
+    organizations.sort((left, right) => left.localeCompare(right))
+    for (const name of organizations) {
+        organization.add(new Option(name, name))
+    }
+    const registered = new Set(organizations.map(name => name.toLowerCase()))
+    const sorted = repos.filter(repo => registered.has(repo.owner.login.toLowerCase()) && shouldProcessRepo(repo))
+        .sort(globalThis.rankingSorter("stargazers_count", "full_name"))
+    // Build each card once so filtering does not fetch its assets again.
+    const cards = sorted.map(repo => ({ repo, column: buildRepoCard(repo, readthedocs) }))
+    const update = () => updateProjectFilters(cards, organizations)
+    const search = document.getElementById("project-search")
+    organization.disabled = false
+    search.disabled = false
+    organization.addEventListener("change", update)
+    search.addEventListener("input", update)
+    update()
 }
 
 
@@ -269,18 +334,14 @@ onDocumentReady(function () {
         })
 
     let reposRequest = fetchJson(`${base_url}/${cache_repo}/github/repos.json`)
+    let organizationsRequest = fetchJson(organizations_url)
 
-    Promise.all([readthedocsRequest, reposRequest])
-        .then(function ([readthedocs, result]) {
-            let sorted = result.sort(globalThis.rankingSorter("stargazers_count", "name"))
-
-            for (let repo of sorted) {
-                if (shouldProcessRepo(repo)) {
-                    buildRepoCard(repo, readthedocs)
-                }
-            }
+    Promise.all([readthedocsRequest, reposRequest, organizationsRequest])
+        .then(function ([readthedocs, result, organizations]) {
+            createProjectBrowser(result, readthedocs, organizations)
         })
         .catch(function (error) {
+            document.getElementById("project-status").textContent = "Projects could not be loaded. Please try again later."
             console.error("Error loading project data:", error)
         })
 })
