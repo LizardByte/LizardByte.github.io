@@ -1,0 +1,13 @@
+{%- assign shared_path = include.path | default: '' -%}
+{%- assign shared_first = shared_path | slice: 0, 1 -%}
+{%- assign shared_prefix = shared_path | slice: 0, 2 -%}
+{%- if shared_path contains ':' or shared_prefix == '//' or shared_first == '#' -%}
+  {{- shared_path | escape -}}
+{%- else -%}
+  {%- assign shared_base = site.url-canonical | default: site.root_baseurl | default: '' -%}
+  {%- assign shared_last = shared_base | slice: -1, 1 -%}
+  {%- if shared_first == '/' -%}
+    {%- assign shared_path = shared_path | remove_first: '/' -%}
+  {%- endif -%}
+  {{- shared_base | escape -}}{%- unless shared_last == '/' -%}/{%- endunless -%}{{- shared_path | escape -}}
+{%- endif -%}

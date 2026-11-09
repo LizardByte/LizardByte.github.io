@@ -245,19 +245,23 @@ cd "${TMPDIR}"
 gem install bundle
 bundle install
 echo "baseurl: ${READTHEDOCS_VERSION}" > _config_rtd.yml
-# Shared root links need the preview prefix without consumer repository paths.
-echo "root_baseurl: /${READTHEDOCS_VERSION}" >> _config_rtd.yml
+if [[ "${sub_project}" == "false" ]]; then
+  # Main-site pages exist in this preview; consumer previews link to the published main site.
+  echo "root_baseurl: /${READTHEDOCS_VERSION}" >> _config_rtd.yml
+  echo "url-canonical: /${READTHEDOCS_VERSION}/" >> _config_rtd.yml
+fi
 echo "_config_rtd.yml:"
 cat _config_rtd.yml
 echo "_config_theme.yml:"
 cat _config_theme.yml
 
-config_files=_config_rtd.yml,_config_theme.yml
+config_files=_config_theme.yml
 if [[ -n "${config_file}" ]] && [[ -e "${config_file}" ]]; then
   config_files="${config_files},${config_file}"
   echo "config file: ${config_file}"
   cat "${config_file}"
 fi
+config_files="${config_files},_config_rtd.yml"
 
 bundle exec jekyll build \
   --future \

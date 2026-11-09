@@ -36,6 +36,12 @@ Project titles and banners link to a repository's HTTP(S) `homepage`, or its Git
 homepage is configured. Set that field to the project's public site, including its new subdomain.
 The consumer does not infer a site URL from an organization or repository name.
 
+### Shared navigation
+
+`url-canonical` in `_config_theme.yml` is the main-site address used by the shared brand, navigation, and footer links.
+Project pages keep their own `url` and `baseurl` for assets and database requests. Read the Docs project previews link
+to the published main site; previews of the main site override `url-canonical` with their own version path.
+
 ### CrowdIn Localization
 
 <p align="center">
