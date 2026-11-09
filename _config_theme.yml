@@ -54,6 +54,7 @@ share-links-active:
   vk: false
 remove-ads: true  # remove the "Powered by Beautiful Jekyll" text in the footer
 url-pretty: "app.LizardByte.dev"
+url-canonical: "https://app.lizardbyte.dev"
 title-on-all-pages: true
 excerpt_length: 50
 feed_show_excerpt: true

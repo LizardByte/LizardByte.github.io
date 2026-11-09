@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
+  <div class="container-fluid">
+
+    {%- if site.title-img -%}
+      <a class="navbar-brand navbar-brand-logo" href="{% include shared-site-url.html path='/' %}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    {%- elsif site.title -%}
+      <a class="navbar-brand" href="{% include shared-site-url.html path='/' %}">{{ site.title }}</a>
+    {%- endif -%}
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ms-auto">
+        {%- for link in site.navbar-links -%}
+          {%- if link[1].first %}
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="navbarDropdown{{ forloop.index }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ link[0] }}</button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown{{ forloop.index }}">
+                {%- for childlink in link[1] -%}
+                  {%- for linkparts in childlink %}
+                    {%- assign navbar_link_url = linkparts[1] -%}
+                    <a class="dropdown-item" href="{% include shared-site-url.html path=navbar_link_url %}">{{ linkparts[0] }}</a>
+                  {%- endfor -%}
+                {%- endfor %}
+              </div>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              {%- assign navbar_link_url = link[1] -%}
+              <a class="nav-link" href="{% include shared-site-url.html path=navbar_link_url %}">{{ link[0] }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        {% if site.theme-switcher != false %}
+          {% assign theme_style = site.theme-switcher-style | default: 'button' %}
+          {% if theme_style == 'dropdown' %}
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="themeDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Change theme">
+                <span id="theme-icon-dropdown" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                <a class="dropdown-item" href="#" data-bs-theme-value="light">
+                  <span class="fas fa-fw fa-sun me-2"></span>Light
+                </a>
+                <a class="dropdown-item" href="#" data-bs-theme-value="dark">
+                  <span class="fas fa-fw fa-moon me-2"></span>Dark
+                </a>
+                <a class="dropdown-item" href="#" data-bs-theme-value="auto">
+                  <span class="fas fa-fw fa-circle-half-stroke me-2"></span>Auto
+                </a>
+              </div>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <button class="nav-link" id="theme-toggle" type="button" title="Toggle theme (currently: auto)">
+                <span id="theme-icon-button" class="fas fa-fw fa-circle-half-stroke"></span>
+                <span class="d-xl-none ms-1">Theme</span>
+              </button>
+            </li>
+          {% endif %}
+        {%- endif -%}
+        {% if site.post_search %}
+          <li class="nav-item">
+            <a class="nav-link" id="nav-search-link" href="#" title="Search">
+              <span id="nav-search-icon" class="fa fa-fw fa-search"></span>
+              <span id="nav-search-text">Search</span>
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </div>
+
+    {% if site.navbar-extra %}
+      {% for file in site.navbar-extra %}
+        {% include {{ file }} %}
+      {% endfor %}
+    {% endif %}
+
+    {% if site.avatar and page.show-avatar != false %}
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="{{ '/' | relative_url }}">
+            <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</nav>
+
+{% include search.html %}
